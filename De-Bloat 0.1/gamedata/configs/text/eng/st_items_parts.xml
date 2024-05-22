@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+
+<string_table>
+
+
+
+
+	
+	
+	<string id="st_prt_i_wood">
+		<text>Wooden parts</text>
+	</string>
+	<string id="st_prt_i_wood_descr">
+		<text>
+		Various wooden parts including grips, handguards and stocks. Usable for repairs of old Soviet rifles\n \n
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	<string id="st_prt_i_scrap">
+		<text>Metal parts</text>
+	</string>
+	<string id="st_prt_i_scrap_descr">
+		<text>
+		Various metal gun parts ranging from sights, springs, plates and dust covers to rods, screws, bolts and rivets. Usable for maintanance of most if not all firearms.\n \n
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	<string id="st_prt_i_fasteners">
+		<text>Metal scrap</text>
+	</string>
+	<string id="st_prt_i_fasteners_descr">
+		<text>
+		Various pieces of metal ranging from screws to sheets. Usable for upgrades of existing gear. \n \n
+				%c[d_purple] • %c[ui_gray_2] crafting item\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for upgrades\n \n
+		</text>
+	</string>
+	
+		<string id="st_prt_i_transistors">
+		<text>Metal scrap</text>
+	</string>
+	<string id="st_prt_i_transistors_descr">
+		<text>
+		Various pieces of electronics, ranging from simple cables and resistors to small circuit boards, with proper tools and some knowledge one could perhaps upgrade even detectors. \n \n
+		%c[d_purple] • %c[ui_gray_2] crafting item\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for upgrades\n \n
+		
+		</text>
+	</string>
+	
+	<string id="st_prt_i_ceramic">
+		<text>Plastic parts</text>
+	</string>
+	<string id="st_prt_i_ceramic_descr">
+		<text>Various plastic plates, shields, covers and other pieces of furniture commonly found on modern guns of all origins.\n \n
+				%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+	<string id="st_prt_w_p_trigger_1">
+		<text>Single-action trigger mechanism</text>
+	</string>
+	<string id="st_prt_w_p_trigger_1_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	<string id="st_prt_w_p_trigger_2">
+		<text>Double-action trigger mechanism</text>
+	</string>
+	<string id="st_prt_w_p_trigger_2_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	<string id="st_prt_w_p_trigger_3">
+		<text>Double-action (DA/SA) trigger mechanism</text>
+	</string>
+	<string id="st_prt_w_p_trigger_3_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	
+		<string id="st_prt_w_p_barrel_1">
+		<text>Light pistol barrel</text>
+	</string>
+	<string id="st_prt_w_p_barrel_1_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+
+	<string id="st_prt_w_p_barrel_2">
+		<text>Medium pistol barrel</text>
+	</string>
+	<string id="st_prt_w_p_barrel_2_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+
+	<string id="st_prt_w_p_barrel_3">
+		<text>Heavy pistol barrel</text>
+	</string>
+	<string id="st_prt_w_p_barrel_3_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+		<string id="st_prt_w_barrel_7">
+		<text>Light rifle barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_7_descr">
+		<text>Basic barrel commonly found in cheaper rifles, easy to maintain and not too costly to replace. Due to popularity of cheaper rifles in the Zone this barrel is a common part.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n	
+		</text>
+	</string>
+	
+		<string id="st_prt_w_barrel_8">
+		<text>Medium rifle barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_8_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+		<string id="st_prt_w_barrel_9">
+		<text>Heavy rifle barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_9_descr">
+		<text>Heavy durable barrel found in some of the best rifles to appear in the Zone.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n			
+		</text>
+	</string>
+	
+	
+			<string id="st_prt_w_barrel_4">
+		<text>Light shotgun barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_4_descr">
+		<text>Standard shotgun barrel with close to half of its original lenght sawn off. Thanks to this it is considerably lighter at cost of far worse accuracy.
+			%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n	
+		</text>
+	</string>
+	
+		<string id="st_prt_w_barrel_3">
+		<text>Medium shotgun barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_3_descr">
+		<text>Commonly used shotgun barrel found in Toz-34 and guns alike.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+		<string id="st_prt_w_barrel_2">
+		<text>Heavy shotgun barrel</text>
+	</string>
+	<string id="st_prt_w_barrel_2_descr">
+		<text>.
+		%c[d_purple] • %c[ui_gray_2] gun part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+
+	
+	
+<!--
+OUTFITS
+-->
+	<string id="st_prt_o_fabrics_1">
+		<text>Cloth sheets</text>
+	</string>
+	<string id="st_prt_o_fabrics_1_descr">
+		<text>Basic cloth sheets found in cheap outfits. They dont offer much protection but are cheap to replace and maintain while offering sufficent protection from cold and rain.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
+		</text>
+	</string>
+	
+	<string id="st_prt_o_fabrics_3">
+		<text>Durable cloth sheets</text>
+	</string>
+	<string id="st_prt_o_fabrics_3_descr">
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_fabrics_4">
+		<text>Military grade cloth sheets</text>
+	</string>
+	<string id="st_prt_o_fabrics_4_descr">
+		<text>Sheets of mil-spec sheets, offer significant insulation and protection from bites while being flexible enough not to affect wearers agility.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+			<string id="st_prt_o_ballistics_11">
+		<text>Leather</text>
+	</string>
+	<string id="st_prt_o_ballistics_11_descr">
+		<text>Simple leather not too different from that found in biker clothes, offers good protection against bites and scratches but wont stop many bullets. Thanks to its low price compared to kevlar it is often used as ballistic insert in cheap suits.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_ballistics_12">
+		<text>Ceramic plates</text>
+	</string>
+	<string id="st_prt_o_ballistics_12_descr">
+		<text>Ceramic ballistic plates offering sufficent protection against small arms fire, while it fails to stop anything bigger than pistol round it is still very good choice for its price and offers much greater protection than simple leather.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+
+	<string id="st_prt_o_ballistics_13">
+		<text>Kevlar plates</text>
+	</string>
+	<string id="st_prt_o_ballistics_13_descr">
+		<text>Kevlar paltes used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+		<string id="st_prt_o_retardant_19">
+		<text>Teflon</text>
+	</string>
+	<string id="st_prt_o_retardant_19_descr">
+		<text>Thin sheet of teflon used for waterproofing of cheap leather jackets commonly seen in the zone. While doing its job well it can easily get damaged. Sheets of this thickness are only suitable for cheap suits, better suits will utilize thicker sheets with greater durability.		
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_retardant_2">
+		<text>Durable teflon</text>
+	</string>
+	<string id="st_prt_o_retardant_2_descr">
+		<text>Thicker layers of teflon sheets providing much greater durability while keeping the positive traits of thinner layers. Used in mid range suits.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_retardant_3">
+		<text>Military grade teflon</text>
+	</string>
+	<string id="st_prt_o_retardant_3_descr">
+		<text>Teflon sheets specially strenghtened to provide better durability without sacrificing agility much. As such can only be seen in higher end combat suits and mid to high range military suits.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+		<string id="st_prt_o_retardant_12">
+		<text>Visor</text>
+	</string>
+	<string id="st_prt_o_retardant_12_descr">
+		<text>Replacable visor commonly used in scientific suits. Ecologist will often have spare ones in stock as they are very fragiel and tend to get damaged easily.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_ballistic_15">
+		<text>Helmet plating</text>
+	</string>
+	<string id="st_prt_o_ballistic_15_descr">
+		<text>Heavy plates used in helmets, essential for repairs of heavy combat suits with integrated helmets. 
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] suit part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+	<string id="st_prt_o_support_1">
+		<text>Exoskeleton frame</text>
+	</string>
+	<string id="st_prt_o_support_1_descr">
+		<text>Extrernal mechanical frame used in Exoskeleton suits, significantly increases wearers carrying capacity at cost of agility.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		%c[d_purple] • %c[ui_gray_2] exoskeleton part\n \n
+		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
+		</text>
+	</string>
+	
+
+</string_table>

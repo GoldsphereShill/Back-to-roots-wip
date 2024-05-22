@@ -1,0 +1,176 @@
+#include "presets\trade_discounts.ltx"
+#include "presets\trade_presets.ltx"
+
+[trader]
+buy_condition = trade_generic_buy 
+sell_condition = trade_generic_sell
+buy_supplies = {=toolkit_task_done(3)} supplies_4, {=toolkit_task_done(2)} supplies_3, {=toolkit_task_done(1)} supplies_2, supplies_1
+buy_item_condition_factor = 0.01
+buy_item_exponent = 1.75
+sell_item_exponent = 0.75
+
+discounts = discount_mechanic
+
+[trade_generic_buy]:mechanic, toolkits_h
+itm_pda_common                           ;NO TRADE
+itm_pda_rare                             ;NO TRADE
+itm_pda_uncommon                         ;NO TRADE
+pri_a25_explosive_charge_item            ;NO TRADE
+
+[trade_generic_sell]:mechanic, toolkits_h
+
+
+[supplies_1]:common_stock		;-- no tools
+swiss_knife             = 0, 0
+ball_hammer             = 0, 0
+duct_tape               = 0, 0
+grease                  = 0, 0
+
+sharpening_stones		= 1, 1
+
+gun_oil                 = 1, 1
+gun_oil_ru_d            = 0, 0
+gun_oil_ru              = 0, 0
+solvent                 = 1, 1
+cleaning_kit_p          = 0, 0
+cleaning_kit_s          = 1, 1
+cleaning_kit_r5         = 0, 0
+cleaning_kit_r7         = 0, 0
+cleaning_kit_u          = 0, 0
+toolkit_p               = 0, 0
+;toolkit_s               = 1, 1
+;toolkit_r5              = 0, 0
+;toolkit_r7              = 0, 0
+
+sewing_kit_b            = 0, 0
+sewing_kit_a            = 1, 1
+sewing_kit_h            = 0, 0
+glue_b                  = 0, 0
+glue_a                  = 1, 1
+glue_e                  = 0, 0
+armor_repair_fa         = 0, 0
+helmet_repair_kit       = 0, 0
+light_repair_kit        = 0, 0
+;medium_repair_kit       = 1, 1
+;heavy_repair_kit        = 0, 0
+;exo_repair_kit          = 0, 0
+
+leatherman_tool         = 0, 0
+rasp_tool               = 0, 0
+ramrod_tool             = 0, 0
+sewing_thread           = 0, 0
+heavy_sewing_thread     = 0, 0
+
+
+[supplies_2]:supplies_1		;-- basic tools delivered
+swiss_knife             = 0, 0
+sharpening_stones		= 2, 1
+
+gun_oil                 = 0, 0
+gun_oil_ru_d            = 0, 0
+gun_oil_ru              = 0, 0
+solvent                 = 0, 0
+cleaning_kit_p          = 0, 0
+cleaning_kit_s          = 2, 1
+cleaning_kit_r5         = 0, 0
+cleaning_kit_r7         = 0, 0
+cleaning_kit_u          = 0, 0
+toolkit_p               = 0, 0
+toolkit_s               = 2, 1
+;toolkit_r5              = 0, 0
+;toolkit_r7              == 0, 0
+
+sewing_kit_b            = 0, 0
+sewing_kit_a            = 2, 1
+sewing_kit_h            = 0, 0
+glue_b                  = 0, 0
+glue_a                  = 2, 1
+glue_e                  = 0, 0
+armor_repair_fa         = 0, 0
+helmet_repair_kit       = 0, 0
+light_repair_kit        = 0, 0
+medium_repair_kit       = 1, 1
+;heavy_repair_kit        = 0, 0
+;exo_repair_kit          = 0, 0
+
+leatherman_tool         = 0, 0
+rasp_tool               = 0, 0
+ramrod_tool             = 0, 0
+sewing_thread           = 0, 0
+heavy_sewing_thread     = 0, 0
+
+
+
+[supplies_3]:supplies_2		;-- advanced tools delivered
+sharpening_stones		= 3, 1
+
+gun_oil                 = 0, 0
+gun_oil_ru_d            = 0, 0
+gun_oil_ru              = 0, 0
+solvent                 = 0, 0
+cleaning_kit_p          = 0, 0
+cleaning_kit_s          = 3, 1
+cleaning_kit_r5         = 0, 0
+cleaning_kit_r7         = 0, 0
+cleaning_kit_u          = 0, 0
+toolkit_p               = 0, 0
+toolkit_s               = 3, 1
+toolkit_r5              = 0, 0
+;toolkit_r7              = 0, 0
+
+sewing_kit_b            = 0, 0
+sewing_kit_a            = 3, 1
+sewing_kit_h            = 0, 0
+glue_b                  = 0, 0
+glue_a                  = 3, 1
+glue_e                  = 0, 0
+armor_repair_fa         = 0, 0
+helmet_repair_kit       = 0, 0
+light_repair_kit        = 0, 0
+medium_repair_kit       = 0, 0
+heavy_repair_kit        = 0, 0
+;exo_repair_kit          =  0, 0
+
+leatherman_tool         = 0, 0
+rasp_tool               = 0, 0
+ramrod_tool             = 0, 0
+sewing_thread           = 0, 0
+heavy_sewing_thread     = 0, 0
+
+
+
+[supplies_4]:supplies_3		;-- expert tools delivered
+sharpening_stones		= 3, 1
+
+gun_oil                 = 0, 0
+gun_oil_ru_d            = 0, 0
+gun_oil_ru              = 0, 0
+solvent                 = 0, 0
+cleaning_kit_p          = 0, 0
+cleaning_kit_s          = 3, 1
+cleaning_kit_r5         = 0, 0
+cleaning_kit_r7         = 0, 0
+cleaning_kit_u          = 0, 0
+toolkit_p               = 0, 0
+toolkit_s               = 3, 1
+toolkit_r5              = 0, 0
+toolkit_r7              = 0, 0
+
+sewing_kit_b            = 0, 0
+sewing_kit_a            = 3, 1
+sewing_kit_h            = 0, 0
+glue_b                  = 0, 0
+glue_a                  = 0, 0
+glue_e                  = 0, 0
+armor_repair_fa         = 0, 0
+helmet_repair_kit       = 0, 0
+light_repair_kit        = 0, 0
+medium_repair_kit       = 0, 0
+heavy_repair_kit        = 0, 0
+exo_repair_kit          = 1, 1
+
+leatherman_tool         = 0, 0
+rasp_tool               = 0, 0
+ramrod_tool             = 0, 0
+sewing_thread           = 0, 0
+heavy_sewing_thread     = 0, 0

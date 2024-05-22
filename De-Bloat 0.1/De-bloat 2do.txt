@@ -1,0 +1,76 @@
+upgr_o_1_armor    ===> Tier 1 armour upgrade kit
+upgr_o_2_armor    ===> Tier 2 armour upgrade kit
+upgr_o_3_armor    ===> Tier 3 armour upgrade kit
+upgr_w_1_calibre    ===> Tier 1 gun upgrade kit
+upgr_w_2_calibre    ===> Tier 2 gun upgrade kit
+upgr_w_3_calibre    ===> Tier 3 gun upgrade kit
+
+
+prt_i_transistors   ===> Electronic parts
+prt_i_fasteners     ===> Metal Scrap
+
+
+<gun parts>
+
+prt_w_p_trigger_1		===>  Light trigger
+prt_w_p_trigger_2		===>  Medium trigger
+prt_w_p_trigger_3		===>  Heavy Trigger
+
+prt_w_p_barrel_1		===>  Light pistol barrel
+prt_w_p_barrel_2		===>  Medium pistol barrel
+prt_w_p_barrel_3		===>  Heavy pistol barrel
+
+prt_w_barrel_7		===>  Light Soviet rifle barrel
+prt_w_barrel_8		===>  Medium Soviet rifle barrel
+prt_w_barrel_9		===>  Heavy Soviet rifle barrel 
+
+prt_w_barrel_12		===>  Light NATO rifle barrel
+prt_w_barrel_10		===>  Medium NATO rifle barrel
+prt_w_barrel_1		===>  Heavy NATO rifle barrel
+
+prt_w_barrel_4		===>  Light shotgun barrel
+prt_w_barrel_3		===>  Medium shotgun barrel
+prt_w_barrel_2		===>  Heavy shotgun barrel
+
+prt_i_wood		===>  Wooden parts
+prt_i_scrap		===>  Metal parts 
+prt_i_ceramic		===>  Plastic parts
+
+<suit parts>
+
+prt_o_fabrics_1     ===>  Cloth
+prt_o_fabrics_3     ===>  Durable cloth
+prt_o_fabrics_4     ===>  Military grade cloth
+
+prt_o_ballistic_11 ===>  tier 1 ballistic protection ===>  Leather
+prt_o_ballistic_12 ===>  tier 2 ballistic protection ===>  Cernamic plates
+prt_o_ballistic_13 ===>  tier 3 ballistic protection ===>  Kevlar
+
+prt_o_retardant_19 ===>  Teflon
+prt_o_retardant_2 ===>  Durable teflon
+prt_o_retardant_3 ===>  Military grade teflon
+
+prt_o_retardant_12 ===>  Visor glass
+
+prt_o_ballistic_15 ===>  Helmet armour
+
+prt_o_support_1 ===>  Exoskeleton frame
+
+
+
+
+
+
+x_heavy_sewing_thread 				/crafts not done, drops not done
+glue_a, glue_b, glue_e  -- combined into just glue_a
+sewing_kit_a, sewing_kit_b, sewing_kit_h -- combined into sewing_kit_a
+gun_oil, gun_oil_ru, gun_oil_ru_d  --  combined into gun_oil
+
+
+
+
+
+-<=KNOWN ISSUES=>-
+
+NPC drop Old ammo
+NPC drop all upgrades

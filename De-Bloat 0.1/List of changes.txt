@@ -1,0 +1,7 @@
+Reduced upgrade kits to just 3 different tier kits for guns and suits separately
+Combiend various electronic parts into single item
+Reduced amount of suit parts into 3 tiers of Teflon, Cloth and ballistic protection
+Reduced amount of gun parts to wooden, metal and plastic parts together with 3 tiers for triggers, pistol barrels, shotgun barrels, nato rifle barrels and eastern bloc rifle barrels respecitevly
+
+Optional patches info:
+Good old artifacts - returns artifact abilities to state much closer to CoP
