@@ -1,3 +1,13 @@
+<Artifact stuff>
+
+Radiation:
+This will read as 6: 0.000125
+This will read as 12: 0.00025
+This will read as 18: 0.00037
+This will read as 24: 0.00049
+
+=---------------------------------------------=
+
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
 upgr_o_2_armor    ===> Tier 2 armour upgrade kit
 upgr_o_3_armor    ===> Tier 3 armour upgrade kit
