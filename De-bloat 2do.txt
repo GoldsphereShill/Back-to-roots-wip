@@ -7,7 +7,7 @@ This will read as 18: 0.00037
 This will read as 24: 0.00049
 
 Imunities:
-This will should as 600%: 0.0069583497053045
+This will should as 100%: 0.0011792452830189
 =---------------------------------------------=
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
