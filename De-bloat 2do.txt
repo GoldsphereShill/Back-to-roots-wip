@@ -7,7 +7,9 @@ This will read as 18: 0.00037
 This will read as 24: 0.00049
 
 Imunities:
-This will should as 100%: 0.0011792452830189
+This will should as 100%: 0.0011792452830189 (for burning)
+!For some reason the coefitient gives 4 times less value than required for: chemical_burn_imunity!
+!!There is no explanation for chemical imunity, it just refuses to work rationally!!
 =---------------------------------------------=
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
