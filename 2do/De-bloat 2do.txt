@@ -12,6 +12,7 @@ This will should as 100%: 0.0011792452830189 (for burning)
 !!There is no explanation for chemical immunity, it just refuses to work rationally!!
 
 Coefitient for shock_immunity: 0.0124992570579494799405646359584
+Coefitient for endurance: 0.00330232558139534883720930232558
 =--------------------------------------------------------------------------------------------------=
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit

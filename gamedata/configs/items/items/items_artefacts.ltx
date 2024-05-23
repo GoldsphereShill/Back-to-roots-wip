@@ -1047,15 +1047,15 @@ lights_enabled                                   = true
 trail_light_color 		                         = 0.6,0.7,0.9
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_dummy_battery_absorbation
-radiation_restore_speed = 0.00013
-power_restore_speed = 0.00088
+radiation_restore_speed = 0.000125
+power_restore_speed = 0.000594 ; 0.00088
 
 tier = 2
 
 [af_dummy_battery_absorbation]:af_base_absorbation
-burn_immunity = -0.00115
-shock_immunity = 0.0623
-strike_immunity = -0.034
+;burn_immunity = -0.00115
+shock_immunity = 0.074995 ; 0.0623
+;strike_immunity = -0.034
 
 
 ;;--================================================================================
@@ -1082,14 +1082,14 @@ trail_light_color 		                         = 0.6,0.7,0.9
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_dummy_dummy_absorbation
 radiation_restore_speed = 0.00025
-power_restore_speed = 0.00142
+power_restore_speed = 0.001188 ; 0.00142
 
 tier = 3
 
 [af_dummy_dummy_absorbation]:af_base_absorbation
-telepatic_immunity = 0.0072
-chemical_burn_immunity = -0.00039
-wound_immunity = -0.034
+;telepatic_immunity = 0.0072
+;chemical_burn_immunity = -0.00039
+;wound_immunity = -0.034
 
 ;;--================================================================================
 
@@ -1114,15 +1114,15 @@ lights_enabled                                   = true
 trail_light_color 		                         = 0.6,0.7,0.9
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_ice_absorbation
-radiation_restore_speed = 0.00047
+radiation_restore_speed = 0.00037 ; 0.00047
 power_restore_speed = 0.00186
 
 tier = 4
 
 [af_ice_absorbation]:af_base_absorbation
-burn_immunity = -0.00248
-telepatic_immunity = -0.0072
-chemical_burn_immunity = -0.00021
+;burn_immunity = -0.00248
+;telepatic_immunity = -0.0072
+;chemical_burn_immunity = -0.00021
 
 ;;--=================================================================================================
 ;;--=================================| Health restoration |================================
