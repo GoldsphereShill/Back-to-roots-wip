@@ -20,7 +20,7 @@
 	</string>
 	
 	<string id="st_prt_i_scrap">
-		<text>Metal parts</text>
+		<text>MGun parts</text>
 	</string>
 	<string id="st_prt_i_scrap_descr">
 		<text>
@@ -42,7 +42,7 @@
 	</string>
 	
 		<string id="st_prt_i_transistors">
-		<text>Metal scrap</text>
+		<text>Electronic parts</text>
 	</string>
 	<string id="st_prt_i_transistors_descr">
 		<text>
