@@ -11,11 +11,14 @@ This will should as 100%: 0.0011792452830189 (for burning)
 !For some reason the coefitient gives 4 times less value than required for: chemical_burn_imunity!
 !!There is no explanation for chemical immunity, it just refuses to work rationally!!
 NOTE: To use my coefitient you must devide the number you want to get in game with 100. Dont ask me why, it had to be this way...
-Coefitient for shock_immunity: 0.0124992570579494799405646359584
-Coefitient for endurance: 0.00330232558139534883720930232558
+Coefitient for shock_immunity: 0.012499257057
+Coefitient for endurance: 0.003302325581
 Coefitient for health regen: 0.015151515152
 Coefitient for wound healing: 0.006666666666
 Coefitient for psi resistance: 0.017241379310
+Coefitient for strike_immunity  (impact resistance): 0.04
+Same is for wound_immunity (rapture) and explosion_immunity and fire_wound_immunity (balistic)!
+Coefitient for radiation_immunity: 0.133333333333
 =--------------------------------------------------------------------------------------------------=
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
