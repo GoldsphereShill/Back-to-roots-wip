@@ -388,15 +388,15 @@ lights_enabled                                   = true
 trail_light_color 		                         = 0.5,0.7,0.2
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_baloon_absorbation
-radiation_restore_speed = 0.00047
+radiation_restore_speed = -0.00052
 
 tier = 4
 
 [af_baloon_absorbation]:af_base_absorbation
-burn_immunity = 0.00115
-chemical_burn_immunity = 0.00131
-telepatic_immunity = -0.0138
-wound_immunity = -0.034
+;burn_immunity = 0.00115
+;chemical_burn_immunity = 0.00131
+;telepatic_immunity = -0.0138
+;wound_immunity = -0.034
 
 ;;--=================================================================================================
 ;;--=================================| Shock immunity |================================
@@ -558,14 +558,14 @@ trail_light_color 		                         = 0.4,0.4,0
 trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_bold
 hit_absorbation_sect 		                     = af_cristall_flower_absorbation
-radiation_restore_speed = 0.00013
+radiation_restore_speed = 0.000125
 
 tier = 2
 
 [af_cristall_flower_absorbation]:af_base_absorbation
-burn_immunity = -0.00115
-telepatic_immunity = 0.0138
-chemical_burn_immunity = 0.00021
+;burn_immunity = -0.00115
+telepatic_immunity = 0.015517
+;chemical_burn_immunity = 0.00021
 
 ;;--================================================================================
 
@@ -624,13 +624,14 @@ trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_electra
 hit_absorbation_sect                             = af_electra_moonlight_absorbation
 radiation_restore_speed = 0.00025
+power_restore_speed = 0.000198
 
 tier = 3
 
 [af_electra_moonlight_absorbation]:af_base_absorbation
-burn_immunity = -0.00248
-telepatic_immunity = 0.0239
-shock_immunity = 0.0623
+;burn_immunity = -0.00248
+telepatic_immunity = 0.031034
+;shock_immunity = 0.0623
 
 
 ;;--================================================================================
@@ -692,17 +693,18 @@ trail_light_color 		                         = 0.4,0.4,0
 trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_bold
 hit_absorbation_sect		                     = af_medusa_absorbation
-radiation_restore_speed = 0.00013
+radiation_restore_speed = -0.00027
 
 tier = 2
 
 [af_medusa_absorbation]:af_base_absorbation
-burn_immunity = 0.00115
-telepatic_immunity = -0.0072
-strike_immunity = 0.1
-wound_immunity = 0.11
-explosion_immunity = 0.089
-fire_wound_immunity = 0.097
+radiation_immunity = 0.013333
+;burn_immunity = 0.00115
+;telepatic_immunity = -0.0072
+;strike_immunity = 0.1
+;wound_immunity = 0.11
+;explosion_immunity = 0.089
+;fire_wound_immunity = 0.097
 
 ;;--================================================================================
 
@@ -729,17 +731,17 @@ trail_light_color 		                         = 0.4,0.4,0
 trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_gravi
 hit_absorbation_sect 		                     = af_vyvert_absorbation
-radiation_restore_speed = 0.00025
+radiation_restore_speed = -0.0004
 
 tier = 3
 
 [af_vyvert_absorbation]:af_base_absorbation
-chemical_burn_immunity = 0.00021
-shock_immunity = -0.0623
-strike_immunity = 0.135
-wound_immunity = 0.124
-explosion_immunity = 0.128
-fire_wound_immunity = 0.117
+;chemical_burn_immunity = 0.00021
+;shock_immunity = -0.0623
+;strike_immunity = 0.135
+;wound_immunity = 0.124
+;explosion_immunity = 0.128
+;fire_wound_immunity = 0.117
 
 ;;--================================================================================
 
@@ -798,7 +800,6 @@ af_rank                                          = 3
 lights_enabled                                   = false
 trail_light_color                                = 0.4,0.4,0.0
 trail_light_range                                = 2.0
-radiation_restore_speed                          = 0.00005
 hit_absorbation_sect                             = af_full_empty_absorbation
 radiation_restore_speed = 0.00047
 power_restore_speed = -0.00113
@@ -838,15 +839,15 @@ trail_light_color 		                         = 0.4,0.4,0 ;0.6,0.7,0.5
 trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_bold
 hit_absorbation_sect 		                     = af_night_star_absorbation
-radiation_restore_speed = 0.00013
-additional_inventory_weight	= 5.23
-additional_inventory_weight2 = 5.23
+radiation_restore_speed = 0.000125
+additional_inventory_weight	= 8
+additional_inventory_weight2 = 8
 
 tier = 2
 
 [af_night_star_absorbation]:af_base_absorbation
-burn_immunity = -0.00115
-chemical_burn_immunity = 0.00021
+;burn_immunity = -0.00115
+;chemical_burn_immunity = 0.00021
 
 
 ;;--================================================================================
@@ -874,15 +875,15 @@ trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_gravi
 hit_absorbation_sect                             = af_gravi_absorbation
 radiation_restore_speed = 0.00025
-additional_inventory_weight	= 8.41
-additional_inventory_weight2 = 8.41
+additional_inventory_weight	= 12
+additional_inventory_weight2 = 12
 
 tier = 3
 
 [af_gravi_absorbation]:af_base_absorbation
-shock_immunity = -0.0623
-telepatic_immunity = -0.0072
-explosion_immunity = 0.034
+;shock_immunity = -0.0623
+;telepatic_immunity = -0.0072
+;explosion_immunity = 0.034
 
 ;;--================================================================================
 
@@ -908,16 +909,16 @@ trail_light_color 		                         = 0.4,0.4,0
 trail_light_range 		                         = 2.0
 artefact_activation_seq		                     = af_activation_gravi
 hit_absorbation_sect                             = af_gold_fish_absorbation
-radiation_restore_speed = 0.00047
-additional_inventory_weight	= 13.3
-additional_inventory_weight2 = 13.3
+radiation_restore_speed = 0.00049
+additional_inventory_weight	= 18
+additional_inventory_weight2 = 18
 
 tier = 4
 
 [af_gold_fish_absorbation]:af_base_absorbation
-strike_immunity = -0.034
-explosion_immunity = -0.034
-wound_immunity = -0.1
+;strike_immunity = -0.034
+;explosion_immunity = -0.034
+;wound_immunity = -0.1
 
 ;;--=================================================================================================
 ;;--=================================| Bleed control |================================
@@ -945,14 +946,15 @@ lights_enabled                                   = true
 trail_light_color 		                         = 0.9,0.4,0.2
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_dummy_glassbeads_absorbation
-radiation_restore_speed = 0.00013
-bleeding_restore_speed = 0.00144
+radiation_restore_speed = 0.000125
+bleeding_restore_speed = 0.002
+health_restore_speed = 0.000303
 
 tier = 2
 
 [af_dummy_glassbeads_absorbation]:af_base_absorbation
-burn_immunity = 0.00115
-shock_immunity = -0.0623
+;burn_immunity = 0.00115
+;shock_immunity = -0.0623
 
 ;;--================================================================================
 
@@ -978,14 +980,14 @@ trail_light_color 		                         = 0.9,0.4,0.2
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_eye_absorbation
 radiation_restore_speed = 0.00025
-bleeding_restore_speed = 0.00278
+bleeding_restore_speed = 0.004
 
 tier = 3
 
 [af_eye_absorbation]:af_base_absorbation
-telepatic_immunity = 0.0072
-shock_immunity = -0.0623
-chemical_burn_immunity = -0.00021
+;telepatic_immunity = 0.0072
+;shock_immunity = -0.0623
+;chemical_burn_immunity = -0.00021
 
 ;;--================================================================================
 
@@ -1010,17 +1012,17 @@ lights_enabled                                   = true
 trail_light_color 		                         = 0.9,0.4,0.2
 trail_light_range 		                         = 2.0
 hit_absorbation_sect                             = af_fire_absorbation
-radiation_restore_speed = 0.00047
-bleeding_restore_speed = 0.00435
-power_restore_speed = -0.00088
+radiation_restore_speed = 0.00049
+bleeding_restore_speed = 0.006
+;power_restore_speed = -0.00088
 
 tier = 4
 
 [af_fire_absorbation]:af_base_absorbation
-telepatic_immunity = -0.0072
-strike_immunity = -0.034
-radiation_immunity = -0.002
-wound_immunity = 0.034
+;telepatic_immunity = -0.0072
+;strike_immunity = -0.034
+;radiation_immunity = -0.002
+;wound_immunity = 0.034
 
 ;;--=================================================================================================
 ;;--=================================| Stamina recovery |================================
@@ -1257,7 +1259,6 @@ trail_light_range 		                         = 2.0
 hit_absorbation_sect 		                     = af_compass_absorbation
 radiation_restore_speed = 0.00049
 power_restore_speed = 0.001188
-bleeding_restore_speed = 0.004
 
 tier = 5
 
@@ -1265,10 +1266,9 @@ tier = 5
 burn_immunity = 0.003537
 chemical_burn_immunity = 0.000577
 shock_immunity = 0.149991
-health_restore_speed = 0.000303
 telepatic_immunity =  0.015517
 
-strike_immunity = 1
+;strike_immunity = 1
 ;wound_immunity = 1
 ;explosion_immunity = 1
 ;fire_wound_immunity = 1
@@ -1300,18 +1300,19 @@ trail_light_range 		                         = 2.0
 ;can_trade			                             = false
 ;quest_item 			                         = false
 hit_absorbation_sect 		                     = af_oasis_heart_absorbation
-radiation_restore_speed = 0.00047
-health_restore_speed = 0.00015
-power_restore_speed = 0.00142
-bleeding_restore_speed = 0.00278
+radiation_restore_speed = -0.000136
+health_restore_speed = 0.000303
+power_restore_speed = 0.001188
+bleeding_restore_speed = 0.004
+satiety_restore_speed = 0.01
 
 tier = 5
 
 [af_oasis_heart_absorbation]:af_base_absorbation
-burn_immunity = -0.00388
-shock_immunity = -0.2044
-telepatic_immunity =  -0.0189
-chemical_burn_immunity =  -0.00057
+;burn_immunity = -0.00388
+;shock_immunity = -0.2044
+;telepatic_immunity =  -0.0189
+;chemical_burn_immunity =  -0.00057
 
 ;;--================================================================================
 
@@ -1342,15 +1343,13 @@ hit_absorbation_sect 		                     = af_monolith_absorbation
 tier = 5
 
 [af_monolith_absorbation]:af_base_absorbation
-burn_immunity = 0.004821
-shock_immunity = 0.31269
-telepatic_immunity = 0.0239
-chemical_burn_immunity = 0.00092
+;burn_immunity = 0.004821
+;shock_immunity = 0.31269
+;telepatic_immunity = 0.0239
+;chemical_burn_immunity = 0.00092
 
-strike_immunity = -0.034
-wound_immunity = -0.034
-explosion_immunity = -0.034
-fire_wound_immunity = -0.034
+strike_immunity = 0.16
+fire_wound_immunity = 0.16
 
 ;;--================================================================================
 
