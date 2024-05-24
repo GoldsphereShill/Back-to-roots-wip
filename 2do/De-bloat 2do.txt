@@ -81,7 +81,7 @@ prt_o_support_1 ===>  Exoskeleton frame
 
 
 
-x_heavy_sewing_thread 				/crafts not done, drops not done
+heavy_sewing_thread
 glue_a, glue_b, glue_e  -- combined into just glue_a
 sewing_kit_a, sewing_kit_b, sewing_kit_h -- combined into sewing_kit_a
 gun_oil, gun_oil_ru, gun_oil_ru_d  --  combined into gun_oil
@@ -92,5 +92,3 @@ gun_oil, gun_oil_ru, gun_oil_ru_d  --  combined into gun_oil
 
 -<=KNOWN ISSUES=>-
 
-NPC drop Old ammo
-NPC drop all upgrades

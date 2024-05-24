@@ -140,97 +140,11 @@ workshop_tool						 		       = true
 workshop_support                                   = shotgun, pistol, rifle_5, rifle_7
 tier                                               = 4
 
-;;----===============================================================================================
-
-[toolkit_r5]:tch_repair ;;-- NATO rifle toolkit with replacement parts ;;--x4
-$spawn 				                               = "devices\repair_kit_10"
-description			                               = st_repair_kit_r5_descr
-inv_name			                               = st_repair_kit_r5
-inv_name_short			                           = st_repair_kit_r5
-cost				                               = 20420
-inv_weight			                               = 3.484
-empty_weight			                           = 1.484
-visual				                               = dynamics\repair\toolkit_nato.ogf
-inv_grid_width		                               = 2
-inv_grid_height		                               = 1
-inv_grid_x			                               = 4
-inv_grid_y			                               = 56
-max_uses								           = 4
-
-repair_min_condition 	                           = 0.5		
-repair_max_condition 	                           = 0.99		
-repair_add_condition 	                           = 0.1		
-repair_part_bonus	 	                           = 0.1		
-repair_use_parts	 	                           = true	
-repair_only				                           = rifle_5
-repair_parts_sections	                           = swiss_knife, grease, steel_wool, solvent, gun_oil, gun_oil_ru, gun_oil_ru_d, cleaning_kit_r5, cleaning_kit_r5_2, cleaning_kit_r5_3, cleaning_kit_u, cleaning_kit_u_2, cleaning_kit_u_3, ball_hammer, kerosene, explo_jerrycan_fuel, explo_jerrycan_fuel_empty, explo_balon_gas, explo_balon_gas_empty, flask, mineral_water, vodka, vodka2, vodka_quality, bottle_metal, mutant_part_flesh_meat, mutant_part_boar_chop, mutant_part_dog_meat, mutant_part_psevdodog_meat, mutant_part_krovosos_meat, mutant_part_chimera_meat ;;--Add sections separated by commas that exclude all sections but these
-repair_use_actor_effects                           = true   
-workshop_tool						 		       = true
-workshop_support                                   = rifle_5
-tier                                               = 5
-
-;;----===============================================================================================
-
-[toolkit_r7]:tch_repair ;;-- WP rifle toolkit with replacement parts ;;--x4
-$spawn 				                               = "devices\repair_kit_10"
-description			                               = st_repair_kit_r7_descr
-inv_name			                               = st_repair_kit_r7
-inv_name_short			                           = st_repair_kit_r7
-cost				                               = 23080
-inv_weight			                               = 3.592
-empty_weight			                           = 1.592
-visual				                               = dynamics\repair\toolkit_wp.ogf
-inv_grid_width		                               = 2
-inv_grid_height		                               = 1
-inv_grid_x			                               = 6
-inv_grid_y			                               = 56
-max_uses								           = 4
-
-repair_min_condition 	                           = 0.5		
-repair_max_condition 	                           = 0.99		
-repair_add_condition 	                           = 0.1		
-repair_part_bonus	 	                           = 0.1		
-repair_use_parts	 	                           = true
-repair_only				                           = rifle_7
-repair_parts_sections	                           = swiss_knife, grease, steel_wool, solvent, gun_oil, gun_oil_ru, gun_oil_ru_d, cleaning_kit_r7, cleaning_kit_r7_2, cleaning_kit_r7_3, cleaning_kit_u, cleaning_kit_u_2, cleaning_kit_u_3, ball_hammer, kerosene, explo_jerrycan_fuel, explo_jerrycan_fuel_empty, explo_balon_gas, explo_balon_gas_empty, flask, mineral_water, vodka, vodka2, vodka_quality, bottle_metal, mutant_part_flesh_meat, mutant_part_boar_chop, mutant_part_dog_meat, mutant_part_psevdodog_meat, mutant_part_krovosos_meat, mutant_part_chimera_meat ;;--Add sections separated by commas that exclude all sections but these
-repair_use_actor_effects                           = true      
-workshop_tool						 		       = true
-workshop_support                                   = rifle_7
-tier                                               = 5
-
-
-;;----==================================================================
 ;;----=====================| Repair Kits (Outfit) |=====================
 ;;----==================================================================
 
 
 ;;----==============================================< Glues >=================================================
-
-[glue_b]:tch_repair ;;-- (Basic glue) ;;--x2
-$spawn 				                               = "devices\repair_kit_10"
-description			                               = st_glue_b_descr
-inv_name			                               = st_glue_b
-inv_name_short			                           = st_glue_b
-cost				                               = 1308
-inv_weight			                               = 0.124
-empty_weight			                           = 0.069
-visual				                               = dynamics\repair\glue_b.ogf
-inv_grid_width			                           = 1
-inv_grid_height			                           = 1
-inv_grid_x			                               = 0
-inv_grid_y			                               = 57
-max_uses								           = 2
-repair_min_condition 	                           = 0.9		
-repair_max_condition 	                           = 0.99		
-repair_add_condition 	                           = 0.02		
-repair_part_bonus	 	                           = 0.02		
-repair_use_parts	 	                           = true		
-repair_only				                           = helmet, helmet_light, outfit, outfit_novice, outfit_light, outfit_medium, outfit_heavy, outfit_exo
-repair_parts_sections	                           = prt_i_copper, swiss_knife, sewing_kit_h, sewing_kit_a, sewing_kit_b, glue_e, glue_a, armor_repair_fa, duct_tape, prt_o_fabrics_1, prt_o_fabrics_2, prt_o_fabrics_3, prt_o_fabrics_4, survival_kit, csky_patch, dolg_patch, ecolog_patch, freedom_patch, stalker_patch, bandit_patch, monolith_patch, army_patch, killer_patch, renegade_patch, isg_patch, greh_patch, helm_cloth_mask
-repair_use_actor_effects                           = true
-tier                                               = 1
-
-;;----===============================================================================================
 
 [glue_a]:tch_repair ;;-- (Advanced glue) ;;--x2
 $spawn 				                               = "devices\repair_kit_10"
@@ -246,7 +160,7 @@ inv_grid_height			                           = 1
 inv_grid_x			                               = 1
 inv_grid_y			                               = 57
 max_uses								           = 2
-repair_min_condition 	                           = 0.75		
+repair_min_condition 	                           = 0.70		
 repair_max_condition 	                           = 0.99		
 repair_add_condition 	                           = 0.04		
 repair_part_bonus	 	                           = 0.04		
@@ -256,31 +170,6 @@ repair_parts_sections	                           = prt_i_copper, swiss_knife, se
 repair_use_actor_effects                           = true
 tier                                               = 2
 
-;;----===============================================================================================
-
-[glue_e]:tch_repair ;;-- (Extreme glue) ;;--x2
-$spawn 				                               = "devices\repair_kit_10"
-description			                               = st_glue_e_descr
-inv_name			                               = st_glue_e
-inv_name_short		                               = st_glue_e
-cost				                               = 3896
-inv_weight			                               = 0.194
-empty_weight			                           = 0.104
-visual				                               = dynamics\repair\glue_e.ogf
-inv_grid_width			                           = 1
-inv_grid_height			                           = 1
-inv_grid_x			                               = 2
-inv_grid_y			                               = 57
-max_uses								           = 2
-repair_min_condition 	                           = 0.7		
-repair_max_condition 	                           = 0.99		
-repair_add_condition 	                           = 0.05		
-repair_part_bonus	 	                           = 0.05		
-repair_use_parts	 	                           = true		
-repair_only				                           = helmet, helmet_light, outfit, outfit_novice, outfit_light, outfit_medium, outfit_heavy, outfit_exo
-repair_parts_sections	                           = prt_i_copper, swiss_knife, sewing_kit_h, sewing_kit_a, sewing_kit_b, glue_a, glue_b, af_kevlar, af_plates, armor_repair_fa, duct_tape, prt_o_fabrics_1, prt_o_fabrics_2, prt_o_fabrics_3, prt_o_fabrics_4, survival_kit, csky_patch, dolg_patch, ecolog_patch, freedom_patch, stalker_patch, bandit_patch, monolith_patch, army_patch, killer_patch, renegade_patch, isg_patch, greh_patch, helm_cloth_mask
-repair_use_actor_effects                           = true
-tier                                               = 3
 
 ;;----==============================================< Repair kits >=================================================
 
@@ -314,37 +203,6 @@ repair_use_actor_effects                           = true
 tier                                               = 2
 
 ;;----==============================================< Sewing kits >=================================================
-
-[sewing_kit_b]:tch_repair ;;-- (Basic sewing kit) ;;--x4
-$spawn 				                               = "devices\repair_kit_10"
-description			                               = st_sewing_kit_b_descr
-inv_name			                               = st_sewing_kit_b
-inv_name_short			                           = st_sewing_kit_b
-cost				                               = 4360
-inv_weight			                               = 0.288
-empty_weight			                           = 0.138
-visual				                               = dynamics\repair\sewing_kit_b.ogf
-inv_grid_width			                           = 1
-inv_grid_height			                           = 1
-inv_grid_x			                               = 4
-inv_grid_y			                               = 57
-upgr_icon_path								       = ui\actor_items\ui_actor_items_1
-upgr_icon_x								 	       = 400
-upgr_icon_y								 	       = 1000
-upgr_icon_width						 	 	       = 100
-upgr_icon_height						 	       = 100
-max_uses								           = 4
-repair_min_condition 	                           = 0.60		
-repair_max_condition 	                           = 0.99		
-repair_add_condition 	                           = 0.08		
-repair_part_bonus	 	                           = 0.07		
-repair_use_parts	 	                           = true		
-repair_only				                           = helmet, helmet_light, outfit, outfit_novice, outfit_light, outfit_medium, outfit_heavy, outfit_exo
-repair_parts_sections	                           = prt_i_copper, af_camelbak, swiss_knife, rope, sewing_kit_h, sewing_kit_a, glue_e, glue_a, glue_b, armor_repair_fa, duct_tape, prt_o_fabrics_1, prt_o_fabrics_2, prt_o_fabrics_3, prt_o_fabrics_4, survival_kit, csky_patch, dolg_patch, ecolog_patch, freedom_patch, stalker_patch, bandit_patch, monolith_patch, army_patch, killer_patch, renegade_patch, isg_patch, greh_patch, helm_cloth_mask, underwear, hide_psy_dog, hide_pseudodog, hide_bloodsucker, hide_boar, hide_flesh, hide_burer, hide_controller
-repair_use_actor_effects                           = true
-tier                                               = 3
-
-;;----===============================================================================================
 
 [sewing_kit_a]:tch_repair ;;-- (Advanced sewing kit) ;;--x4
 $spawn 				                               = "devices\repair_kit_10"
@@ -437,35 +295,6 @@ tier                                               = 4
 
 ;;----===============================================================================================
 
-[light_repair_kit]:tch_repair ;;--x4
-$spawn 							                   = "devices\repair_kit_10"
-description						                   = st_light_repair_kit_descr
-inv_name						                   = st_light_repair_kit
-inv_name_short					                   = st_light_repair_kit
-cost							                   = 13360
-inv_weight						                   = 4.484
-empty_weight						               = 1.169
-visual							                   = dynamics\repair\armor_repair_pro.ogf
-inv_grid_width					                   = 2
-inv_grid_height					                   = 1
-inv_grid_x			                               = 2
-inv_grid_y			                               = 58
-max_uses								           = 4
-
-repair_min_condition 			                   = 0.5		
-repair_max_condition 			                   = 0.99		
-repair_add_condition 			                   = 0.1		
-repair_part_bonus	 			                   = 0.1		
-repair_use_parts	 			                   = true		
-repair_only				                           = outfit_light
-repair_parts_sections			                   = prt_i_copper, swiss_knife, boots, rope, synthrope, duct_tape, prt_o_fabrics_1, prt_o_fabrics_2, prt_o_fabrics_3, prt_o_fabrics_4, af_kevlar, af_plates, csky_patch, dolg_patch, ecolog_patch, freedom_patch, stalker_patch, dolg_novice_outfit_worn, bandit_patch, monolith_patch, army_patch, killer_patch, renegade_patch, isg_patch, greh_patch, tarpaulin, beadspread, underwear, ball_hammer
-repair_use_actor_effects 		                   = true   
-workshop_tool						 		       = true   
-workshop_support                                   = outfit_light
-tier                                               = 3
-
-;;----===============================================================================================
-
 [medium_repair_kit]:tch_repair ;;--x4
 $spawn 							                   = "devices\repair_kit_10"
 description						                   = st_medium_repair_kit_descr
@@ -476,10 +305,10 @@ inv_weight						                   = 6.484
 empty_weight						               = 1.569
 visual							                   = dynamics\repair\armor_repair_pro.ogf
 inv_grid_width					                   = 2
-inv_grid_height					                   = 1
-inv_grid_x         				                   = 4
+inv_grid_height					                   = 2
+inv_grid_x         				                   = 6
 inv_grid_y         				                   = 58
-max_uses								           = 4
+max_uses								           = 6
 
 repair_min_condition 			                   = 0.5	
 repair_max_condition 			                   = 0.99		
@@ -492,35 +321,6 @@ repair_use_actor_effects 		                   = true
 workshop_tool						 		       = true
 workshop_support                                   = outfit, outfit_light, outfit_medium, outfit_heavy
 tier                                               = 4
-
-;;----===============================================================================================
-
-[heavy_repair_kit]:tch_repair ;;--x5
-$spawn 							                   = "devices\repair_kit_10"
-description						                   = st_exolight_repair_kit_descr
-inv_name						                   = st_exolight_repair_kit
-inv_name_short					                   = st_exolight_repair_kit
-cost							                   = 19360
-inv_weight						                   = 10.484
-empty_weight						               = 2.769
-visual							                   = dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
-inv_grid_width					                   = 2
-inv_grid_height					                   = 2
-inv_grid_x         				                   = 6
-inv_grid_y         				                   = 58
-max_uses								           = 5
-
-repair_min_condition 			                   = 0.5	
-repair_max_condition 			                   = 0.99		
-repair_add_condition 			                   = 0.1		
-repair_part_bonus	 			                   = 0.1		
-repair_use_parts	 			                   = true	
-repair_only				                           = outfit_heavy
-repair_parts_sections			                   = prt_i_scrap, prt_i_copper, swiss_knife, boots, rope, synthrope, duct_tape, prt_o_fabrics_1, prt_o_fabrics_2, prt_o_fabrics_3, prt_o_fabrics_4, af_kevlar, af_plates, csky_patch, dolg_patch, ecolog_patch, freedom_patch, stalker_patch, bandit_patch, monolith_patch, army_patch, killer_patch, renegade_patch, isg_patch, greh_patch, tarpaulin, beadspread, underwear, ball_hammer
-repair_use_actor_effects 		                   = true      
-workshop_tool						 		       = true
-workshop_support                                   = outfit_heavy
-tier                                               = 5
 
 ;;----===============================================================================================
 
