@@ -14,6 +14,7 @@ NOTE: To use my coefitient you must devide the number you want to get in game wi
 Coefitient for shock_immunity: 0.0124992570579494799405646359584
 Coefitient for endurance: 0.00330232558139534883720930232558
 Coefitient for health regen: 0.015151515152
+Coefitient for wound healing: 0.006666666666
 =--------------------------------------------------------------------------------------------------=
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
