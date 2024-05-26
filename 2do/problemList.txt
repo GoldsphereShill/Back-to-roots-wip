@@ -1,5 +1,6 @@
 Curent:
 - prt_o_ballistic_12 localization issues
+- prt_w_barrel_1, prt_w_barrel_12 and prt_w_barrel_10 also have localization issues
 
 Solved:
 - The niS thing persists even after turning off debugMode /// FIXED

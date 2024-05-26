@@ -166,7 +166,26 @@
 		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n			
 		</text>
 	</string>
-	
+
+		<string id="st_prt_w_barrel_10">
+		<text>placeholder</text>
+	</string>
+	<string id="st_prt_w_barrel_10_descr">
+		<text>r
+		%c[d_purple]  %c[ui_gray_2] r\n \n
+		%c[d_purple]  %c[ui_gray_2] r\n \n			
+		</text>
+	</string>
+
+		<string id="st_prt_w_barrel_12">
+		<text>placeholder</text>
+	</string>
+	<string id="st_prt_w_barrel_12_descr">
+		<text>r
+		%c[d_purple]  %c[ui_gray_2] r\n \n
+		%c[d_purple]  %c[ui_gray_2] r\n \n					
+		</text>
+	</string>
 	
 			<string id="st_prt_w_barrel_4">
 		<text>Light shotgun barrel</text>
