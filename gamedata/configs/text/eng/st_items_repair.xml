@@ -260,20 +260,6 @@
 		</text>
 	</string>
 	
-	<string id="st_sewing_kit_b">
-		<text>Sewing kit</text>
-	</string>
-	<string id="st_sewing_kit_b_descr">
-		<text>\n \n
-		%c[ui_gray_2]COMPATIBILITY:\n \n
-		%c[d_orange] � %c[ui_gray_2] all outfits and light headgear sets\n \n
-		%c[ui_gray_1]A light sewing kit consisting of a cloth reel, several steel needles and a pair of scissors. It can be used to sew up bullet holes or ruptures in soft fabrics of outfits. Its practical applications are limited due to the short length of the thread and subpar durability of needles, so the kit will be useless in case of more serious damage. For the same reason, it's compatible with only a handful of materials. Nonetheless, it is strongly advised to always use whatever is available to make the kit more effective.\n \n
-		%c[ui_gray_3]PROPERTIES:\n
-		%c[d_blue] � %c[ui_gray_2] technological item\n
-		%c[d_orange] � %c[ui_gray_2] usable for repairing equipment\n
-		</text>
-	</string>
-	
 	<string id="st_sewing_kit_a">
 		<text>Outfit Repair Kit</text>
 	</string>
@@ -284,22 +270,6 @@
 		%c[ui_gray_1]This sewing kit contains reels of nylon and metallic threads, a large selection of high-quality needles, and basic mechanical tools. Capable of sewing on even the hardest of mutant hides, this kit is suitable for repairing everything from small bullet holes to outfits and helmets that have been torn up to the brink of falling apart.\n \n
 		%c[ui_gray_3]PROPERTIES:\n
 		%c[d_blue] � %c[ui_gray_2] technological item\n
-		%c[d_orange] � %c[ui_gray_2] usable for repairing equipment\n
-		</text>
-	</string>
-	
-	<string id="st_sewing_kit_h">
-		<text>Heavy sewing kit</text>
-	</string>
-	<string id="st_sewing_kit_h_descr">
-		<text>\n \n
-		%c[ui_gray_2]COMPATIBILITY:\n \n
-		%c[d_orange] � %c[ui_gray_2] all outfits and light headgear sets\n \n
-		%c[ui_gray_1]This military-grade, heavy sewing kit is designed to handle fractures in protective plates of modern combat armors. It contains enough metallic thread to put together outfits that have literally been torn apart. Capable of sewing on even hardest of mutant hides to your armor of choice. Another advantage of the kit are the basic mechanical tools that can be used to disassemble outfits and headgear in order to salvage repair materials. It's the highest quality sewing kit available in the Zone.\n \n
-		%c[ui_gray_3]PROPERTIES:\n
-		%c[d_blue] � %c[ui_gray_2] technological item\n
-		%c[d_blue] � %c[ui_gray_2] high quality\n
-		%c[d_blue] � %c[ui_gray_2] valuable\n
 		%c[d_orange] � %c[ui_gray_2] usable for repairing equipment\n
 		</text>
 	</string>
