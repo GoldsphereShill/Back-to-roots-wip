@@ -3,8 +3,8 @@ Curent:
 - Universal Armor Repair kit cannot repair light outfits for some reason.
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed
 - prt_o_ballistic_12 localization issues
-- A lot of things contain prt_o_ballistc_1
 Solved:
 - The niS thing persists even after turning off debugMode /// FIXED
 - Sewing Kits arent properly merged (remnants of the old system exist in ph_box_items_by_levels.ltx, items_repair.ltx, ph_box_items_count.ltx, trade_generic_mechanic.ltx, st_items_repair.xml /// FIXED
 - Universal Repair Kit repairs only medium armours, NOT ONLY A LOCALIZATION ISSUE. This is caused by non existing items being listed in the item_repair.ltx /// Partially FIXED
+- A lot of things contain prt_o_ballistic_1. Similar with prt_o_ballistic_5, prt_o_ballistic_9, prt_o_fabrics_2, prt_o_retardant_1, prt_o_retardant_5 // FIXED
