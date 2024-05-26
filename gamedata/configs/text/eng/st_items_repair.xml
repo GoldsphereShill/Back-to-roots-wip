@@ -301,22 +301,7 @@
 		%c[d_orange]  %c[ui_gray_2] usable for repairing equipment\n
 		</text>
 	</string>
-	
-	<string id="st_glue_e">
-		<text>"M17" glue tube</text>
-	</string>
-	<string id="st_glue_e_descr">
-		<text>\n \n
-		%c[ui_gray_2]COMPATIBILITY:\n \n
-		%c[d_orange]  %c[ui_gray_2] all outfits and headgear sets\n \n
-		%c[ui_gray_1]M17 is a result of a Soviet military-industrial research project intended to devise an extremely potent, single-ingredient adhesive which could be used in any situation regardless of purpose and materials involved. It was decided to use a highly potent methacrylate which is most often optimized for reacting with either plastic or metal. In case of M17, however, this limitation has been bypassed, making the substance equally effective in both areas. In addition, the adhesive received a significant boost to versatility thanks to its hydrate form: it can be diluted with water and used in any concentration depending on the intended result. There is almost no damage that the glue, combined with appropriate materials, won't be able to repair. Can be used with all materials available in the Zone.\n \n
-		%c[ui_gray_3]PROPERTIES:\n
-		%c[d_blue]  %c[ui_gray_2] technological item\n
-		%c[d_blue]  %c[ui_gray_2] high quality\n
-		%c[d_blue]  %c[ui_gray_2] valuable\n
-		%c[d_orange]  %c[ui_gray_2] usable for repairing equipment\n
-		</text>
-	</string>
+
 	
 	<string id="st_armor_repair_fa">
 		<text>Emergency armor repair set</text>
