@@ -77,27 +77,27 @@
 
 
 	<string id="st_prt_w_p_trigger_1">
-		<text>Single-action trigger mechanism</text>
+		<text>Light trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_1_descr">
-		<text>.
+		<text>Light trigger mechanism used in small firearms, very cheap and disposable, common item in the Zone.
 		%c[d_purple]  %c[ui_gray_2] gun part\n \n
 		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
 	</string>
 	
 	<string id="st_prt_w_p_trigger_2">
-		<text>Double-action trigger mechanism</text>
+		<text>Medium trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_2_descr">
-		<text>.
+		<text>Strengtened trigger mechanism, not only is it more durable but less sensitive too decreasing the chance of unwanted missfire.
 		%c[d_purple]  %c[ui_gray_2] gun part\n \n
 		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
 	</string>
 	
 	<string id="st_prt_w_p_trigger_3">
-		<text>Double-action (DA/SA) trigger mechanism</text>
+		<text>Heavy trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_3_descr">
 		<text>.
