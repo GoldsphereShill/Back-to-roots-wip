@@ -1,2 +1,3 @@
 - The niS thing persists even after turning off debugMode
 - Mechanics sell very little stuff
+- Universal Repair Kit repairs only medium armours
