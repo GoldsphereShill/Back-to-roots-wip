@@ -1,6 +1,5 @@
 Curent:
 - all ballistic parts have localization issues!
-- prt_w_barrel_1, prt_w_barrel_12 and prt_w_barrel_10 also have localization issues
 - leather and paper have localization issues
 - prt_o_retardant_12 has localization issues!
 
@@ -13,3 +12,4 @@ Solved:
 - AEK-971 lacks barrel in repair section of the workshop /// FIXED, prt_w_p_barrel_7 was used instead prt_w_barrel_7
 - Mechanics sell very little stuff///FIXED
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed///DECIDED, knife is kept, grooming kit is yeeted
+- prt_w_barrel_1, prt_w_barrel_12 and prt_w_barrel_10 also have localization issues///FIXED
