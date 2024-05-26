@@ -1,0 +1,2 @@
+- The niS thing persists even after turning off debugMode
+- Mechanics sell very little stuff
