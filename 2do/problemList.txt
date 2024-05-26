@@ -1,6 +1,6 @@
 Curent:
 - Mechanics sell very little stuff
-
+- Universal Armor Repair kit cannot repair light outfits for some reason.
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed
 
 Solved:
