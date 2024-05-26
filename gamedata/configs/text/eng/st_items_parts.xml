@@ -172,8 +172,8 @@
 	</string>
 	<string id="st_prt_w_barrel_10_descr">
 		<text>r
-		%c[d_purple]  %c[ui_gray_2] r\n \n
-		%c[d_purple]  %c[ui_gray_2] r\n \n			
+		%c[d_purple]  %c[ui_gray_2] r \n \n
+		%c[d_purple]  %c[ui_gray_2] r \n \n			
 		</text>
 	</string>
 
@@ -182,11 +182,21 @@
 	</string>
 	<string id="st_prt_w_barrel_12_descr">
 		<text>r
-		%c[d_purple]  %c[ui_gray_2] r\n \n
-		%c[d_purple]  %c[ui_gray_2] r\n \n					
+		%c[d_purple]  %c[ui_gray_2] r \n \n
+		%c[d_purple]  %c[ui_gray_2] r \n \n					
 		</text>
 	</string>
 	
+		<string id="st_prt_w_barrel_1">
+		<text>placeholder</text>
+	</string>
+	<string id="st_prt_w_barrel_1_descr">
+		<text>r
+		%c[d_purple]  %c[ui_gray_2] r \n \n
+		%c[d_purple]  %c[ui_gray_2] r \n \n					
+		</text>
+	</string>
+
 			<string id="st_prt_w_barrel_4">
 		<text>Light shotgun barrel</text>
 	</string>
