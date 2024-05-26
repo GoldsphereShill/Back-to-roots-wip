@@ -2,7 +2,8 @@ Curent:
 - Mechanics sell very little stuff
 - Universal Armor Repair kit cannot repair light outfits for some reason.
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed
-
+- prt_o_ballistic_12 localization issues
+- A lot of things contain prt_o_ballistc_1
 Solved:
 - The niS thing persists even after turning off debugMode /// FIXED
 - Sewing Kits arent properly merged (remnants of the old system exist in ph_box_items_by_levels.ltx, items_repair.ltx, ph_box_items_count.ltx, trade_generic_mechanic.ltx, st_items_repair.xml /// FIXED
