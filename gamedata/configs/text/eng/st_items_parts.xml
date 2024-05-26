@@ -80,14 +80,9 @@
 		<text>Light trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_1_descr">
-		<text>Light trigger mechanism used in small firearms, very cheap and disposable, common item in the Zone.
-		%c[d_purple]  %c[ui_gray_2] gun part\n \n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Very light trigger used in cheaper low power firearms.
 		%c[d_purple] � %c[ui_gray_2] gun part\n \n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 	
@@ -95,14 +90,9 @@
 		<text>Medium trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_2_descr">
-		<text>Strengtened trigger mechanism, not only is it more durable but less sensitive too decreasing the chance of unwanted missfire.
-		%c[d_purple]  %c[ui_gray_2] gun part\n \n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Strengtened trigger mechanism found in slightly stronger guns. It is more durable and provides better control of the gun, its less sensitive and lowers chance of unintentional firing significantly.
 		%c[d_purple] � %c[ui_gray_2] gun part\n \n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 	
@@ -110,14 +100,9 @@
 		<text>Heavy trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_3_descr">
-		<text>.
-		%c[d_purple]  %c[ui_gray_2] gun part\n \n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Heavy trigger mechanism used in heavy weaponry such as sniper rifles and mechineguns, its very durable and requires so force to be pulled thus making chance of missfire very low.
 		%c[d_purple] � %c[ui_gray_2] gun part\n \n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 	
@@ -126,14 +111,9 @@
 		<text>Light pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_1_descr">
-		<text>.
-		%c[d_purple]  %c[ui_gray_2] gun part\n \n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Light barrel found in smaller pistols that use weaker ammunition like 9x18 and 9x19, one example of such gun is the Makarov Pistol.
 		%c[d_purple] � %c[ui_gray_2] gun part\n \n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 
@@ -141,15 +121,9 @@
 		<text>Medium pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_2_descr">
-<<<<<<< Updated upstream
-		<text>.
-		%c[d_purple]  %c[ui_gray_2] gun part\n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Heavier and more durable barrel used in stronger guns, mainly guns chambered in .45 such as Colt 1911.
 		%c[d_purple] � %c[ui_gray_2] gun part\n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 
@@ -157,15 +131,9 @@
 		<text>Heavy pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_3_descr">
-<<<<<<< Updated upstream
-		<text>.
-		%c[d_purple]  %c[ui_gray_2] gun part\n \n
-		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
-=======
 		<text>Heavy barrel used in big heavy democracy spreding guns. Due to impracticality and price of guns its used in, such barrel is rare comodity in the Zone.
 		%c[d_purple] � %c[ui_gray_2] gun part\n \n
 		%c[d_purple] � %c[ui_gray_2] usable for replacement at workshop\n \n
->>>>>>> Stashed changes
 		</text>
 	</string>
 	
