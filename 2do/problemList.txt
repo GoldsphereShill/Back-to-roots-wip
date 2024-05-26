@@ -2,3 +2,4 @@
 - Mechanics sell very little stuff
 - Universal Repair Kit repairs only medium armours, NOT ONLY A LOCALIZATION ISSUE /// This is caused by non existing items being listed in the item_repair.ltx
 - Sewing Kits arent properly merged (remnants of the old system exist in ph_box_items_by_levels.ltx, items_repair.ltx, ph_box_items_count.ltx, trade_generic_mechanic.ltx, st_items_repair.xml
+- Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed
