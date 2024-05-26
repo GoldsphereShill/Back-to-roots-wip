@@ -2,7 +2,6 @@ Curent:
 - Mechanics sell very little stuff
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed
 - prt_o_ballistic_12 localization issues
-- AEK-971 lacks barrel in repair section of the workshop
 
 Solved:
 - The niS thing persists even after turning off debugMode /// FIXED
@@ -10,3 +9,4 @@ Solved:
 - Universal Repair Kit repairs only medium armours, NOT ONLY A LOCALIZATION ISSUE. This is caused by non existing items being listed in the item_repair.ltx /// Partially FIXED
 - A lot of things contain prt_o_ballistic_1. Similar with prt_o_ballistic_5, prt_o_ballistic_9, prt_o_fabrics_2, prt_o_retardant_1, prt_o_retardant_5 // FIXED
 - Universal Armor Repair kit cannot repair light outfits for some reason. // FIXED
+- AEK-971 lacks barrel in repair section of the workshop /// FIXED, prt_w_p_barrel_7 was used instead prt_w_barrel_7
