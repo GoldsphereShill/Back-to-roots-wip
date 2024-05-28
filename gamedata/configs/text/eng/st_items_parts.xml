@@ -41,13 +41,6 @@
 		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
 	</string>
-	
-	<string id="st_prt_i_leather">
-		<text>Leather roll</text>
-	</string>
-	<string id="st_prt_i_leather_descr">
-		<text>.</text>
-	</string>
 
 	<string id="st_prt_i_fasteners">
 		<text>Metal scrap</text>
