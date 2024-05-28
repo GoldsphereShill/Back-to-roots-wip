@@ -1,9 +1,7 @@
 Curent:
-- all ballistic parts have localization issues!/// FIXED
-- leather and paper have localization issues/// FIXED
-- prt_o_retardant_12 has localization issues!/// FIXED
-- prt_i_ammo has localization issues!/// FIXED
+
 - niS still exists somewhere
+
 
 Solved:
 - The niS thing persists even after turning off debugMode /// FIXED
@@ -15,3 +13,7 @@ Solved:
 - Mechanics sell very little stuff///FIXED
 - Removal of grooming kit and swiss knife will require a lot of crafting recipies to be changed///DECIDED, knife is kept, grooming kit is yeeted
 - prt_w_barrel_1, prt_w_barrel_12 and prt_w_barrel_10 also have localization issues///FIXED
+- all ballistic parts have localization issues!/// FIXED
+- leather and paper have localization issues/// FIXED
+- prt_o_retardant_12 has localization issues!/// FIXED
+- prt_i_ammo has localization issues!/// FIXED
