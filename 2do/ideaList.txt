@@ -7,7 +7,9 @@ Andermann:
 
 
 Chymo:
-1)Cat
+1)Cat nerf
+2)Faster sprint
+3)Gunrunner (sprinting with all guns)
 
 
 DONE THINGS:
