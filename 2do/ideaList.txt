@@ -1,9 +1,15 @@
 Andermann:
-1)Better weapon and outfit upgrade system (Perhaps even granting all outfits at least 1 starting artifact slot)
-2)Reducing weight of certain artifacts a bit.
-3)Upgrade system for backpacks and kives :)
+
+- Better weapon and outfit upgrade system (Perhaps even granting all outfits at least 1 starting artifact slot)
+
+- Upgrade system for backpacks and knives :)
 
 
 
 Chymo:
 1)Cat
+
+
+DONE THINGS:
+
+-Reducing weight of certain artifacts a bit. // DONE
