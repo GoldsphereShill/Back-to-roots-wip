@@ -5,7 +5,19 @@
 
 
 
-
+	<string id="st_prt_i_ammo">
+		<text>Ammo parts</text>
+	</string>
+	<string id="st_prt_i_ammo_descr">
+		<text> Even with good supplies, it’s not uncommon to end up with one or more cartridges of what might be considered as “bad” ammunition. Unlucky stalkers might find themselves in very bad situations when their weapons jam at critical moments due to bad cartridges. On the contrary, these ammo parts can be reused for the creation of better variants. That's why some stalkers prefer to keep them around.\n \n </text>
+	</string>
+	
+	<string id="st_prt_i_paper">
+		<text>Paper sheets</text>
+	</string>
+	<string id="st_prt_i_paper_descr">
+		<text> Torn sheets of silk coated paper. Even in a place like the Zone, it can be used for all kind of things. The cheapest way for packaging food or cleaning dirt.\n \n </text>
+	</string>
 	
 	
 	<string id="st_prt_i_wood">
@@ -62,19 +74,6 @@
 		%c[d_purple]  %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
 	</string>
-
-
-	
-
-
-
-
-
-	
-
-
-
-
 
 	<string id="st_prt_w_p_trigger_1">
 		<text>Light trigger mechanism</text>
