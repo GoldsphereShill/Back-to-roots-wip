@@ -42,6 +42,13 @@
 		</text>
 	</string>
 	
+	<string id="st_prt_i_leather">
+		<text>Leather roll</text>
+	</string>
+	<string id="st_prt_i_leather_descr">
+		<text>.</text>
+	</string>
+
 	<string id="st_prt_i_fasteners">
 		<text>Metal scrap</text>
 	</string>
@@ -263,10 +270,10 @@ OUTFITS
 		</text>
 	</string>
 	
-			<string id="st_prt_o_ballistics_11">
+			<string id="st_prt_o_ballistic_11">
 		<text>Leather</text>
 	</string>
-	<string id="st_prt_o_ballistics_11_descr">
+	<string id="st_prt_o_ballistic_11_descr">
 		<text>Simple leather not too different from that found in biker clothes, offers good protection against bites and scratches but wont stop many bullets. Thanks to its low price compared to kevlar it is often used as ballistic insert in cheap suits.
 		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
 		%c[d_purple]  %c[ui_gray_2] suit part\n \n
@@ -274,10 +281,10 @@ OUTFITS
 		</text>
 	</string>
 	
-	<string id="st_prt_o_ballistics_12">
+	<string id="st_prt_o_ballistic_12">
 		<text>Ceramic plates</text>
 	</string>
-	<string id="st_prt_o_ballistics_12_descr">
+	<string id="st_prt_o_ballistic_12_descr">
 		<text>Ceramic ballistic plates offering sufficent protection against small arms fire, while it fails to stop anything bigger than pistol round it is still very good choice for its price and offers much greater protection than simple leather.
 		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
 		%c[d_purple]  %c[ui_gray_2] suit part\n \n
@@ -285,10 +292,10 @@ OUTFITS
 		</text>
 	</string>
 
-	<string id="st_prt_o_ballistics_13">
+	<string id="st_prt_o_ballistic_13">
 		<text>Kevlar plates</text>
 	</string>
-	<string id="st_prt_o_ballistics_13_descr">
+	<string id="st_prt_o_ballistic_13_descr">
 		<text>Kevlar paltes used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
 		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
 		%c[d_purple]  %c[ui_gray_2] suit part\n \n
