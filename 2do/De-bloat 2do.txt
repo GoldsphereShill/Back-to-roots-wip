@@ -20,6 +20,10 @@ Coefitient for strike_immunity  (impact resistance): 0.04
 Same is for wound_immunity (rapture) and explosion_immunity and fire_wound_immunity (balistic)!
 Coefitient for radiation_immunity: 0.133333333333
 =--------------------------------------------------------------------------------------------------=
+<Text files stuff>
+
+!!!THE FILES NEED TO BE ENCODED IN windows 1251 FOR SOME REASON. IT REQUIRES A PROGRAM LIKE VISUAL STUDIO CODE TO EDIT THIS!!! 
+
 
 upgr_o_1_armor    ===> Tier 1 armour upgrade kit
 upgr_o_2_armor    ===> Tier 2 armour upgrade kit
