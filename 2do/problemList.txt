@@ -1,8 +1,6 @@
 Curent:
 
-- The circles need to be put back in place!
-- niS still exists somewhere!
-
+- Some circles need to be put back in place!
 
 
 Solved:
@@ -20,3 +18,4 @@ Solved:
 - prt_o_retardant_12 has localization issues!/// FIXED
 - prt_i_ammo has localization issues!/// FIXED
 - old meat still spawns in stashes (absolutely useless items, isnt even used for cooking)/// fixed
+- niS still exists somewhere! /// FIXED, no more niS
