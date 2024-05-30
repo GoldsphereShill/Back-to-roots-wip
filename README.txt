@@ -1,7 +1,7 @@
 Less Items for Anomaly REWORK
 Small mod that reduces amount of items while keeping all the features like crafting.
 Version: 0.1 (beta)
-Made by Chymo and Andermann 	- 2023
+Made by Chymo and Andermann 	- 2024
 Special thanks to Great_Day for creation of the original Less Items mod
 
 
