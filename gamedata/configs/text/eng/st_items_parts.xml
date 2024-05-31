@@ -9,7 +9,7 @@
 		<text>Ammo parts</text>
 	</string>
 	<string id="st_prt_i_ammo_descr">
-		<text> Even with good supplies, it’s not uncommon to end up with one or more cartridges of what might be considered as “bad” ammunition. Unlucky stalkers might find themselves in very bad situations when their weapons jam at critical moments due to bad cartridges. On the contrary, these ammo parts can be reused for the creation of better variants. That's why some stalkers prefer to keep them around.\n \n </text>
+		<text> Even with good supplies, it•s not uncommon to end up with one or more cartridges of what might be considered as •bad• ammunition. Unlucky stalkers might find themselves in very bad situations when their weapons jam at critical moments due to bad cartridges. On the contrary, these ammo parts can be reused for the creation of better variants. That's why some stalkers prefer to keep them around.\n \n </text>
 	</string>
 	
 	<string id="st_prt_i_paper">
@@ -79,7 +79,7 @@
 		<text>Light trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_1_descr">
-		<text>Very light trigger used in cheaper low power firearms.
+		<text>Very light trigger used in cheaper low power firearms.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -89,7 +89,7 @@
 		<text>Medium trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_2_descr">
-		<text>Strengtened trigger mechanism found in slightly stronger guns. It is more durable and provides better control of the gun, its less sensitive and lowers chance of unintentional firing significantly.
+		<text>Strengtened trigger mechanism found in slightly stronger guns. It is more durable and provides better control of the gun, its less sensitive and lowers chance of unintentional firing significantly.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -99,7 +99,7 @@
 		<text>Heavy trigger mechanism</text>
 	</string>
 	<string id="st_prt_w_p_trigger_3_descr">
-		<text>Heavy trigger mechanism used in heavy weaponry such as sniper rifles and mechineguns, its very durable and requires so force to be pulled thus making chance of missfire very low.
+		<text>Heavy trigger mechanism used in heavy weaponry such as sniper rifles and mechineguns, its very durable and requires so force to be pulled thus making chance of missfire very low.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -110,7 +110,7 @@
 		<text>Light pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_1_descr">
-		<text>Light barrel found in smaller pistols that use weaker ammunition like 9x18 and 9x19, one example of such gun is the Makarov Pistol.
+		<text>Light barrel found in smaller pistols that use weaker ammunition like 9x18 and 9x19, one example of such gun is the Makarov Pistol.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -120,7 +120,7 @@
 		<text>Medium pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_2_descr">
-		<text>Heavier and more durable barrel used in stronger guns, mainly guns chambered in .45 such as Colt 1911.
+		<text>Heavier and more durable barrel used in stronger guns, mainly guns chambered in .45 such as Colt 1911.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -130,7 +130,7 @@
 		<text>Heavy pistol barrel</text>
 	</string>
 	<string id="st_prt_w_p_barrel_3_descr">
-		<text>Heavy barrel used in big heavy democracy spreding guns. Due to impracticality and price of guns its used in, such barrel is rare comodity in the Zone.
+		<text>Heavy barrel used in big heavy democracy spreding guns. Due to impracticality and price of guns its used in, such barrel is rare comodity in the Zone.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -140,7 +140,7 @@
 		<text>Light Soviet rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_7_descr">
-		<text>Basic barrel commonly found in cheaper rifles, easy to maintain and not too costly to replace. Due to popularity of cheaper rifles in the Zone this barrel is a common part. Mostly used in 5.45 AK variants.
+		<text>Basic barrel commonly found in cheaper rifles, easy to maintain and not too costly to replace. Due to popularity of cheaper rifles in the Zone this barrel is a common part. Mostly used in 5.45 AK variants.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n	
 		</text>
@@ -150,7 +150,7 @@
 		<text>Medium Soviet rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_8_descr">
-		<text>Bigger 7.62x39 used in older Sovier rifles. It is more durable to withstand the power of 7.62 rounds. Despite age of 7.62x39 guns these barrels are still relatively common in the Zone.
+		<text>Bigger 7.62x39 used in older Sovier rifles. It is more durable to withstand the power of 7.62 rounds. Despite age of 7.62x39 guns these barrels are still relatively common in the Zone.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -160,7 +160,7 @@
 		<text>Heavy Soviet rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_9_descr">
-		<text>Strengtened 7.62 barrel made to withstand the more powerful 7.62x54 rounds. Found mainly in sniper rifles and machineguns.
+		<text>Strengtened 7.62 barrel made to withstand the more powerful 7.62x54 rounds. Found mainly in sniper rifles and machineguns.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n			
 		</text>
@@ -170,7 +170,7 @@
 		<text>Light NATO rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_12_descr">
-		<text>Light barrel chambered in standard 5.56 NATO. Somewhat rarer compared to Soviet barrels but some factions still have plenty of these.
+		<text>Light barrel chambered in standard 5.56 NATO. Somewhat rarer compared to Soviet barrels but some factions still have plenty of these.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n					
 		</text>
@@ -180,7 +180,7 @@
 		<text>Medium NATO rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_10_descr">
-		<text>NATO barrel chambered in 7.62x51, used in heavy ARs and light sniper rifles. Rare but still acessible with right contacts.
+		<text>NATO barrel chambered in 7.62x51, used in heavy ARs and light sniper rifles. Rare but still acessible with right contacts.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n				
 		</text>
@@ -190,7 +190,7 @@
 		<text>Heavy NATO rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_1_descr">
-		<text>Heavy barrel chambered in .338 Lapua, only found in powerful western sniper rifles. Rare part in the Zone.
+		<text>Heavy barrel chambered in .338 Lapua, only found in powerful western sniper rifles. Rare part in the Zone.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n			
 		</text>
@@ -200,7 +200,7 @@
 		<text>Light shotgun barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_4_descr">
-		<text>Standard shotgun barrel with close to half of its original lenght sawn off. Thanks to this it is considerably lighter at cost of far worse accuracy.
+		<text>Standard shotgun barrel with close to half of its original lenght sawn off. Thanks to this it is considerably lighter at cost of far worse accuracy.\n \n
 			%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n	
 		</text>
@@ -210,7 +210,7 @@
 		<text>Medium shotgun barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_3_descr">
-		<text>Commonly used shotgun barrel found in Toz-34 and guns alike.
+		<text>Commonly used shotgun barrel found in Toz-34 and guns alike.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -220,7 +220,7 @@
 		<text>Heavy shotgun barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_2_descr">
-		<text>Strengtened 12 gauge barrel used in more expensive shotguns. Rare in the Zone, not many regular stalkers get their hands on one.
+		<text>Strengtened 12 gauge barrel used in more expensive shotguns. Rare in the Zone, not many regular stalkers get their hands on one.\n \n
 		%c[d_purple] • %c[ui_gray_2] gun part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -236,7 +236,7 @@ OUTFITS
 		<text>Cloth sheets</text>
 	</string>
 	<string id="st_prt_o_fabrics_1_descr">
-		<text>Basic cloth sheets found in cheap outfits. They dont offer much protection but are cheap to replace and maintain while offering sufficent protection from cold and rain.
+		<text>Basic cloth sheets found in cheap outfits. They dont offer much protection but are cheap to replace and maintain while offering sufficent protection from cold and rain.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n
 		</text>
@@ -246,7 +246,7 @@ OUTFITS
 		<text>Durable cloth sheets</text>
 	</string>
 	<string id="st_prt_o_fabrics_3_descr">
-		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		<text>Thicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
@@ -257,7 +257,7 @@ OUTFITS
 	</string>
 	<string id="st_prt_o_fabrics_4_descr">
 		<text>Sheets of mil-spec sheets, offer significant insulation and protection from bites while being flexible enough not to affect wearers agility.
-		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
@@ -268,7 +268,7 @@ OUTFITS
 	</string>
 	<string id="st_prt_o_ballistic_11_descr">
 		<text>Simple leather not too different from that found in biker clothes, offers good protection against bites and scratches but wont stop many bullets. Thanks to its low price compared to kevlar it is often used as ballistic insert in cheap suits.
-		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
@@ -279,7 +279,7 @@ OUTFITS
 	</string>
 	<string id="st_prt_o_ballistic_12_descr">
 		<text>Ceramic ballistic plates offering sufficent protection against small arms fire, while it fails to stop anything bigger than pistol round it is still very good choice for its price and offers much greater protection than simple leather.
-		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
@@ -289,8 +289,13 @@ OUTFITS
 		<text>Kevlar plates</text>
 	</string>
 	<string id="st_prt_o_ballistic_13_descr">
+<<<<<<< Updated upstream
 		<text>Kevlar plates used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
 		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+=======
+		<text>Kevlar paltes used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
+		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
+>>>>>>> Stashed changes
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
@@ -301,7 +306,7 @@ OUTFITS
 	</string>
 	<string id="st_prt_o_retardant_19_descr">
 		<text>Thin sheet of teflon used for waterproofing of cheap leather jackets commonly seen in the zone. While doing its job well it can easily get damaged. Sheets of this thickness are only suitable for cheap suits, better suits will utilize thicker sheets with greater durability.		
-		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
+		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
