@@ -289,13 +289,8 @@ OUTFITS
 		<text>Kevlar plates</text>
 	</string>
 	<string id="st_prt_o_ballistic_13_descr">
-<<<<<<< Updated upstream
 		<text>Kevlar plates used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
-		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.
-=======
-		<text>Kevlar paltes used only in the best combat suits of the zone. While offering great protection they are very costly and as such can only be found in high grade military suits, exosuits and combat exoskeletons.
 		\nThicker layered cloth sheets found in better suits. While still not offering much ballistic protection they offer good insulation and some protection from claws and teeth of small mutants.\n \n
->>>>>>> Stashed changes
 		%c[d_purple] • %c[ui_gray_2] suit part\n \n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n \n		
 		</text>
