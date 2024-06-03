@@ -150,7 +150,7 @@
 		<text>Medium Soviet rifle barrel</text>
 	</string>
 	<string id="st_prt_w_barrel_8_descr">
-		<text>Bigger 7.62x39 used in older Sovier rifles. It is more durable to withstand the power of 7.62 rounds. Despite age of 7.62x39 guns these barrels are still relatively common in the Zone.\n
+		<text>Bigger 7.62x39 barrel used in older Sovier rifles. It is more durable to withstand the power of 7.62 rounds. Despite age of 7.62x39 guns these barrels are still relatively common in the Zone.\n
 		%c[d_purple] • %c[ui_gray_2] gun part\n
 		%c[d_purple] • %c[ui_gray_2] usable for replacement at workshop\n
 		</text>
