@@ -1,4 +1,4 @@
-usable for upgrades<?xml version="1.0" encoding="windows-1251"?>
+<?xml version="1.0" encoding="windows-1251"?>
 
 <!--
 	Repair Kits
@@ -7,186 +7,186 @@ usable for upgrades<?xml version="1.0" encoding="windows-1251"?>
 <string_table>
 
 	<string id="st_sharpening_stones">
-		<text>Точильные камни</text>
+		<text>Sharpening stones</text>
 	</string>
 	<string id="st_sharpening_stones_descr">
-		<text>%c[d_purple] • %c[ui_gray_2] Набор камней, используемых для заточки тупых ножей.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2] Set of stones used for sharpening of blunt knives.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_gun_oil">
-		<text>Пистолетное масло</text>
+		<text>Gun oil</text>
 	</string>
 	<string id="st_gun_oil_descr">
-		<text>%c[d_purple] • %c[ui_gray_2] Обычное оружейное масло, используемое для чистки огнестрельного оружия.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2] Ordinary gun oil used for cleaning of firearms.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2] repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_cleaning_kit_s">
-		<text>Набор для чистки огнестрельного оружия</text>
+		<text>Firearm cleaning kit</text>
 	</string>
 	<string id="st_cleaning_kit_s_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Набор для чистки, содержащий инструменты, необходимые для чистки любого типа огнестрельного оружия.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Cleaning kit containing tools necesarry to clean any type of firearm.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_repair_kit_s">
-		<text>Набор для ремонта огнестрельного оружия</text>
+		<text>Firearm repair kit</text>
 	</string>
 	<string id="st_repair_kit_s_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Ремонтный набор, содержащий инструменты и детали, необходимые для ремонта любого типа огнестрельного оружия.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any type of firearm.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_repair_kit_s_empty">
-		<text>Набор для ремонта огнестрельного оружия (пустой)</text>
+		<text>Firearm repair kit (empty)</text>
 	</string>
 	<string id="st_repair_kit_s_empty_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Почти пустой ремонтный комплект, с некоторыми дополнительными деталями может быть снова пригоден для использования.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Nearly empty repair kit, with some extra parts could be usable again.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  crafting item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_sewing_kit_a">
-		<text>Комплект для ремонта экипировки</text>
+		<text>Outfit Repair Kit</text>
 	</string>
 	<string id="st_sewing_kit_a_descr">
 		<text>EMPTY\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_glue_a">
-		<text>Тюбик с клеем</text>
+		<text>Glue tube</text>
 	</string>
 	<string id="st_glue_a_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Обычный тюбик с клеем, который можно использовать для небольших костюмов и шлемов\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Regular glue tube usable for small of suits and helmets\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2] repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 
 	
 	<string id="st_armor_repair_fa">
-		<text>Набор для ремонта аварийной брони</text>
+		<text>Emergency armor repair set</text>
 	</string>
 	<string id="st_armor_repair_fa_descr">
-		<text>Ремонтный набор, позволяющий производить экстренный ремонт экипировки. В комплект входит утиная лента военного образца и готовые к использованию листы плотного текстиля различных форм и размеров, позволяющие быстро залатать любые повреждения экипировки. Это особенно полезно для предотвращения дальнейших структурных повреждений уже поврежденных костюмов. Из-за относительно невысокой прочности предоставленных материалов набор может быть использован только для мелкого ремонта и неэффективен в случае с более прочными материалами, такими как кевлар или металл. По этой причине набор имеет очень ограниченное применение в обслуживании головных уборов.\n \n
+		<text>\n \n
 		COMPATIBILITY:\n \n
-		%c[d_orange] • %c[ui_gray_2]  все наряды и комплекты легких головных уборов\n \n
-		%c[ui_gray_1] • %c[ui_gray_2]\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]СВОЙСТВА:\n
-		%c[d_blue] • %c[ui_gray_2]  технологическая деталь\n
-		%c[d_blue] • %c[ui_gray_2]  Быстрое использование (клейкая лента)\n
-		%c[d_orange] • %c[ui_gray_2] пригоден для ремонта оборудования\n
+		%c[d_orange]  %c[ui_gray_2]  all outfits and light headgear sets\n \n
+		%c[ui_gray_1]  %c[ui_gray_2]A repair set allowing the user to perform emergency repairs of outfits. Includes military grade ducktape and ready-to-use sheets of thick textile in a variety of shapes and sizes which make it possible to quickly patch up any outfit damage. This is especially useful to prevent further structural damage of already damaged suits. Due to a relatively low durability of provided materials, the kit can be used only for minor repairs and is ineffective in case of harder materials like kevlar or metal. For this reason, the kit has a very limited use in headgear maintenance.\n \n
+		%c[ui_gray_3]  %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue]  %c[ui_gray_2]  technological item\n
+		%c[d_blue]  %c[ui_gray_2]  fast usage (adhesive tape)\n
+		%c[d_orange]  %c[ui_gray_2] usable for repairing equipment\n
 		</text>
 	</string>
 	
 	<string id="st_helmet_repair_kit">
-		<text>Набор для ремонта головных уборов</text>
+		<text>Headgear repair kit</text>
 	</string>
 	<string id="st_helmet_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Ремонтный набор, содержащий инструменты и детали, необходимые для ремонта шлемов.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair helmets.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2] repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_medium_repair_kit">
-		<text>Универсальный набор для ремонта брони</text>
+		<text>Universal armor repair kit</text>
 	</string>
 	<string id="st_medium_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Ремонтный набор, содержащий инструменты и детали, необходимые для ремонта костюмов любого типа.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any tegular type of suit.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_exo_repair_kit">
-		<text>Набор для ремонта экзоскелета</text>
+		<text>Exoskeleton repair kit</text>
 	</string>
 	<string id="st_exo_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Ремонтный набор, содержащий инструменты и детали, необходимые для ремонта костюмов «Экзоскелет».\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair Exoskeleton suits.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	
 	<string id="st_leatherman_tool">
-		<text>Мультиинструмент</text>
+		<text>Multitool</text>
 	</string>
 	<string id="st_leatherman_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Инструмент, необходимый для разборки оружия, костюмов и других предметов.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]A tool necessary for disassembly of guns, suits and other items.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_rasp_tool">
-		<text>Напильник</text>
+		<text>File</text>
 	</string>
 	<string id="st_rasp_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Напильник, используемый для восстановления деталей оружия, например, изношенного или заржавевшего ствола или казенной части.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]A file, used to restore weapon parts such as a worn or rusty barrel or breech head.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
 	<string id="st_ramrod_tool">
-		<text>таран</text>
+		<text>Ramrod</text>
 	</string>
 	<string id="st_ramrod_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Старый таран, используемый для чистки ружейных стволов.\n \n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
-		%c[d_orange] • %c[ui_gray_2]  предмет ремонта\n
-		%c[d_orange] • %c[ui_gray_2] ТРАЙТЫ:\n
+		<text>%c[d_purple]  %c[ui_gray_2]Old ramrod used for cleaning gun barrels.\n \n
+		%c[d_orange]  %c[ui_gray_2] TRAITS:\n
+		%c[d_orange]  %c[ui_gray_2]  part repair item\n
+		%c[d_orange]  %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 
 	<string id="st_sewing_thread">
-		<text>Основная швейная нить</text>
+		<text>Basic sewing thread</text>
 	</string>
 	<string id="st_sewing_thread_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Эта швейная нить изготавливается из самых разных материалов: хлопка, льна, нейлона и шелка. Каждый сталкер знает, что из-за суровой обстановки в Зоне нелегко избежать разрыва ткани. Приберечь пару швейных ниток для дальних походов - мудрая идея.\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]СВОЙСТВА:\n
-		%c[d_blue] • %c[ui_gray_2]   повседневная вещь\n
-		%c[d_orange] • %c[ui_gray_2]   пригодны для обслуживания экипировочных деталей\n
+		<text>%c[d_purple]  %c[ui_gray_2]This sewing thread is made out of many different materials including cotton, linen, nylon, and silk. Every stalker knows it's not easy to avoid cloth tearig every while and then due to the harsh environment inside the Zone. Saving a couple of sewing threads for long trips is a wise idea.\n \n
+		%c[ui_gray_3]  %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue]  %c[ui_gray_2]   everyday item\n
+		%c[d_orange]  %c[ui_gray_2]   usable for outfit parts maintenance\n
 		</text>
 	</string>
 	
 	<string id="st_heavy_sewing_thread">
-		<text>Комплект полевой брони</text>
+		<text>Field armour toolkit</text>
 	</string>
 	<string id="st_heavy_sewing_thread_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Расширенный набор инструментов для шитья и герметизации ретардантов. В том числе кевларовая нить, одна из самых прочных и термостойких из имеющихся в продаже нитей. Она примерно в 2,5 раза прочнее нейлона и полиэстера, мало растягивается, не плавится и разлагается при температуре 800F. Это делает ее отличным выбором для применения в условиях высоких нагрузок, в том числе для зашивания швов на одежде для тяжелых условий эксплуатации.\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]СВОЙСТВА:\n
-		%c[d_blue] • %c[ui_gray_2]   технологическая деталь\n
-		%c[d_blue] • %c[ui_gray_2]   набор инструментов\n
-		%c[d_blue] • %c[ui_gray_2]   высокое качество\n
-		%c[d_orange] • %c[ui_gray_2]   пригодны для обслуживания экипировочных деталей\n
+		<text>%c[d_purple]  %c[ui_gray_2]An advanced toolkit for sewing and sealing retardants. Including kevlar thread, one of the strongest and most heat resistant commercially available threads. It is about 2.5 times stronger than nylon and polyester, has very little stretch, does not melt, and decomposes at 800F. This makes it a great choice for high stress applications including sewing seams on heavy duty clothing.\n \n
+		%c[ui_gray_3]  %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue]  %c[ui_gray_2]   technological item\n
+		%c[d_blue]  %c[ui_gray_2]   toolkit\n
+		%c[d_blue]  %c[ui_gray_2]   high quality\n
+		%c[d_orange]  %c[ui_gray_2]   usable for outfit parts maintenance\n
 		</text>
 	</string>
 </string_table>
