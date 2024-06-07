@@ -1,6 +1,6 @@
 Less Items for Anomaly REWORK
 Small mod that reduces amount of items while keeping all the features like crafting.
-Version: 0.1 (beta)
+Version: Beta DEV
 Made by Chymo and Andermann 	- 2024
 Special thanks to Great_Day for creation of the original Less Items mod
 
@@ -15,3 +15,17 @@ Combined items that do the same thing into single one for each types (glues for 
 Removed excess items (plastic jars and such)
 Adapted crafting for the new parts system
 
+--- CHANGE LOG ---
+
+0.14.1:
+- Fixed english localization files (the game should no longer crash)
+- Russian localization files are now actually in Russian
+
+0.14: 
+- Added Russian Localization
+- Added changelog
+
+0.13:
+- Fixed traders selling removed items
+- Fixed mechanics selling nothing at all
+- Fixed minor localization issues

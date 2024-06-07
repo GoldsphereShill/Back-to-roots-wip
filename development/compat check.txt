@@ -1,0 +1,26 @@
+----To check----
+
+Trader Overhaul
+Stash Overhaul
+Zone Customization Project
+
+
+----Working----
+Keep Crafting Window Open
+Hideout Furniture (anything that adds more furniture too)
+Companion Inventory Unlock
+HUD icons time
+ANUS Revised
+Ultimate Dialog Expanded
+NPC fleeing
+Dynamic NPC Armor Visuals
+Get out of my way you stupid NPC
+Artifact collision visuals fixed
+Companions deactivate headlamps in stealth
+High quality glass overlay
+Dialog Dynamic UI
+Crooks Faction Identification
+Mod Config menu
+High resolution pda maps
+Soundscape overhaul
+Wider sliders

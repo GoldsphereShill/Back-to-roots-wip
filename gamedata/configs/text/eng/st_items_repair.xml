@@ -10,10 +10,10 @@
 		<text>Sharpening stones</text>
 	</string>
 	<string id="st_sharpening_stones_descr">
-		<text>%c[d_purple] • %c[ui_gray_2] Set of stones used for sharpening of blunt knives.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2] Set of stones used for sharpening of blunt knives.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -21,10 +21,10 @@
 		<text>Gun oil</text>
 	</string>
 	<string id="st_gun_oil_descr">
-		<text>%c[d_purple] • %c[ui_gray_2] Ordinary gun oil used for cleaning of firearms.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2] repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2] Ordinary gun oil used for cleaning of firearms.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2] repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -32,10 +32,10 @@
 		<text>Firearm cleaning kit</text>
 	</string>
 	<string id="st_cleaning_kit_s_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Cleaning kit containing tools necesarry to clean any type of firearm.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Cleaning kit containing tools necesarry to clean any type of firearm.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -43,10 +43,10 @@
 		<text>Firearm repair kit</text>
 	</string>
 	<string id="st_repair_kit_s_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any type of firearm.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any type of firearm.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -54,10 +54,10 @@
 		<text>Firearm repair kit (empty)</text>
 	</string>
 	<string id="st_repair_kit_s_empty_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Nearly empty repair kit, with some extra parts could be usable again.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  crafting item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Nearly empty repair kit, with some extra parts could be usable again.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  crafting item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -66,9 +66,9 @@
 	</string>
 	<string id="st_sewing_kit_a_descr">
 		<text>EMPTY\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -76,10 +76,10 @@
 		<text>Glue tube</text>
 	</string>
 	<string id="st_glue_a_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Regular glue tube usable for small of suits and helmets\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2] repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Regular glue tube usable for small of suits and helmets\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2] repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 
@@ -90,12 +90,12 @@
 	<string id="st_armor_repair_fa_descr">
 		<text>\n \n
 		COMPATIBILITY:\n \n
-		%c[d_orange] • %c[ui_gray_2]  all outfits and light headgear sets\n \n
-		%c[ui_gray_1] • %c[ui_gray_2]A repair set allowing the user to perform emergency repairs of outfits. Includes military grade ducktape and ready-to-use sheets of thick textile in a variety of shapes and sizes which make it possible to quickly patch up any outfit damage. This is especially useful to prevent further structural damage of already damaged suits. Due to a relatively low durability of provided materials, the kit can be used only for minor repairs and is ineffective in case of harder materials like kevlar or metal. For this reason, the kit has a very limited use in headgear maintenance.\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]PROPERTIES:\n
-		%c[d_blue] • %c[ui_gray_2]  technological item\n
-		%c[d_blue] • %c[ui_gray_2]  fast usage (adhesive tape)\n
-		%c[d_orange] • %c[ui_gray_2] usable for repairing equipment\n
+		%c[d_orange] ˜ %c[ui_gray_2]  all outfits and light headgear sets\n \n
+		%c[ui_gray_1] ˜ %c[ui_gray_2]A repair set allowing the user to perform emergency repairs of outfits. Includes military grade ducktape and ready-to-use sheets of thick textile in a variety of shapes and sizes which make it possible to quickly patch up any outfit damage. This is especially useful to prevent further structural damage of already damaged suits. Due to a relatively low durability of provided materials, the kit can be used only for minor repairs and is ineffective in case of harder materials like kevlar or metal. For this reason, the kit has a very limited use in headgear maintenance.\n \n
+		%c[ui_gray_3] ˜ %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue] ˜ %c[ui_gray_2]  technological item\n
+		%c[d_blue] ˜ %c[ui_gray_2]  fast usage (adhesive tape)\n
+		%c[d_orange] ˜ %c[ui_gray_2] usable for repairing equipment\n
 		</text>
 	</string>
 	
@@ -103,10 +103,10 @@
 		<text>Headgear repair kit</text>
 	</string>
 	<string id="st_helmet_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair helmets.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2] repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair helmets.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2] repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -114,10 +114,10 @@
 		<text>Universal armor repair kit</text>
 	</string>
 	<string id="st_medium_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any tegular type of suit.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair any tegular type of suit.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -125,10 +125,10 @@
 		<text>Exoskeleton repair kit</text>
 	</string>
 	<string id="st_exo_repair_kit_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair Exoskeleton suits.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Repair kit containing tools and parts necesarry to repair Exoskeleton suits.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -137,10 +137,10 @@
 		<text>Multitool</text>
 	</string>
 	<string id="st_leatherman_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]A tool necessary for disassembly of guns, suits and other items.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]A tool necessary for disassembly of guns, suits and other items.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -148,10 +148,10 @@
 		<text>File</text>
 	</string>
 	<string id="st_rasp_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]A file, used to restore weapon parts such as a worn or rusty barrel or breech head.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]A file, used to restore weapon parts such as a worn or rusty barrel or breech head.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 	
@@ -159,10 +159,10 @@
 		<text>Ramrod</text>
 	</string>
 	<string id="st_ramrod_tool_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]Old ramrod used for cleaning gun barrels.\n \n
-		%c[d_orange] • %c[ui_gray_2] TRAITS:\n
-		%c[d_orange] • %c[ui_gray_2]  part repair item\n
-		%c[d_orange] • %c[ui_gray_2] STATS:\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]Old ramrod used for cleaning gun barrels.\n \n
+		%c[d_orange] ˜ %c[ui_gray_2] TRAITS:\n
+		%c[d_orange] ˜ %c[ui_gray_2]  part repair item\n
+		%c[d_orange] ˜ %c[ui_gray_2] STATS:\n
 		</text>
 	</string>
 
@@ -170,10 +170,10 @@
 		<text>Basic sewing thread</text>
 	</string>
 	<string id="st_sewing_thread_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]This sewing thread is made out of many different materials including cotton, linen, nylon, and silk. Every stalker knows it's not easy to avoid cloth tearig every while and then due to the harsh environment inside the Zone. Saving a couple of sewing threads for long trips is a wise idea.\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]PROPERTIES:\n
-		%c[d_blue] • %c[ui_gray_2]   everyday item\n
-		%c[d_orange] • %c[ui_gray_2]   usable for outfit parts maintenance\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]This sewing thread is made out of many different materials including cotton, linen, nylon, and silk. Every stalker knows it's not easy to avoid cloth tearig every while and then due to the harsh environment inside the Zone. Saving a couple of sewing threads for long trips is a wise idea.\n \n
+		%c[ui_gray_3] ˜ %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue] ˜ %c[ui_gray_2]   everyday item\n
+		%c[d_orange] ˜ %c[ui_gray_2]   usable for outfit parts maintenance\n
 		</text>
 	</string>
 	
@@ -181,12 +181,12 @@
 		<text>Field armour toolkit</text>
 	</string>
 	<string id="st_heavy_sewing_thread_descr">
-		<text>%c[d_purple] • %c[ui_gray_2]An advanced toolkit for sewing and sealing retardants. Including kevlar thread, one of the strongest and most heat resistant commercially available threads. It is about 2.5 times stronger than nylon and polyester, has very little stretch, does not melt, and decomposes at 800F. This makes it a great choice for high stress applications including sewing seams on heavy duty clothing.\n \n
-		%c[ui_gray_3] • %c[ui_gray_2]PROPERTIES:\n
-		%c[d_blue] • %c[ui_gray_2]   technological item\n
-		%c[d_blue] • %c[ui_gray_2]   toolkit\n
-		%c[d_blue] • %c[ui_gray_2]   high quality\n
-		%c[d_orange] • %c[ui_gray_2]   usable for outfit parts maintenance\n
+		<text>%c[d_purple] ˜ %c[ui_gray_2]An advanced toolkit for sewing and sealing retardants. Including kevlar thread, one of the strongest and most heat resistant commercially available threads. It is about 2.5 times stronger than nylon and polyester, has very little stretch, does not melt, and decomposes at 800F. This makes it a great choice for high stress applications including sewing seams on heavy duty clothing.\n \n
+		%c[ui_gray_3] ˜ %c[ui_gray_2]PROPERTIES:\n
+		%c[d_blue] ˜ %c[ui_gray_2]   technological item\n
+		%c[d_blue] ˜ %c[ui_gray_2]   toolkit\n
+		%c[d_blue] ˜ %c[ui_gray_2]   high quality\n
+		%c[d_orange] ˜ %c[ui_gray_2]   usable for outfit parts maintenance\n
 		</text>
 	</string>
 </string_table>
