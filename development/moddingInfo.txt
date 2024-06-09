@@ -85,8 +85,8 @@ prt_o_support_1 ===>  Exoskeleton frame
 
 
 
-
-
+[REMOVED MISC]
+Mirror, welding goggles, cards. shovels, jar, ropes, Bed spread
 
 heavy_sewing_thread
 glue_a, glue_b, glue_e  -- combined into just glue_a
