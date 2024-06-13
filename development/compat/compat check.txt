@@ -4,6 +4,9 @@ Trader Overhaul
 Stash Overhaul
 Zone Customization Project
 
+----Patched----
+Tweaki Breaki´s bugged stash fix
+
 
 ----Working----
 Keep Crafting Window Open
