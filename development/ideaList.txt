@@ -1,16 +1,17 @@
 Andermann:
 
-- Better weapon and outfit upgrade system (Perhaps even granting all outfits at least 1 starting artifact slot)
+- Better weapon and outfit upgrade system (Perhaps even granting all outfits at least 1 starting artifact slot) // HARD
 
-- Upgrade system for backpacks and knives :)
+- Upgrade system for backpacks and knives :) // EVEN HARDER
 
-
+- Some custom questlines
 
 Chymo:
 1)Cat nerf
 2)Faster sprint
 3)Gunrunner (sprinting with all guns)
-
+4)Brotherhood and iTheon tasks compat checks/patches
+5)Stash improvement
 
 DONE THINGS:
 
