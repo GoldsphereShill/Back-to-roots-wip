@@ -107,14 +107,14 @@ x_drug_anabiotic		    = 4, recipe_drug_4, drug_psy_blockade,2,drug_booster,1
 
 [6]
 title						= st_ui_craft_ammo
-x_ammo_9x18_fmj	            = 5, recipe_ammo_0, ammo_9x18_fmj_bad,2,prt_i_ammo,2
-x_ammo_9x18_pmm	            = 5, recipe_ammo_0, ammo_9x18_pmm_bad,2,prt_i_ammo,2
-x_ammo_9x18_ap	            = 5, recipe_ammo_0, ammo_9x18_ap_bad,2,prt_i_ammo,2
-x_ammo_9x19_pbp	            = 5, recipe_ammo_0, ammo_9x19_pbp_bad,2,prt_i_ammo,2
-x_ammo_9x19_fmj	            = 5, recipe_ammo_0, ammo_9x19_fmj_bad,2,prt_i_ammo,2
-x_ammo_9x19_ap	            = 5, recipe_ammo_0, ammo_9x19_ap_bad,2,prt_i_ammo,2
-x_ammo_11.43x23_hydro	    = 5, recipe_ammo_0, ammo_11.43x23_hydro_bad,2,prt_i_ammo,3
-x_ammo_11.43x23_fmj	        = 5, recipe_ammo_0, ammo_11.43x23_fmj_bad,2,prt_i_ammo,3
+;x_ammo_9x18_fmj	            = 5, recipe_ammo_0, ammo_9x18_fmj_bad,2,prt_i_ammo,2 ; BASIC 9x18, uncraftable
+x_ammo_9x18_pmm	            = 5, recipe_ammo_0, x_ammo_9x18_fmj,2
+x_ammo_9x18_ap	            = 5, recipe_ammo_0, x_ammo_9x18_pmm,2
+x_ammo_9x19_pbp	            = 5, recipe_ammo_0, ammo_9x19_pbp_fmj,2
+;x_ammo_9x19_fmj	            = 5, recipe_ammo_0, ammo_9x19_fmj_bad,2,prt_i_ammo,2 ; BASIC 9x19, uncraftable
+x_ammo_9x19_ap	            = 5, recipe_ammo_0, x_ammo_9x19_pbp,2
+x_ammo_11.43x23_hydro	    = 5, recipe_ammo_0, ammo_11.43x23_fmj,2
+;x_ammo_11.43x23_fmj	        = 5, recipe_ammo_0, ammo_11.43x23_fmj_bad,2,prt_i_ammo,3 ; BASIC, uncraftable
 x_ammo_12x70_buck	        = 5, recipe_ammo_0, ammo_12x70_buck_bad,2,prt_i_ammo,3
 x_ammo_12x76_zhekan	        = 5, recipe_ammo_0, ammo_12x76_zhekan_bad,2,prt_i_ammo,3
 x_ammo_12x76_dart	        = 5, recipe_ammo_0, ammo_12x76_dart_bad,2,prt_i_ammo,3
