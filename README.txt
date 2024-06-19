@@ -17,6 +17,14 @@ Adapted crafting for the new parts system
 
 --- CHANGE LOG ---
 
+0.15:
+- Removed old ammo fully
+- Reworked crafting system
+- Removed recipe books
+- Updated cooking
+- Removed many medical and food items
+- Some secret stuff
+
 0.14.1:
 - Fixed english localization files (the game should no longer crash)
 - Russian localization files are now actually in Russian
