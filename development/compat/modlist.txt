@@ -3,3 +3,4 @@ Gray Hip Outfit: https://www.moddb.com/mods/stalker-anomaly/addons/hips-grey-out
 iTheon tasks: https://github.com/lTheon/iTheon-New-Tasks-Addon
 Body Dots on Minimap: https://www.moddb.com/mods/stalker-anomaly/addons/bodydotsminimap-white-dots-but-blue
 Companion Inventory Unlock: https://www.moddb.com/mods/stalker-anomaly/addons/companion-inventory
+HUD Icons Time: https://www.moddb.com/mods/stalker-anomaly/addons/hud-icons-time
