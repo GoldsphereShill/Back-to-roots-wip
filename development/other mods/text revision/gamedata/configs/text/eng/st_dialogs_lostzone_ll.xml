@@ -628,7 +628,7 @@
 		<text>Strelok, I presume?</text>
 	</string>
 	<string id="living_legend_strelok_start_1">
-		<text>Yes. I wasn't expecting Rogue to recruit anyone, although a member of Duty is a pretty reasonable choice.</text>
+		<text>Yes. I wasn't expecting Rogue to recruit anyone, although a well dsiciplined Duty soldier is a pretty reasonable choice for such mission.</text>
 	</string>
 	<string id="living_legend_strelok_start_11">
 		<text>Yes. I wasn't expecting Rogue to recruit anyone, let alone hire a mercenary.</text>
@@ -712,16 +712,16 @@
 		<text>Thanks, Strelok. Now that we've wiped out about half the Monolith forces in the Zone, can you tell me what you're looking for this far north?</text>
 	</string>
 	<string id="living_legend_strelok_objective_3">
-		<text>Answers. Like you, I seek answers. In order to get them we must raid the Chernobyl NPP, and find a shard of the Wish Granter.</text>
+		<text>Answers. Like you, I seek answers. In order to get them we must raid the Chernobyl NPP, and find an extremely powerful artifact called Shard.</text>
 	</string>
 	<string id="living_legend_strelok_objective_4">
-		<text>Okay... no, hang on. Are you insane? Raid the Power Plant? Wish Granter? It's real after all? I heard legends, but...</text>
+		<text>What is so special about this "Shard"? You sure are after it for good reason. Where did it come from and how did it get to NPP?</text>
 	</string>
 	<string id="living_legend_strelok_objective_5">
-		<text>There's a grain of truth in every legend, stalker. The Wish Granter exists, I've seen it with my own eyes. And don't worry. We've managed to defeat Eidolon and his forces. I was able to fight my way into the Power Plant myself a few years ago. With your help we'll manage again.</text>
+		<text>After death of C-Conciousness a strong Psi wave was released, some people died to its energy immidiately, some turned into zombies and few, me included, had illusions of their greatest wishes. The wave was strong and went all the way to Zones borders. But you see, for some reason when it reached the border, it started returning. Going faster and faster snapping people out of the illusions. All this power then concentrated in the power plant and condensed to form the Shard. Stalkers who were nearby immidiately went to see what was happening. They found the Shard. Powerful artifact capable of showing you your most desired information you could never reach alone. These stalkers went into craze, fighting one another for the Shard, Eidolon among them. I dont know what the Shard showed him and I never will. But that day, the old stalker died and was turned into fanatic. Now Stalker, we need to find the Shard. I doubt Monolithians moved it as it is too valuable and was alredy in depth of sarcophagus under the powerplant.</text>
 	</string>
 	<string id="living_legend_strelok_objective_51">
-		<text>There's a grain of truth in every legend, merc. The Wish Granter exists, I've seen it with my own eyes. And don't worry. We've managed to defeat Eidolon and his forces. I was able to fight my way into the Power Plant myself a few years ago. With your help we'll manage again.</text>
+		<text>After death of C-Conciousness a strong Psi wave was released, some people died to its energy immidiately, some turned into zombies and few, me included, had illusions of their greatest wishes. The wave was strong and went all the way to Zones borders. But you see, for some reason when it reached the border, it started returning. Going faster and faster snapping people out of the illusions. All this power then concentrated in the power plant and condensed to form the Shard. Stalkers who were nearby immidiately went to see what was happening. They found the Shard. Powerful artifact capable of showing you your most desired information you could never reach alone. These stalkers went into craze, fighting one another for the Shard, Eidolon among them. I dont know what the Shard showed him and I never will. But that day, the old stalker died and was turned into fanatic. Now Merc, we need to find the Shard. I doubt Monolithians moved it as it is too valuable and was alredy in depth of sarcophagus under the powerplant.</text>
 	</string>
 	<string id="living_legend_strelok_objective_6">
 		<text>This is insane. How do you plan to attack it?</text>
@@ -736,7 +736,7 @@
 		<text>I can't wait to see what knowledge is worth all of this.</text>
 	</string>
 	<string id="living_legend_strelok_objective_9">
-		<text>Patience. Accompany us into the depths of the Sarcophagus and you'll find many of the answers you seek in the process. When we obtain the shard, I'll reveal anything else you may wish to know. I promise.</text>
+		<text>Patience. Accompany us into the depths of the Sarcophagus and you'll find many of the answers you seek in the process. When we obtain the Shard, I'll reveal anything else you may wish to know. I promise.</text>
 	</string>
 	<string id="living_legend_strelok_objective_10">
 		<text>Fair enough. I'll go with you.</text>
@@ -746,7 +746,7 @@
 	</string>
 	
 	<string id="living_legend_strelok_answers_0">
-		<text>Alright, Strelok, I've done what you wanted. Take the shard. Your answers for mine.</text>
+		<text>Alright, Strelok, I've done what you wanted. Take the Shard. Your answers for mine.</text>
 	</string>
 	<string id="living_legend_strelok_answers_1">
 		<text>Very well. I'm grateful for your help. Ask, and I'll do my best to answer.</text>
