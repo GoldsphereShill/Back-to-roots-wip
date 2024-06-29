@@ -1,0 +1,93 @@
+--[[
+        LIFAR - Module: Guarenteed Stash Items
+
+        Original Author(s)
+          Singustromo <singustromo at disroot.org>
+
+        Edited by
+
+        License
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+          (https://creativecommons.org/licenses/by-nc-sa/4.0)
+
+        Synopsis
+          Adds guarenteed loot to stashes on the map
+
+        TODO
+          random condition not working
+          set condition / amount in config; e.g. wpn_svt40:20:50 (20-50% dur.)
+--]]
+
+-- Item properties
+item_prop_table = {
+        cond_r = { 30, 70 },
+        cond_ct = "part" , cond_cr = { 0.5, 0.75, 1 },
+        ammo = math.random(10, 30),
+}
+
+data_key = "lifar_custom_stashes"
+config = ""
+
+spawned_stash_contents = {} -- m_data
+
+function on_game_start()
+        UnregisterScriptCallback("physic_object_on_use_callback", treasure_manager.physic_object_on_use_callback)
+        RegisterScriptCallback("physic_object_on_use_callback", physic_object_on_use_callback)
+
+        RegisterScriptCallback("save_state", save_state)
+        RegisterScriptCallback("load_state", load_state)
+
+        config = ini_file_ex([[plugins\lifar_stashes\stashes.ltx]])
+end
+
+function save_state(m_data)
+        m_data[data_key] = spawned_stash_contents
+end
+
+function load_state(m_data)
+        spawned_stash_contents = m_data[data_key] or {}
+end
+
+-- output of next() is nil when table is empty
+function is_table_empty(tbl)
+        return not (tbl and next(tbl))
+end
+
+TM_UseCallback = treasure_manager.physic_object_on_use_callback
+function physic_object_on_use_callback(box, who)
+        if not IsInvbox(box) then return end -- same check as in TM func
+
+        local stash_name = box and box:name()
+        if stash_registered(stash_name) then
+                TM_UseCallback(box, who)
+                return
+        end
+
+        local items = config:collect_section(stash_name)
+	if is_table_empty(items) then
+                TM_UseCallback(box, who)
+                register_stash(stash_name)                
+                return
+        end 
+
+        -- ini:collect_section(x) as keys 
+        for item, _ in pairs(items) do 
+                printf("[LIFAR] Spawning %s in %s", item, stash_name)
+                local se_obj = alife_create_item(item, box, item_prop_table)
+        end
+
+        -- prevent loot from TM on next interaction
+        treasure_manager.release_stash_by_id(box:id())
+        treasure_manager.caches[box:id()] = false -- make box available
+
+        register_stash(stash_name)
+end
+
+function register_stash(name)
+        if not config:section_exist(name) then return end
+        spawned_stash_contents[name] = true
+end
+
+function stash_registered(name)
+        return name and spawned_stash_contents[name]
+end
