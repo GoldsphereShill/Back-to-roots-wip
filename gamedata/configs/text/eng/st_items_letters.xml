@@ -292,9 +292,11 @@
 	</string>
 	<string id="st_stash_note_1_desc">
 		<text>Barely funcioning PDA, two logs are readable.\n \n
-			  LOG:\n \n
-			  March 26 2013 5:32pm: Fuck this place and fuck Major. We are stuck at swamps with fog everywhere. Can't see shit.   \n \n
-			  March 26 2013 7:25pm: I stepped in some glowing junk and now I can't walk. I hate this place. Im all alone, stuck in a stinking swamp with nothing but old bread and machine pistol from 60s. What was that? No! GO away! NOOOO!  *dog barking and screaming*  \n \n
+			LOG:\n 
+			  March 26 2013 5:32pm: \n
+			Fuck this place and fuck Major. We are stuck at swamps with fog everywhere. Can't see shit. \n
+			  March 26 2013 7:25pm: \n
+			I stepped in some glowing junk and now I can't walk. I hate this place. Im all alone, stuck in a stinking swamp with nothing but old bread and machine pistol from 60s. What was that? No! GO away! NOOOO!  *dog barking and screaming* \n \n
 		</text>
 	</string>
 
@@ -303,9 +305,11 @@
 	</string>
 	<string id="st_stash_note_2_desc">
 		<text>Barely funcioning PDA, two logs are readable.\n \n
-			  LOG:\n \n
-			  December 13th 2010 8:13pm: Me and my brothers will soon be leaving to find the Monolith. To prove it is real! I know it is real... It gifted me this artifact to help me survive the long and exhausting trip that is before me. I will sleep here and join my brothers in the morning. We are leaving in few days so I still have time. \n \n
-			  December 14th 2010 0:47am: Mishka? What do you want? Can't you see Im sleaping? WAIT! Who are you? WHAT are you? No go away, monster! Brothers help! Arghh noo! *growls and screaming* \n \n
+			LOG: \n
+			  December 13th 2010 8:13pm: \n
+			Me and my brothers will soon be leaving to find the Monolith. To prove it is real! I know it is real... It gifted me this artifact to help me survive the long and exhausting trip that is before me. I will sleep here and join my brothers in the morning. We are leaving in few days so I still have time.\n
+			  December 14th 2010 0:47am: \n
+			Mishka? What do you want? Can't you see Im sleaping? WAIT! Who are you? WHAT are you? No go away, monster! Brothers help! Arghh noo! *growls and screaming* \n \n
 		</text>
 	</string>
 
@@ -313,7 +317,7 @@
 		<text>In memory of Bull</text>
 	</string>
 	<string id="st_stash_note_3_desc">
-		<text>Im leaving your lucky rifle here with you, it doesn't feel right for you not to have it. \n \n
+		<text>Im leaving your lucky rifle here with you, it doesn't feel right for you not to have it. \n
 			  Farewell Stalker \n \n
 			 
 		</text>
