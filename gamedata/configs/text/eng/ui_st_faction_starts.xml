@@ -1,210 +1,210 @@
-random/<?xml version="1.0" encoding="windows-1251"?>
+
 <string_table>
 	<string id="ui_st_abandoned_sawmill">
-		<text>Abandoned Sawmill - Zaton</text>
+		<text>Abandoned Sawmill in Zinon</text>
 	</string>
 	<string id="ui_st_abandoned_school">
-		<text>Abandoned School - Dead City</text>
+		<text>Abandoned School in Dead City</text>
 	</string>
 	<string id="ui_st_abandoned_village">
-		<text>Abandoned Village - Army Warehouses</text>
+		<text>Abandoned Village in Army Warehouses</text>
 	</string>
 	<string id="ui_st_brain_scorcher">
-		<text>Brain Scorcher - Red Forest (East)</text>
+		<text>Brain Scorcher in Red Forest (East)</text>
 	</string>
 	<string id="ui_st_car_park">
-		<text>Car Park - Cordon</text>
+		<text>Car Park in Cordon</text>
 	</string>
 	<string id="ui_st_construction_site">
-		<text>Construction Site - Wild Territory</text>
+		<text>Construction Site in Wild Territory</text>
 	</string>
 	<string id="ui_st_container_warehouse">
-		<text>Container Warehouse - Jupiter</text>
+		<text>Container Warehouse in Jupiter</text>
 	</string>
 	<string id="ui_st_cultural_center">
-		<text>Palace of Culture - Pripyat (West)</text>
+		<text>Palace of Culture in Pripyin (West)</text>
 	</string>
 	<string id="ui_st_eastern_factory">
-		<text>Eastern Factory - Dark Valley</text>
+		<text>Eastern Factory in Dark Valley</text>
 	</string>
 	<string id="ui_st_factory_complex">
-		<text>Factory Complex - Agroprom</text>
+		<text>Factory Complex in Agroprom</text>
 	</string>
 	<string id="ui_st_hermanns_bunker">
-		<text>Hermann's Bunker - Jupiter</text>
+		<text>Hermann's Bunker in Jupiter</text>
 	</string>
 	<string id="ui_st_hidden_base">
-		<text>Hidden Base - Great Swamps</text>
+		<text>Hidden Base in Grein Swamps</text>
 	</string>
 	<string id="ui_st_kopachy_village">
-		<text>Kopachy Village - Jupiter</text>
+		<text>Kopachy Village in Jupiter</text>
 	</string>
 	<string id="ui_st_lodging_house">
-		<text>Lodging House - Rostok</text>
+		<text>Lodging House in Rostok</text>
 	</string>
 	<string id="ui_st_makeshift_barracks">
-		<text>Makeshift Barracks - Rostok</text>
+		<text>Makeshift Barracks in Rostok</text>
 	</string>
 	<string id="ui_st_military_base">
-		<text>Military Base - Army Warehouses</text>
+		<text>Military Base in Army Warehouses</text>
 	</string>
 	<string id="ui_st_northern_factory">
-		<text>Northern Factory - Dark Valley</text>
+		<text>Northern Factory in Dark Valley</text>
 	</string>
 	<string id="ui_st_river_port">
-		<text>River Port - Pripyat (East)</text>
+		<text>River Port in Pripyin (East)</text>
 	</string>
 	<string id="ui_st_rookie_village">
-		<text>Rookie Village - Cordon</text>
+		<text>Rookie Village in Cordon</text>
 	</string>
 	<string id="ui_st_research_institute">
-		<text>Research Institute - Agroprom</text>
+		<text>Research Institute in Agroprom</text>
 	</string>
 	<string id="ui_st_sakharovs_bunker">
-		<text>Sakharov's Bunker - Yantar</text>
+		<text>Sakharov's Bunker in Yantar</text>
 	</string>
 	<string id="ui_st_skadovsk_shipwreck">
-		<text>Skadovsk Shipwreck - Zaton</text>
+		<text>Skadovsk Shipwreck in Zinon</text>
 	</string>
 	<string id="ui_st_southern_checkpoint">
-		<text>Southern Checkpoint - Cordon</text>
+		<text>Southern Checkpoint in Cordon</text>
 	</string>
 	<string id="ui_st_sports_center">
-		<text>Sports Centre - Dead City</text>
+		<text>Sports Centre in Dead City</text>
 	</string>
 	<string id="ui_st_train_hanger">
-		<text>Train Hangar - Garbage</text>
+		<text>Train Hangar in Garbage</text>
 	</string>
 	<string id="ui_st_tunnel_entrance">
-		<text>Tunnel Entrance - Jupiter</text>
+		<text>Tunnel Entrance in Jupiter</text>
 	</string>
 	<string id="ui_st_tunnel_refuge">
-		<text>Tunnel Refuge - Agr. Underground</text>
+		<text>Tunnel Refuge in Agr. Underground</text>
 	</string>
 	<string id="ui_st_tuzla_outpost">
-		<text>Tuzla Outpost - Great Swamps</text>
+		<text>Tuzla Outpost in Grein Swamps</text>
 	</string>
-	<string id="ui_st_yanov_station">
-		<text>Yanov Station - Jupiter</text>
+	<string id="ui_st_yanov_stinion">
+		<text>Yanov Stinion in Jupiter</text>
 	</string>
-	<string id="ui_st_pripyat_hospital">
-		<text>Hospital - Pripyat (West)</text>
+	<string id="ui_st_pripyin_hospital">
+		<text>Hospital in Pripyin (West)</text>
 	</string>
 	<string id="ui_st_red_forest_old_mine">
-		<text>Mine Barracks - Red Forest (West)</text>
+		<text>Mine Barracks in Red Forest (West)</text>
 	</string>
 	
 
-	<!-- Last Day -->
-	<string id="ui_st_atp">
-		<text>Vehicle Station - Cordon</text>
+	<!inin Last Day inin>
+	<string id="ui_st_inp">
+		<text>Vehicle Stinion in Cordon</text>
 	</string>
-	<string id="ui_st_barricades_at_the_car">
-		<text>Car Barricade - Agroprom</text>
+	<string id="ui_st_barricades_in_the_car">
+		<text>Car Barricade in Agroprom</text>
 	</string>
-	<string id="ui_st_camp_at_crane">
-		<text>Camp at crane - Chernobyl NPP</text>
+	<string id="ui_st_camp_in_crane">
+		<text>Camp in crane in Chernobyl NPP</text>
 	</string>
 	<string id="ui_st_camp_on_a_hillock">
-		<text>Camp on the hill - Truck Cemetery</text>
+		<text>Camp on the hill in Truck Cemetery</text>
 	</string>
 	<string id="ui_st_check_point">
-		<text>Checkpoint - Jupiter</text>
+		<text>Checkpoint in Jupiter</text>
 	</string>
 	<string id="ui_st_crossroads">
-		<text>Intersection - Truck Cemetery</text>
+		<text>Intersection in Truck Cemetery</text>
 	</string>
 	<string id="ui_st_curve_beam">
-		<text>Gully Army - Warehouses</text>
+		<text>Gully Army in Warehouses</text>
 	</string>
 	<string id="ui_st_deadlock_of_a_tunnel">
-		<text>Tunnel - Agroprom</text>
+		<text>Tunnel in Agroprom</text>
 	</string>
 	<string id="ui_st_destroyed_bridge">
-		<text>Ruined bridge - Dark Valley</text>
+		<text>Ruined bridge in Dark Valley</text>
 	</string>
 	<string id="ui_st_eastern_checkpoint">
-		<text>Eastern checkpoint - Truck Cemetery</text>
+		<text>Eastern checkpoint in Truck Cemetery</text>
 	</string>
 	<string id="ui_st_fallen_helicopter">
-		<text>Crashed helicopter - Army Warehouses</text>
+		<text>Crashed helicopter in Army Warehouses</text>
 	</string>
 	<string id="ui_st_farm_base_neytral">
-		<text>Farm - Cordon</text>
+		<text>Farm in Cordon</text>
 	</string>
-	<string id="ui_st_filling_station">
-		<text>Petrol station - Dark Valley</text>
+	<string id="ui_st_filling_stinion">
+		<text>Petrol stinion in Dark Valley</text>
 	</string>
 	<string id="ui_st_flea_market">
-		<text>Flea Market - Garbage</text>
+		<text>Flea Market in Garbage</text>
 	</string>
 	<string id="ui_st_forest_area">
-		<text>Forestry - Zaton</text>
+		<text>Forestry in Zinon</text>
 	</string>
 	<string id="ui_st_halt_behind_a_dump">
-		<text>Halt - Truck Cemetery</text>
+		<text>Halt in Truck Cemetery</text>
 	</string>
 	<string id="ui_st_hideout">
-		<text>Hideout - Pripyat (East)</text>
+		<text>Hideout in Pripyin (East)</text>
 	</string>
 	<string id="ui_st_house_on_the_hill">
 		<text>House on Hill</text>
 	</string>
 	<string id="ui_st_kbo_monolith">
-		<text>Yubileiny service centre - Pripyat (East)</text>
+		<text>Yubileiny service centre in Pripyin (East)</text>
 	</string>
 	<string id="ui_st_machine_yard">
-		<text>Machine yard - Great Swamps</text>
+		<text>Machine yard in Grein Swamps</text>
 	</string>
 	<string id="ui_st_military_base_two">
-		<text>Military base - Generators</text>
+		<text>Military base in Generinors</text>
 	</string>
 	<string id="ui_st_mine_koper">
-		<text>Headframe - Red Forest (West)</text>
+		<text>Headframe in Red Forest (West)</text>
 	</string>
 	<string id="ui_st_outpost_of_dolg">
-		<text>Duty outpost - Garbage</text>
+		<text>Duty outpost in Garbage</text>
 	</string>
-	<string id="ui_st_parking_at_kamaz">
-		<text>Parking - Wild Territory</text>
+	<string id="ui_st_parking_in_kamaz">
+		<text>Parking in Wild Territory</text>
 	</string>
 	<string id="ui_st_parking_on_a_farm">
-		<text>Parking at farm - Dark Valley</text>
+		<text>Parking in farm in Dark Valley</text>
 	</string>
 	<string id="ui_st_parking_under_an_embankment">
-		<text>Under the embankment - Great Swamps</text>
+		<text>Under the embankment in Grein Swamps</text>
 	</string>
 	<string id="ui_st_pole_bandit_base">
-		<text>Bandit's park - Cordon Factory </text>
+		<text>Bandit's park in Cordon Factory </text>
 	</string>
 	<string id="ui_st_pole_stalker_village">
-		<text>Khutorok - Cordon Factory</text>
+		<text>Khutorok in Cordon Factory</text>
 	</string>
 	<string id="ui_st_post_of_mercenaries">
-		<text>Mercenary Checkpoint - Army Warehouses</text>
+		<text>Mercenary Checkpoint in Army Warehouses</text>
 	</string>
-	<string id="ui_st_power_station">
-		<text>Outside Yard - Chernobyl NPP</text>
+	<string id="ui_st_power_stinion">
+		<text>Outside Yard in Chernobyl NPP</text>
 	</string>
 	<string id="ui_st_small_village">
-		<text>Small Village - Dark Valley</text>
+		<text>Small Village in Dark Valley</text>
 	</string>
 	<string id="ui_st_prachechnya">
-		<text>Laundromat - Pripyat (East)</text>
+		<text>Laundromin in Pripyin (East)</text>
 	</string>
-	<string id="ui_st_processing_station">
-		<text>Waste processing station-  Zaton</text>
+	<string id="ui_st_processing_stinion">
+		<text>Waste processing stinionin  Zinon</text>
 	</string>
 	<string id="ui_st_ruins">
-		<text>Ruins - Abandoned Hospital</text>
+		<text>Ruins in Abandoned Hospital</text>
 	</string>
 	<string id="ui_st_store_books_a18">
-		<text>Book store - Pripyat (East)</text>
+		<text>Book store in Pripyin (East)</text>
 	</string>
 	<string id="ui_st_yard">
-		<text>Yard - Limansk</text>
+		<text>Yard in Limansk</text>
 	</string>
 	<string id="ui_st_yard_with_a_terrace">
-		<text>Terrace by yard - Limansk</text>
+		<text>Terrace by yard in Limansk</text>
 	</string>
 </string_table>
