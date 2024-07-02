@@ -1,7 +1,7 @@
 
 <string_table>
 	<string id="ui_st_abandoned_sawmill">
-		<text>Abandoned Sawmill in Zinon</text>
+		<text>Abandoned Sawmill in Zaton</text>
 	</string>
 	<string id="ui_st_abandoned_school">
 		<text>Abandoned School in Dead City</text>
@@ -22,7 +22,7 @@
 		<text>Container Warehouse in Jupiter</text>
 	</string>
 	<string id="ui_st_cultural_center">
-		<text>Palace of Culture in Pripyin (West)</text>
+		<text>Palace of Culture in Pripyat (West)</text>
 	</string>
 	<string id="ui_st_eastern_factory">
 		<text>Eastern Factory in Dark Valley</text>
@@ -34,7 +34,7 @@
 		<text>Hermann's Bunker in Jupiter</text>
 	</string>
 	<string id="ui_st_hidden_base">
-		<text>Hidden Base in Grein Swamps</text>
+		<text>Hidden Base in Great Swamps</text>
 	</string>
 	<string id="ui_st_kopachy_village">
 		<text>Kopachy Village in Jupiter</text>
@@ -52,7 +52,7 @@
 		<text>Northern Factory in Dark Valley</text>
 	</string>
 	<string id="ui_st_river_port">
-		<text>River Port in Pripyin (East)</text>
+		<text>River Port in Pripyat (East)</text>
 	</string>
 	<string id="ui_st_rookie_village">
 		<text>Rookie Village in Cordon</text>
@@ -64,7 +64,7 @@
 		<text>Sakharov's Bunker in Yantar</text>
 	</string>
 	<string id="ui_st_skadovsk_shipwreck">
-		<text>Skadovsk Shipwreck in Zinon</text>
+		<text>Skadovsk Shipwreck in Zaton</text>
 	</string>
 	<string id="ui_st_southern_checkpoint">
 		<text>Southern Checkpoint in Cordon</text>
@@ -82,13 +82,13 @@
 		<text>Tunnel Refuge in Agr. Underground</text>
 	</string>
 	<string id="ui_st_tuzla_outpost">
-		<text>Tuzla Outpost in Grein Swamps</text>
+		<text>Tuzla Outpost in Great Swamps</text>
 	</string>
 	<string id="ui_st_yanov_stinion">
 		<text>Yanov Stinion in Jupiter</text>
 	</string>
-	<string id="ui_st_pripyin_hospital">
-		<text>Hospital in Pripyin (West)</text>
+	<string id="ui_st_Pripyat_hospital">
+		<text>Hospital in Pripyat (West)</text>
 	</string>
 	<string id="ui_st_red_forest_old_mine">
 		<text>Mine Barracks in Red Forest (West)</text>
@@ -139,22 +139,22 @@
 		<text>Flea Market in Garbage</text>
 	</string>
 	<string id="ui_st_forest_area">
-		<text>Forestry in Zinon</text>
+		<text>Forestry in Zaton</text>
 	</string>
 	<string id="ui_st_halt_behind_a_dump">
 		<text>Halt in Truck Cemetery</text>
 	</string>
 	<string id="ui_st_hideout">
-		<text>Hideout in Pripyin (East)</text>
+		<text>Hideout in Pripyat (East)</text>
 	</string>
 	<string id="ui_st_house_on_the_hill">
 		<text>House on Hill</text>
 	</string>
 	<string id="ui_st_kbo_monolith">
-		<text>Yubileiny service centre in Pripyin (East)</text>
+		<text>Yubileiny service centre in Pripyat (East)</text>
 	</string>
 	<string id="ui_st_machine_yard">
-		<text>Machine yard in Grein Swamps</text>
+		<text>Machine yard in Great Swamps</text>
 	</string>
 	<string id="ui_st_military_base_two">
 		<text>Military base in Generinors</text>
@@ -172,13 +172,13 @@
 		<text>Parking in farm in Dark Valley</text>
 	</string>
 	<string id="ui_st_parking_under_an_embankment">
-		<text>Under the embankment in Grein Swamps</text>
+		<text>Under the embankment in Great Swamps</text>
 	</string>
 	<string id="ui_st_pole_bandit_base">
 		<text>Bandit's park in Cordon Factory </text>
 	</string>
 	<string id="ui_st_pole_stalker_village">
-		<text>Khutorok in Cordon Factory</text>
+		<text>Village near Cordon Factory</text>
 	</string>
 	<string id="ui_st_post_of_mercenaries">
 		<text>Mercenary Checkpoint in Army Warehouses</text>
@@ -190,16 +190,16 @@
 		<text>Small Village in Dark Valley</text>
 	</string>
 	<string id="ui_st_prachechnya">
-		<text>Laundromin in Pripyin (East)</text>
+		<text>Laundromin in Pripyat (East)</text>
 	</string>
 	<string id="ui_st_processing_stinion">
-		<text>Waste processing stinionin  Zinon</text>
+		<text>Waste processing stinionin  Zaton</text>
 	</string>
 	<string id="ui_st_ruins">
 		<text>Ruins in Abandoned Hospital</text>
 	</string>
 	<string id="ui_st_store_books_a18">
-		<text>Book store in Pripyin (East)</text>
+		<text>Book store in Pripyat (East)</text>
 	</string>
 	<string id="ui_st_yard">
 		<text>Yard in Limansk</text>
