@@ -30,3 +30,4 @@ Campire Healing: https://www.moddb.com/mods/stalker-anomaly/addons/campfire-heal
 
 -Optional:
 Semi Radiant AI: https://www.moddb.com/mods/stalker-anomaly/addons/semi-radiant-ai-01-dltx-required
+Spatial Anomalies Restored: https://www.moddb.com/mods/stalker-anomaly/addons/spatial-anomalies-10
