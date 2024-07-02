@@ -327,8 +327,18 @@
 		<text>Note of Clear Sky member</text>
 	</string>
 	<string id="st_stash_note_4_desc">
-		<text>We are leaving for North. Might as well leave my NBC suit here, I will need ballistic protection more anyways. Hopefully I will make it back here. \n \n
+		<text>We are leaving for North. Might as well leave my NBC suit here, I will need ballistic protection more anyways. Hopefully I will make it back here. 
 			 
 		</text>
 	</string>
+
+		<string id="st_stash_note_4_name">
+		<text>Note for Gloomy</text>
+	</string>
+	<string id="st_stash_note_4_desc">
+		<text>Gloomy I moved our stash to attic of the elevator control building at forestry, feels much safer than this old bus. \n I also left some medkits and food there in case of need. \n Hope to see you soon, take care buddy. \n -Duster \n \n
+			 
+		</text>
+	</string>
+
 </string_table>
