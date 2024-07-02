@@ -12,23 +12,28 @@
 
         Synopsis
           Adds guarenteed loot to stashes on the map
-
-        TODO
-          random condition not working
-          set condition / amount in config; e.g. wpn_svt40:20:50 (20-50% dur.)
+          Configurable via LTX, including item condition
 --]]
 
--- Item properties
-item_prop_table = {
-        cond_r = { 30, 70 },
-        cond_ct = "part" , cond_cr = { 0.5, 0.75, 1 },
-        ammo = math.random(10, 30),
-}
+DEBUG = true
+LOGGING_PREFIX = "[LIFAR]"
 
 data_key = "lifar_custom_stashes"
 config = ""
 
 spawned_stash_contents = {} -- m_data
+
+function log(message, ...)
+        if not DEBUG then return end
+
+        local args = {...}
+        local output = string.format("%s %s", LOGGING_PREFIX, message)
+        printf(output, unpack(args))
+end
+
+---------------------
+--    Callbacks    --
+---------------------
 
 function on_game_start()
         UnregisterScriptCallback("physic_object_on_use_callback", treasure_manager.physic_object_on_use_callback)
@@ -37,7 +42,29 @@ function on_game_start()
         RegisterScriptCallback("save_state", save_state)
         RegisterScriptCallback("load_state", load_state)
 
+        if DEBUG then
+                RegisterScriptCallback("actor_on_first_update", aofu)
+        end
+
         config = ini_file_ex([[plugins\lifar_stashes\stashes.ltx]])
+end
+
+function aofu()
+        if (not DEBUG) then return end
+
+        for i = 1, 65534 do
+                local se_obj = alife_object(i)
+
+                if se_obj then
+                        local stash_name = se_obj:name()
+                        local hash = hash_objectinfo(se_obj)
+
+                        if string.find(stash_name, "inventory_box_") or string.find(stash_name, "tb_stsh_") then
+                                level.map_add_object_spot_ser(se_obj.id,
+                                        "treasure_unique", "TB's with ID #" .. hash)
+                        end
+                end
+        end
 end
 
 function save_state(m_data)
@@ -48,46 +75,224 @@ function load_state(m_data)
         spawned_stash_contents = m_data[data_key] or {}
 end
 
--- output of next() is nil when table is empty
-function is_table_empty(tbl)
-        return not (tbl and next(tbl))
-end
-
 TM_UseCallback = treasure_manager.physic_object_on_use_callback
 function physic_object_on_use_callback(box, who)
         if not IsInvbox(box) then return end -- same check as in TM func
 
         local stash_name = box and box:name()
-        if stash_registered(stash_name) then
+        local hash = hash_objectinfo(box)
+
+        log("Stash name is '%s' (#%s)", stash_name or "N/A", hash or "ERR")
+
+        if stash_registered(hash) then
                 TM_UseCallback(box, who)
                 return
         end
 
-        local items = config:collect_section(stash_name)
+        local items, items_by_hash = config:collect_section(stash_name),
+                config:collect_section(hash)
+
+        items = (is_table_empty(items)) and items_by_hash or items
+
 	if is_table_empty(items) then
                 TM_UseCallback(box, who)
-                register_stash(stash_name)                
+                register_stash(hash) -- prevent subsequent ini calls
                 return
-        end 
-
-        -- ini:collect_section(x) as keys 
-        for item, _ in pairs(items) do 
-                printf("[LIFAR] Spawning %s in %s", item, stash_name)
-                local se_obj = alife_create_item(item, box, item_prop_table)
         end
 
-        -- prevent loot from TM on next interaction
-        treasure_manager.release_stash_by_id(box:id())
-        treasure_manager.caches[box:id()] = false -- make box available
+        -- ini:collect_section(x) as keys 
+        for item_definition, _ in pairs(items) do
+                local fields = {}
+                for x in (item_definition .. ":"):gmatch("([^:]*):") do
+                        table.insert(fields, x)
+                end
 
-        register_stash(stash_name)
+                local item_sec, cond_lower, cond_upper = fields[1],
+                        tonumber(fields[2]), tonumber(fields[3])
+
+                if not (item_sec and ini_sys:section_exist(item_sec)) then
+                        log("Section '%s' does not exist!", item_sec)
+                        goto next_item_def
+                end
+
+                local condition = (cond_lower and cond_upper)
+                        and math.random(cond_lower, cond_upper)
+                        or cond_lower
+
+                local max_uses = SYS_GetParam(2, item_sec, "max_uses", 0)
+
+                if max_uses == 0 then -- item using condition
+                        log("Spawning %s (%s%) in %s (#%s)",
+                                item_sec, condition or 100, stash_name, hash)
+
+                        condition = clamp(condition and (condition / 100) or 1, 0, 1)
+                else
+                        clamp(condition, 1, max_uses)
+                        log("Spawning %s in %s (#%s) with %s uses",
+                                item_sec, stash_name, hash, condition)
+                end
+
+                local se_obj
+                if condition < 1 then -- need to set condition
+                        se_obj = create_item_with_condition(box, item_sec, condition)
+                else
+                        se_obj = alife_create_item(item_sec, box)
+
+                        if max_uses > 0 then -- item with uses
+                                timed_call(64, set_uses_by_id,
+                                se_obj and se_obj.id, condition)
+                        end
+                end
+
+                if not (se_obj and se_obj.id) then
+                        log("Unable to spawn item '%s'", item_sec)
+                        goto next_item_def
+                end
+
+                :: next_item_def ::
+        end
+
+        register_stash(hash)
+        TM_UseCallback(box, who)
 end
 
-function register_stash(name)
-        if not config:section_exist(name) then return end
-        spawned_stash_contents[name] = true
+----------------------------
+--    Helper functions    --
+----------------------------
+
+function register_stash(index)
+        spawned_stash_contents[index] = true
 end
 
-function stash_registered(name)
-        return name and spawned_stash_contents[name]
+function stash_registered(index)
+        return spawned_stash_contents[index]
+end
+
+function hash_objectinfo(obj)
+        if not obj then return end
+
+        local pos, gvid
+
+        if (type(obj.id) == "function") then -- check, if online
+                pos = obj:position()
+                gvid = obj:game_vertex_id()
+        elseif obj.id then
+                pos = obj.position
+                gvid = obj.m_game_vertex_id
+        else
+                callstack()
+                return
+        end
+
+        local stash_level = alife():level_name(game_graph():vertex(gvid):level_id())
+
+        -- shorten it because of crc16_xmodem
+        local stash_map = stash_level and txr_routes.get_map(stash_level)
+
+        local pos_str = string.format("%s%s%s",
+                stash_map,
+                math.floor(pos.x),
+                math.floor(pos.y))
+
+        return libhash_crc16.CRC16_XMODEM(pos_str)
+end
+
+-- Taken from death_manager
+function create_item_with_condition(box, sec, condition)
+        if not (box and sec and condition) then return end
+
+	-- create server object without spawning the item
+	local se_item = alife_create(sec, box:position(),
+                box:level_vertex_id(), box:game_vertex_id(), box:id(), false)
+
+	-- read packet data, there are different functions for different items classes,
+        -- for outfits get_item_data, parses packet data into lua table
+	-- if you don't know what kind of object you are parsing you
+        -- can just use utils_stpk.get_object_data and utils_stpk.set_object_data
+	local data = utils_stpk.get_item_data(se_item)
+        if not data then return end
+
+	-- item packets contain condition value among other things
+	data.condition = condition
+
+	-- convert table to packet and submit it to server
+	utils_stpk.set_item_data(data, se_item)
+
+	-- actually spawn the modified item
+	alife():register(se_item)
+
+        return se_item
+end
+
+-- Waits for se_obj to become online and sets it's remaining uses
+-- @id                  se_obj id
+-- @uses                integer > 0
+-- @returns             true when obj online
+function set_uses_by_id(id, uses)
+        if not (id and uses and uses > 0) then return true end
+
+        local obj = get_object_by_id(id) -- wait for it to become online
+        if not obj then return end
+
+        local sec = obj:section()
+        local max_uses = SYS_GetParam(2, sec, "max_uses", 0)
+
+        if (max_uses > 1 and uses < max_uses) then
+                obj:set_remaining_uses(uses)
+        end
+
+        return true
+end
+
+---------------------------
+--    General Purpose    --
+---------------------------
+
+-- output of next() is nil when table is empty
+function is_table_empty(tbl)
+        return not (tbl and next(tbl))
+end
+
+-- Repeatedly calls functor
+-- Time should be declared in milliseconds
+function timed_call(delay, functor, ...)
+        if not functor then return end
+        local args = {...}
+
+        -- We also delay first execution
+        local throttled_func = throttle(delay, true, functor, unpack(args))
+        if not throttled_func then return end
+
+        -- Calls functor every game tick (approx. 16-17 ms)
+        AddUniqueCall(throttled_func)
+end
+
+-- Wrapper to throttle function execution with time delay
+-- Modified derivative from modded exes
+-- @delay               number (milliseconds)
+-- @delay_first_call    boolean
+-- @func                functor
+-- @vararg              functor-parameters
+-- @returns             functor
+function throttle(delay, delay_first_call, functor, ...)
+        if not functor then return end
+        local args = {...}
+
+        if not (delay and delay > (GAMETICK_DURATION or 16)) then
+                return function()
+                        return functor(unpack(args))
+                end
+        end
+
+        local TimeGlobal = time_global
+        local tg_threshold = (delay_first_call)
+                and TimeGlobal() + delay or 0
+
+        return function()
+                local tg = TimeGlobal()
+                if (tg_threshold +1) > tg then return end
+                tg_threshold = tg + delay
+
+                return functor(unpack(args))
+        end
 end
