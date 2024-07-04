@@ -20,16 +20,16 @@
 		</frame_front>
 		
 		<!-- Static Text -->
-		<cap_character x="8" y="5" width="105" height="22">
+		<cap_character x="37" y="10" width="105" height="22">
 			<text r="250" g="250" b="250" font="letterica18"  align="c">st_mm_new_game_character</text>
 		</cap_character>
-		<cap_options x="8" y="391" width="105" height="22">
+		<cap_options x="80" y="400" width="105" height="22">
 			<text r="250" g="250" b="250" font="letterica18"  align="c">st_mm_new_game_options</text>
 		</cap_options>
-		<cap_inventory x="372" y="5" width="105" height="22">
+		<cap_inventory x="380" y="10" width="105" height="22">
 			<text r="250" g="250" b="250" font="letterica18"  align="c">st_mm_new_game_inventory</text>
 		</cap_inventory>
-		<cap_loadout x="548" y="5" width="105" height="22">
+		<cap_loadout x="554" y="10" width="105" height="22">
 			<text r="250" g="250" b="250" font="letterica18"  align="c">st_mm_new_game_loadout</text>
 		</cap_loadout>
 		
@@ -86,7 +86,7 @@
 		<cont_loadout x="552" y="38" width="157" height="300" stretch="1"/>
 		
 		<!-- Main buttons -->
-		<btn_faction x="3" y="346" width="68" height="21" stretch="1">
+		<btn_faction x="5" y="346" width="68" height="21" stretch="1">
 			<text r="150" g="150" b="150" font="letterica16" align="c">st_mm_btn_new_game_faction</text>
 			<texture>ui_inGame2_button</texture>
 		</btn_faction>
