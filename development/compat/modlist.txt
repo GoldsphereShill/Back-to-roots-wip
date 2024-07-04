@@ -34,3 +34,5 @@ XR-danger script fixed: https://www.moddb.com/mods/stalker-anomaly/addons/fixed-
 Semi Radiant AI: https://www.moddb.com/mods/stalker-anomaly/addons/semi-radiant-ai-01-dltx-required
 Spatial Anomalies Restored: https://www.moddb.com/mods/stalker-anomaly/addons/spatial-anomalies-10
 Search Logic: https://www.moddb.com/mods/stalker-anomaly/addons/search-logic
+Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
+SoC style artifacts: https://www.moddb.com/mods/stalker-anomaly/addons/soc-style-artefacts-dltx
