@@ -26,6 +26,7 @@ Dialog Dynamic UI: https://www.moddb.com/mods/stalker-anomaly/addons/dialog-dyna
 Faction Identification UI: https://www.moddb.com/mods/stalker-anomaly/addons/crooks-faction-identification-ui
 Hit Impulse Restored: https://www.moddb.com/mods/stalker-anomaly/addons/hit-impulse-restore
 Sleep Timelapse: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-required-sleep-timelapse-01
+Cozy Campfires: https://www.moddb.com/mods/stalker-anomaly/addons/cozy-campfires
 Campire Healing: https://www.moddb.com/mods/stalker-anomaly/addons/campfire-healing-and-designated-savepoint-indicator
 XR-danger script fixed: https://www.moddb.com/mods/stalker-anomaly/addons/fixed-xr-danger
 
