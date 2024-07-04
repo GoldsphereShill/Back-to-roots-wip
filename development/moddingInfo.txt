@@ -98,3 +98,7 @@ gun_oil, gun_oil_ru, gun_oil_ru_d  --  combined into gun_oil
 ***CRAFTING REQUIRES AT LEAST 2 ITEMS TO EXIST IN THE CONFIG FOR SOME REASON. IF THERE IS ONLY 1 ITEM IT WILL NOT APPEAR IN THE UI***
 - Solution to this is to use a placeholder item (EXAMPLE: x_ammo_9x18_pm = 5, recipe_ammo_0, ammo_9x18_fmj,2,placeholder,0)
 - The item named "placeholder" doesnt exist in any way, but the game just needs it to load the one item recipe properly.
+
+
+[IMPORTANT LINKS]
+https://stepmodifications.org/wiki/Guide:FOMOD/ModuleConfigXML
