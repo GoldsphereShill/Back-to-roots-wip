@@ -5,6 +5,7 @@ New-Item -Name "builds\Less Items for Anomaly REWORK" -ItemType Directory #Temp 
 New-Item -Name "builds\Less Items for Anomaly REWORK\00 Main" -ItemType Directory #Temp folder 2
 Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK\00 Main" -Recurse #Copying gamedata
 Copy-Item -Path "..\readme.txt" -Destination "builds\Less Items for Anomaly REWORK\readme.txt" #Readme
+Copy-Item -Path "..\fomod" -Destination "builds\Less Items for Anomaly REWORK\" -Recurse #Better Installing
 PAUSE
 ##Deleting some copied files
 #Items
