@@ -84,8 +84,8 @@
 	<string id="ui_st_tuzla_outpost">
 		<text>Tuzla Outpost in Great Swamps</text>
 	</string>
-	<string id="ui_st_yanov_stinion">
-		<text>Yanov Stinion in Jupiter</text>
+	<string id="ui_st_yanov_station">
+		<text>Yanov Station in Jupiter</text>
 	</string>
 	<string id="ui_st_Pripyat_hospital">
 		<text>Hospital in Pripyat (West)</text>
@@ -97,7 +97,7 @@
 
 	<!inin Last Day inin>
 	<string id="ui_st_inp">
-		<text>Vehicle Stinion in Cordon</text>
+		<text>Vehicle Station in Cordon</text>
 	</string>
 	<string id="ui_st_barricades_in_the_car">
 		<text>Car Barricade in Agroprom</text>
@@ -132,8 +132,8 @@
 	<string id="ui_st_farm_base_neytral">
 		<text>Farm in Cordon</text>
 	</string>
-	<string id="ui_st_filling_stinion">
-		<text>Petrol stinion in Dark Valley</text>
+	<string id="ui_st_filling_station">
+		<text>Petrol Station in Dark Valley</text>
 	</string>
 	<string id="ui_st_flea_market">
 		<text>Flea Market in Garbage</text>
@@ -183,7 +183,7 @@
 	<string id="ui_st_post_of_mercenaries">
 		<text>Mercenary Checkpoint in Army Warehouses</text>
 	</string>
-	<string id="ui_st_power_stinion">
+	<string id="ui_st_power_station">
 		<text>Outside Yard in Chernobyl NPP</text>
 	</string>
 	<string id="ui_st_small_village">
@@ -192,8 +192,8 @@
 	<string id="ui_st_prachechnya">
 		<text>Laundromin in Pripyat (East)</text>
 	</string>
-	<string id="ui_st_processing_stinion">
-		<text>Waste processing stinionin  Zaton</text>
+	<string id="ui_st_processing_station">
+		<text>Waste processing Station in  Zaton</text>
 	</string>
 	<string id="ui_st_ruins">
 		<text>Ruins in Abandoned Hospital</text>
