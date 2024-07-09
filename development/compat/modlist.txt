@@ -37,3 +37,13 @@ Spatial Anomalies Restored: https://www.moddb.com/mods/stalker-anomaly/addons/sp
 Search Logic: https://www.moddb.com/mods/stalker-anomaly/addons/search-logic
 Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
 SoC style artifacts: https://www.moddb.com/mods/stalker-anomaly/addons/soc-style-artefacts-dltx
+Undercover Communications: https://www.moddb.com/mods/stalker-anomaly/addons/151-banjajis-undercover-communications
+
+-Perhaps: (Ass mods suggested by andermann)
+Battery Warning: https://www.moddb.com/mods/stalker-anomaly/addons/batterywarning
+Xenotech Behavior: https://www.moddb.com/mods/stalker-anomaly/addons/xenotech-behavior
+RF Reworked: https://www.moddb.com/mods/stalker-anomaly/addons/151152-coverdraves-reworked-rf-receiver-beeps
+Include lower tiers of toolkits: https://www.moddb.com/mods/stalker-anomaly/addons/high-level-toolkits-include-low-level-toolkits
+Defended Lab X-10: https://www.moddb.com/mods/stalker-anomaly/addons/defended-lab-x-10
+Ledge Grabbing: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-ledge-grabbing-mantling
+Less screen shake on damage: https://www.moddb.com/mods/stalker-anomaly/addons/no-camera-animations-when-injured
