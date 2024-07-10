@@ -1,25 +1,25 @@
 
-[up_sect_firsta_sunrise_1]:up_sect_prop_stamina_1; up_sect_prop_armor_5
+[up_sect_firsta_sunrise_1]:up_sect_prop_armor_5
 
-[up_sect_firstc_sunrise_1]:up_sect_prop_wound_5; done
+[up_sect_firstc_sunrise_1]:up_sect_prop_wound_5
 
-[up_sect_firstd_sunrise_1]:up_sect_prop_armor_5; up_sect_prop_stamina_1
+[up_sect_firstd_sunrise_1]:up_sect_prop_stamina_1
 
-[up_sect_firste_sunrise_1]:up_sect_prop_durability_3; up_sect_prop_armor_5
+[up_sect_firste_sunrise_1]:up_sect_prop_armor_5
 
-[up_sect_secona_sunrise_1]:up_sect_prop_weight_3; done
+[up_sect_secona_sunrise_1]:up_sect_prop_weight_3
 
 [up_sect_seconc_sunrise_1]:up_sect_prop_burn_5
 
-[up_sect_second_sunrise_1]:up_sect_prop_chem_5; done
+[up_sect_second_sunrise_1]:up_sect_prop_chem_5
 
-[up_sect_secone_sunrise_1]:up_sect_prop_shock_10; done
+[up_sect_secone_sunrise_1]:up_sect_prop_shock_10
 
-[up_sect_seconf_sunrise_1]:up_sect_prop_radiation_10; done
+[up_sect_seconf_sunrise_1]:up_sect_prop_radiation_10
 
-[up_sect_thirda_sunrise_1]:up_sect_prop_arty_1; up_sect_prop_radiation_5
+[up_sect_thirda_sunrise_1]:up_sect_prop_radiation_5
 
-[up_sect_thirdc_sunrise_1]:up_sect_prop_bleed_1; up_sect_prop_health_1
+[up_sect_thirdc_sunrise_1]:up_sect_prop_health_1
 
 [up_sect_thirdd_sunrise_1]:up_sect_prop_carryweight_5
 
@@ -50,11 +50,11 @@ prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
 
-property                = prop_power
+property                = prop_armor
 
-name                    = st_up_stamina_1_name
-description             = st_up_stamina_1_descr
-icon                    = ui_inGame2_upgrade_outfit_stamins_2
+name                    = st_up_armor_1_name
+description             = st_up_armor_1_descr
+icon                    = ui_inGame2_upgrade_outfit_armour_1
 
 [up_firstc_sunrise_1]
 scheme_index            = 1, 0
@@ -90,11 +90,11 @@ prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
 
-property                = prop_durability
+property                = prop_power
 
-name                    = st_up_durability_2_name
-description             = st_up_durability_2_descr
-icon                    = ui_inGame2_upgrade_outfit_durability_2
+name                    = st_up_stamina_1_name
+description             = st_up_stamina_1_descr
+icon                    = ui_inGame2_upgrade_outfit_stamins_1
 
 [up_firste_sunrise_1]
 scheme_index            = 2, 0
@@ -230,11 +230,11 @@ prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
 
-property                = prop_artefact
+property                = prop_radio
 
-name                    = st_up_arty_1_name
-description             = st_up_arty_1_descr
-icon                    = ui_inGame2_upgrade_outfit_arty_1
+name                    = st_up_rad_1_name
+description             = st_up_rad_1_descr
+icon                    = ui_inGame2_upgrade_outfit_rad_2
 
 [up_thirdc_sunrise_1]
 scheme_index            = 1, 4
@@ -250,11 +250,11 @@ prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
 
-property                = prop_restore_bleeding
+property                = prop_restore_health
 
-name                    = st_up_bleed_1_name
-description             = st_up_bleed_1_descr
-icon                    = ui_inGame2_upgrade_outfit_bleed_1
+name                    = st_up_health_1_name
+description             = st_up_health_1_descr
+icon                    = ui_inGame2_upgrade_outfit_health_1
 
 [up_thirdd_sunrise_1]
 scheme_index            = 1, 5
