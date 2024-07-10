@@ -102,3 +102,4 @@ gun_oil, gun_oil_ru, gun_oil_ru_d  --  combined into gun_oil
 
 [IMPORTANT LINKS]
 https://stepmodifications.org/wiki/Guide:FOMOD/ModuleConfigXML
+https://igigog.github.io/anomaly-modding-book
