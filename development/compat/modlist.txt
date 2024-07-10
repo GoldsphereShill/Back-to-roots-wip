@@ -47,3 +47,7 @@ Include lower tiers of toolkits: https://www.moddb.com/mods/stalker-anomaly/addo
 Defended Lab X-10: https://www.moddb.com/mods/stalker-anomaly/addons/defended-lab-x-10
 Ledge Grabbing: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-ledge-grabbing-mantling
 Less screen shake on damage: https://www.moddb.com/mods/stalker-anomaly/addons/no-camera-animations-when-injured
+Global Map Rework: https://www.moddb.com/mods/stalker-anomaly/addons/global-map-rework
+Companions dont Die: https://www.moddb.com/mods/stalker-anomaly/addons/companions-dont-die
+Interactive Pda (gamma level bullshitery): https://www.moddb.com/mods/stalker-anomaly/addons/interactive-pda-01
+Exo Servomotor Sounds: https://www.moddb.com/mods/stalker-anomaly/addons/exo-servomotor-sounds
