@@ -52,14 +52,14 @@ end
 function aofu()
         if (not DEBUG) then return end
 
-        for i = 1, 65534 do
+        for i = 1, 200000 do
                 local se_obj = alife_object(i)
 
                 if se_obj then
                         local stash_name = se_obj:name()
                         local hash = hash_objectinfo(se_obj)
 
-                        if string.find(stash_name, "inventory_box_") or string.find(stash_name, "tb_stsh_") then
+                        if string.find(stash_name, "inventory_box_") or string.find(stash_name, "tb_stsh_") or string.find(stash_name, "treasure_") then
                                 level.map_add_object_spot_ser(se_obj.id,
                                         "treasure_unique", "TB's with ID #" .. hash)
                         end
