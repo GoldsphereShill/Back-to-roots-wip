@@ -51,3 +51,7 @@ Global Map Rework: https://www.moddb.com/mods/stalker-anomaly/addons/global-map-
 Companions dont Die: https://www.moddb.com/mods/stalker-anomaly/addons/companions-dont-die
 Interactive Pda (gamma level bullshitery): https://www.moddb.com/mods/stalker-anomaly/addons/interactive-pda-01
 Exo Servomotor Sounds: https://www.moddb.com/mods/stalker-anomaly/addons/exo-servomotor-sounds
+Controller Overhaul: https://www.moddb.com/mods/stalker-anomaly/addons/arszis-psy-and-controller-overhaul
+Burer Overhaul: https://www.moddb.com/mods/stalker-anomaly/addons/arszis-burer-overhaul
+Upgradable Backpacks: https://www.moddb.com/mods/stalker-anomaly/addons/upgrades-for-backpacks-v10-151152
+Expseva suit: https://www.moddb.com/mods/stalker-anomaly/addons/exoseva-cbse-outfits-12-for-rc22
