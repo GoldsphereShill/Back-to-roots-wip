@@ -7,6 +7,7 @@ scheduled               = off              	; option for ALife Simulator
 cform                   = skeleton
 class                   = WP_SVD
 description				= st_wpn_ptrs_descr
+parent_section                           = wpn_ptrs
 
 
 ; Cammo preset VERY LOW
@@ -31,6 +32,11 @@ ef_weapon_type			= 11
 
 default_to_ruck         = false
 sprint_allowed       	= false
+
+
+kind                    = w_sniper
+repair_type             = rifle_7
+
 
 ;-------------------------------------------------------------------------------
 cost					= 70920
@@ -179,7 +185,7 @@ ph_mass			 			= 3
 
 ;addons
 scope_status			= 1
-silencer_status			= 0
+silencer_status			= 2
 grenade_launcher_status		= 0
 
 zoom_enabled				= true
@@ -191,7 +197,7 @@ scope_name 					= wpn_addon_scope
 scope_x 						= 60
 scope_y 						= -2
 
-silencer_name           = wpn_addon_silencer_1143x23    ; section name for the attachable silencer
+silencer_name           = wpn_sil_kzrzp; wpn_addon_silencer_1143x23    ; section name for the attachable silencer
 silencer_x              = 270                ; offset in inventory icon
 silencer_y              = -12
 
