@@ -58,7 +58,7 @@ rpm_empty_click         = 90
 use_aim_bullet		= false		;�������������� �� ������ ������ ����
 time_to_aim		= 1.0
 
-hud                                      = wpn_mk14_hud
+hud                                      = wpn_mk14_hud ;AAAAAAAAAAAAAAAAAAAAAAAAAA
 
 misfire_probability        	= 0.005
 misfire_start_condition		= 0.875
@@ -156,13 +156,13 @@ fire_point           	= 0.0, 0.169, 0.902
 ;fire_point2             = 0.0, 0.129, 0.942
 fire_point2          	= 0.0, 0.169, 0.902
 
-smoke_particles         = weapons\effects\kyky_smok3
+smoke_particles         = weapons\generic_shoot_00;weapons\effects\kyky_smok3
 ;flame_particles		   	= weapons\effects\kyky_muzzleflash
 rpm_empty_click 		= 200
 
 shell_point		 	= 0.0, 0.129, 0.192
 shell_dir		 	= 0.0, 0.0, 0.4
-shell_particles	 		= ;weapons\generic_shells
+shell_particles	 		= weapons\762x54;weapons\generic_shells
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;��� ������
@@ -269,3 +269,42 @@ aim_hud_offset_rot = 0.031700,0.035500,0.000000
 
 aim_hud_offset_pos_16x9 = -0.114200,0.087000,-0.161000
 aim_hud_offset_rot_16x9 = 0.031700,0.035500,0.000000
+
+;14.5x114 API cartridge for PTRS anti-tank rifle
+
+[ammo_14.5x114]:ammo_base
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_7.62x54_7h1" ; option for Level Editor
+class			= AMMO_S
+cform           = skeleton
+visual          = dynamics\weapons\wpn_ammo\ammo_762x54_7h1.ogf
+description		= ammo_14.5x114_descr
+$prefetch 		= 64
+
+cost			= 12000
+
+box_size		= 10
+
+inv_name		= ammo_14.5x114
+inv_name_short	= ammo_14.5x114_s
+inv_weight		= 1.91
+
+inv_grid_width     = 2
+inv_grid_height    = 2
+inv_grid_x         = 45
+inv_grid_y         = 75
+
+k_dist			= 1
+k_disp			= 1.1	; 3.2
+k_hit			= 1.35
+k_impulse		= 1.0
+k_pierce		= 9.1
+k_ap			= 7.5
+impair			= 1.0 ; 0.95
+buck_shot		= 1
+tracer			= off        ;  off
+wm_size         = 0.375
+explosive		= on
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
