@@ -38,6 +38,7 @@ Search Logic: https://www.moddb.com/mods/stalker-anomaly/addons/search-logic
 Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
 SoC style artifacts: https://www.moddb.com/mods/stalker-anomaly/addons/soc-style-artefacts-dltx
 Undercover Communications: https://www.moddb.com/mods/stalker-anomaly/addons/151-banjajis-undercover-communications
+Anomaly-ai-extension: https://www.moddb.com/mods/stalker-anomaly/addons/anomaly-ai-extension
 
 -Perhaps: (Ass mods suggested by andermann)
 Battery Warning: https://www.moddb.com/mods/stalker-anomaly/addons/batterywarning
