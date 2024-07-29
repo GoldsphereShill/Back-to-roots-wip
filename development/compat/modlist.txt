@@ -15,7 +15,6 @@ High Resolution PDA Maps: https://www.moddb.com/mods/stalker-anomaly/addons/high
 NPC Pushing: https://www.moddb.com/mods/stalker-anomaly/addons/get-out-of-my-way-you-stupid-npc
 No weapon dropping on damage: https://www.moddb.com/mods/stalker-anomaly/addons/remove-dropping-weapons-from-damage-for-152
 
-
 -Hideout Furniture:
 Hideout Furniture: https://www.moddb.com/mods/stalker-anomaly/addons/hideout-furniture-hf
 Hideout Furniture Preview Gizmos: https://www.moddb.com/mods/stalker-anomaly/addons/hideout-furniture-placement-preview-gizmo
@@ -30,6 +29,8 @@ Sleep Timelapse: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-r
 Cozy Campfires: https://www.moddb.com/mods/stalker-anomaly/addons/cozy-campfires
 Campire Healing: https://www.moddb.com/mods/stalker-anomaly/addons/campfire-healing-and-designated-savepoint-indicator
 XR-danger script fixed: https://www.moddb.com/mods/stalker-anomaly/addons/fixed-xr-danger
+Campfires on map: https://www.moddb.com/mods/stalker-anomaly/addons/displaycampfiresonmap
+Hedlamp Animation Fix: https://www.moddb.com/mods/stalker-anomaly/addons/headlamp-animation-fix-rc18-23
 
 -Optional:
 Semi Radiant AI: https://www.moddb.com/mods/stalker-anomaly/addons/semi-radiant-ai-01-dltx-required
