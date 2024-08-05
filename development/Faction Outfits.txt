@@ -1,0 +1,4 @@
+novice_outfit
+stalker_outfit
+stalker_mk2_outfit
+stalker_proto_exo_outfit
