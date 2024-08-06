@@ -1,0 +1,703 @@
+;[[
+
+; Tronex
+; Item disassembly and parts (Normal / Conditional)
+;--------------------------------------------------
+; You can define items componenets/parts in here, they are divided in 2 groups: conditional and normal
+; Difference is that conditional items (outfits/weapons) can be repaired at the workshop by using identical parts (those parts should have condition enabled) (defined under [con_parts_list])
+; Normal items don't have this feature, their componenets are mostly used for crafing (defined under [nor_parts_list])
+
+;-- ATTENTION about conditional items:
+;-- never add identical parts for your item. Every part must be different for the same item
+;-- You can add up to 6 parts here
+
+;]]
+
+;;--==========================< Settings >=============================
+[settings]
+disassembly_chance = 40 ;-- A permanent increase in the chance of obtaining a part when disassembling, in formula wpn_cond*100+x >= math.random(1,100)
+
+
+[weapons_spare_parts]
+prt_i_scrap
+
+
+;;--==========================< Conditional part list >=============================
+;-- These items have parts with simulated condition
+
+
+;prt_w_barrel_3					=	prt_w_barrel_4,		prt_w_barrel_4
+[con_parts_list]
+
+;-- Weapons - Rifles
+wpn_9a91						=	 prt_w_p_trigger_2,	prt_w_p_barrel_3,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic				
+wpn_abakan						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				    prt_i_scrap,				prt_i_scrap,		prt_i_ceramic	
+wpn_abakan_camo					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				    prt_i_scrap,				prt_i_scrap,		prt_i_ceramic	
+wpn_ace21						=	 prt_w_p_trigger_2,	prt_w_barrel_10,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_aek							=	 prt_w_p_trigger_2,	prt_w_barrel_7,				    prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_aek_camo					=	 prt_w_p_trigger_2,	prt_w_barrel_7,			    	prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_aek_duty					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				    prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak							=	 prt_w_p_trigger_2,	prt_w_barrel_7,			    	prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak101						=	 prt_w_barrel_12,	prt_w_p_trigger_2,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak101_camo					=	 prt_w_barrel_12,	prt_w_p_trigger_2,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak102						=	 prt_w_barrel_12,	prt_w_p_trigger_2,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak103						=	 prt_w_barrel_8,	prt_w_p_trigger_2,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak103_camo					=	 prt_w_barrel_8,	prt_w_p_trigger_2,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak104						=	 prt_w_barrel_8,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak105						=	 prt_w_barrel_7,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak12						=	 prt_w_p_trigger_2,	prt_w_barrel_8,				    prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74m						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74m_alt					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74m_camo					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74m_custom				=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74m_duty					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74m_pka					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic
+wpn_ak74u						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_wood
+wpn_ak74u_camo					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_wood
+wpn_ak74u_custom				=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_wood
+wpn_ak74u_old					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_wood
+wpn_ak74u_snag					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_ceramic,		wpn_sil_pbs4	
+wpn_ak74_alt					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_custom					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_modern					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_old					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_rpk					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_akm							=	 prt_w_p_trigger_2,	prt_w_barrel_8,			    	prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_akms						=	 prt_w_p_trigger_2,	prt_w_barrel_8,			    	prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_akms_alt					=	 prt_w_p_trigger_2,	prt_w_barrel_8,				    prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_aks							=	 prt_w_p_trigger_2,	prt_w_barrel_8,			    	prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_aks74						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_aks74_new					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_aug_custom					=	 prt_i_ceramic,		prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_aug_freedom					=	 prt_i_ceramic,		prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_aug_merc					=	 prt_i_ceramic,		prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_aug_modern					=	 prt_i_ceramic,		prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_bm16						=	 prt_w_barrel_1,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_bm16_alt					=	 prt_w_barrel_1,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_bm16_full					=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_bm16_full_alt				=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_fn2000						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_fn2000_camo					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_fn2000_custom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_fn2000_nimble				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_g3							=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_g36							=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_g36k						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_g36_camo					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_g36_nimble					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_g3sg1						=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_g43							=	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_galil						=	 prt_w_barrel_10,	prt_i_wood,						prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_galil_custom				=	 prt_w_barrel_10,	prt_i_wood,						prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_galil_modern				=	 prt_w_barrel_10,	prt_i_wood,						prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_groza						=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_groza_nimble				=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_hk416						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_k98							=	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_l85							=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85a2						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85a2_alt					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85a2_custom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85a2_modern				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85_alt						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85_custom					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l85_modern					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_l96a1						=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_l96a1m						=	 prt_w_barrel_1,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_lr300						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_lr300_camo					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_lr300_custom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m16							=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m16a2						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m24							=	 prt_w_barrel_1,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap	
+wpn_m249						=	 prt_w_barrel_12,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic		
+wpn_m4							=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m4a1						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m4a1_camo					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m4a1_custom					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_m4a1_freedom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_mosin						=	 prt_w_barrel_9,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_mossberg590					=	 prt_w_barrel_3,	prt_i_wood,						prt_w_p_trigger_3,			prt_i_scrap
+wpn_mp133						=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_mp153						=	 prt_w_barrel_3,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_pkm							=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_wood		
+wpn_pkm_zulus					=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_wood		
+wpn_pkp							=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_scrap,		prt_i_ceramic		
+wpn_rpk							=	 prt_w_p_trigger_2,	prt_w_barrel_8,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_rpk74						=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_saiga12s					=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_scar						=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_scar_custom					=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_scar_new					=	 prt_w_barrel_10,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_sig550						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_sig550_camo					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_sig550_custom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_sig550_luckygun 			=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_sig550_sniper				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_sig552						=	 prt_w_barrel_12,	prt_i_ceramic,					prt_w_p_trigger_2,			prt_i_scrap
+wpn_sks							=	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_sks_modern					=	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_spas12						=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap,		prt_i_scrap
+wpn_spas12_custom				=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap,		prt_i_scrap
+wpn_spas12_nimble				=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap,		prt_i_scrap
+wpn_sr25						=	 prt_w_barrel_10,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_sv98						=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_wood,			prt_i_wood
+wpn_sv98_custom					=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_wood,			prt_i_wood
+wpn_svd							=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_wood,			prt_i_wood
+wpn_svd_custom					=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_wood,			prt_i_wood
+wpn_svd_nimble					=	 prt_w_barrel_9,	prt_w_p_trigger_3,				prt_i_scrap,				prt_i_wood,			prt_i_wood
+wpn_svt40						=	 prt_w_barrel_9,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_svt40_modern				=	 prt_w_barrel_9,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_svu							=	 prt_w_barrel_9,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_svu_alt						=	 prt_w_barrel_9,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_svu_nimble					=	 prt_w_barrel_9,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_toz34						=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_custom				=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_decor					=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_mark4					=	 prt_w_barrel_2,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_obrez					=	 prt_w_barrel_1,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_obrez_custom			=	 prt_w_barrel_1,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_toz34_obrez_decor			=	 prt_w_barrel_1,	prt_w_barrel_2,					prt_i_wood,					prt_w_p_trigger_2,	prt_i_scrap
+wpn_trg							=	 prt_w_barrel_1,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_type63						=	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_usas12						=	 prt_w_barrel_2,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap,		prt_i_scrap
+wpn_val							=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_val_modern					=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_vepr						=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_vihr						=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_vintorez					=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_wood,					prt_w_p_trigger_2
+wpn_vintorez_1pn93				=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_wood,					prt_w_p_trigger_2
+wpn_vintorez_alt				=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_wood,					prt_w_p_trigger_2
+wpn_vintorez_nimble				=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_wood,					prt_w_p_trigger_2
+wpn_vsk94						=	 prt_w_barrel_8,	prt_i_scrap,					prt_i_ceramic,				prt_w_p_trigger_2
+wpn_wincheaster1300				=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_wincheaster1300_trapper		=	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_mp5							=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5_custom					=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5_alt						=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5sd						=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5sd_custom				=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5sd_new					=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_mp5_nimble					=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_pp2000						=	 prt_w_p_trigger_2,	prt_w_p_barrel_2,				prt_i_scrap,				prt_i_ceramic
+wpn_vityaz						=	 prt_w_p_trigger_1,	prt_w_p_barrel_2,				prt_i_scrap,				prt_i_ceramic
+wpn_vz61						=	 prt_w_p_barrel_2,	prt_i_scrap,					prt_w_p_trigger_1
+wpn_vz61_freedom				=	 prt_w_p_barrel_2,	prt_i_scrap,					prt_w_p_trigger_1
+wpn_vz61_camo					=	 prt_w_p_barrel_2,	prt_i_scrap,					prt_w_p_trigger_1
+wpn_vz61_alt					=	 prt_w_p_barrel_2,	prt_i_scrap,					prt_w_p_trigger_1
+wpn_bizon						=	 prt_w_p_trigger_1,	prt_w_p_barrel_2,				prt_i_scrap,				prt_i_scrap
+wpn_kiparis						=	 prt_w_p_barrel_2,	prt_i_scrap,					prt_w_p_trigger_1
+wpn_ump45						=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_ump45_custom				=	 prt_w_p_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_1,			prt_i_scrap
+wpn_ppsh41						=	 prt_w_p_barrel_3,	prt_i_wood,						prt_w_p_trigger_2,			prt_i_scrap
+wpn_ppsh41_woodnew				=	 prt_w_p_barrel_3,	prt_i_wood,						prt_w_p_trigger_2,			prt_i_scrap
+wpn_ppsh41_rednew				=	 prt_w_p_barrel_3,	prt_i_wood,						prt_w_p_trigger_2,			prt_i_scrap
+
+; new
+wpn_aug_a3                      =	 prt_i_ceramic,		prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_remington870                =	 prt_w_barrel_3,	prt_i_ceramic,					prt_w_p_trigger_3,			prt_i_scrap
+wpn_mk14                        =	 prt_i_ceramic,		prt_i_scrap,					prt_i_scrap,				prt_w_p_trigger_2,	prt_w_barrel_10
+wpn_fnc                         =	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_fal                         =	 prt_w_barrel_10,	prt_i_wood,						prt_w_p_trigger_2,			prt_i_scrap
+wpn_toz34_bull                  =	 prt_w_barrel_3,	prt_w_barrel_3,					prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_mp7                         =	 prt_w_p_trigger_2,	prt_w_p_barrel_2,				prt_i_scrap,				prt_i_ceramic
+wpn_m98b                        =	 prt_w_barrel_1,	prt_i_ceramic,					prt_i_ceramic,				prt_w_p_trigger_3,	prt_i_scrap
+wpn_m60                         =	 
+wpn_remington700                =	 prt_w_barrel_10,	prt_i_wood,						prt_i_wood,					prt_w_p_trigger_3,	prt_i_scrap
+wpn_hk417                       =	 
+wpn_famas3                      =	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_ceramic
+wpn_fort500                     =	 prt_w_barrel_2,	prt_i_wood,						prt_w_p_trigger_3,			prt_i_scrap
+wpn_wa2000                      =	 prt_w_p_trigger_3,	prt_i_scrap,                    prt_i_scrap,		prt_i_wood,			prt_i_wood,		prt_w_barrel_9
+wpn_ash12						= 	 
+wpn_m82							= 	 prt_w_p_trigger_3,	prt_i_scrap,	                prt_i_ceramic,		prt_i_ceramic,		prt_w_barrel_9
+;wpn_m79
+wpn_vssk						= 	 prt_w_p_trigger_3,	prt_i_scrap,	                prt_i_scrap,		prt_i_ceramic,			prt_i_ceramic,	prt_w_barrel_9
+;wpn_p90
+;wpn_protecta 
+;wpn_protecta_camo
+;wpn_protecta_custom
+;wpn_protecta_nimble
+
+;-- Weapons - Pistols
+wpn_aps                         = 	prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_pm                          =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_pm_custom                   =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_pmm                         =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_pb                          =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_pb_custom                   =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_tt33                        =   prt_w_p_barrel_2,	prt_i_scrap,	prt_w_p_trigger_2
+wpn_tt33_modern                 =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2
+wpn_cz52                        =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_fort                        =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_fort_snag                   =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_mp443                       =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_gsh18                       =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_gsh18_custom                =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_oc33                        =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_2
+wpn_cz75                        =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_cz75_auto                   =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_beretta                     =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_beretta_camo                =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_beretta_modern              =   prt_w_p_barrel_2,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_beretta_alt                 =   prt_w_p_barrel_2,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_hpsa                        =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_hpsa_alt                    =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_colt1911                    =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2
+wpn_colt1911_duty               =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_merc               =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_camo               =   prt_w_p_barrel_2,	prt_i_scrap,	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_custom             =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_modern             =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_alt                =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt1911_new                =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_colt_kimber                 =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1,	prt_i_scrap
+wpn_sig220                      =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1
+wpn_sig220_custom               =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_sig220_nimble               =   prt_w_p_barrel_1,	prt_i_scrap, 	prt_w_p_trigger_1
+wpn_fn57                        =   prt_w_p_barrel_1,	prt_i_ceramic, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_fnp45                       =   prt_w_p_barrel_2,	prt_i_ceramic,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_fnp45_custom                =   prt_w_p_barrel_2,	prt_i_ceramic,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_fnx45                       =   prt_w_p_barrel_2,	prt_i_ceramic,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_fnx45_custom                =   prt_w_p_barrel_2,	prt_i_ceramic,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_fnx45_alt                   =   prt_w_p_barrel_2,	prt_i_ceramic, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_glock                       =   prt_w_p_barrel_1,	prt_i_ceramic, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_glock_custom                =   prt_w_p_barrel_1,	prt_i_ceramic, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_glock_modern                =   prt_w_p_barrel_1,	prt_i_ceramic,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_usp                         =   prt_w_p_barrel_2,	prt_i_scrap,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_usp_custom                  =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_usp_match                   =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_usp_nimble                  =   prt_w_p_barrel_2,	prt_i_scrap, 	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_walther                     =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_walther_custom              =   prt_w_p_barrel_1,	prt_i_scrap,	prt_w_p_trigger_1,	prt_i_ceramic
+wpn_desert_eagle                =   prt_w_p_barrel_3,	prt_i_scrap, 	prt_w_p_trigger_2, 	prt_i_scrap
+wpn_desert_eagle_custom         =   prt_w_p_barrel_3,	prt_i_scrap, 	prt_w_p_trigger_2, 	prt_i_scrap
+wpn_desert_eagle_modern         =   prt_w_p_barrel_3,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_desert_eagle_nimble         =   prt_w_p_barrel_3,	prt_i_scrap, 	prt_w_p_trigger_2,	prt_i_scrap
+wpn_mp412                       =   prt_w_p_barrel_3,	prt_i_scrap, 	prt_w_p_trigger_1
+
+;;-- Helmets						
+helm_cloth_mask                     = prt_o_fabrics_1,		prt_o_fabrics_1
+helm_rp_bala                     	= prt_o_fabrics_1,		prt_o_fabrics_1
+helm_bandana                     	= prt_o_fabrics_1
+
+;;-- Outfits - Novice
+novice_outfit                       = prt_o_fabrics_1,		prt_o_fabrics_1,		prt_o_ballistic_11
+dolg_novice_outfit                  = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_ballistic_11
+cs_novice_outfit                    = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_ballistic_11
+novice_outfit_tourist               = prt_o_fabrics_1,		prt_o_fabrics_1,		prt_o_ballistic_11
+bandit_novice_outfit                = prt_o_fabrics_1,		prt_o_fabrics_1,		prt_o_ballistic_11
+renegade_novice_outfit              = prt_o_fabrics_1,		prt_o_fabrics_1,		prt_o_ballistic_11
+novice_outfit_camo                  = prt_o_fabrics_1,		prt_o_fabrics_1,		prt_o_ballistic_11
+bandit_novice_outfit_alt            = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_ballistic_11
+redline_novice_outfit               = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_ballistic_11
+svoboda_novice_outfit               = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_ballistic_11
+
+;;-- Outfits - Trenchcoats           
+trenchcoat_outfit                   = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_2
+trenchcoat_brown_outfit             = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+trenchcoat_green_outfit             = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+monolith_trenchcoat_outfit          = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+greh_trenchcoat_outfit              = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+trenchcoat_dolg_brown_outfit        = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_11,		prt_o_ballistic_12
+trenchcoat_freedom_brown_outfit     = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_11,		prt_o_ballistic_12
+
+;;-- Outfits - Sunrise              
+stalker_outfit                      = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_outfit_camo                 = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_outfit_alt                  = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_outfit_barge                = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_graphite_outfit             = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_predator_outfit             = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_autumn_outfit               = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_bear_outfit                 = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_salamander_outfit           = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_drought_outfit              = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+stalker_tigerstripe_outfit          = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_ballistic_12,		prt_o_ballistic_11
+ecolog_guard_outfit                 = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+cs_stalker_outfit                   = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+
+;;-- Outfits - LCS 
+merc_outfit                         = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+merc_scout_outfit                   = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+merc_fighter_outfit                 = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+merc_jackal_outfit                  = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+merc_sunset_outfit                  = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+merc_coyote_outfit                  = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+
+banditmerc_outfit                   = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+renegademerc_outfit                 = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+greh_armored_outfit                 = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+greh_armored_camo_outfit            = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+
+isg_lcs_outfit                      = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+isg_lcs_camo_outfit                 = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+isg_lcs_urban_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12
+
+dolg_voin_outfit                    = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+
+;;-- Outfits - STS                
+merc_sun_outfit                     = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+merc_wolven_outfit                  = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_retardant_3,		prt_o_ballistic_12
+merc_nighthunter_outfit             = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+   
+bandit_sun_outfit                   = prt_o_fabrics_3,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+svoboda_light_outfit                = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+monolith_outfit                     = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+
+isg_outfit                          = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+isg_camo_outfit                     = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+
+;;-- Outfits - PS5                   
+dolg_outfit                         = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+dolg_scout_outfit                   = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_retardant_3,		prt_o_ballistic_12
+dolg_red_outfit                     = prt_o_fabrics_1,		prt_o_retardant_2,		  prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+
+svoboda_heavy_outfit_2              = prt_o_fabrics_3,		prt_o_retardant_2,		  prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+bandit_ps5_outfit                   = prt_o_fabrics_3,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+greh_ps5_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		  prt_o_ballistic_12,		prt_o_ballistic_13
+
+;;-- Outfits - CSky
+cs_light_novice_outfit              = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2, 		prt_o_ballistic_11
+cs_light_outfit                     = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12
+cs_medium_outfit                    = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13
+cs_heavy_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+
+;;-- Outfits - Exploration           
+nomad_outfit                        = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,			prt_o_ballistic_11,			prt_o_ballistic_12
+travel_outfit                       = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_19,          prt_o_retardant_2,			prt_o_ballistic_12
+wastelander_outfit                  = prt_o_fabrics_1,		prt_o_retardant_19,		prt_o_retardant_2,			prt_o_retardant_3,			prt_o_ballistic_12
+
+;;-- Outfits - NBC                   
+nbc_outfit                          = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_12, 	helm_respirator_gp5
+bandit_nbc_outfit                   = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12, 	helm_respirator_gp5
+cs_nbc_outfit                       = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_12, 	helm_respirator_gp5
+monolith_nbc_outfit                 = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12, 	helm_respirator_gp5
+nbc_freedom_outfit                  = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12, 	helm_respirator_gp5
+nbc_merc_outfit                     = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12, 	helm_respirator_gp5
+nbc_dolg_outfit                     = prt_o_fabrics_1,		prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_ballistic_11,		prt_o_ballistic_12, 	helm_respirator_gp5
+
+;;-- Outfits - Light assualt vest   
+light_monolit_outfit                = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_dolg_outfit                   = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_loner_outfit                  = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_freedom_outfit                = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_voen_outfit                   = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_merc_outfit                   = prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+light_isg_outfit                   	= prt_o_fabrics_1,		prt_o_retardant_19,		  prt_o_retardant_2,		prt_o_ballistic_11,		prt_o_ballistic_12
+
+;;-- Outfits - Berill                
+army_outfit                         = prt_o_fabrics_1,		prt_o_fabrics_3,		 prt_o_ballistic_12
+specops_outfit                      = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12, 	    prt_o_ballistic_13
+specops_bandit_outfit               = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12, 	    prt_o_ballistic_13
+specops_merc_outfit                 = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12,		prt_o_ballistic_13
+specops_dolg_outfit                 = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12,		prt_o_ballistic_13
+svoboda_heavy_outfit                = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12,		prt_o_ballistic_13
+
+dolg_specops_red_outfit             = prt_o_fabrics_3,		prt_o_retardant_19,		 prt_o_ballistic_12,		prt_o_ballistic_13
+
+;;-- Outfits - Skat                  
+military_outfit                     = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,	    prt_o_ballistic_12,		prt_o_ballistic_13
+military_bandit_outfit              = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+military_monolit_outfit             = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+military_merc_outfit                = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13
+military_sky_outfit                 = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,	    prt_o_ballistic_12,		prt_o_ballistic_13
+military_freedom_outfit             = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,	    prt_o_ballistic_12,		prt_o_ballistic_13
+dolg_heavy_outfit                   = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_13,		prt_o_ballistic_13
+dolg_heavy_redline_outfit           = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_13,		prt_o_ballistic_13
+dolg_pantsir_outfit                 = prt_o_fabrics_4,		prt_o_retardant_2,		 prt_o_retardant_3,		prt_o_ballistic_13,		prt_o_ballistic_13
+
+;;-- Outfits - SEVA                  
+scientific_outfit                   = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+bandit_scientific_outfit            = prt_o_fabrics_1,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+cs_scientific_outfit_good           = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+monolith_scientific_outfit          = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+isg_scientific_outfit               = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+merc_scientific_outfit              = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+dolg_scientific_outfit              = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+svoboda_scientific_outfit           = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+renegade_scientific_outfit       	= prt_o_fabrics_1,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+
+bandit_scientific_dark_outfit       = prt_o_fabrics_1,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+monolith_scientific_light_outfit    = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+
+dolg_scientific_wood_outfit         = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+dolg_scientific_red_outfit          = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+
+merc_combat_scientific_outfit       = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			helm_protective
+merc_scientific_armored_outfit      = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			prt_o_ballistic_13,			prt_o_retardant_12
+merc_ace_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_ballistic_12,			prt_o_ballistic_13,			prt_o_retardant_12
+
+cs_scientific_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_retardant_3,		prt_o_retardant_3,			prt_o_ballistic_12,			prt_o_retardant_12
+
+hybrid_outfit                       = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_protective
+
+;;-- Outfits - Exolight              
+exolight_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+military_exolight_outfit            = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+isg_exolight_outfit                 = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+cs_exolight_outfit                  = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+monolith_exolight_outfit            = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+merc_exolight_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+bandit_exolight_outfit              = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+dolg_exolight_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+svoboda_exolight_outfit             = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+
+exo_wood_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+
+exo_merc_grass_outfit               = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+exo_merc_urban_outfit               = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+exo_merc_wood_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+
+exo_dolg_outfit                     = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+exo_dolg_wood_outfit                = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+exo_dolg_urban_outfit               = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+
+freedom_exo_vineleaf_outfit         = prt_o_fabrics_3,		prt_o_retardant_2,		prt_o_ballistic_12,		prt_o_ballistic_13,			helm_exo
+
+
+;;-- Outfits - Proto-exo             
+cs_stalker_proto_exo_outfit         = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_support_1
+monolith_proto_exo_outfit           = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+svoboda_light_proto_exo_outfit      = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+military_proto_exo_outfit           = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+dolg_heavy_proto_exo_outfit         = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_13,		prt_o_support_1
+dolg_proto_exo_outfit               = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+stalker_proto_exo_outfit            = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_support_1
+ecolog_proto_exo_outfit             = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+isg_proto_exo_outfit                = prt_o_fabrics_3,		prt_o_retardant_3,		prt_o_ballistic_12,		prt_o_ballistic_12,		prt_o_support_1
+
+;;-- Outfits - Exo                   
+exo_outfit                          = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,	    prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+cs_exo_outfit                       = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+bandit_exo_outfit                   = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,	    prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+ecolog_exo_outfit                   = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+svoboda_exo_outfit                  = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+monolith_exo_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+renegade_exo_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+greh_exo_outfit                     = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+military_exo_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+isg_exo_outfit                      = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+merc_exo_outfit                     = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+dolg_exo_outfit                     = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_exo
+
+;;-- Outfits - Nosorog               
+dolg_nosorog_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+monolith_nosorog_outfit             = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+merc_nosorog_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+freedom_nosorog_outfit              = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+army_nosorog_outfit                 = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+isg_nosorog_outfit                  = prt_o_fabrics_4,		prt_o_retardant_3,		 prt_o_ballistic_13,		prt_o_ballistic_13,		prt_o_support_1,	helm_spartan
+
+;;-- Outfits - SSP-99                
+ecolog_outfit_yello                 = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+ecolog_outfit_orange                = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+ecolog_outfit_green                 = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+ecolog_outfit_white                 = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+ecolog_outfit_red                   = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+ecolog_outfit_blue                  = prt_o_fabrics_4,		prt_o_retardant_3,		prt_o_retardant_3,		prt_o_ballistic_12
+
+;;-- no group
+ghillie_outfit                      = prt_o_fabrics_3,		prt_o_retardant_19,		prt_o_retardant_2,		prt_o_ballistic_11
+
+
+
+
+
+
+;;--==========================< Normal part list >=============================
+;-- These items don't have parts with simulated condition
+
+[nor_parts_list]
+;bolt                             = prt_i_fasteners, prt_i_fasteners
+;bolt_bullet                      = prt_i_fasteners, prt_i_fasteners
+lead_box                         = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+af_aac                           = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+af_aam                           = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+af_camelbak                      = prt_i_fasteners,prt_o_ballistic_11,prt_o_ballistic_13,prt_o_retardant_19
+af_camelbak_up                   = prt_i_fasteners,prt_i_fasteners,prt_o_ballistic_11,prt_o_ballistic_13,prt_o_retardant_19
+af_cooler                        = prt_o_retardant_19,prt_i_fasteners,prt_i_fasteners,prt_o_fabrics_4
+af_cooler_up                     = prt_o_retardant_19,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_o_fabrics_4
+af_frames                        = prt_i_fasteners,prt_o_ballistic_15,prt_i_fasteners,prt_o_fabrics_3
+af_frames_up                     = prt_i_fasteners,prt_i_fasteners,prt_o_ballistic_15,prt_i_fasteners,prt_i_fasteners,prt_o_fabrics_3
+af_freon                         = prt_o_retardant_19,prt_o_retardant_3,prt_i_fasteners,prt_i_plastic
+af_freon_up                      = prt_o_retardant_19,prt_o_retardant_3,prt_i_fasteners,prt_i_fasteners,prt_i_plastic,prt_i_plastic
+af_grid                          = prt_o_ballistic_11,prt_i_fasteners,prt_i_fasteners,prt_o_fabrics_3
+af_grid_up                       = prt_o_ballistic_11,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_o_fabrics_3
+af_iam                           = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners
+af_kevlar                        = prt_o_ballistic_12,prt_o_ballistic_12,prt_o_ballistic_12,prt_o_ballistic_12
+af_kevlar_up                     = prt_o_ballistic_12,prt_o_ballistic_12,prt_o_ballistic_12,prt_o_ballistic_13,prt_o_ballistic_13,prt_o_ballistic_13
+af_plates                        = prt_o_ballistic_12,prt_o_ballistic_12,prt_i_fasteners,prt_i_fasteners
+af_plates_up                     = prt_o_ballistic_13,prt_o_ballistic_12,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners
+af_surge                         = prt_i_transistors,prt_i_fasteners,prt_i_fasteners,prt_o_retardant_19
+af_surge_up                      = prt_i_transistors,prt_i_transistors,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_i_fasteners,prt_o_retardant_19
+
+detector_advanced                = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+detector_anomaly                 = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_transistors, prt_i_fasteners
+detector_elite                   = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_resistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+detector_geiger                  = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_transistors, prt_i_fasteners
+detector_radio                   = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners
+detector_scientific              = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+detector_simple                  = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+device_flashlight                = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+device_pda_1                     = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+device_pda_2                     = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+device_pda_3                     = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+device_torch_dummy               = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+device_torch_nv_1                = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors
+device_torch_nv_2                = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors
+device_torch_nv_3                = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors
+itm_pda_common                   = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners
+itm_pda_rare                     = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners
+itm_pda_uncommon                 = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners
+itm_guide_usb_1                  = prt_i_transistors
+itm_guide_usb_2                  = prt_i_transistors
+
+solvent                          = prt_o_fabrics_4, prt_i_textolite
+gun_oil_ru                       = prt_o_fabrics_4, prt_i_textolite
+glue_a                           = prt_o_fabrics_4, prt_i_textolite
+heavy_repair_kit                 = prt_i_scrap, prt_i_scrap, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+exo_repair_kit                   = prt_o_support_1, prt_i_scrap, prt_i_scrap, prt_i_scrap, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+armor_repair_fa                  = prt_o_fabrics_4, prt_i_textolite
+
+
+itm_backpack                     = prt_o_fabrics_1, prt_o_fabrics_3
+equ_small_pack                   = prt_o_fabrics_3, prt_o_fabrics_1,prt_o_fabrics_1
+equ_small_military_pack          = prt_o_fabrics_4, prt_o_fabrics_4, prt_o_fabrics_1, prt_o_fabrics_3
+equ_military_pack                = prt_o_fabrics_4, prt_o_fabrics_4, prt_o_fabrics_4, prt_o_fabrics_1, prt_o_fabrics_1, prt_o_fabrics_3, prt_o_fabrics_3
+equ_tourist_pack                 = prt_o_fabrics_3, prt_o_fabrics_3, prt_o_fabrics_3, prt_o_fabrics_1, prt_o_fabrics_1, prt_o_fabrics_1, prt_o_fabrics_1, prt_o_fabrics_1
+itm_sleepbag                     = prt_o_fabrics_3, prt_o_fabrics_3, prt_o_fabrics_1, prt_o_retardant_19
+itm_tent                         = prt_o_fabrics_3, prt_o_fabrics_3, prt_o_fabrics_3, prt_o_retardant_19, prt_o_retardant_19
+kit_hunt                         = prt_o_fabrics_4, prt_o_fabrics_4, prt_o_fabrics_3, prt_o_fabrics_3, wpn_knife3,	itm_backpack
+
+army_bowler                      = prt_i_fasteners, prt_i_fasteners
+ball_hammer                      = prt_i_fasteners,
+compression_bag                  = prt_o_fabrics_3, prt_o_fabrics_3, prt_o_retardant_19
+cooking                          = cutlery, prt_i_plastic, prt_i_plastic
+fieldcooker                      = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+
+beadspread                       = prt_o_fabrics_3, prt_o_fabrics_1
+beans                            = prt_i_fasteners
+boots                            = prt_o_fabrics_4, prt_o_fabrics_3
+broken_detector                  = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fastenerscutlery                          = prt_i_fasteners
+explo_balon_gas                  = prt_i_fasteners, prt_i_fasteners
+flashlight_broken                = prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+gloves                           = prt_o_fabrics_3, prt_o_fabrics_1
+guitar_a                         = af_compass
+hand_watch                       = prt_i_fasteners, prt_i_fasteners
+headlamp                         = prt_i_transistors, prt_i_transistors, prt_i_fasteners
+meinkampf                        = prt_i_paper
+mine_new                         = prt_i_fasteners, prt_i_fasteners
+mirror                           = prt_i_fasteners, prt_i_fasteners
+porn                             = prt_i_paper
+porn2                            = prt_i_paper
+radio                            = prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+radio2                           = prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+shovel_mili                      = prt_i_fasteners, prt_i_wood
+shovel_old                       = prt_i_fasteners
+synthrope                        = rope, rope
+tarpaulin                        = prt_o_fabrics_3
+underwear                        = prt_o_fabrics_1
+walkie                           = prt_i_transistors, prt_i_transistors, prt_i_fasteners, prt_i_fasteners
+;welding_goggles                  = prt_i_textolite
+prt_o_support_1					 = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors, prt_i_transistors
+
+stimpack                         = e_syringe, prt_i_plastic
+stimpack_army                    = e_syringe, prt_i_plastic
+stimpack_scientic                = e_syringe, e_syringe, prt_i_plastic
+survival_kit                     = bandage, medkit_army, prt_i_textolite, e_syringe, prt_i_plastic, prt_i_paper
+corn                             = prt_i_fasteners
+jgut                             = bandage, prt_o_fabrics_4, prt_o_fabrics_4
+bandage                          = prt_o_fabrics_3
+;chili                            = prt_i_fasteners
+conserva                         = prt_i_fasteners
+drug_booster                     = syringe
+glucose                          = e_syringe
+glucose_s                        = e_syringe
+grease                           = syringe
+morphine                         = e_syringe
+rebirth                          = e_syringe
+salicidic_acid                   = e_syringe
+tetanus                          = e_syringe
+tomato                           = prt_i_fasteners
+tushonka                         = prt_i_fasteners
+yadylin                          = syringe
+adrenalin                        = e_syringe
+analgetic                        = e_syringe
+medkit                           = e_syringe, e_syringe, prt_i_textolite, prt_i_paper
+medkit_army                      = bandage, e_syringe, prt_i_textolite, prt_i_plastic, prt_i_plastic
+medkit_scientic                  = bandage, e_syringe, e_syringe, prt_i_textolite, prt_i_plastic, prt_i_plastic
+
+itm_mapkit_1                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_2                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_3                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_4                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_5                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_6                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_7                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_8                     = prt_i_paper, prt_i_paper, prt_i_paper
+itm_mapkit_9                     = prt_i_paper, prt_i_paper, prt_i_paper
+letter_ecologist_report_1_of_3   = prt_i_paper, prt_i_paper, prt_i_paper
+letter_ecologist_report_2_of_3   = prt_i_paper, prt_i_paper, prt_i_paper
+letter_ecologist_report_3_of_3   = prt_i_paper, prt_i_paper, prt_i_paper
+letter_freedom_manual_1_of_2     = prt_i_paper
+letter_freedom_manual_2_of_2     = prt_i_paper
+letter_letter_to_outside         = prt_i_paper
+letter_memoirs_1_of_2            = prt_i_paper
+letter_memoirs_2_of_2            = prt_i_paper
+letter_mercenary                 = prt_i_paper
+letter_military_log              = prt_i_paper
+letter_military_stalker          = prt_i_paper
+letter_monolith_prayer_1_of_3    = prt_i_paper
+letter_monolith_prayer_2_of_3    = prt_i_paper
+letter_monolith_prayer_3_of_3    = prt_i_paper
+letter_monolithian_thoughts      = prt_i_paper
+letter_stalker_letter_1_of_2     = prt_i_paper
+letter_stalker_letter_2_of_2     = prt_i_paper
+letter_stalker_letter_3          = prt_i_paper
+
+ammo_11.43x23_fmj                = prt_i_fasteners, prt_i_fasteners
+ammo_11.43x23_hydro              = prt_i_fasteners, prt_i_fasteners
+ammo_12.7x55_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_12.7x55_fmj                 = prt_i_fasteners, prt_i_fasteners
+ammo_12x70_buck                  = prt_i_fasteners, prt_i_fasteners
+ammo_12x70_buck_self             = prt_i_fasteners, prt_i_fasteners
+ammo_12x76_bull                  = prt_i_fasteners, prt_i_fasteners
+ammo_12x76_dart                  = prt_i_fasteners, prt_i_fasteners
+ammo_12x76_zhekan                = prt_i_fasteners, prt_i_fasteners
+ammo_12x76_zhekan_heli           = prt_i_fasteners, prt_i_fasteners
+ammo_357_hp_mag                  = prt_i_fasteners, prt_i_fasteners
+ammo_5.45x39_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_5.45x39_ep                  = prt_i_fasteners, prt_i_fasteners
+ammo_5.45x39_fmj                 = prt_i_fasteners, prt_i_fasteners
+ammo_5.56x45_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_5.56x45_fmj               	 = prt_i_fasteners, prt_i_fasteners
+ammo_5.56x45_ss190               = prt_i_fasteners, prt_i_fasteners
+ammo_5.7x28_ss190                = prt_i_fasteners, prt_i_fasteners
+ammo_5.7x28_ss195                = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x25_p                   = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x25_ps                  = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x39_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x39_fmj                 = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x51_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x51_fmj                 = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x54_7h1                 = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x54_7h14                = prt_i_fasteners, prt_i_fasteners
+ammo_7.62x54_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_7.92x33_ap                  = prt_i_fasteners, prt_i_fasteners
+ammo_7.92x33_fmj                 = prt_i_fasteners, prt_i_fasteners
+ammo_9x18_ap                     = prt_i_fasteners, prt_i_fasteners
+ammo_9x18_fmj                    = prt_i_fasteners, prt_i_fasteners
+ammo_9x18_pmm                    = prt_i_fasteners, prt_i_fasteners
+ammo_9x19_ap                     = prt_i_fasteners, prt_i_fasteners
+ammo_9x19_fmj                    = prt_i_fasteners, prt_i_fasteners
+ammo_9x19_pbp                    = prt_i_fasteners, prt_i_fasteners
+ammo_9x39_ap                     = prt_i_fasteners, prt_i_fasteners
+ammo_9x39_pab9                   = prt_i_fasteners, prt_i_fasteners
+ammo_m209                        = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+ammo_magnum_300                  = prt_i_fasteners, prt_i_fasteners
+ammo_og-7b                       = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+ammo_pkm_100                     = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+ammo_vog-25                      = prt_i_fasteners, prt_i_fasteners, prt_i_fasteners, prt_i_fasteners
+ied_new                              = prt_i_scrap, prt_i_scrap
+ied_rpg_new                          = prt_i_scrap, prt_i_scrap
