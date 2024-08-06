@@ -22,7 +22,7 @@ Adapted crafting for the new parts system
 - Additional item cleanup
 - NPCs will now drop actual weapons and armors which will have more than 2 durability
 - NPCs will now (in most cases) drop ammo for the weapon they use (like in the base trilogy)
-* Russian translations arent done yet
+- Russian translation updated
 
 0.15:
 - Removed old ammo fully
