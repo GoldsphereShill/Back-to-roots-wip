@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
-	<string id="st_stalker_mk2_outfit_name">
+	<string id="stalker_outfit_mk2_name">
 		<text>"Sunrise" Mk2 stalker suit</text>
 	</string>
-	<string id="st_stalker_mk2_outfit_description">
+	<string id="stalker_outfit_mk2_description">
 		<text>%c[ui_gray_1]Second generation of popular sunrise suit, after many flaws surfaced the Cordon technician Xenotech took matter into his own hands and upgraded batch of suits to new gen 2 standard. It offers better overall protection, better carry weight thanks to belt pouches and lower weight thanks to lighter materials. \n \n
 		</text>
 	</string>
