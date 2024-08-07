@@ -49,6 +49,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus
 
 #UI
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ui" -Recurse
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\system.ltx"
 #Sounds
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\sounds\weapons" -Recurse
 #Textures
