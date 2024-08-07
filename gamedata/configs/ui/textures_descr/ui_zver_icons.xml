@@ -1,0 +1,74 @@
+<w>
+	<file name="ui\zver\Compass">
+		<texture id="ZverCompass" x="0" y="0" width="144" height="144" />
+	</file>
+	
+	<file name="ui\zver\Additional">
+		<!-- Detection & Noise Bars -->
+		<texture id="NoiseBar" x="0" y="0" width="256" height="256" />
+		<texture id="DetectionBar" x="256" y="0" width="256" height="256" />
+		
+		<!-- Minimap BG -->
+		<texture id="MiniMapBG" x="0" y="256" width="185" height="185" />
+		
+		<!-- Location Icon -->
+		<texture id="LocationIcon" x="188" y="256" width="150" height="150" />
+		
+		<!-- Actor Icon -->
+		<texture id="ActorMain" x="224" y="406" width="22" height="22" />
+		<texture id="ActorArrow" x="188" y="406" width="36" height="36" />
+		
+		<!-- Fast Travel Icon -->
+		<texture id="TravelIcon" x="0" y="444" width="64" height="64" />
+	</file>
+
+	<file name="ui\zver\MapIcons">
+		<!-- Big Icons -->
+		<texture id="Zver_Stalker_Trader" x="0" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Barman" x="19" y="0" width="19" height="19" />
+		<texture id="Zver_Player_Mine" x="38" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Companion" x="57" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Guide" x="76" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Special" x="95" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_VIP" x="114" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Mechanic" x="133" y="0" width="19" height="19" />
+		<texture id="Zver_Place_To_Rest" x="152" y="0" width="19" height="19" />
+		<texture id="Zver_Stalker_Medic" x="171" y="0" width="19" height="19" />
+		<texture id="Zver_Actor_Box" x="190" y="0" width="19" height="19" />
+
+		<!-- Small Icons -->
+		<texture id="Zver_Stalker_Trader_Small" x="0" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Barman_Small" x="15" y="19" width="15" height="15" />
+		<texture id="Zver_Player_Mine_Small" x="30" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Companion_Small" x="45" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Guide_Small" x="60" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Special_Small" x="75" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_VIP_Small" x="90" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Mechanic_Small" x="105" y="19" width="15" height="15" />
+		<texture id="Zver_Place_To_Rest_Small" x="120" y="19" width="15" height="15" />
+		<texture id="Zver_Stalker_Medic_Small" x="135" y="19" width="15" height="15" />
+		<texture id="Zver_Actor_Box_Small" x="150" y="19" width="15" height="15" />
+
+		<!-- Mission Icons -->
+		<texture id="Zver_Primary_Mission" x="100" y="34" width="23" height="23" />
+		<texture id="Zver_Secondary_Mission" x="123" y="34" width="23" height="23" />
+
+		<!-- Stashes Icons -->
+		<texture id="Zver_Secret_Green" x="0" y="34" width="25" height="25" />
+		<texture id="Zver_Secret_Yellow" x="25" y="34" width="25" height="25" />
+		<texture id="Zver_Secret_Purple" x="50" y="34" width="25" height="25" />
+		<texture id="Zver_Secret_Red" x="75" y="34" width="25" height="25" />
+		
+		<!-- Exit Icon -->
+		<texture id="ExitIcon" x="146" y="34" width="11" height="12" />
+		
+		<!-- Player Triangle (Minimap) -->
+		<texture id="PlayerTriangle" x="146" y="46" width="7" height="9" />
+
+		<!-- Spot -->
+		<texture id="Zver_Location_Legend" x="168" y="19" width="41" height="41" />
+		
+		<!-- Quest Arrow -->
+		<texture id="QuestArrowIcon" x="209" y="0" width="11" height="60" />
+	</file>
+</w>

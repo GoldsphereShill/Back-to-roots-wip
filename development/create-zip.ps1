@@ -11,6 +11,8 @@ Copy-Item -Path "fomod" -Destination "builds\Less Items for Anomaly REWORK\" -Re
 #Scripts
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\actor_status.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_zver_mcm.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_minimap_deadmarks.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_minimap_counter.script"
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\outfits" -Recurse
@@ -29,6 +31,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_outfits_new.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_zver.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_zver_mcm.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_zver_map.xml"
 
 #Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_loadscreen.xml" #The file doesnt exist
 #Text Russsian 
@@ -42,6 +45,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus
 #>
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_zver.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_zver_mcm.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_zver_map.xml"
 
 #UI
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ui" -Recurse
