@@ -24,11 +24,13 @@ Hit Impulse Restored: https://www.moddb.com/mods/stalker-anomaly/addons/hit-impu
 Attachment icon fix - EverybodyLies: https://www.moddb.com/mods/stalker-anomaly/addons/weapon-attachments-position-fix-vanilla
 XR-danger script fixed: https://www.moddb.com/mods/stalker-anomaly/addons/fixed-xr-danger
 No weapon dropping on damage: https://www.moddb.com/mods/stalker-anomaly/addons/remove-dropping-weapons-from-damage-for-152
+Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
+Companion Tweaks: https://www.moddb.com/mods/stalker-anomaly/addons/companion-carryweight-and-looting-rework
+Faction Identification UI: https://www.moddb.com/mods/stalker-anomaly/addons/crooks-faction-identification-ui
 
 -Essential:
 Companion Inventory Unlock: https://www.moddb.com/mods/stalker-anomaly/addons/companion-inventory
 iTheon tasks: https://github.com/lTheon/iTheon-New-Tasks-Addon
-Companion Tweaks: https://www.moddb.com/mods/stalker-anomaly/addons/companion-carryweight-and-looting-rework
 NPC Pushing: https://www.moddb.com/mods/stalker-anomaly/addons/get-out-of-my-way-you-stupid-npc
 
 -Hideout Furniture:
@@ -37,7 +39,7 @@ Hideout Furniture Preview Gizmos: https://www.moddb.com/mods/stalker-anomaly/add
 Even More Hideout Furniture: https://www.moddb.com/mods/stalker-anomaly/addons/even-more-hideout-furniture
 
 -UI:
-Faction Identification UI: https://www.moddb.com/mods/stalker-anomaly/addons/crooks-faction-identification-ui
+
 
 -Other:
 ESCAPE FROM TARKOV FOOTSTEPS AND TINNITUS REPLACER: https://www.moddb.com/mods/stalker-anomaly/addons/escape-from-tarkov-footsteps-and-tinnitus-replacer
@@ -45,14 +47,11 @@ Sleep Timelapse: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-r
 Cozy Campfires: https://www.moddb.com/mods/stalker-anomaly/addons/cozy-campfires
 Campire Healing: https://www.moddb.com/mods/stalker-anomaly/addons/campfire-healing-and-designated-savepoint-indicator
 Campfires on map: https://www.moddb.com/mods/stalker-anomaly/addons/displaycampfiresonmap
-Hedlamp Animation Fix: https://www.moddb.com/mods/stalker-anomaly/addons/headlamp-animation-fix-rc18-23
 Minimod Repo - TheMrDemonized: https://www.moddb.com/mods/stalker-anomaly/addons/dltx-required-dltx-minimod-pack !!!We wont include all!!!
 
 -Optional:
 Semi Radiant AI: https://www.moddb.com/mods/stalker-anomaly/addons/semi-radiant-ai-01-dltx-required
 Spatial Anomalies Restored: https://www.moddb.com/mods/stalker-anomaly/addons/spatial-anomalies-10
-Search Logic: https://www.moddb.com/mods/stalker-anomaly/addons/search-logic
-Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
 SoC style artifacts: https://www.moddb.com/mods/stalker-anomaly/addons/soc-style-artefacts-dltx
 Undercover Communications: https://www.moddb.com/mods/stalker-anomaly/addons/151-banjajis-undercover-communications
 Anomaly-ai-extension: https://www.moddb.com/mods/stalker-anomaly/addons/anomaly-ai-extension
@@ -61,7 +60,6 @@ Anomaly-ai-extension: https://www.moddb.com/mods/stalker-anomaly/addons/anomaly-
 Battery Warning: https://www.moddb.com/mods/stalker-anomaly/addons/batterywarning
 Xenotech Behavior: https://www.moddb.com/mods/stalker-anomaly/addons/xenotech-behavior
 RF Reworked: https://www.moddb.com/mods/stalker-anomaly/addons/151152-coverdraves-reworked-rf-receiver-beeps
-Include lower tiers of toolkits: https://www.moddb.com/mods/stalker-anomaly/addons/high-level-toolkits-include-low-level-toolkits
 Defended Lab X-10: https://www.moddb.com/mods/stalker-anomaly/addons/defended-lab-x-10
 Ledge Grabbing: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-ledge-grabbing-mantling
 Less screen shake on damage: https://www.moddb.com/mods/stalker-anomaly/addons/no-camera-animations-when-injured
