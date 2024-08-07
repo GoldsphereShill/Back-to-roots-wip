@@ -4,36 +4,20 @@ $modVersion = Read-Host "Enter Version" #LIfAR ($modVersion).zip will be the fin
 New-Item -Name "builds\Less Items for Anomaly REWORK" -ItemType Directory #Temp folder
 New-Item -Name "builds\Less Items for Anomaly REWORK\Main" -ItemType Directory #Temp folder 2
 Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK\Main" -Recurse #Copying gamedata
+Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK\Main" -Recurse #Copying gamedata
 Copy-Item -Path "..\readme.txt" -Destination "builds\Less Items for Anomaly REWORK\readme.txt" #Readme
 Copy-Item -Path "fomod" -Destination "builds\Less Items for Anomaly REWORK\" -Recurse #Better Installing
 ##Deleting some copied files
 #ROOT
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\VERSIONS"
 #Scripts
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\actor_status.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_zver_mcm.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_minimap_deadmarks.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_minimap_counter.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dph_mcm_save_storage.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\mcm_log.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_main_menu.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_mcm.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dialog_fov.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dialog_fov_mcm.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_headlamp_animation_fix.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dynamic_eq_icon.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\rax_icon_layers.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\z_item_icon_info.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dynamic_npc_armor_visuals.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_item_cooking_keep_crafting_window_open.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_item_repair_keep_crafting_window_open.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_time_events_keep_crafting_window_open.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_ui_workshop_keep_crafting_window_open.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\demonized_time_events.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\sr_light.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_headlamp_animation_fix.script"
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\z_monkey_toolkit_workshop.script"
-
+Copy-item -Path "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\libhash_crc16.script" -Destination "builds\Less Items for Anomaly REWORK\" 
+Copy-item -Path "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\treasure_manager_guarenteed_loot.script" -Destination "builds\Less Items for Anomaly REWORK\"
+Copy-item -Path "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\utils_item.script" -Destination "builds\Less Items for Anomaly REWORK\"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\*.*" -Recurse
+Copy-Item -Path "builds\Less Items for Anomaly REWORK\libhash_crc16.script" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\"
+Copy-Item -Path "builds\Less Items for Anomaly REWORK\treasure_manager_guarenteed_loot.script" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\"
+Copy-Item -Path "builds\Less Items for Anomaly REWORK\utils_item.script" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\"
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\outfits" -Recurse
@@ -47,6 +31,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\mcm_key_
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\plugins" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\zones" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\dynamic_npc_armor_visuals.ltx"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ai_tweaks\" -Recurse
 
 #Text English
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_dialogs_lostzone_ll.xml"
