@@ -1,0 +1,67 @@
+--[[
+	=====================================================================
+	Addon      : Tosox Mini Mods Repo: Disassembling Outfits gives Patches
+	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/tosox-mini-mods-repo/
+	Author     : Tosox
+	Date       : 26.01.2024
+	Last Edit  : 27.02.2024
+	=====================================================================
+--]]
+
+local patch_to_give = nil
+
+orig_item_parts_disassembly_outfit = item_parts.disassembly_outfit
+item_parts.disassembly_outfit = function(obj, obj_d)
+	if math.random() < get_mcm_config("patch_chance") then
+		local outfit_comm = ini_sys:r_string_ex(obj:section(), "community")
+		if (outfit_comm) and (outfit_comm ~= "") then
+			local patch_section = gameplay_disguise.get_patch(outfit_comm, true)
+			local is_unpatched = se_load_var(obj:id(), obj:name(), "unpatched")
+			if (not is_unpatched) and (patch_section) then
+				patch_to_give = patch_section
+			end
+		end
+	end
+
+	orig_item_parts_disassembly_outfit(obj, obj_d)
+end
+
+orig_item_parts_timer_disassembly_outfit = item_parts.timer_disassembly_outfit
+item_parts.timer_disassembly_outfit = function(npc_id, result_details, result_conditions, name)
+	-- Insert the patch into the disassembly parts list
+	if patch_to_give then
+		table.insert(result_details, patch_to_give)
+		patch_to_give = nil
+	end
+
+	return orig_item_parts_timer_disassembly_outfit(npc_id, result_details, result_conditions, name)
+end
+
+--===========================================================================
+--
+-- MCM
+--
+--===========================================================================
+
+local cc = table.concat
+
+local MCM_ROOT_ID = "tmmr"
+local MCM_MODULE_ID = "outfits_gives_patches"
+
+defaults = {
+	["patch_chance"] = 0.15
+}
+
+function get_mcm_config(key)
+	local path = cc({ MCM_ROOT_ID, MCM_MODULE_ID, key }, "/")
+	if ui_mcm then return ui_mcm.get(path) else return defaults[key] end
+end
+
+function on_mcm_load()
+	return {
+		id = MCM_MODULE_ID, sh = true, gr = {
+			{ id = "title", type = "slide", link = "ui_options_slider_night", text = cc({ "ui_mcm", MCM_ROOT_ID, MCM_MODULE_ID, "title" }, "_"), size = { 512, 50 }, spacing = 20 },
+			{ id = "patch_chance", type = "track", val = 2, min = 0.0, max = 1.0, step = 0.01, def = defaults["patch_chance"] }
+		}
+	}, MCM_ROOT_ID
+end

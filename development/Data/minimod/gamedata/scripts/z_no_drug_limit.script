@@ -1,0 +1,18 @@
+--[[
+	=====================================================================
+	Addon      : Tosox Mini Mods Repo: New No Drug Limit
+	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/tosox-mini-mods-repo/
+	Author     : Tosox
+	Credits    : nb79
+	Date       : 17.11.2023
+	Last Edit  : 19.01.2024
+	=====================================================================
+--]]
+
+orig_itms_manager_aoibu = itms_manager.actor_on_item_before_use
+itms_manager.actor_on_item_before_use = function(...)
+	orig_itms_manager_aoibu(...)
+
+	-- Resetting the old_booster table disables the "old booster still active" check
+	itms_manager.old_booster = {}
+end

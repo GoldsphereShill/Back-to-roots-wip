@@ -1,0 +1,174 @@
+--[[
+	=====================================================================
+	Addon      : Tosox Mini Mods Repo: Auto Equip Gear
+	Link       : https://www.moddb.com/mods/stalker-anomaly/addons/tosox-mini-mods-repo/
+	Author     : Tosox
+	Date       : 11.01.2024
+	Last Edit  : 21.05.2024
+	=====================================================================
+--]]
+
+function IsBinoc(o, c)
+	if not (c) then
+		c = o and o:clsid()
+	end
+	return c and (c == clsid.wpn_binocular_s or c == clsid.wpn_binocular)
+end
+
+function IsTorch(o, c)
+	if not (c) then
+		c = o and o:clsid()
+	end
+	return c and (c == clsid.device_torch_s or c == clsid.device_torch)
+end
+
+function IsPDA(o, c)
+	if not (c) then
+		c = o and o:clsid()
+	end
+	return c and (c == clsid.obj_pda_s or c == clsid.device_pda)
+end
+
+--=====================================================================
+
+do_anims = false
+function disable_item_animations()
+	do_anims = actor_effects.is_animations_on()
+	actor_effects.set_animations(false)
+end
+
+function restore_item_animations()
+	actor_effects.set_animations(do_anims)
+end
+
+--=====================================================================
+
+function equip_gear()
+	local function gather_gear(actor, itm)
+		local sec = itm:section()
+		if IsMelee(itm) then
+			db.actor:move_to_slot(itm, 1)
+		elseif IsGrenade(itm) then
+			db.actor:move_to_slot(itm, 4)
+		elseif IsBinoc(itm) then
+			db.actor:move_to_slot(itm, 5)
+		elseif IsBolt(itm) then
+			db.actor:move_to_slot(itm, 6)
+		elseif IsOutfit(itm) then
+			db.actor:move_to_slot(itm, 7)
+		elseif IsPDA(itm) then
+			db.actor:move_to_slot(itm, 8)
+		elseif IsTorch(itm) then
+			db.actor:move_to_slot(itm, 10)
+		elseif IsItem("device", sec) then
+			db.actor:move_to_slot(itm, 9)
+		elseif IsHeadgear(itm) then
+			db.actor:move_to_slot(itm, 12)
+		elseif IsItem("backpack", sec) then
+			db.actor:move_to_slot(itm, 13)
+		end
+	end
+	db.actor:iterate_inventory(gather_gear, db.actor)
+end
+
+function empty_slots()
+	for i = 1, 13 do
+		local itm = db.actor:item_in_slot(i)
+		if itm then
+			db.actor:move_to_ruck(itm)
+		end
+	end
+end
+
+--=====================================================================
+
+equipped_slots = {}
+equipped_belt = {}
+function save_equipped_slots()
+	-- Save all items in the slots
+	for i = 1, 13 do
+		equipped_slots[i] = db.actor:item_in_slot(i)
+	end
+
+	-- Save all items in the belt
+	db.actor:iterate_belt(function(actor, itm)
+		table.insert(equipped_belt, itm)
+	end)
+end
+
+function restore_equipped_slots()
+	-- Restore all items from the slots
+	for i = 1, 13 do
+		if equipped_slots[i] then
+			db.actor:move_to_slot(equipped_slots[i], i)
+		end
+	end
+	equipped_slots = {}
+
+	-- Wait until we equipped our outfit
+	CreateTimeEvent("tsx_auto_equip_gear", "equip_belt", 0.25, function()
+		-- Restore all items from the belt
+		for _, v in pairs(equipped_belt) do
+			db.actor:move_to_belt(v)
+		end
+		equipped_belt = {}
+		return true
+	end)
+end
+
+--=====================================================================
+
+orig_new_game_equipment = itms_manager.new_game_equippment
+itms_manager.new_game_equippment = function(...)
+	orig_new_game_equipment(...)
+	
+	equip_gear()
+	
+	-- Wait until we equipped our outfit
+	CreateTimeEvent("tsx_auto_equip_gear", "equip_gear", 0.25, function()
+		-- Override autosave again
+		exec_console_cmd("save " .. user_name() .. " - autosave")
+		return true
+	end)
+	
+	return true
+end
+
+orig_xr_effects_bar_arena_teleport = xr_effects.bar_arena_teleport
+xr_effects.bar_arena_teleport = function(...)
+	-- Save the slots before entering the arena
+	save_equipped_slots()
+
+	-- Disable item animations
+	disable_item_animations()
+
+    orig_xr_effects_bar_arena_teleport(...)
+
+	-- Wait until we received all arena items
+	CreateTimeEvent("tsx_auto_equip_gear", "equip_arena_enter", 0.25, function()
+		equip_gear()
+		return true
+	end)
+end
+
+orig_xr_effects_bar_arena_teleport_2 = xr_effects.bar_arena_teleport_2
+xr_effects.bar_arena_teleport_2 = function(...)
+	orig_xr_effects_bar_arena_teleport_2(...)
+
+	-- Wait until we received our items back
+	CreateTimeEvent("tsx_auto_equip_gear", "equip_arena_exit", 0.25, function()
+		-- Move the items that were equipped by default back into the backpack
+		empty_slots()
+
+		-- Wait until all items are back in the backpack
+		CreateTimeEvent("tsx_auto_equip_gear", "restore_equipped_slots", 0.25, function()
+			restore_equipped_slots()
+
+			-- Restore item animations
+			restore_item_animations()
+			
+			return true
+		end)
+		return true
+	end)
+end
