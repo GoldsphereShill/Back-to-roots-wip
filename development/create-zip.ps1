@@ -18,6 +18,8 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dph_mcm_
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\mcm_log.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_main_menu.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\ui_mcm.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dialog_fov.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dialog_fov_mcm.script"
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\outfits" -Recurse
@@ -39,6 +41,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_zver_mcm.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_zver_map.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_mcm.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_dialog_fov_mcm.xml"
 #Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_loadscreen.xml" #The file doesnt exist
 #Text Russsian 
 <#
@@ -53,6 +56,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_zver_mcm.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_zver_map.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_mcm.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_dialog_fov_mcm.xml"
 #UI
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ui" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\system.ltx"
