@@ -35,6 +35,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\se
 Copy-Item -Path "data\legacy_parts.txt" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\settings\parts.ltx" #Legacy parts.ltx
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\mcm_key_localization.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\plugins" -Recurse
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\zones" -Recurse
 
 #Text English
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_dialogs_lostzone_ll.xml"
