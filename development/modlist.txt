@@ -27,6 +27,7 @@ No weapon dropping on damage: https://www.moddb.com/mods/stalker-anomaly/addons/
 Disable Burnt Fuzz Anomaly: https://www.moddb.com/mods/stalker-anomaly/addons/disable-burnt-fuzz
 Companion Tweaks: https://www.moddb.com/mods/stalker-anomaly/addons/companion-carryweight-and-looting-rework
 Faction Identification UI: https://www.moddb.com/mods/stalker-anomaly/addons/crooks-faction-identification-ui
+Less screen shake on damage: https://www.moddb.com/mods/stalker-anomaly/addons/no-camera-animations-when-injured
 
 -Essential:
 Companion Inventory Unlock: https://www.moddb.com/mods/stalker-anomaly/addons/companion-inventory
