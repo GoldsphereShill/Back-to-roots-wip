@@ -1,0 +1,70 @@
+<window>
+	<!-- 71.875 -->
+	<zver x="0" y="700" width="180" height="24" stretch="1">
+	
+		<ammo_display x="905.5" y="-26.5" width="117.875" height="48" stretch="1">
+			<texture>ui\zver\AmmoCoutHUD.dds</texture>
+			<!-- ammo text color is now controled by a table at the top of the script values here will be over ridden -->
+			<fmj_ammo x="13" y="10.8" width="26" height="17"> 
+				<text align="c" complex_mode="0" font="letterica18" r="238" g="155" b="23" a="255">fmj</text>
+			</fmj_ammo>
+			
+			<ap_ammo x="43.5" y="10.5" width="26" height="17"> 
+				<text align="c" complex_mode="0" font="letterica18" r="238" g="155" b="23" a="255">ap</text>
+			</ap_ammo>
+			
+			<third_ammo x="74" y="10.8" width="26" height="17"> 
+				<text align="c" complex_mode="0" font="letterica18" r="238" g="155" b="23" a="255">third</text>
+			</third_ammo>
+		</ammo_display>
+
+	
+		<armor_health  x="126" y="-67" width="71.875" height="132" stretch="1" >
+			<texture>ui\zver\ARMRHud.dds</texture>
+			<text align="c" complex_mode="0" x="3" y="95.6" font="arial_14" r="200" g="155" b="64" a="255">armor</text>
+			<value x="55" y="23" width="2.875" height="56" stretch="1" horz="0" min="0" max="100" pos="0">
+			<progress>
+				<texture>ui\zver\ARMRHudBar.dds</texture>
+			</progress>
+			</value>
+
+		</armor_health>
+
+
+		<weapon_health x="862.5" y="-51" width="71.875" height="132" stretch="1" >
+			<texture>ui\zver\WPNHud.dds</texture>
+			<text align="c" complex_mode="0" x="1.1" y="99" font="arial_14" r="240" g="155" b="64" a="255">weapon</text>
+			<value x="18" y="26" width="2.875" height="56" stretch="1" horz="0" min="0" max="100">
+			<progress>
+				<texture>ui\zver\WPNHudBar.dds</texture>
+			</progress>
+			</value>
+		</weapon_health>
+		
+		<rad_health x="0" y="-4" width="46" height="72" stretch="1">
+			<texture>ui\zver\RADHud.dds</texture>
+			<value x="5.88" y="5" width="2.875" height="44" stretch="1" horz="0" min="0" max="100" pos="0">
+			<progress>
+				<texture>ui\zver\RADHudBar.dds</texture>
+			</progress>
+			</value>
+		</rad_health>
+		
+		<bleeding_health x="106" y="-4" width="46" height="72" stretch="1" >
+			<texture>ui\zver\BLEEDHud.dds</texture>
+			<value x="36.6" y="5" width="2.875" height="44" stretch="1" horz="0" min="0" max="100" pos="0">
+			<progress>
+				<texture>ui\zver\BLEEDHudBar.dds</texture>
+			</progress>
+			</value>
+		</bleeding_health>
+		
+		<progress_bar_health x="33.8" y="-34" width="100" height="12" horz="1" min="0" max="100" pos="0">
+			<progress>
+				<texture>ui\zver\HPP.dds</texture>
+			</progress>
+		</progress_bar_health>
+
+	</zver>	
+	
+</window>

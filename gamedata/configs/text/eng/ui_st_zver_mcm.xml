@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!-- 
+	zver strings
+-->
+
+<string_table>
+	<string id="ui_mcm_menu_zver">
+		<text>Zver HUD</text>
+	</string>
+	<string id="ui_mm_video_hud_zverslide">
+		<text>Zver HUD - Settings</text>
+	</string>
+
+
+
+	<string id="ui_mcm_zver_armorbar">
+		<text>Armor Condition Bar</text>
+	</string>
+	<string id="ui_mcm_zver_armorbar_desc">
+		<text>Shows the Armor Condition Bar.</text>
+	</string>
+	<string id="ui_mcm_zver_armortext">
+		<text>Armor Condition %-Text</text>
+	</string>
+	<string id="ui_mcm_zver_armortext_desc">
+		<text>Shows the Armor Condition as a percentage in text. \n%c[ui_gray_2]Has no effect if the bar is disabled.</text>
+	</string>
+	<string id="ui_mcm_zver_weaponshow">
+		<text>Weapon Condition Bar</text>
+	</string>
+	<string id="ui_mcm_zver_weaponshow_desc">
+		<text>Shows the Weapon Condition Bar.</text>
+	</string>
+	<string id="ui_mcm_zver_weapontext">
+		<text>Weapon Condition %-Text</text>
+	</string>
+	<string id="ui_mcm_zver_weapontext_desc">
+		<text>Shows the Weapon Condition as a percentage in text. \n%c[ui_gray_2]Has no effect if the bar is disabled.</text>
+	</string>
+	<string id="ui_mcm_zver_weaponbarhide">
+		<text>Hide HUD on Unequip</text>
+	</string>
+	<string id="ui_mcm_zver_weaponbarhide_desc">
+		<text>Makes the Weapon Condition Bar disappear when weapon unequiped. \n%c[ui_gray_2]Has no effect if the bar is disabled.</text>
+	</string>
+	<string id="ui_mcm_zver_ammoshow">
+		<text>Total Ammo Counters</text>
+	</string>
+	<string id="ui_mcm_zver_ammoshow_desc">
+		<text>Shows the TOTAL amount of ammo you have for each 3 types available in inventory.</text>
+	</string>
+	<string id="ui_mcm_zver_oldammoshow">
+		<text>Old Ammo</text>
+	</string>
+	<string id="ui_mcm_zver_oldammoshow_desc">
+		<text>Makes the Old Ammo appear where relevant (Such as not having its "good" counterparts)</text>
+	</string>
+	<string id="ui_mcm_zver_radhealthshow">
+		<text>Radiation Exposure Bar</text>
+	</string>
+	<string id="ui_mcm_zver_radhealthshow_desc">
+		<text>Shows the amount of Radiation you have as a bar.</text>
+	</string>
+	<string id="ui_mcm_zver_bleedingbarshow">
+		<text>Bleeding Bar</text>
+	</string>
+	<string id="ui_mcm_zver_bleedingbarshow_desc">
+		<text>Shows the amount of blood you're losing as a bar.</text>
+	</string>
+	<string id="ui_mcm_zver_healingbar">
+		<text>Health Prediction Bar</text>
+	</string>
+	<string id="ui_mcm_zver_healingbar_desc">
+		<text>Shows the amount of Health you are recovering as a 1-by-10 health signs.</text>
+	</string>
+	
+</string_table>

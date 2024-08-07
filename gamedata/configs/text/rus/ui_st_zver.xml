@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!-- 
+	Zver HUD strings
+-->
+
+<string_table>
+	<string id="ui_mm_video_hud_zverlide">
+		<text>Zver HUD - Настройки</text>
+	</string>
+
+
+
+	<string id="ui_mm_video_hud_armorbar">
+		<text>Вкл.\Выкл.  состояния брони</text>
+	</string>
+	<string id="ui_mm_video_hud_armorbar_desc">
+		<text>Отображать шкалу состояния брони</text>
+	</string>
+	<string id="ui_mm_video_hud_armortext">
+		<text>Отображать %-состояния брони</text>
+	</string>
+	<string id="ui_mm_video_hud_armortext_desc">
+		<text>Показывает состояние брони в процентах. \n%c[ui_gray_2]Если шкала состояния брони отключена, то эта настройка не имеет какого-либо эффекта.</text>
+	</string>
+	<string id="ui_mm_video_hud_weaponshow">
+		<text>Вкл.\Выкл. HUD состояния оружия</text>
+	</string>
+	<string id="ui_mm_video_hud_weaponshow_desc">
+		<text>Отображать шкалу состояния оружия</text>
+	</string>
+	<string id="ui_mm_video_hud_weapontext">
+		<text>Отображать %-состояния оружия</text>
+	</string>
+	<string id="ui_mm_video_hud_weapontext_desc">
+		<text>Показывает состояние оружия в процентах. \n%c[ui_gray_2]Если шкала состояния оружия отключена, то эта настройка не имеет какого-либо эффекта.</text>
+	</string>
+	<string id="ui_mm_video_hud_weaponbarhide">
+		<text>Скрывать HUD оружия при убирании оружия</text>
+	</string>
+	<string id="ui_mm_video_hud_weaponbarhide_desc">
+		<text>Скрывает HUD и шкалу состояния оружия, когда Вы убираете оружие. \n%c[ui_gray_2]Если шкала состояния оружия отключена, то эта настройка не имеет какого-либо эффекта.</text>
+	</string>
+	<string id="ui_mm_video_hud_ammoshow">
+		<text>Вкл.\Выкл. доп. счётчик патронов</text>
+	</string>
+	<string id="ui_mm_video_hud_ammoshow_desc">
+		<text>Показывает полный боезапас каждого из 3 типов боеприпасов, имеющихся в инвентаре.</text>
+	</string>
+	<string id="ui_mm_video_hud_oldammoshow">
+		<text>Учитывать плохие патроны</text>
+	</string>
+	<string id="ui_mm_video_hud_oldammoshow_desc">
+		<text>Показывает количество имеющихся в инвентаре непригодных патронов, в случае, если нет их хороших аналогов.</text>
+	</string>
+	<string id="ui_mm_video_hud_radhealthshow">
+		<text>Вкл.\Выкл. HUD облучения</text>
+	</string>
+	<string id="ui_mm_video_hud_radhealthshow_desc">
+		<text>Показывает количество поглощённой Вами радиации в виде иконки и шкалы.</text>
+	</string>
+	<string id="ui_mm_video_hud_bleedingbarshow">
+		<text>Вкл.\Выкл. HUD кровотечения</text>
+	</string>
+	<string id="ui_mm_video_hud_bleedingbarshow_desc">
+		<text>Показывает количество поглощённой Вами радиации в виде иконки и шкалы</text>
+	</string>
+	<string id="ui_mm_video_hud_healingbar">
+		<text>Шкала восстановления здоровья</text>
+	</string>
+	<string id="ui_mm_video_hud_healingbar_desc">
+		<text>Показывает доп. шкалу - уровень восстанавливаемого здоровья, снизу шкалы здоровья</text>
+	</string>
+	
+</string_table>
