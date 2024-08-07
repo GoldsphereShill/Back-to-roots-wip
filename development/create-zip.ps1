@@ -30,6 +30,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_item_
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_time_events_keep_crafting_window_open.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_ui_workshop_keep_crafting_window_open.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\demonized_time_events.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\sr_light.script"
 
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"

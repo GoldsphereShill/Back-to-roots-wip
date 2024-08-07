@@ -18,15 +18,13 @@ Burner always visible-  DinkyBinky: https://www.moddb.com/mods/stalker-anomaly/a
 Electra always visible-  DinkyBinky: https://www.moddb.com/mods/stalker-anomaly/addons/electra-always-visible-dltx
 Gray Hip Outfit: https://www.moddb.com/mods/stalker-anomaly/addons/hips-grey-outfit
 Dynamic NPC Armour Visuals: https://www.moddb.com/mods/stalker-anomaly/addons/dynamic-npc-armor-visuals
+Keep Crafting Window Open: https://www.moddb.com/mods/stalker-anomaly/addons/keep-crafting-window-opened
+Companions deactivate headlamps in stealth: https://www.moddb.com/mods/stalker-anomaly/addons/tbs-companions-deactivate-headlamps-when-in-stealth
 
 -Essential:
 Companion Inventory Unlock: https://www.moddb.com/mods/stalker-anomaly/addons/companion-inventory
 iTheon tasks: https://github.com/lTheon/iTheon-New-Tasks-Addon
-
 Companion Tweaks: https://www.moddb.com/mods/stalker-anomaly/addons/companion-carryweight-and-looting-rework
-Keep Crafting Window Open: https://www.moddb.com/mods/stalker-anomaly/addons/keep-crafting-window-opened
-
-Companions deactivate headlamps in stealth: https://www.moddb.com/mods/stalker-anomaly/addons/tbs-companions-deactivate-headlamps-when-in-stealth
 Mod Config Menu: https://www.moddb.com/mods/stalker-anomaly/addons/anomaly-mod-configuration-menu-patch-fr
 High Resolution PDA Maps: https://www.moddb.com/mods/stalker-anomaly/addons/high-resolution-maps
 NPC Pushing: https://www.moddb.com/mods/stalker-anomaly/addons/get-out-of-my-way-you-stupid-npc
