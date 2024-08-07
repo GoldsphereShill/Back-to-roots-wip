@@ -33,19 +33,19 @@
 	</friend_mini_spot>
 
 	<deadbody_mini_spot width="10" height="10" stretch="1" alignment="c">
-		<texture r="10" g="225" b="225">ui_mmap_common_actor</texture>
+		<texture r="50" g="195" b="255">ui_mmap_common_actor</texture>
 	</deadbody_mini_spot>
 
 	<deadbody_pda_spot width="12" height="12" stretch="1" alignment="c" location_level="5">
-		<texture r="10" g="225" b="225">ui_mmap_common_actor</texture>
+		<texture r="50" g="195" b="255">ui_mmap_common_actor</texture>
 	</deadbody_pda_spot>
 
 	<tushka_mini_spot width="10" height="10" stretch="1" alignment="c">
-		<texture r="10" g="225" b="225">ui_pda2_important1</texture>
+		<texture r="50" g="195" b="255">ui_pda2_important1</texture>
 	</tushka_mini_spot>
 
 	<tushka_pda_spot width="12" height="12" stretch="1" alignment="c" location_level="5">
-		<texture r="10" g="225" b="225">ui_pda2_important1</texture>
+		<texture r="50" g="195" b="255">ui_pda2_important1</texture>
 		<!-- <texture r="0" g="255" b="255">ui_pda2_important1</texture> -->
 	</tushka_pda_spot>
 
