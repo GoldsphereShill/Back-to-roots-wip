@@ -24,6 +24,12 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_headl
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dynamic_eq_icon.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\rax_icon_layers.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\z_item_icon_info.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\dynamic_npc_armor_visuals.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_item_cooking_keep_crafting_window_open.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_item_repair_keep_crafting_window_open.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_time_events_keep_crafting_window_open.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_ui_workshop_keep_crafting_window_open.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\demonized_time_events.script"
 
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"
@@ -33,9 +39,11 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\we
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\settings\npc_loadouts" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\settings\parts.ltx" #Anomalite deletes some outfits, LIfAR uses legacy file
 Copy-Item -Path "data\legacy_parts.txt" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\settings\parts.ltx" #Legacy parts.ltx
+#Other Configs
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\mcm_key_localization.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\plugins" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\zones" -Recurse
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\dynamic_npc_armor_visuals.ltx"
 
 #Text English
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_dialogs_lostzone_ll.xml"
