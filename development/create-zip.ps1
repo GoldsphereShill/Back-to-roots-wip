@@ -3,13 +3,15 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 $modVersion = Read-Host "Enter Version" #LIfAR ($modVersion).zip will be the final name
 New-Item -Name "builds\Less Items for Anomaly REWORK" -ItemType Directory #Temp folder
 New-Item -Name "builds\Less Items for Anomaly REWORK\Main" -ItemType Directory #Temp folder 2
-Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK\Main" -Recurse #Copying gamedata
-Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK\Main" -Recurse #Copying gamedata
+New-Item -Name "builds\Less Items for Anomaly REWORK\Main\gamedata" -ItemType Directory #Temp folder 3
+Copy-Item -Path "..\gamedata\configs" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata" -Recurse #Copying gamedata
+Copy-Item -Path "..\gamedata\sounds" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata" -Recurse #Copying gamedata
+Copy-Item -Path "..\gamedata\scripts" -Destination "builds\Less Items for Anomaly REWORK\Main\gamedata" -Recurse #Copying gamedata
 Copy-Item -Path "..\readme.txt" -Destination "builds\Less Items for Anomaly REWORK\readme.txt" #Readme
 Copy-Item -Path "fomod" -Destination "builds\Less Items for Anomaly REWORK\" -Recurse #Better Installing
 ##Deleting some copied files
 #ROOT
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\VERSIONS"
+#Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\VERSIONS" #No need to do this anymore
 #Scripts
 Copy-item -Path "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\libhash_crc16.script" -Destination "builds\Less Items for Anomaly REWORK\" 
 Copy-item -Path "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\treasure_manager_guarenteed_loot.script" -Destination "builds\Less Items for Anomaly REWORK\"
@@ -32,6 +34,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\plugins"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\zones" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\dynamic_npc_armor_visuals.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ai_tweaks\" -Recurse
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\mod_system_burer_drop_disabler.ltx"
 
 #Text English
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_dialogs_lostzone_ll.xml"
@@ -69,7 +72,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\system.l
 #Sounds
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\sounds\weapons" -Recurse
 #Textures
-Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\textures" -Recurse
+#Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\textures" -Recurse #No need to do this anymore
 
 ##Compressing Archive and removing the old folder
 Compress-Archive -Path "builds\Less Items for Anomaly REWORK" -DestinationPath "builds\LIfAR ($modVersion).zip"
