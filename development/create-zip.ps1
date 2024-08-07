@@ -7,6 +7,10 @@ Copy-Item -Path "..\gamedata" -Destination "builds\Less Items for Anomaly REWORK
 Copy-Item -Path "..\readme.txt" -Destination "builds\Less Items for Anomaly REWORK\readme.txt" #Readme
 Copy-Item -Path "fomod" -Destination "builds\Less Items for Anomaly REWORK\" -Recurse #Better Installing
 ##Deleting some copied files
+
+#Scripts
+Remove-Item "D:\Games\S.T.A.L.K.E.R\Anomaly Mods\mods\Back-to-roots-wip\gamedata\scripts\actor_status.script"
+
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\outfits" -Recurse
