@@ -32,6 +32,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_ui_wo
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\demonized_time_events.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\sr_light.script"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\zz_headlamp_animation_fix.script"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\scripts\z_monkey_toolkit_workshop.script"
 
 #Items
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\items\items\items_artefacts.ltx"

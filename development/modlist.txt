@@ -20,6 +20,7 @@ Gray Hip Outfit: https://www.moddb.com/mods/stalker-anomaly/addons/hips-grey-out
 Dynamic NPC Armour Visuals: https://www.moddb.com/mods/stalker-anomaly/addons/dynamic-npc-armor-visuals
 Keep Crafting Window Open: https://www.moddb.com/mods/stalker-anomaly/addons/keep-crafting-window-opened
 Companions deactivate headlamps in stealth: https://www.moddb.com/mods/stalker-anomaly/addons/tbs-companions-deactivate-headlamps-when-in-stealth
+Hit Impulse Restored: https://www.moddb.com/mods/stalker-anomaly/addons/hit-impulse-restore
 
 -Essential:
 Companion Inventory Unlock: https://www.moddb.com/mods/stalker-anomaly/addons/companion-inventory
@@ -37,20 +38,11 @@ Hideout Furniture Preview Gizmos: https://www.moddb.com/mods/stalker-anomaly/add
 Even More Hideout Furniture: https://www.moddb.com/mods/stalker-anomaly/addons/even-more-hideout-furniture
 
 -UI:
-Utjas item ui imprevements: https://www.moddb.com/mods/stalker-anomaly/addons/utjans-item-ui-improvements
-Throw Indicator - KalakCZ: https://www.moddb.com/mods/stalker-anomaly/addons/151-152-throw-indicator
-HUD Icons Time: https://www.moddb.com/mods/stalker-anomaly/addons/hud-icons-time
-Zver HUD - Asametar: https://www.moddb.com/mods/stalker-anomaly/addons/zver-hud
-Zver Minimap - Asametar: https://www.moddb.com/mods/stalker-anomaly/addons/zver-minimap
-Dynamic Crosshair - Great_Day: https://www.moddb.com/mods/stalker-anomaly/addons/dynamic-crosshair-for-151
-UI improvements - Utjan:  https://www.moddb.com/mods/stalker-anomaly/addons/utjans-item-ui-improvements
-Dialog Dynamic UI: https://www.moddb.com/mods/stalker-anomaly/addons/dialog-dynamic-ui
 Faction Identification UI: https://www.moddb.com/mods/stalker-anomaly/addons/crooks-faction-identification-ui
 Attachment icon fix - EverybodyLies: https://www.moddb.com/mods/stalker-anomaly/addons/weapon-attachments-position-fix-vanilla
 
 -Other:
 ESCAPE FROM TARKOV FOOTSTEPS AND TINNITUS REPLACER: https://www.moddb.com/mods/stalker-anomaly/addons/escape-from-tarkov-footsteps-and-tinnitus-replacer
-Hit Impulse Restored: https://www.moddb.com/mods/stalker-anomaly/addons/hit-impulse-restore
 Sleep Timelapse: https://www.moddb.com/mods/stalker-anomaly/addons/modded-exes-required-sleep-timelapse-01
 Cozy Campfires: https://www.moddb.com/mods/stalker-anomaly/addons/cozy-campfires
 Campire Healing: https://www.moddb.com/mods/stalker-anomaly/addons/campfire-healing-and-designated-savepoint-indicator
