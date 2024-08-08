@@ -233,8 +233,8 @@ function on_mcm_load()
 				{type = "line"},
 				
 				{type = "title", text = "Position"},
-				{id = "xo"	, type = "track", val = 2, def = 108.0, 	min = 0.0, max = 1024.0, step = 0.5},
-				{id = "yo"	, type = "track", val = 2, def = 665.0, min = 0.0, max = 768.0, step = 0.5},
+				{id = "xo"	, type = "track", val = 2, def = 199.5, 	min = 0.0, max = 1024.0, step = 0.5},
+				{id = "yo"	, type = "track", val = 2, def = 700, min = 0.0, max = 768.0, step = 0.5},
 				{type = "title", text = ""},
 				{id = "xp"	, type = "track", val = 2, def = 0.0, 	min = -300.0, max = 300.0, 	step = 0.5},
 				{id = "yp"	, type = "track", val = 2, def = 0.0, 	min = -300.0, max = 300.0, 	step = 0.5},
