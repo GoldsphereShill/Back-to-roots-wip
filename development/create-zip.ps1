@@ -36,6 +36,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\dynamic_
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ai_tweaks\" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\mod_system_burer_drop_disabler.ltx"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\story_npc_carryweights.ltx"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\gameplay\" -Recurse
 
 #Text English
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\st_dialogs_lostzone_ll.xml"
@@ -53,6 +54,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_item_icon_info.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_factionID.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_mcm_haruka_exo_servo_sounds.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_companion_inventory_fix.xml"
 #Text Russsian 
 <#
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\st_dialogs_lostzone_ll.xml"
@@ -71,6 +73,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_item_icon_info.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_factionID.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_mcm_haruka_exo_servo_sounds.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_companion_inventory_fix.xml"
 #UI
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ui" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\system.ltx"

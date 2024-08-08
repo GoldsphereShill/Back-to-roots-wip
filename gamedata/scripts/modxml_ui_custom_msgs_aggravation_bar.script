@@ -1,0 +1,26 @@
+-- ======================================================================
+--[[	Gameplay Addon: NPC Friendly Fire Response and Actor Surrender
+-- ======================================================================
+
+	Add aggravation bar to UI
+
+-- ===================================================================--]]
+
+function on_xml_read()
+    RegisterScriptCallback("on_xml_read", function(xml_file_name, xml_obj)
+        -- XML file i want to change
+        local xml_to_change = [[ui\ui_custom_msgs.xml]]
+
+        -- Check if its the file i want to change
+        if xml_file_name == xml_to_change then
+            -- Here is my code to change XML
+            local aggravation_bar = 
+[[
+<bar_aggravation x="0" y="650" width="1024" height="50">
+		<text complex_mode="1" r="150" g="150" b="150" align="c"  vert_align="c" font="letterica18" />
+	</bar_aggravation>
+]]
+            xml_obj:insertFromXMLString(aggravation_bar)
+        end
+    end)
+end

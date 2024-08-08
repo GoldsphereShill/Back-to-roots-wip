@@ -1,0 +1,1557 @@
+-- ===================================================================================
+--[[	Gameplay Addon: NPC Friendly Fire / War Response and Actor Surrender
+-- ===================================================================================
+ 	
+ 	Author: dEmergence (dEmergence @ ModDB)
+ 	Version: 0.1.1
+	Updated: 20240608
+	
+	Standalone version:
+	https://www.moddb.com/mods/stalker-anomaly/addons/npc-friendly-fire-response-and-actor-surrender
+	
+	Originally created by dEmergence for 'Dynamic Faction Relations Customizer'
+	https://www.moddb.com/mods/stalker-anomaly/addons/dynamic-faction-relations-customizer-dfrc-v10
+	
+	License: Feel free to reuse any of my code. Just add credit where credit is due.
+
+-- ================================================================================--]]
+
+local dfrc = dynamic_faction_relations_customizer
+local dfrc_has_feature = {
+	["affs"] = false
+	}
+if dfrc then
+	dfrc_has_feature["affs"] = dfrc.features and dfrc.features["affs"] or false
+end
+
+settings = {}
+settings["enable_debug_log"] = false
+settings["faction_dissatisfaction_limit"] = 100
+--settings["enable_goodwill_reset_on_friendly_fire"] = true
+settings["enable_goodwill_regeneration"] = true
+settings["min_goodwill_regainable_after_reset"] = 0
+settings["max_goodwill_regainable_after_reset"] = 0.5
+settings["max_goodwill_regainable_after_friendly_fire"] = 0.5
+
+is_factions_enemies = game_relations.is_factions_enemies
+
+-- Faction Aggravation Cache
+
+dfrc_tgr = {}
+dfrc_tgr.npc_map = {}
+dfrc_tgr.last_hit_time = 0
+
+-- Area Scanning Parameters
+
+WITNESS_DISTANCE = 1600
+GOSSIP_DISTANCE = 4900
+MAX_OBSERVER_DISTANCE = 10000
+
+local AREA_STATS = {}
+local min_scan_time_age = 10000
+local max_scan_time_age = 300000
+
+-- NPC Updates happen roughly every 1000 ms that means this value is applied once per second!
+local base_grudge_value_mod = 0.5
+local aggravation_factor = 1
+local calming_factor = 0.25
+
+-- Timing Parameters
+local min_hit_time_delay = 600000
+local min_regen_time_delay = 450000
+
+-- General Update Rate
+local tg_update = 0
+local tg_update_step = 996 --[ms] set to be a little off to avoid stacking up the same timeslot as other functions
+
+-- Regeneration Update Rate
+local tg_update_tgr = 0
+local tg_update_step_tgr = tg_update_step * 60 * 4 --* every 4 minutes ( = 24 min in game )
+
+-- News Message Handler Parameters
+local msg_duration = 10
+local msg_cooldown_min_time = 7000
+local msg_cooldown_time = {}
+
+local spammer_tracker = {
+	["WasHit"] = 0,
+	["SeenHit"] = -1,
+	["SeenActorHitWeapon"] = 0,
+	["SeenActorWeapon"] = 0,
+	["SeenActorInitSurrender"] = 0,
+	["AcknowledgedActorSurrender"] = 0,
+	["SeenActorUnSurrender"] = 0,
+	["ReportingAttack"] = 0
+}
+
+local spammer_tracker_max = {
+	["WasHit"] = 3,
+	["SeenHit"] = 3,
+	["SeenActorHitWeapon"] = 3,
+	["SeenActorWeapon"] = 3,
+	["SeenActorInitSurrender"] = 3,
+	["AcknowledgedActorSurrender"] = 3,
+	["SeenActorUnSurrender"] = 3,
+	["ReportingAttack"] = 3
+}
+
+-- HUD
+local show_hud_bar = false
+
+-- Debug Output
+function d_printf(debugtxt)
+	if settings["enable_debug_log"] then
+		printf(tostring( debugtxt ))
+	end
+end
+
+local function load_settings()
+	if dfrc then
+		d_printf("DFRC.TGR: Loading settings from DFRC")
+		if dynamic_faction_relations_customizer.settings then			
+			settings["enable_debug_log"] = dynamic_faction_relations_customizer.settings["enable_debug_log"] or false
+			d_printf("* settings[enable_debug_log] == "..tostring(settings["enable_debug_log"]))
+			
+			settings["faction_dissatisfaction_limit"] = dynamic_faction_relations_customizer.settings["faction_dissatisfaction_limit"] or 100
+			d_printf("* settings[faction_dissatisfaction_limit] == "..tostring(settings["faction_dissatisfaction_limit"]))
+			
+			-- if dynamic_faction_relations_customizer.settings["enable_goodwill_reset_on_friendly_fire"] ~= nil then
+				-- settings["enable_goodwill_reset_on_friendly_fire"] = dynamic_faction_relations_customizer.settings["enable_goodwill_reset_on_friendly_fire"]
+			-- end
+			
+			settings["min_goodwill_regainable_after_reset"] = dynamic_faction_relations_customizer.settings["min_goodwill_regainable_after_reset"] or dynamic_faction_relations_customizer.settings["min_keep_goodwill_percent_on_reset"] or 0
+			d_printf("* settings[min_goodwill_regainable_after_reset] == "..tostring(settings["min_goodwill_regainable_after_reset"]))
+			
+			settings["max_goodwill_regainable_after_reset"] = dynamic_faction_relations_customizer.settings["max_goodwill_regainable_after_reset"] or dynamic_faction_relations_customizer.settings["max_keep_goodwill_percent_on_reset"] or 0.5
+			d_printf("* settings[max_goodwill_regainable_after_reset] == "..tostring(settings["max_goodwill_regainable_after_reset"]))
+			
+			settings["max_goodwill_regainable_after_friendly_fire"] = dynamic_faction_relations_customizer.settings["max_goodwill_regainable_after_friendly_fire"] or 0.5
+			d_printf("* settings[max_goodwill_regainable_after_friendly_fire] == "..tostring(settings["max_goodwill_regainable_after_friendly_fire"]))
+		else
+			d_printf("! Unable to retrieve settings. This addon requires at least Dynamic Faction Relations Customizer version 2.2.4 to apply custom settings.")
+		end
+	end
+end
+
+function setup_tgr_cache_comm(faction)
+	dfrc_tgr[faction] = {}
+	dfrc_tgr[faction].npcs = {}
+	dfrc_tgr[faction].hit_v = 0
+	dfrc_tgr[faction].last_hit_time = 0
+	dfrc_tgr[faction].regen_enabled = not is_factions_enemies(faction,string.gsub( get_object_community(db.actor), "actor_", "" ))
+	dfrc_tgr[faction].regen_active = false
+	dfrc_tgr[faction].regen_rate = 0
+	dfrc_tgr[faction].regen_cycle = 0
+	dfrc_tgr[faction].regen_peak = 0.02 -- default regen_peak
+	dfrc_tgr[faction].last_regen_time = 0
+	dfrc_tgr[faction].last_regen_time_hr = 0
+	dfrc_tgr[faction].last_reset_time = 0
+	dfrc_tgr[faction].surrender_enabled = not is_factions_enemies(faction,string.gsub( get_object_community(db.actor), "actor_", "" ))
+end
+
+function setup_tgr_cache_npc(faction,id)
+	dfrc_tgr[faction].npcs[id] = {}
+	dfrc_tgr[faction].npcs[id].last_hit_time = 0
+end
+
+function get_object_levelname(obj)
+	if not (obj) then 
+		return "nil"
+	end 
+	
+	local gvid = obj.m_game_vertex_id or obj.game_vertex_id and obj:game_vertex_id()
+	if not (gvid) then 
+		return "nil"
+	end
+	
+	local gg = game_graph()
+	if (gg:valid_vertex_id(gvid)) then
+		cvertex = gg:vertex(gvid)
+		return alife():level_name(cvertex:level_id())
+	end
+			
+	return "nil"
+end
+
+function distance_to_xz_sqr(a, b)
+	return math.pow(b.x - a.x, 2) + math.pow(b.z - a.z, 2)
+end
+
+function is_within_x_distance(npc_1, npc_2, dist_type, dist_custom)
+	if not (npc_1 and npc_2) then
+		d_printf("DFRC.TGR: is_within_x_distance(npc_1,npc_2,..): nil object was passed",nil,"param_error")
+		return false
+	end
+	
+	local npc_1_level_name = tostring(get_object_levelname(npc_1))
+	local npc_2_level_name = tostring(get_object_levelname(npc_2))
+	
+	if ( npc_1_level_name and npc_1_level_name == npc_2_level_name ) then
+		local dist = distance_to_xz_sqr(npc_1:position(), npc_2:position())
+		local dist_xz = MAX_OBSERVER_DISTANCE
+		if dist_type then
+			if dist_type == "WITNESS" then
+				dist_xz = WITNESS_DISTANCE
+			elseif dist_type == "GOSSIP" then
+				dist_xz = GOSSIP_DISTANCE
+			elseif dist_type == "HEARSAY" then
+				dist_xz = MAX_OBSERVER_DISTANCE
+			elseif dist_type == "CUSTOM" then
+				if dist_custom then
+					dist_xz = tonumber(dist_custom) or MAX_OBSERVER_DISTANCE
+				end
+			end
+		end
+		return (dist < dist_xz)
+	else
+		-- npc's are not in same level
+		return false
+	end
+end
+
+function is_within_observer_distance(npc_1, npc_2)
+	return is_within_x_distance(npc_1, npc_2, "HEARSAY")
+end
+
+-- setup and age check for AREA_STATS tables
+function scan_area_cooldown(obj_comm)
+	local tg = time_global()
+
+	if not AREA_STATS[obj_comm] then
+		AREA_STATS[obj_comm] = {}
+	end
+	
+	if not AREA_STATS[obj_comm].last_scan_time then
+		AREA_STATS[obj_comm].last_scan_time = 0
+		--AREA_STATS[obj_comm].num_enemies = 0
+	end
+
+	if (AREA_STATS[obj_comm].last_scan_time + min_scan_time_age) > tg then
+		return true
+	elseif (AREA_STATS[obj_comm].last_scan_time + max_scan_time_age) < tg then
+		AREA_STATS[obj_comm].hostile = false -- clear enemy num memory
+	end
+	
+	AREA_STATS[obj_comm].num_enemies = 0 -- clear enemy num memory
+	AREA_STATS.last_comm = obj_comm
+	
+	return false
+end
+
+function scan_area_for_enemies(obj, obj_comm)
+	if scan_area_cooldown(obj_comm) then return end
+
+	local actor = db.actor
+	local tg = time_global()
+
+	for i=1, #db.OnlineStalkers do
+		local npc = level.object_by_id(db.OnlineStalkers[i])
+		if npc and IsStalker(npc,npc:clsid()) and npc:alive() then 
+			local npc_id = npc:id()
+			if npc_id ~= obj:id() and npc_id ~= AC_ID and not npc:has_info("npcx_is_companion") then				
+				if is_within_observer_distance(actor, npc) then
+					local npc_comm = get_object_community(npc)
+					if is_factions_enemies(npc_comm, obj_comm) then
+						AREA_STATS[obj_comm].num_enemies = AREA_STATS[obj_comm].num_enemies + 1
+					end
+				end
+			end
+		end
+	end
+	
+	AREA_STATS[obj_comm].hostile = ( AREA_STATS[obj_comm].hostile or (AREA_STATS[obj_comm].num_enemies > 0) )
+	
+	d_printf("DFRC.TGR: scan_area_for_enemies - comm "..obj_comm.." num_enemies "..AREA_STATS[obj_comm].num_enemies)
+	AREA_STATS[obj_comm].last_scan_time = tg
+end
+
+function scan_area_and_alert_nearby_npcs(obj, obj_comm, wpn, silent, silent_hear_dist)
+	if scan_area_cooldown(obj_comm) then return end
+
+	local actor = db.actor
+	local tg = time_global()	
+	local dist_type = silent and "CUSTOM" or "HEARSAY"
+	
+	local reporting_npcs = {}
+	
+	for i=1, #db.OnlineStalkers do
+		local npc = level.object_by_id(db.OnlineStalkers[i])
+		if npc and IsStalker(npc,npc:clsid()) and npc:alive() then 
+			local npc_id = npc:id()
+			if npc_id ~= obj:id() and npc_id ~= AC_ID and not npc:has_info("npcx_is_companion") then
+				if is_within_x_distance(actor, npc, dist_type, silent_hear_dist) then
+					local npc_comm = get_object_community(npc)
+					if is_factions_enemies(npc_comm, obj_comm) then
+						AREA_STATS[obj_comm].num_enemies = AREA_STATS[obj_comm].num_enemies + 1
+					elseif wpn then
+						if not dfrc_tgr[obj_comm].npcs[npc_id] then
+							setup_tgr_cache_npc(obj_comm,npc_id)
+							d_printf("DFRC.TGR: scan_area_and_alert_nearby_npcs - Setup Cache for NPC id: "..tostring(npc_id)..", comm: "..tostring(npc_comm)..", goodwill(db.actor): "..tostring(npc:goodwill(db.actor)))
+						end
+						dfrc_tgr.npc_map[npc_id] = obj_comm -- used to map neutral npc to attacked faction
+						if npc:see(obj) or npc:see(db.actor) then
+							dfrc_tgr[obj_comm].npcs[npc_id].witness = true
+							if npc:see(db.actor) then								
+								set_npc_hostile(npc, npc_id, npc_comm)
+								reporting_npcs[#reporting_npcs + 1] = npc
+							end
+						end
+						dfrc_tgr[obj_comm].watches_out_for = wpn:section()
+					end
+				end
+			end
+		end
+	end
+	
+	if #reporting_npcs > 0 then
+		local sender = reporting_npcs[math.random(#reporting_npcs)]
+		if sender then
+			SeenHit(sender, npc_comm)
+		end
+	end
+	
+	AREA_STATS[obj_comm].hostile = ( AREA_STATS[obj_comm].hostile or (AREA_STATS[obj_comm].num_enemies > 0) )
+	
+	d_printf("DFRC.TGR: scan_area - comm "..obj_comm.." num_enemies "..AREA_STATS[obj_comm].num_enemies)
+	AREA_STATS[obj_comm].last_scan_time = tg
+end
+
+function npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
+	--if not settings["enable_goodwill_reset_on_friendly_fire"] then return end
+	if not npc then return end
+	
+	-- collect victim npc data
+	local npc_id = npc:id()
+	local npc_comm = get_object_community(npc)
+	
+	if who:id() ~= AC_ID then
+		-- local who_comm = string.gsub( get_object_community(who), "actor_", "" )
+		-- if not is_factions_enemies(who_comm, npc_comm) then
+			-- -- someone else's fuckup may hit the news now, allowing you to regain goodwill faster
+			-- change_goodwill_regen_peak(npc_comm, amount)
+		-- end
+		return
+	 end
+	 
+	 --if not dfrc_tgr.last_comm_hit_by_actor then
+	dfrc_tgr.last_comm_hit_by_actor = npc_comm
+	dfrc_tgr.last_hit_time = time_global()
+	 --end
+	
+	-- shooter must be actor --
+	-- skip if reset not applicable due to faction goodwill below threshold or negative or if not an ongoing incident
+	if goodwill_reset_not_applicable(npc_comm) and not dfrc_tgr[npc_comm] then return end
+	
+	-- collecting incident parameters
+	local wpn = db.actor:active_item()
+
+	if not IsWeapon(wpn) then return end -- no point going further if "just" H2H
+
+	local silent = wpn and gameplay_silent_kills.valid_silent_weapon(wpn) or false
+	local silent_hear_dist = wpn and gameplay_silent_kills.silent_weapon_hear_range(wpn) or 10	
+	
+	-- setup cache entries	
+	if not dfrc_tgr[npc_comm] then
+		setup_tgr_cache_comm(npc_comm)
+	end	
+	if not dfrc_tgr[npc_comm].npcs[npc_id] then
+		setup_tgr_cache_npc(npc_comm,npc_id)
+		dfrc_tgr.npc_map[npc_id] = npc_comm
+		d_printf("DFRC.TGR: npc_on_hit_callback - Setup Cache for NPC id: "..tostring(npc_id)..", comm: "..tostring(npc_comm)..", goodwill(db.actor): "..tostring(npc:goodwill(db.actor)))
+	end
+
+	-- scan area for enemies and neutrals to npc
+	scan_area_and_alert_nearby_npcs(npc, npc_comm, wpn, silent, silent_hear_dist)
+			
+	local num_nearby_enemies = AREA_STATS[npc_comm].num_enemies
+	local num_alerted_npcs = math.max(#dfrc_tgr[npc_comm].npcs, 1)
+	local enemy_factor = ( num_nearby_enemies * 2 ) + 1
+	local grudge = (num_nearby_enemies > 0) and (amount / enemy_factor) or amount	
+	if npc:see(db.actor) then
+		grudge = grudge * 2
+		set_npc_hostile(npc, npc_id, npc_comm)
+	end
+
+	-- set faction specific data	
+	dfrc_tgr[npc_comm].last_hit_time = time_global()
+	dfrc_tgr[npc_comm].watches_out_for = wpn:section()	
+	dfrc_tgr[npc_comm].hit_v = dfrc_tgr[npc_comm].hit_v + grudge
+
+	if num_nearby_enemies == 0 and not silent then
+		dfrc_tgr[npc_comm].regen_active = false -- even if they cannot prove it was you their suspicion is enough to temporarily halt regeneration
+		WasHit(npc, npc_comm, num_alerted_npcs)
+	end	
+
+	-- set npc data
+	dfrc_tgr[npc_comm].npcs[npc_id].victim = true
+
+	if npc:see(db.actor) and not dfrc_tgr[npc_comm].npcs[npc_id].witness then
+		dfrc_tgr[npc_comm].npcs[npc_id].witness = true
+	end
+	
+	-- if not msg_cooldown then >>msg: "Ouch!", "Ack...", "What the..."
+
+	d_printf("~DFRC.TGR: HIT NPC "..npc_id.." comm = "..npc_comm.." new hit_v = "..tostring(dfrc_tgr[npc_comm].hit_v)..", alive = "..tostring(npc:alive())..", witness = "..tostring(dfrc_tgr[npc_comm].npcs[npc_id].witness)..", ttr = "..tostring(dfrc_tgr[npc_comm].npcs[npc_id].time_to_report)..", goodwill(db.actor): "..tostring(npc:goodwill(db.actor)))
+end
+
+function npc_on_update(npc)
+	--if not settings["enable_goodwill_reset_on_friendly_fire"] then return end
+	if not npc then return end
+	
+	local actor_comm = string.gsub( get_object_community(db.actor), "actor_", "" )		
+	local npc_id = npc:id()
+	local npc_comm = get_object_community(db.actor)
+	local npc_hostile = (npc:relation(db.actor) == game_object.enemy)
+
+	local target_comm = dfrc_tgr.npc_map[npc_id]
+
+	if npc:alive() and not target_comm and npc_hostile then
+		if not dfrc_tgr[npc_comm] then return end
+		-- map and cache newly 'triggered' npc
+		dfrc_tgr.npc_map[npc_id] = npc_comm
+		target_comm = npc_comm			
+		if not dfrc_tgr[target_comm].npcs[npc_id] then
+			setup_tgr_cache_npc(target_comm,npc_id)
+			dfrc_tgr.npc_map[npc_id] = target_comm
+			d_printf("DFRC.TGR: npc_on_update_callback - Setup Cache for NPC id: "..tostring(npc_id)..", comm: "..tostring(npc_comm)..", goodwill(db.actor): "..tostring(npc:goodwill(db.actor))..", hostile = "..tostring(npc_hostile))
+		end
+	end
+
+	if not npc:alive() then
+		if dfrc_tgr[target_comm] then
+			dfrc_tgr[target_comm].npcs[npc_id] = nil
+		end
+		if dfrc_tgr.npc_map[npc_id] then
+			dfrc_tgr.npc_map[npc_id] = nil
+		end
+		return
+	end
+	
+	if not dfrc_tgr[target_comm] then return end
+	-- show Aggravation HUD bar if aggravation > 0
+	show_hud_bar = (dfrc_tgr[target_comm].hit_v > 0)
+
+	local tg = time_global()
+
+	-- if actor did generally hit an enemy of the aggravated faction recently this flag will be set
+	local actor_vs_comm = (dfrc_tgr.last_hit_time + 240000 > tg) and dfrc_tgr.last_comm_hit_by_actor
+	local actor_is_helping = actor_vs_comm and dfrc_tgr[target_comm].actor_is_helping or actor_vs_comm and is_factions_enemies(actor_vs_comm, target_comm) or nil
+	dfrc_tgr[target_comm].actor_is_helping = actor_is_helping
+
+	if dfrc_tgr[target_comm].npcs[npc_id] then	
+		-- rescan area for enemies
+		scan_area_for_enemies(npc, target_comm)
+		
+		local enemies_nearby = (AREA_STATS[target_comm].num_enemies > 0)
+		local is_enemy_comm = is_factions_enemies(actor_comm, target_comm)
+		
+		if not is_aggravation_limit_reached(target_comm) and enemies_nearby then			
+			-- aggravation is only possible through hits during enemy encounters
+			if npc_hostile and not is_enemy_comm then
+				-- there are more important matters at hand so we will set this npc neutral and exit
+				set_npc_neutral(npc, npc_id, target_comm, false)
+			end
+			-- exit
+			return
+		end
+		
+		local npc_flags = dfrc_tgr[target_comm].npcs[npc_id]
+
+		-- No enemies around, lets take a look at what the actor is up to
+		local hostile_area = AREA_STATS[target_comm].hostile
+		local num_alerted_npcs = math.max(#dfrc_tgr[target_comm].npcs, 1)
+
+		local hit_timeout = ( dfrc_tgr[target_comm].last_hit_time + ( 100000 / ( hostile_area and 2 or 1 ) ) ) < tg
+		local incident_timeout = ( dfrc_tgr[target_comm].last_hit_time + ( 600000 / ( hostile_area and 3 or 1 ) ) ) < tg
+
+		-- some cleanup of npc flags if applicable:
+		if dfrc_tgr[target_comm].npcs[npc_id].surrender_ack then
+			if dfrc_tgr[target_comm].npcs[npc_id].surrender_ack + 600000 < tg then
+				dfrc_tgr[target_comm].npcs[npc_id].surrender_ack = nil
+			end			
+		end
+		
+		if dfrc_tgr[target_comm].npcs[npc_id].last_report then
+			if dfrc_tgr[target_comm].npcs[npc_id].last_report + 600000 < tg then
+				dfrc_tgr[target_comm].npcs[npc_id].last_report = nil
+			end
+		end
+
+		local wpn = db.actor:active_item()
+	
+		-- calming is faster if area is flagged as hostile				
+		local cm = (actor_is_helping or incident_timeout) and 3 or hit_timeout and 2 or 1
+
+		if npc:see(db.actor) then		
+			if not IsWeapon(wpn) then
+				-- reduce aggravation and suspicion unless surrender meachnics are disabled for whichever reason (enemy faction, fake-out)
+				if not dfrc_tgr[target_comm].surrender_enabled and incident_timeout then
+					-- reset surrender enabled if incident has timed out
+					dfrc_tgr[target_comm].surrender_enabled = not is_enemy_comm
+				end
+				
+				if dfrc_tgr[target_comm].surrender_enabled then
+					if npc_hostile or npc_flags.witness then
+						if IsMoveState('mcCrouch') and not IsMoveState('mcAnyMove') then
+							-- actor surrenders
+							if npc_flags.surrender_ack then
+								if npc_flags.time_to_sack then
+									dfrc_tgr[target_comm].npcs[npc_id].time_to_sack = nil
+									AcknowledgedActorSurrender(npc, target_comm)
+								end
+							elseif npc_flags.time_to_sack then
+								local actor_critically_wounded = (db.actor.health < 0.4 and db.actor.bleeding > 0.5)						
+								if npc_flags.time_to_sack < tg or actor_critically_wounded then
+									if actor_critically_wounded then
+										d_printf("~DFRC.TGR: npc_on_update_callback - actor is spared due to injuries")											
+									end
+									-- acknowledge surrender and set hostile to neutral
+									set_npc_neutral(npc, npc_id, target_comm, tg)
+									-- victim can set all registered witness npcs neutral
+									-- also triggered if actor badly wounded
+									if npc_flags.victim or actor_critically_wounded then										
+										set_all_neutral_in_faction(target_comm, tg)
+									end										
+								end
+							else
+								-- >>msg: "That's right, stay down!"
+								if npc_flags.witness and is_aggravation_limit_reached(target_comm) then
+									SeenActorInitSurrender(npc, target_comm)
+								end
+								set_surrender_time(npc_id, target_comm, ( 1 / cm ) )									
+							end
+							calm_down(target_comm, (2 * cm / num_alerted_npcs))
+						else
+							calm_down(target_comm, (1 * cm / num_alerted_npcs))
+						end
+					elseif hit_timeout then
+						calm_down(target_comm, (1 * cm / num_alerted_npcs))
+					end
+				end
+			else
+				-- Compare active weapon with cached type
+				if dfrc_tgr[target_comm].watches_out_for then						
+					local aggr_mult = 1
+					
+					if dfrc_tgr[target_comm].watches_out_for == wpn:section() then
+						aggr_mult = aggr_mult * 2							
+						if not npc_flags.witness then
+							dfrc_tgr[target_comm].npcs[npc_id].witness = true
+							SeenActorHitWeapon(npc, target_comm)
+						end							
+						if not hostile_area then
+							aggr_mult = aggr_mult * 2								
+							if npc_flags.victim and not hit_timeout then
+								aggr_mult = aggr_mult * 2
+								set_npc_hostile(npc, npc_id, target_comm)
+							end
+						end
+					else
+						if not hostile_area then
+							if npc_flags.witness then
+								if npc_flags.victim and not hit_timeout then
+									aggr_mult = aggr_mult * 2
+								end
+							else
+								if not npc_hostile then
+									SeenActorWeapon(npc, target_comm)
+								end
+							end
+						end
+					end
+					
+					if not hostile_area and dfrc_tgr[target_comm].surrender_enabled and (npc_flags.surrender_ack or npc_flags.time_to_sack) then
+						aggr_mult = aggr_mult * 2
+						-- surrender option is temporarily forfeit if player is caught with weapon before incident timeout
+						dfrc_tgr[target_comm].last_hit_time = tg -- using this to negate hit_timeout
+						dfrc_tgr[target_comm].surrender_enabled = false
+						dfrc_tgr[target_comm].npcs[npc_id].surrender_ack = nil
+						dfrc_tgr[target_comm].npcs[npc_id].time_to_sack = nil
+						SeenActorUnSurrender(npc, target_comm)
+					end
+					
+					-- aggravate
+					if aggr_mult > 0 then
+						aggravate(target_comm, ( aggr_mult / cm / num_alerted_npcs ))
+					end
+				end
+
+				-- enough is enough!
+				if is_aggravation_limit_reached(target_comm) and dfrc_tgr[target_comm].npcs[npc_id].witness then
+					set_npc_hostile(npc, npc_id, target_comm)
+					set_npc_ttr(npc_id, target_comm, num_alerted_npcs)
+				end
+
+			end
+		elseif hit_timeout and (dfrc_tgr[target_comm].npcs[npc_id].surrender_ack or not npc_flags.witness) and not npc_hostile then
+			calm_down(target_comm, (cm / num_alerted_npcs))
+		end
+		
+		-- regardless of npc seeing actor
+		-- will not trigger unless player carries weapon or surrender is disabled since is_aggravation_limit_reached() condition is used:
+		if npc_flags.witness and npc_flags.time_to_report and is_aggravation_limit_reached(target_comm) then
+			if npc_flags.time_to_sack then return end -- giving the surrender timer a chance
+			if npc_flags.time_to_report > tg then return end
+			
+			-- RESET so it can be reused
+			dfrc_tgr[target_comm].npcs[npc_id].time_to_report = nil
+
+			if not npc_flags.last_report then				
+				-- >>msg: "You're going down!" / "I need some help over here!"				
+				local reporting_npcs = {}
+				
+				-- report will set all registered npcs to witness (but not yet hostile)
+				-- random npc will be selected for report
+				for k,v in pairs(dfrc_tgr[target_comm].npcs) do
+					if not dfrc_tgr[target_comm].npcs[k].witness then
+						dfrc_tgr[target_comm].npcs[k].witness = true
+						local n = get_object_by_id(k) or nil
+						if n then
+							set_npc_hostile(n, npc_id, target_comm)
+							reporting_npcs[#reporting_npcs + 1] = n
+						end
+					end
+				end
+
+				if #reporting_npcs > 0 then
+					local sender = reporting_npcs[math.random(#reporting_npcs)]
+					if sender then
+						ReportingAttack(sender, target_comm)
+					end
+				end
+				
+				dfrc_tgr[target_comm].npcs[npc_id].last_report = tg
+				
+				if goodwill_reset_not_applicable(target_comm) then return end
+
+				-- escalate to afd if dfrc installed and afd enabled
+				if dfrc then
+					if dfrc.setup_actor_faction_dissatisfation then
+						-- Modify AFD tracking value if target_comm == actor_comm and feature is enabled
+						local afd_enabled = false
+						if dynamic_faction_relations_customizer.settings then
+							afd_enabled = dynamic_faction_relations_customizer.settings["enable_actor_faction_dissatisfaction"]
+						else
+							afd_enabled = dynamic_faction_relations_customizer.enable_actor_faction_dissatisfaction
+						end
+						if afd_enabled and target_comm == actor_comm then
+							if not dynamic_faction_relations_customizer.dfrc_afd then
+								dfrc.setup_actor_faction_dissatisfation()
+							end
+							if not dynamic_faction_relations_customizer.dfrc_afd.value then
+								dynamic_faction_relations_customizer.dfrc_afd.value = 0
+							end
+							dynamic_faction_relations_customizer.dfrc_afd.value = dynamic_faction_relations_customizer.dfrc_afd.value + dfrc_tgr[target_comm].hit_v
+							dynamic_faction_relations_customizer.dfrc_afd.threshold = math.max(dfrc_tgr[target_comm].hit_v,dynamic_faction_relations_customizer.dfrc_afd.threshold)
+						end
+					end
+				end
+				
+				-- execute reset
+				execute_temp_goodwill_reset(target_comm)
+			else
+				for i=1, #db.OnlineStalkers do
+					local npc_a = level.object_by_id(db.OnlineStalkers[i])
+					if npc_a and IsStalker(npc_a,npc_a:clsid()) and npc_a:alive() then 
+						local npc_a_id = npc_a:id()
+						if npc_a_id ~= npc_id and npc_a_id ~= AC_ID and not npc_a:has_info("npcx_is_companion") then
+							if is_within_observer_distance(npc, npc_a) then
+								local npc_comm = get_object_community(npc_a)
+								if not is_factions_enemies(npc_comm, target_comm) then
+									if not dfrc_tgr[target_comm].npcs[npc_a_id] then
+										setup_tgr_cache_npc(target_comm,npc_a_id)
+										d_printf("DFRC.TGR: trigger_nearby_npcs - Setup Cache for NPC id: "..tostring(npc_a_id)..", comm: "..tostring(target_comm)..", goodwill(db.actor): "..tostring(npc_a:goodwill(db.actor)))
+									end
+									dfrc_tgr.npc_map[npc_a_id] = target_comm -- used to map neutral npc to attacked faction
+									dfrc_tgr[target_comm].npcs[npc_a_id].witness = true
+									if npc_a:see(db.actor) then
+										set_npc_hostile(npc_a, npc_a_id, target_comm)
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+function is_aggravation_limit_reached(target_comm)
+	if not (dfrc_tgr[target_comm] and settings["faction_dissatisfaction_limit"]) then return false end
+	if not dfrc_tgr[target_comm].hit_v then return false end
+	return ( dfrc_tgr[target_comm].hit_v >= settings["faction_dissatisfaction_limit"] )
+end
+
+function set_all_neutral_in_faction(target_comm, s_ack)
+	for i=1, #db.OnlineStalkers do
+		local npc = level.object_by_id(db.OnlineStalkers[i])
+		if npc and IsStalker(npc,npc:clsid()) and npc:alive() then 
+			local npc_id = npc:id()
+			local npc_comm = get_object_community(npc)
+			if npc_id ~= AC_ID and not npc:has_info("npcx_is_companion") then
+				if not is_factions_enemies(npc_comm, target_comm) then
+					set_npc_neutral(npc, npc_id, target_comm, s_ack)
+				end
+			end
+		end
+	end
+end
+
+function set_npc_neutral(npc, npc_id, target_comm, s_ack)
+	if (npc:relation(db.actor) == game_object.enemy) then
+		-- add option to store old goodwill later?
+		local old_goodwill = npc:goodwill(db.actor)
+		npc:force_set_goodwill(-700, db.actor)
+		if dfrc_tgr[target_comm].npcs[npc_id] then
+			dfrc_tgr[target_comm].npcs[npc_id].time_to_report = nil
+			dfrc_tgr[target_comm].npcs[npc_id].surrender_ack = s_ack
+		end
+		local hit_v_str = string.format("%.3f", dfrc_tgr[target_comm].hit_v)
+		d_printf("#DFRC.TGR: SET NPC NEUTRAL id = "..npc_id..", comm = "..target_comm..", hit_v = "..hit_v_str..", old_goodwill(db.actor): "..tostring(old_goodwill))
+	end
+end
+
+function set_npc_hostile(npc, npc_id, target_comm)
+	if not (npc:relation(db.actor) == game_object.enemy) then
+		-- add option to store old goodwill later?
+		local old_goodwill = npc:goodwill(db.actor)
+		npc:force_set_goodwill(-3000, db.actor)
+		local hit_v_str = string.format("%.3f", dfrc_tgr[target_comm].hit_v)
+		d_printf("!DFRC.TGR: SET NPC HOSTILE id = "..npc_id..", comm = "..target_comm..", hit_v = "..hit_v_str..", old_goodwill(db.actor): "..tostring(old_goodwill))
+	end
+end
+
+-- aggravation and calming
+
+function aggravate(target_comm, multiplier)
+	dfrc_tgr[target_comm].hit_v = dfrc_tgr[target_comm].hit_v + (base_grudge_value_mod * aggravation_factor * multiplier)
+	if dfrc_tgr[target_comm].hit_v >= settings["faction_dissatisfaction_limit"] then
+		d_printf("!DFRC.TGR: MAXIMUM Aggravation reached - comm = "..target_comm)
+	else
+		d_printf("~DFRC.TGR: AGGRAVATING - comm = "..target_comm)
+	end
+end
+
+function calm_down(target_comm, multiplier)
+	if dfrc_tgr[target_comm].hit_v > 0 then
+		dfrc_tgr[target_comm].hit_v = math.max(dfrc_tgr[target_comm].hit_v - (base_grudge_value_mod * calming_factor * multiplier), 0)
+		if dfrc_tgr[target_comm].hit_v == 0 then
+			d_printf("-DFRC.TGR: Aggravation has reached 0 - comm = "..target_comm)
+			show_hud_bar = false
+		else
+			d_printf("#DFRC.TGR: CALMING DOWN - comm = "..target_comm)
+		end
+	end
+end
+
+function set_surrender_time(npc_id, target_comm, multiplier)
+	dfrc_tgr[target_comm].npcs[npc_id].time_to_sack = time_global() + math.floor( 1000 * math.random(2,5) * clamp(multiplier * math.max( ( dfrc_tgr[target_comm].hit_v / 20 ), 1 ), 0.25, 5) )
+	local hit_v_str = string.format("%.3f", dfrc_tgr[target_comm].hit_v)
+	local tta_str = tostring(dfrc_tgr[target_comm].npcs[npc_id].time_to_sack)
+	d_printf("!DFRC.TGR: SURRENDERING to NPC "..npc_id..", comm = "..target_comm..", hit_v = "..hit_v_str..", tta = "..tta_str)
+end
+
+function set_npc_ttr(npc_id, target_comm, multiplier)
+	local hit_v_str = string.format("%.3f", dfrc_tgr[target_comm].hit_v)
+	local ttr_str = tostring(dfrc_tgr[target_comm].npcs[npc_id].time_to_report)
+	-- if dfrc_tgr[target_comm].npcs[npc_id].last_report then
+		-- d_printf("*DFRC.TGR: Incident was already reported a short while ago. TTR will not be set for WITNESS NPC "..npc_id..", comm = "..target_comm..", hit_v = "..hit_v_str)
+		-- return
+	-- end
+	if not dfrc_tgr[target_comm].npcs[npc_id].time_to_report then
+		dfrc_tgr[target_comm].npcs[npc_id].time_to_report = time_global() + math.floor( 1000 * math.random(4,9) * clamp(multiplier, 1, 5) )
+		d_printf("!DFRC.TGR: SET TTR for WITNESS NPC "..npc_id.." comm = "..target_comm.." hit_v = "..hit_v_str..", ttr = "..ttr_str)
+	else
+		d_printf("*DFRC.TGR: TTR already set for WITNESS NPC "..npc_id..", comm = "..target_comm..", hit_v = "..hit_v_str..", ttr = "..ttr_str)
+	end
+end
+
+function execute_temp_goodwill_reset(faction)
+	if not dfrc_tgr[faction] then
+		d_printf("!DFRC.TGR: Cannot execute Goodwill Reset on faction "..tostring(faction).." - Cache was not properly set up")
+		return
+	end
+
+	local current_goodwill = relation_registry.community_goodwill(faction, AC_ID)
+
+	local min_keep_goodwill_pct = math.min(settings["min_goodwill_regainable_after_reset"],settings["max_goodwill_regainable_after_friendly_fire"])
+	local max_keep_goodwill_pct = math.max(settings["min_goodwill_regainable_after_reset"],settings["max_goodwill_regainable_after_friendly_fire"])
+	d_printf("!DFRC.TGR: min_keep_goodwill_pct = "..tostring(min_keep_goodwill_pct).." max_keep_goodwill_pct = "..tostring(max_keep_goodwill_pct))
+	if max_keep_goodwill_pct > settings["max_goodwill_regainable_after_friendly_fire"] then
+		-- in case of switched min / max
+		max_keep_goodwill_pct = settings["max_goodwill_regainable_after_friendly_fire"]
+		d_printf("!DFRC.TGR: corrected max_keep_goodwill_pct = "..tostring(max_keep_goodwill_pct))
+	end
+	local keep_goodwill_pct = random_float(min_keep_goodwill_pct,max_keep_goodwill_pct)
+	d_printf("!DFRC.TGR: final keep_goodwill_pct = "..tostring(keep_goodwill_pct))
+
+	if not dfrc_tgr[faction].max_v then
+		dfrc_tgr[faction].max_v = math.floor(current_goodwill * keep_goodwill_pct)
+	else
+		dfrc_tgr[faction].max_v = math.floor(dfrc_tgr[faction].max_v * keep_goodwill_pct)
+		dfrc_tgr[faction].regen_rate = 0
+		dfrc_tgr[faction].regen_cycle = 0
+	end
+	
+	d_printf("!DFRC.TGR: Goodwill Reset Triggered - keep_gw% = "..string.format("%.2f",keep_goodwill_pct)..", new max_v = "..tostring(dfrc_tgr[faction].max_v))
+	relation_registry.set_community_goodwill( faction, AC_ID, 0 )
+	
+	if dfrc_tgr[faction].max_v == 0 then
+		d_printf("!DFRC.TGR: Goodwill cannot be regenerated.")
+		dfrc_tgr[faction].regen_enabled = false
+	else
+		dfrc_tgr[faction].regen_enabled = not is_factions_enemies(faction,string.gsub( get_object_community(db.actor), "actor_", "" ))
+		dfrc_tgr[faction].last_reset_time = time_global()
+	end	
+end
+
+-- determine if a reset could be applied
+function goodwill_reset_not_applicable(target_comm)
+	if relation_registry.community_goodwill(target_comm, AC_ID) <= 100 then
+		return true
+	end
+	if not dfrc_tgr[target_comm] then
+		return false
+	end	
+	local tg = time_global()	
+	if dfrc_tgr[target_comm].last_reset_time > 0 and ( dfrc_tgr[target_comm].last_reset_time + 600000 ) > tg then
+		-- last reset was less than an ingame hour ago
+		return true
+	else
+		return false
+	end	
+end
+
+-- called by change_factions_community_num
+function change_goodwill_regen_peak(faction, value)
+	if not settings["enable_goodwill_regeneration"] then return end	
+	if not dfrc_tgr[faction] then return end
+	if not dfrc_tgr[faction].regen_enabled then return end
+	
+	if value > 10 then
+		dfrc_tgr[faction].regen_active = true
+		dfrc_tgr[faction].regen_peak = math.min(dfrc_tgr[faction].regen_peak + 0.005, 0.05)
+		dfrc_tgr[faction].hit_v = math.max(dfrc_tgr[faction].hit_v - value, 0)
+	elseif value < -10 or dfrc_tgr[faction].hit_v > 75 then
+		dfrc_tgr[faction].regen_peak = math.max(dfrc_tgr[faction].regen_peak - 0.005, 0)
+	end
+	
+	d_printf("#DFRC.TGR: faction = "..faction..", new regen_peak = "..string.format("%.3f",dfrc_tgr[faction].regen_peak))
+end
+
+function regenerate_goodwill_with_factions()
+	if not settings["enable_goodwill_regeneration"] then return end
+	
+	factions_table = game_relations.factions_table	
+	if not factions_table then
+		d_printf("! ERROR in regenerate_goodwill_with_factions: no faction table found.")
+		return
+	end
+	
+	local tg = time_global()
+	
+	for i=1, #factions_table do
+		if dfrc_tgr[factions_table[i]] then
+			if dfrc_tgr[factions_table[i]].regen_enabled and dfrc_tgr[factions_table[i]].max_v then			
+				local last_hit_time = dfrc_tgr[factions_table[i]].last_hit_time
+				local max_value = dfrc_tgr[factions_table[i]].max_v
+				
+				if max_value then
+					if not dfrc_tgr[factions_table[i]].regen_active then
+						if ((last_hit_time + min_hit_time_delay) < tg) then
+							dfrc_tgr[factions_table[i]].regen_active = true
+						end
+					else
+						if (dfrc_tgr[factions_table[i]].last_regen_time + min_regen_time_delay) < tg then
+							local last_regen_time_hr = dfrc_tgr[factions_table[i]].last_regen_time_hr
+							local current_hr = utils_obj.time_spent_in_zone(3)
+							local hrs_passed = (last_regen_time_hr > 0) and (current_hr - last_regen_time_hr) or 1
+							if hrs_passed == 0 then
+								hrs_passed = 1
+							end
+							dfrc_tgr[factions_table[i]].last_regen_time_hr = current_hr
+							dfrc_tgr[factions_table[i]].last_regen_time = tg
+
+							-- increase rate on first and then after 3 iterations total
+							local regen_cycle = dfrc_tgr[factions_table[i]].regen_cycle
+							dfrc_tgr[factions_table[i]].regen_cycle = (regen_cycle < 3) and (regen_cycle + 1) or 1
+							if dfrc_tgr[factions_table[i]].regen_cycle == 1 then
+								dfrc_tgr[factions_table[i]].regen_rate = math.min(dfrc_tgr[factions_table[i]].regen_rate + 0.005, dfrc_tgr[factions_table[i]].regen_peak)
+								-- making sure that if this dropped to 0 that it will be restored to 0.05 in the next cycle.
+								if dfrc_tgr[factions_table[i]].regen_peak == 0 then
+									dfrc_tgr[factions_table[i]].regen_peak = 0.005
+								end
+							end
+							
+							if dfrc_tgr[factions_table[i]].regen_rate > 0 then
+								local regen_value = math.min(max_value * dfrc_tgr[factions_table[i]].regen_rate, 1) * hrs_passed
+								local current_value = relation_registry.community_goodwill(factions_table[i], AC_ID)
+								local new_value = math.min(current_value + regen_value, max_value)
+								if new_value ~= current_value then
+									relation_registry.set_community_goodwill( factions_table[i], AC_ID, new_value)
+								end
+								if ( (current_value + regen_value) > max_value ) then
+									if #dfrc_tgr[factions_table[i]].npcs == 0 then
+										dfrc_tgr[factions_table[i]] = nil
+									end
+									d_printf("#DFRC.TGR: Goodwill with "..factions_table[i].." fully regenerated.")
+								else
+									d_printf("#DFRC.TGR: Goodwill with "..factions_table[i].." regenerated to "..new_value)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+local function save_state(m_data)
+	if (USE_MARSHAL) then
+		printdbg("# SAVING: Gameplay - Actor Friendly Fire and Surrender Stats")
+		m_data.dfrc_tgr = dfrc_tgr
+	end
+end
+
+local function load_state(m_data)
+	if (USE_MARSHAL) then
+		printdbg("# LOADING: DFRC Persistent Data")
+		if m_data.dfrc_tgr then
+			dfrc_tgr = m_data.dfrc_tgr
+		end
+	end
+end
+
+local function on_before_level_changing()
+	-- purge npc lists from dfrc_tgr if outdated
+	--if not settings["enable_goodwill_reset_on_friendly_fire"] then return end
+	factions_table = game_relations.factions_table
+	
+	if not factions_table then
+		d_printf("! ERROR in regenerate_goodwill_with_factions: no faction table found.")
+		return
+	end
+	
+	show_hud_bar = false
+
+	-- TODO:
+	-- * if npcs is not empty still has any npc with an active ttr flag: execute reset
+end
+
+-- Callbacks
+
+local function actor_on_update()
+	
+	hud_update()
+
+	if not settings["enable_goodwill_regeneration"] then return end
+	
+	local tg = time_global()
+	if tg < tg_update then
+		return
+	end
+	tg_update = tg + tg_update_step
+	if tg > tg_update_tgr then
+		regenerate_goodwill_with_factions()
+		tg_update_tgr = tg + tg_update_step_tgr
+	end
+end
+
+local function on_option_change()
+	load_settings()
+end
+
+local function on_game_load()
+	load_settings()
+	show_hud_bar = false
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_before_level_changing",on_before_level_changing)
+	RegisterScriptCallback("npc_on_update",npc_on_update)
+	--RegisterScriptCallback("on_enemy_eval", on_enemy_eval)
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+	RegisterScriptCallback("npc_on_hit_callback",npc_on_hit_callback)
+	RegisterScriptCallback("save_state",save_state)
+	RegisterScriptCallback("load_state",load_state)
+	RegisterScriptCallback("on_option_change", on_option_change)
+	RegisterScriptCallback("on_game_load", on_game_load)
+	
+	-- Patch game_relations function if "Dynamic Faction Relation Customizer" is not installed:
+	if not dfrc_has_feature["affs"] then
+		ORIGINAL_GR_CFCN = game_relations.change_factions_community_num
+		function game_relations.change_factions_community_num(faction_name, obj_id, delta, source)
+			if(faction_name~=nil) and (faction_name~="none") and (obj_id ~= nil) and (delta ~= nil) then
+				-- adapt regen_peak (if TGR is enabled)
+				if obj_id == AC_ID then
+					change_goodwill_regen_peak(faction_name, delta)
+				end
+				ORIGINAL_GR_CFCN(faction_name, obj_id, delta, source)
+			end
+		end
+		
+		-- full replacement of original function (fixes vanilla bug as well)
+		function game_relations.reset_goodwill(faction_1 , faction_2) -- Reset the goodwill for actors of both factions
+			if ui_options.get("alife/general/war_goodwill_reset") then
+				d_printf("DFRC.TGR game_relations.reset_goodwill called: "..faction_1.." and "..faction_2)
+				if faction_1 == faction_2 then
+					d_printf("* Factions are identical...? No change.")
+					return
+				end
+				local actor_comm = get_actor_true_community()
+				local target_comm
+				if actor_comm == faction_1 then
+					target_comm = faction_2
+				elseif actor_comm == faction_2 then
+					target_comm = faction_1
+				end
+				if target_comm then			
+					local current_goodwill = relation_registry.community_goodwill(target_comm, AC_ID)
+
+					if current_goodwill <= 0 then
+						d_printf("* Goodwill is zero or negative. No change.")
+						return
+					end
+
+					local min_keep_goodwill = current_goodwill * math.min(settings["min_goodwill_regainable_after_reset"],settings["max_goodwill_regainable_after_reset"])
+					local max_keep_goodwill = current_goodwill * math.max(settings["min_goodwill_regainable_after_reset"],settings["max_goodwill_regainable_after_reset"])
+
+					local new_goodwill = math.floor(math.random(min_keep_goodwill, max_keep_goodwill))
+
+					d_printf("* Actor_Comm = "..actor_comm..", Target_Comm = "..target_comm..", old_goodwill_value = "..current_goodwill..", rnd_keep% = "..string.format("%.2f",(new_goodwill/current_goodwill))..", new_goodwill = "..new_goodwill)
+
+					-- will be empty when not enabled so separate check for feature enabled is not needed
+					if dfrc_tgr[target_comm] then
+						if current_goodwill < dfrc_tgr[target_comm].max_v then
+							local current_max_v = dfrc_tgr[target_comm].max_v
+							local min_keep_max_v = current_max_v * settings["min_goodwill_regainable_after_reset"]
+							local max_keep_max_v = current_max_v * settings["max_goodwill_regainable_after_reset"]
+							local new_max_v = math.floor(math.random(min_keep_max_v, max_keep_max_v))
+							gameplay_surrender_friendly_fire.dfrc_tgr[target_comm].max_v = new_max_v
+							d_printf("* Actor_Comm = "..actor_comm..", Target_Comm = "..target_comm..", old_max_v_value = "..current_max_v..", rnd_keep% = "..string.format("%.2f",(min_keep_max_v/max_keep_max_v))..", new_max_v = "..new_max_v)
+						end
+						dfrc_tgr[target_comm].regen_rate = 0
+						dfrc_tgr[target_comm].regen_cycle = 0
+					else
+						setup_tgr_cache_comm(target_comm)
+						dfrc_tgr[target_comm].max_v = new_goodwill						
+					end
+
+					-- this overrides is_enemy of setup
+					if current_goodwill > 100 then
+						dfrc_tgr[target_comm].regen_enabled = true
+					end
+					
+					dfrc_tgr[faction].regen_peak = 0.01 -- default regen_peak for war response
+					
+					relation_registry.set_community_goodwill( target_comm, AC_ID, 0 )
+				end
+			end
+		end
+	end
+end
+
+-- News Extension
+
+function is_spam(msg_type_or_id)
+	-- if npc id is passed then return false
+	if not spammer_tracker[msg_type_or_id] then return false end
+	-- increment tracker
+	spammer_tracker[msg_type_or_id] = spammer_tracker[msg_type_or_id] + 1
+	-- check if anything other than 1 (not spam)
+	local ret_v = (spammer_tracker[msg_type_or_id] ~= 1)
+	if spammer_tracker[msg_type_or_id] > spammer_tracker_max[msg_type_or_id] then
+		spammer_tracker[msg_type_or_id] = 0
+	end		
+	return ret_v
+end
+
+function active_message_cooldown(msg_type_or_id)
+	local tg = time_global()
+	local active_cooldown = false
+	if msg_cooldown_time[msg_type_or_id] then
+		active_cooldown = ( msg_cooldown_time[msg_type_or_id] + msg_cooldown_min_time > tg )
+	end
+	if not active_cooldown then
+		active_cooldown = is_spam(msg_type_or_id)
+	end
+	return active_cooldown
+end
+
+function set_message_cooldown(msg_type_or_id)
+	local tg = time_global()
+	msg_cooldown_time[msg_type_or_id] = tg
+end
+
+-- On NPC hit by friendly fire (NPC sees actor)
+function WasHit(sender, victim_comm, witnesses)
+	if not sender then return end
+	
+	local msg_type = "WasHit"	
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_death_stalker_24", 
+		[2] = "st_dyn_news_comm_isg_12", 
+		[3] = "st_dyn_news_comm_actor_14",
+		[4] = "st_dyn_news_comm_freedom_14",
+		[5] = "dm_help_11",
+		[6] = "axr_phrase_npc_start_wounded",
+	}
+	
+	--	"st_dyn_news_res_death_stalker_24"				What the fuck...
+	--	"st_dyn_news_comm_isg_12"						Taking fire, need assistance!
+	--	"st_dyn_news_comm_actor_14"						Help!
+	--	"st_dyn_news_comm_freedom_14"					Shit, help!
+	--	"dm_help_11"									Medkit! Quick!
+	--	"axr_phrase_npc_start_wounded"					Help... me.
+	
+	if witnesses > 1 then	
+		str_tbl = {
+			[1] = "st_dyn_news_comm_renegade_12", 
+			[2] = "st_dyn_news_comm_actor_11", 
+			[3] = "st_dyn_news_comm_army_npc_11",
+			[4] = "st_dyn_news_comm_isg_14",
+			[5] = "dm_help_8",
+			[6] = "axr_phrase_npc_start_wounded",
+		}
+	end
+	
+	--	"st_dyn_news_comm_renegade_12"					We need some fucking help!
+	--	"st_dyn_news_comm_actor_11"						We need help!
+	--	"st_dyn_news_comm_army_npc_11"					Requesting support!
+	--	"st_dyn_news_comm_isg_14"						Requesting backup, now!
+	--	"dm_help_8"										Screw this place!
+	--	"axr_phrase_npc_start_wounded"					Help... me.
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	local instance = dynamic_news_manager.get_dynamic_news()
+	if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	else
+		instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- On NPC hit by friendly fire (Another NPC sees actor)
+function SeenHit(sender, victim_comm)
+	if not sender then return end
+	
+	local msg_type = "SeenHit"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_fake_death_stalker_14", 
+		[2] = "st_dyn_news_res_fake_death_stalker_96", 
+		[3] = "st_dyn_news_res_fake_death_stalker_115",
+		[4] = "st_dyn_news_res_fake_death_mutant_49",
+		[5] = "dm_dialog_companion_question_answer_1",
+		[6] = "dm_dialog_companion_final_words_bad_alone_2",
+	}
+
+	--	"st_dyn_news_res_fake_death_stalker_14			Damn.
+	--	"st_dyn_news_res_fake_death_stalker_96"			Uh, what happened here?
+	--	"st_dyn_news_res_fake_death_stalker_115"		Shit, I heard that one from here!
+	--	"st_dyn_news_res_fake_death_mutant_49"			What the hell is going on...?
+	--	"dm_dialog_companion_question_answer_1"			What is it?
+	--	"dm_dialog_companion_final_words_bad_alone_2"	Woah, man! What the hell is your problem?
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	local instance = dynamic_news_manager.get_dynamic_news()
+	if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	else
+		instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- NPC has seen weapon that was saved in .watches_out_for
+function SeenActorHitWeapon(sender, victim_comm)
+	if not sender then return end
+	
+	local msg_type = "SeenActorHitWeapon"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_fake_death_stalker_101", 
+		[2] = "st_dyn_news_res_artefact_6", 
+		[3] = "st_dyn_news_builder_ending_12",
+		[4] = "st_dyn_news_res_enemy_activity_stalker_1",
+		[5] = "st_surrender_victim_answer_esc_m_trader_bounty_3",
+		[6] = "dm_dialog_companion_final_words_bad_alone_2",
+	}
+	
+	--	"st_dyn_news_res_fake_death_stalker_101"		Well, well! What do we have here?
+	--	"st_dyn_news_res_artefact_6"					Son of a bitch...
+	--	"st_dyn_news_builder_ending_12"					I'd stay away if I were you.
+	--	"st_dyn_news_res_enemy_activity_stalker_1"		Someone is looking for trouble.
+	--	"st_surrender_victim_answer_esc_m_trader_bounty_3"	Fuck you!
+	--	"dm_dialog_companion_final_words_bad_alone_2"	Woah, man! What the hell is your problem?
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	-- local instance = dynamic_news_manager.get_dynamic_news()
+	-- if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	-- else
+		-- instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	-- end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+
+end
+
+-- On NPC seeing actor armed while under suspicion
+function SeenActorWeapon(sender, victim_comm)
+	if not sender then return end
+
+	local msg_type = "SeenActorWeapon"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_fake_death_stalker_8", 
+		[2] = "st_dyn_news_builder_ending_8", 
+		[3] = "st_dyn_news_surge_builder_end_bandit_5",
+		[4] = "st_dyn_news_res_fake_death_stalker_102",
+		[5] = "st_surrender_victim_answer_zat_b7_bandit_boss_sultan_bounty_5",
+		[6] = "dm_dialog_companion_actor_reply_to_join_4",
+	}
+
+	--	"st_dyn_news_res_fake_death_stalker_8"			Yeeeah...												--> SurrenderInit
+	--	"st_dyn_news_builder_ending_8"					Watch out.
+	--	"st_dyn_news_surge_builder_end_bandit_5"		Better hide your ass
+	--	"st_dyn_news_res_fake_death_stalker_102"		Well, well...											--> SurrenderInit
+	--	"st_surrender_victim_answer_zat_b7_bandit_boss_sultan_bounty_5"	...
+	--	"dm_dialog_companion_actor_reply_to_join_4"		Get lost!
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	-- local instance = dynamic_news_manager.get_dynamic_news()
+	-- if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	-- else
+		-- instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	-- end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- On NPC seeing actor initiating surrender
+function SeenActorInitSurrender(sender, victim_comm)
+	if not sender then return end
+
+	local msg_type = "SeenActorInitSurrender"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_fake_death_stalker_78", 
+		[2] = "st_dyn_news_res_fake_death_mutant_49", 
+		[3] = "st_dyn_news_gossip_hostage_4",
+		[4] = "st_dyn_news_gossip_kill_wounded_8",
+		[5] = "st_surrender_victim_answer_esc_m_trader_bounty_3",
+		[6] = "dm_dialog_companion_actor_reply_to_join_2",
+		[7] = "st_dyn_news_res_fake_death_stalker_83",
+	}
+
+--	"st_dyn_news_res_fake_death_stalker_78"			So, has anyone had time to get his stuff or not?
+--	"st_dyn_news_res_fake_death_mutant_49"			What the hell is going on...?
+--	"st_dyn_news_gossip_hostage_4"					I don't think your friends are coming for you!
+--	"st_dyn_news_gossip_kill_wounded_8"				Surrender, asshole! We know you are wounded!
+--	"st_surrender_victim_answer_esc_m_trader_bounty_3"	Fuck you!
+--	"dm_dialog_companion_actor_reply_to_join_2"		Fine. But if you die, I'm taking your shit.
+--	"st_dyn_news_res_fake_death_stalker_83"			That's how it is.
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	-- local instance = dynamic_news_manager.get_dynamic_news()
+	-- if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	-- else
+		-- instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	-- end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- On NPC ackknowledging actor surrender
+function AcknowledgedActorSurrender(sender, victim_comm)
+	if not sender then return end
+
+	local msg_type = "AcknowledgedActorSurrender"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_enemy_activity_mutant_1_8", 
+		[2] = "st_dyn_news_res_fake_death_stalker_53", 
+		[3] = "st_dyn_news_res_enemy_activity_stalker_9",
+		[4] = "st_dyn_news_res_enemy_activity_stalker_3",
+		[5] = "st_surrender_actor_1",
+		[6] = "st_surrender_actor_2",
+		[7] = "st_surrender_victim_answer_5",
+		[8] = "dm_dialog_companion_actor_reply_to_join_1",
+		[9] = "axr_phrase_actor_give_command_ignore_combat",
+	}
+
+--	"st_dyn_news_res_enemy_activity_mutant_1_8"		Carry on, son.											--> AcknowledgedActorSurrender
+--	"st_dyn_news_res_fake_death_stalker_53"			I bet my ass this ain't gonna be no good...
+--	"st_dyn_news_res_enemy_activity_stalker_9"		If he tries something stupid, open fire at once.		--> AcknowledgedActorSurrender
+--	"st_dyn_news_res_enemy_activity_stalker_3"		If he tries something funny, he's gonna pay for it.		--> AcknowledgedActorSurrender
+--	"st_surrender_actor_1"							You'll live.
+--	"st_surrender_actor_2"							Good luck...
+--	"st_surrender_victim_answer_5"					Go fuck yourself!
+--	"dm_dialog_companion_actor_reply_to_join_1"		Just focus on where you aim with those guns, then.
+--	"axr_phrase_actor_give_command_ignore_combat"	Avoid shooting at anyone for now.
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	local instance = dynamic_news_manager.get_dynamic_news()
+	if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	else
+		instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- On NPC seeing actor armed again in non-hostile environment
+function SeenActorUnSurrender(sender, victim_comm)
+	if not sender then return end
+
+	local msg_type = "SeenActorUnSurrender"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_res_artefact_9", 
+		[2] = "st_dyn_news_gossip_kill_wounded_4", 
+		[3] = "st_dyn_news_res_death_stalker_33",
+		[4] = "st_dyn_news_res_fake_death_stalker_1",
+		[5] = "st_surrender_actor_3",
+		[6] = "dm_dialog_companion_final_words_bad_2",
+		[7] = "stalker_stitch_join_eidolon_1",
+	}
+
+--	"st_dyn_news_res_artefact_9"					You serious?!											--> Unsurrender
+--	"st_dyn_news_gossip_kill_wounded_4"				Time to put him down for good.							--> Unsurrender	
+--	"st_dyn_news_res_death_stalker_33"				Here we go again...
+--	"st_dyn_news_res_fake_death_stalker_1"			What in hell?!
+--	"st_surrender_actor_3"							Time to end you.
+--	"dm_dialog_companion_final_words_bad_2"			Kill this asshole!
+--	"stalker_stitch_join_eidolon_1"					All right, bring it on!
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	-- local instance = dynamic_news_manager.get_dynamic_news()
+	-- if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	-- else
+		-- instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	-- end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- On witness reporting before Goodwill Reset
+function ReportingAttack(sender, victim_comm)
+	if not sender then return end
+
+	local msg_type = "ReportingAttack"
+	local sender_id = sender:id()
+	if active_message_cooldown(sender_id) or active_message_cooldown(msg_type) then return end
+
+	d_printf(">>> AFFS Dyn News: "..msg_type.." - call")
+	set_message_cooldown(sender_id)
+	set_message_cooldown(msg_type)
+
+	local Se = strformat("%s, %s",sender:character_name(),dynamic_news_helper.GetCommunityDescription(sender,6))
+	
+	local str_tbl = {
+		[1] = "st_dyn_news_surge_builder_end_killer_4", 
+		[2] = "st_dyn_news_res_artefact_12", 
+		[3] = "st_dyn_news_res_fake_death_mutant_42",
+		[4] = "st_dyn_news_res_fake_death_stalker_55",
+		[5] = "st_dyn_news_res_found_stash_1",
+		[6] = "st_dyn_news_res_fake_death_stalker_40",
+		[7] = "st_dyn_news_res_fake_death_stalker_50",
+		[8] = "st_dyn_news_res_fake_death_stalker_75",
+		[9] = "st_dyn_news_res_fake_death_stalker_86",
+	}
+	
+	--	"st_dyn_news_surge_builder_end_killer_4"		You've been warned
+	--	"st_dyn_news_res_artefact_12"					You probably just made yourself several enemies.
+	--	"st_dyn_news_res_fake_death_mutant_42"			Well, fuck that guy!
+	--	"st_dyn_news_res_fake_death_stalker_55"			I had a bad feeling about that guy. Good thing I wasn't nearby.
+	--	"st_dyn_news_res_found_stash_1"					Well, sucks to be you.
+	--	"st_dyn_news_res_fake_death_stalker_40"			He screwed up...
+	--	"st_dyn_news_res_fake_death_stalker_50"			I'm gonna put that fucking asshole in a coffin!
+	--	"st_dyn_news_res_fake_death_stalker_75"			Sad to see this happening...
+	--	"st_dyn_news_res_fake_death_stalker_86"			That's the end of you, scum.
+	
+	local msg = game.translate_string(str_tbl[math.random(#str_tbl)])
+	-- local instance = dynamic_news_manager.get_dynamic_news()
+	-- if not instance then
+		dynamic_news_helper.send_tip(msg,Se, nil, msg_duration,victim_comm,"beep_1","gr")
+	-- else
+		-- instance:PushToChannel(victim_comm, {Mg=msg,Ic=victim_comm,Snd="beep_1",Se=Se,It="gr"})
+	-- end
+	d_printf(">>> msg: '"..msg.."'")
+	
+	return
+end
+
+-- Helpers for HUD
+
+function currently_aggravating()
+	if not AREA_STATS.last_comm then return end
+	local faction = AREA_STATS.last_comm
+	if not faction then return end
+	if not dfrc_tgr[faction] then return end
+	if not dfrc_tgr[faction].hit_v then return end
+	if not dfrc_tgr[faction].hit_v == 0 then return end
+	return true
+end
+
+function get_current_aggravation_value()
+	local faction = AREA_STATS.last_comm
+	if not faction then return 0 end
+	if not dfrc_tgr[faction] then return 0 end
+	
+	local factor = 1	
+	if settings["faction_dissatisfaction_limit"] > 100 then
+		factor = 100 / settings["faction_dissatisfaction_limit"]
+	end
+
+	local val = math.floor(dfrc_tgr[faction].hit_v * factor)
+	return val	
+end
+
+------------------------------------------------------------
+-- HUD -- (adapted from gameplay_disguise)
+------------------------------------------------------------
+
+local h_tmr = 0
+local h_a = "#" 	-- bar shape (character)
+local h_bar = 15 	-- total bars
+local h_val = 1 	-- suspicion-meter
+local h_step = 10 -- step size for suspicion changes
+local h_time = 500 -- update step [ms]
+function hud_update()
+	local hud = get_hud()
+	local hud_d = hud:GetCustomStatic("bar_aggravation")
+	--local hud_d = hud:GetCustomStatic("bar_disguise")
+	local wnd
+	
+	if (not currently_aggravating()) or (db.actor:is_talking()) or not show_hud_bar then
+		if (hud_d ~= nil) then
+			hud:RemoveCustomStatic("bar_aggravation")
+			--hud:RemoveCustomStatic("bar_disguise")
+			hud_d = nil
+		end
+		return
+	end
+	
+	if (hud_d == nil) then
+		hud:AddCustomStatic("bar_aggravation",true)
+		--hud:AddCustomStatic("bar_disguise",true)
+		hud_d = hud:GetCustomStatic("bar_aggravation")
+		--hud_d = hud:GetCustomStatic("bar_disguise")
+		wnd = hud_d:wnd()
+		if (wnd ~= nil) then
+			wnd:SetAutoDelete(true)
+		end
+	end
+	
+	-- Update time
+	local tg = time_global()
+	if h_tmr >= tg then
+		return
+	else
+		h_tmr = tg + h_time
+	end
+	
+	if (hud_d ~= nil) then
+		wnd = hud_d:wnd()
+		
+		-- Sliding bar
+		local val = get_current_aggravation_value()
+		if (val > h_val) and (val - h_val > h_step) then
+			h_val = h_val + h_step
+		elseif (val < h_val) and (h_val - val > h_step) then
+			h_val = h_val - h_step
+		end
+		h_val = clamp(h_val,0,100)
+		
+		-- Color
+		local str = hud_val_to_str(h_val)
+		local green = math.floor(255 * ((100 - h_val)/100))
+		local red = math.floor(255 * (h_val/100))
+		wnd:TextControl():SetTextST(str)
+		wnd:TextControl():SetTextColor(GetARGB(255, red, green, 50))
+	end
+end
+
+function hud_val_to_str(val)
+	local str = ""
+	local bars = (val > (h_step/2)) and math.floor((val/100)*h_bar) or 0
+	for i=1,bars do
+		str = str .. h_a
+	end
+	return str
+end
