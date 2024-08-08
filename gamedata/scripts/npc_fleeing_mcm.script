@@ -1,0 +1,74 @@
+-- If you don't use MCM, change your defaults from here.
+local defaults = {
+	-- power
+	["threshold_mult"] = 1.25,
+	["companion_pwr"] = 5, 
+--	["enemies_pwr_mult"] = 1,
+--	["friends_pwr_mult"] = 1,
+
+	-- distance before flee
+	["enemies_radius"] = 125,
+	["friends_radius"] = 70,
+
+	-- distance after flee
+	["enemies_upd_radius"] = 35,
+	["friends_upd_radius"] = 35,
+
+	-- others
+	["start_flee_time"] = 7,
+	["flee_protection_time"] = 12,
+
+	["cancel_on_hit"] = true,
+	["hits_to_cancel"] = 3,
+
+	["flee_smart_min_dist"] = 90,
+
+	["cover_time"] = 12,
+	["smoke_enabled"] = true,
+
+	["flee_dbg"] = false,
+
+}
+
+function get_config(key)
+	if ui_mcm then return ui_mcm.get("npc_flee/"..key) else return defaults[key] end
+end
+
+function on_mcm_load()
+	op = { id= "npc_flee",sh=true ,gr={
+			{ id= "title",type= "slide",link= "ui_options_slider_player",text="ui_mcm_npc_flee_title",size= {512,50},spacing= 20 },
+
+			{ id= "title"				   ,type= "desc"	 ,text= "ui_mcm_npc_flee_header_power" 			,align= "l"	,clr= {255,60,190,190}	},
+			{id = "threshold_mult", type = "track", val = 2, min = 1.15, max = 2, step = 0.05, def = 1.25},
+			{id = "companion_pwr", type = "track", val = 2, min = 1, max = 50, step = 0.5, def = 5},
+		--	{id = "enemies_pwr_mult", type = "track", val = 2, min = 0.25, max = 3, step = 0.25, def = 1},
+		--	{id = "friends_pwr_mult", type = "track", val = 2, min = 0.25, max = 3, step = 0.25, def = 1},
+
+			{id="divider", type="line" },
+			{ id= "title"				   ,type= "desc"	 ,text= "ui_mcm_npc_flee_header_dist_before" 			,align= "l"	,clr= {255,60,190,190}	},
+			{id = "enemies_radius", type = "track", val = 2, min = 30, max = 240, step = 5, def = 125},
+			{id = "friends_radius", type = "track", val = 2, min = 30, max = 240, step = 5, def = 70},
+
+			{id="divider", type="line" },
+			{ id= "title"				   ,type= "desc"	 ,text= "ui_mcm_npc_flee_header_dist_after" 			,align= "l"	,clr= {255,60,190,190}	},
+			{id = "enemies_upd_radius", type = "track", val = 2, min = 10, max = 100, step = 5, def = 35},
+			{id = "friends_upd_radius", type = "track", val = 2, min = 10, max = 100, step = 5, def = 35},
+
+			{id="divider", type="line" },
+			{ id= "title"				   ,type= "desc"	 ,text= "ui_mcm_npc_flee_header_others" 			,align= "l"	,clr= {255,60,190,190}	},
+			{id = "start_flee_time", type = "track", val = 2, min = 0, max = 20, step = 1, def = 7},
+			{id = "flee_protection_time", type = "track", val = 2, min = 0, max = 30, step = 1, def = 12},
+			{id = "cancel_on_hit", type = "check", val = 1, def = true},
+			{id = "hits_to_cancel", type = "track", val = 2, min = 1, max = 7, step = 1, def = 3},
+			{id = "flee_smart_min_dist", type = "track", val = 2, min = 50, max = 200, step = 5, def = 90},
+			{id = "cover_time", type = "track", val = 2, min = 0, max = 25, step = 1, def = 12},
+			{id = "smoke_enabled", type = "check", val = 1, def = true},
+
+			{id="divider", type="line" },
+			{id = "flee_dbg", type = "check", val = 1, def = false},
+
+		}
+	}
+
+	return op
+end

@@ -1,0 +1,560 @@
+
+local squads_t = {}
+local flee_smarts = {}
+local smoke_parts = {}
+
+------------------------------------ things to change ---------------------------------
+-- power mults 	for stalker its (rank*comm);	 for mutant only last table
+local rank_to_val = {
+	["novice"] = 0.6, ["trainee"] = 0.6, ["experienced"] = 0.9, ["professional"] = 0.9,
+	["veteran"] = 1.15, ["expert"] = 1.15, ["master"] = 1.4, ["legend"] = 1.4,
+}
+
+local comm_to_val = {
+	["zombied"] = 0.7, ["bandit"] = 0.8, ["renegade"] = 0.8, ["stalker"] = 0.9, ["csky"] = 0.9, ["ecolog"] = 0.9,
+	["dolg"] = 1, ["freedom"] = 1, ["army"] = 1.1, ["killer"] = 1.2, ["greh"] = 1.2, ["isg"] = 1.3, ["monolith"] = 1.3,
+}
+
+local mutant_to_val = {
+	[clsid["tushkano_s"]] = 0.1, [clsid["zombie_s"]] = 0.3, [clsid["dog_s"]] = 0.3, [clsid["flesh_s"]] = 0.5, [clsid["fracture_s"]] = 0.5, [clsid["boar_s"]] = 0.75, [clsid["pseudodog_s"]] = 0.75,
+	[clsid["cat_s"]] = 0.75, [clsid["snork_s"]] = 0.75, ["SM_KARLIK"] = 0.75, [clsid["poltergeist_s"]] = 1, ["SM_LURKER"] = 1.5, [clsid["psy_dog_s"]] = 2,
+	["SM_PSYSUCKER"] = 2.5, [clsid["bloodsucker_s"]] = 2.5, [clsid["burer_s"]] = 2.5, [clsid["chimera_s"]] = 3.5, [clsid["controller_s"]] = 4, [clsid["gigant_s"]] = 5,
+}
+
+-- ignore list for comms that do not flee
+local ignore_flee = {
+	["zombied"] = true, ["monolith"] = true,
+}
+
+-- chance to use smoke grenade (every npc in squad is checked, 1 is 100%)
+local smoke_ranks = {
+	["novice"] = 0.01, ["trainee"] = 0.03, ["experienced"] = 0.1, ["professional"] = 0.15,
+	["veteran"] = 0.25, ["expert"] = 0.3, ["master"] = 0.4, ["legend"] = 0.4,
+}
+---------------------------------------------------------------------------------------
+
+-- start flee if  (friends_power * threshold_mult < enemies_power)
+local threshold_mult = npc_fleeing_mcm.get_config("threshold_mult")
+
+-- powers multipliers (goes to friends_power and enemies_power)
+local enemies_pwr_mult = 1		--npc_fleeing_mcm.get_config("enemies_pwr_mult")
+local friends_pwr_mult = 1		--npc_fleeing_mcm.get_config("friends_pwr_mult")
+local companion_pwr_mult = npc_fleeing_mcm.get_config("companion_pwr")
+
+-- iterate through enemies/friends radius when NOT fleeing, then if enemy power is greater - start flee
+local enemies_radius = npc_fleeing_mcm.get_config("enemies_radius")
+local friends_radius = npc_fleeing_mcm.get_config("friends_radius")
+
+-- iterate through enemies/friends radius when fleeing, then if enemy power is less - cancel flee
+local enemies_upd_radius = npc_fleeing_mcm.get_config("enemies_upd_radius")
+local friends_upd_radius = npc_fleeing_mcm.get_config("friends_upd_radius")
+
+-- some other stuff
+local start_flee_time = npc_fleeing_mcm.get_config("start_flee_time") 						-- guaranteed flee time after it starts (cant be cancelled)
+local flee_protection_time = npc_fleeing_mcm.get_config("flee_protection_time")				-- seconds between new flee (set 0 for instant flees one after another when possible)
+
+local cancel_on_hit = npc_fleeing_mcm.get_config("cancel_on_hit")					-- cancel flee on hit (only after "start_flee_time")
+local hits_to_cancel = npc_fleeing_mcm.get_config("hits_to_cancel") 						-- amount of hits needed to cancel flee
+
+local flee_smart_min_dist = npc_fleeing_mcm.get_config("flee_smart_min_dist") 				-- pick smart to flee that at least further than this value
+
+local cover_time = npc_fleeing_mcm.get_config("cover_time")
+local smoke_enabled = npc_fleeing_mcm.get_config("smoke_enabled")
+
+-- do not touch for now
+local flee_time = 600
+
+local start_flee_check = false		-- delay for first update, because somehow they dont see friends for a few first seconds
+
+local flee_dbg = npc_fleeing_mcm.get_config("flee_dbg")
+local print_lists_dbg = false
+local immortal_npcs = false
+
+function squad_on_update(squad)
+	-- small delay for loading
+	if not start_flee_check then
+		return
+	end
+
+	-- do only for online squads
+	if not (squad.online) then
+		squads_t[squad.id] = nil
+		return
+	end
+
+	-- do only for simulation stalkers
+	if (ignore_flee[squad.player_id]) or (string.find(squad.player_id, "monster")) or (not string.find(squad:section_name(), "sim_squad")) then
+		return
+	end
+
+	-- do only if not surge (and cancel flee)
+	if xr_conditions.surge_started() then
+		cancel_flee(squad, squads_t[squad.id] and squads_t[squad.id].fleeing, "surge started")
+		return
+	end
+
+	-- check update timer (2 sec per squad)
+	if squads_t[squad.id] and squads_t[squad.id].tmr and ( time_global() - squads_t[squad.id].tmr < 2000 ) then
+		return
+	end
+
+	-- store/update the squad properties (timer, powers and enemy)
+	squads_t[squad.id] = squads_t[squad.id] or {}
+	squads_t[squad.id].tmr = time_global()
+
+	-- if fleeing - update flee state and return
+	if squads_t[squad.id].fleeing then
+		update_flee(squad)
+		pr2("~----------------------------------upd")
+		return
+	end
+
+	-- flee to another smart
+	start_flee(squad)
+	pr2("~-------------------------------end")
+
+end
+
+function update_flee(squad)
+	-- start updates only after flee started + start_flee_time
+	if squads_t[squad.id].start_updates_tmr and ( time_global() - squads_t[squad.id].start_updates_tmr < 1000 * start_flee_time ) then
+		return
+	end
+	squads_t[squad.id].start_updates_tmr = nil
+
+	-- cancel flee if at least one squad member is close to smart target
+	local smart = squads_t[squad.id].smart_id and alife_object(squads_t[squad.id].smart_id)
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) and smart and npc:position():distance_to(smart.position) < 15 then
+			cancel_flee(squad, true, "smart reached")
+			return
+		end
+	end
+
+	-- cancel flee if power is greater than enemies (to fight weak enemies on the way)
+	local enemy_pwr, friend_pwr, be_squad_id = get_powers(squad, enemies_upd_radius, friends_upd_radius)
+	if be_squad_id and friend_pwr * threshold_mult >= enemy_pwr then
+		cancel_flee(squad, true, "weak enemies met", enemy_pwr, friend_pwr)
+		return
+	end
+
+	-- make nearest npc in squad to cover the rest
+	local function stop_covering(obj_id, squad_id)
+		local cvr_npc = level.object_by_id(obj_id)
+		if valid_obj(cvr_npc, true) and squads_t[squad_id] then
+			squads_t[squad_id].npc_cover_id = nil
+		end
+		return true
+	end
+
+	local cover_id = squads_t[squad.id].npc_cover_id
+	local cover_npc = cover_id and level.object_by_id(cover_id)
+	if valid_obj(cover_npc, true) then
+		CreateTimeEvent("flee_cover_e" .. cover_id, "flee_cover_a" .. cover_id, cover_time, stop_covering, cover_id, squad.id)
+		demonized_stalker_aoe_panic.npc_remove_aoe_panic(cover_id, "npc_flee" .. cover_id, true)
+	end
+
+	-- change flee state between panic and assault based on distance to best enemy
+	local enemy = be_squad_id and alife_object(be_squad_id)
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) and (not cover_id or cover_id ~= m.id) then
+			local state = enemy and npc:position():distance_to(enemy.position) < 40 and "panic" or "assault"
+			demonized_stalker_aoe_panic.npc_add_aoe_panic(npc:id(), "npc_flee" .. npc:id(), flee_time, nil, enemy and enemy.position, false, smart and smart.position, state)
+		end
+	end
+
+end
+
+function start_flee(squad)
+	-- protection from another instant flee
+	if squads_t[squad.id].no_flee_time and (time_global() - squads_t[squad.id].no_flee_time < 1000 * flee_protection_time) then
+		return
+	end
+	squads_t[squad.id].no_flee_time = nil
+
+	-- get powers and calculate if enemies are greater
+	local enemy_pwr, friend_pwr, be_squad_id = get_powers(squad, enemies_radius, friends_radius)
+	if (not be_squad_id) or (friend_pwr * threshold_mult >= enemy_pwr) then return end
+
+	-- get smart to flee
+	local smart_name = get_smart_to_flee(squad, be_squad_id)
+	local smart = smart_name and SIMBOARD.smarts_by_names[smart_name]
+	if not smart then return end
+
+	-- set this smart as assigned target and store
+	squad:specific_update(smart.id)
+	squads_t[squad.id].smart_id = smart.id
+
+	-- start panic
+	local enemy = alife_object(be_squad_id)
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) then
+			pr2("~ -------------- start panic")
+			local state = enemy and npc:position():distance_to(enemy.position) < 80 and "panic" or "assault"
+			demonized_stalker_aoe_panic.npc_add_aoe_panic(npc:id(), "npc_flee" .. npc:id(), flee_time, nil, nil, false, smart.position, state)
+		end
+	end
+
+	pr("- id: %s || sec: %s", squad.id, squad:section_name())
+	pr("$ flee to %s || en_pwr: %s || fr_pwr: %s", smart_name, enemy_pwr, friend_pwr)
+	pr("~-------------------------------------------")
+
+	squads_t[squad.id].fleeing = true
+	squads_t[squad.id].start_updates_tmr = time_global()
+
+	squads_t[squad.id].hits = 0
+
+	-- get last npc that will cover squad
+	local nearest_id = get_nearest_squad_member_id(squad, smart)
+	if nearest_id and cover_time > 0 and squad:npc_count() > 1 then
+		squads_t[squad.id].npc_cover_id = nearest_id
+	end
+
+	-- create smoke on farthest npc position
+	local farthest_id = get_farthest_squad_member_id(squad, smart)
+	local far_npc = farthest_id and level.object_by_id(farthest_id)
+	if smoke_enabled and far_npc then
+		for m in squad:squad_members() do
+			local npc = level.object_by_id(m.id)
+			local npc_rank = valid_obj(npc) and ranks.get_obj_rank_name(npc)
+			if npc_rank and smoke_ranks[npc_rank] and smoke_ranks[npc_rank] >= math.random() then
+				smoke_parts[npc:id()] = particles_object("explosions\\explosion_dym")
+				smoke_parts[npc:id()]:play_at_pos(far_npc:position())
+				break
+			end
+		end
+	end
+
+end
+
+function cancel_flee(squad, is_fleeing, print_msg, pwr1, pwr2)
+	if not (squads_t[squad.id] and is_fleeing) then return end
+
+	local squad_npcs = {}
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) then
+			squad_npcs[npc:id()] = true
+			demonized_stalker_aoe_panic.npc_remove_aoe_panic(npc:id(), "npc_flee" .. npc:id(), true)
+		end
+	end
+
+	pr("- id: %s || sec: %s", squad.id, squad:section_name())
+	pr("$ stopped fleeing, %s %s %s", print_msg, pwr1 and ("|| en_pwr: " .. pwr1) or "", pwr2 and (" || fr_pwr: " .. pwr2) or "")
+	pr("~-------------------------------------------")
+
+	squads_t[squad.id].fleeing = nil
+	squads_t[squad.id].no_flee_time = time_global()
+
+	squads_t[squad.id].hits = nil
+
+	squads_t[squad.id].npc_cover_id = nil
+
+	-- test (delete npc from body)
+	--[[
+	for id, t in pairs(db.storage) do
+		if t.corpse_already_selected and squad_npcs[t.corpse_already_selected] then
+			db.storage[id].corpse_already_selected = nil
+		end
+	end
+	--]]
+
+	-- test (delete body from npc)
+	for id, _ in pairs(squad_npcs) do
+		if db.storage[id] and db.storage[id].corpse_detection then
+			db.storage[id].corpse_detection.selected_corpse_id = nil
+		end
+	end
+
+end
+
+function get_powers(squad, enemy_radius, friend_radius)
+	local enemies_t = {}
+	local friends_t = {}
+
+	local highest_enemy_id
+	local highest_enemy_power = 0
+
+	-- iterate through memory of each npc in squad
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) and npc.memory_visible_objects and npc:memory_visible_objects() then
+
+			-- add self
+			if npc:has_info("npcx_is_companion") then
+				friends_t[npc:id()] = friends_t[npc:id()] or get_obj_power(npc, true) or 0
+			else
+				friends_t[npc:id()] = friends_t[npc:id()] or get_obj_power(npc) or 0
+			end
+
+			pr2("~   ------------1")
+			for o in npc:memory_visible_objects() do
+				local obj = o and o:object()
+				if valid_obj(obj, true) and obj:position():distance_to(npc:position()) < enemy_radius then
+					local obj_power = get_obj_power(obj) or 0
+
+					-- get all enemy powers
+					if npc:relation(obj) >= game_object.enemy then
+						enemies_t[obj:id()] = enemies_t[obj:id()] or obj_power
+
+						-- save best enemy
+						if obj:id() ~= 0 and obj_power > highest_enemy_power then
+							highest_enemy_power = obj_power
+							local enemy_squad = get_object_squad(obj)
+							highest_enemy_id = enemy_squad and enemy_squad.id or highest_enemy_id
+						end
+
+					-- get all friend powers (with reduced range)
+					elseif obj:position():distance_to(npc:position()) < friend_radius then
+						friends_t[obj:id()] = friends_t[obj:id()] or obj_power
+
+					end
+
+				end
+			end
+
+		end
+	end
+
+	pr2("~   ------------2")
+	if not highest_enemy_id then return end
+
+	pr2("~   ------------3")
+
+	-- calc total powers
+	local enemies_power = 0
+	pr2("   enemies list:")
+	for obj_id, pwr in pairs(enemies_t) do
+		pr2("      enemy: %s || pwr: %s", level.object_by_id(obj_id):name(), pwr)
+		enemies_power = enemies_power + pwr
+	end
+
+	pr2("~   ------------4")
+	local friends_power = 0
+	pr2("   friends list:")
+	for obj_id, pwr in pairs(friends_t) do
+		pr2("      friend: %s || pwr: %s", level.object_by_id(obj_id):name(), pwr)
+		friends_power = friends_power + pwr
+	end
+	pr2("~   ------------5")
+
+	return enemies_power * enemies_pwr_mult, friends_power * friends_pwr_mult, highest_enemy_id
+end
+
+function get_obj_power(npc, is_comp)
+	local power = 1
+
+	-- if stalker
+	if IsStalker(npc) then
+
+		-- rank and community power
+		local rank = ranks.get_obj_rank_name(npc)
+		local comm = npc:character_community()
+		power = power * (rank and rank_to_val[rank] or 0.5) * (comm and comm_to_val[comm] or 0.7)
+
+		-- if companion
+		if is_comp then
+			power = power * companion_pwr_mult
+		end
+
+	-- if mutant
+	elseif IsMonster(npc) then
+
+		local kind = ini_sys:r_string_ex(npc:section(), "kind")
+		if kind and mutant_to_val[kind] then
+			power = power * mutant_to_val[kind]
+		elseif mutant_to_val[npc:clsid()] then
+			power = power * mutant_to_val[npc:clsid()]
+		else
+			power = power * 0.3
+		end
+
+	end
+
+	return power
+end
+
+function get_smart_to_flee(squad, be_squad_id)
+	local enemy_squad = alife_object(be_squad_id)
+	if not (enemy_squad and flee_smarts[squad.player_id]) then return end
+
+	local nearest_dist = 9999
+	local nearest_smart_name
+	for smart_name, _ in pairs(flee_smarts[squad.player_id]) do
+		local smart = SIMBOARD.smarts_by_names[smart_name]
+		if smart then
+			-- get dist from squad to this smart
+			local squad_dist = squad.position:distance_to(smart.position)
+
+			-- get dist from enemy to this smart
+			local enemy_dist = enemy_squad.position:distance_to(smart.position)
+
+			-- check if squad is closer to smart than enemy, pick smart that is "flee_smart_min_dist" meters away but nearest of those
+			if squad_dist and enemy_dist and (enemy_dist - squad_dist) > 0 and (squad_dist > flee_smart_min_dist) and (squad_dist < nearest_dist) then
+				nearest_dist = squad_dist
+				nearest_smart_name = smart_name
+			end
+
+		end
+	end
+
+	return nearest_smart_name
+end
+
+function get_nearest_squad_member_id(squad, smart)
+	local dist = 999
+	local nearest_id
+
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) and (npc:position():distance_to(smart.position) < dist) then
+			dist = npc:position():distance_to(smart.position)
+			nearest_id = npc:id()
+		end
+	end
+
+	return nearest_id
+end
+
+function get_farthest_squad_member_id(squad, smart)
+	local dist = 0
+	local farthest_id
+
+	for m in squad:squad_members() do
+		local npc = level.object_by_id(m.id)
+		if valid_obj(npc) and (npc:position():distance_to(smart.position) > dist) then
+			dist = npc:position():distance_to(smart.position)
+			farthest_id = npc:id()
+		end
+	end
+
+	return farthest_id
+end
+
+function get_obj_level_name(se_obj)
+	local lid = se_obj and game_graph():vertex(se_obj.m_game_vertex_id):level_id()
+	return lid and alife():level_name(lid)
+end
+
+function actor_on_first_update()
+	local comms = { "bandit", "renegade", "stalker", "csky", "ecolog", "dolg", "freedom", "army", "killer", "greh", "isg", "monolith" }
+	local def_props_t = { ["all"] = true, ["base"] = true, ["surge"] = true, ["territory"] = true }
+
+	for name, smart in pairs(SIMBOARD.smarts_by_names) do
+		local smart_level_name = get_obj_level_name(smart)
+		-- smart on current level
+		if smart_level_name == level.name() then
+
+			for i = 1, #comms do
+				local comm = comms[i]
+				-- validate if smart can receive squads
+				 if (not smart.disabled) and (smart.max_population and smart.max_population > 0) then
+
+					-- check if smart can receive this community
+					local comm_prop = smart.props and smart.props[comm] and smart.props[comm] > 0
+					local def_prop = false
+					for k, v in pairs(def_props_t) do
+						if smart.props and smart.props[k] and smart.props[k] > 0 then
+							def_prop = true
+							break
+						end
+					end
+
+					-- store this smart name for this community
+					if comm_prop or def_prop then
+						flee_smarts[comm] = flee_smarts[comm] or {}
+						flee_smarts[comm][name] = true
+					end
+				end
+
+			end
+
+		end
+	end
+
+	-- small delay for loading
+	CreateTimeEvent("dly_sq_upd_e", "dly_sq_upd_a", 5, function()
+		start_flee_check = true
+		return true
+	end)
+
+end
+
+function valid_obj(obj, cls)
+	if not obj then return end
+
+	local class_check = (not cls) or IsStalker(obj) or IsMonster(obj)
+	return class_check and obj.alive and obj:alive() and (not IsWounded(obj))
+end
+
+function server_entity_on_unregister(se_obj, typ)
+	-- remove squad
+	if squads_t[se_obj.id] then
+		squads_t[se_obj.id] = nil
+	end
+end
+
+function pr(...)
+	if not flee_dbg then return end
+	printf(...)
+end
+
+function pr2(...)
+	if not print_lists_dbg then return end
+	printf(...)
+end
+
+function npc_on_before_hit(npc, s_hit, bone_id, flags)
+	local squad = get_object_squad(npc)
+	if cancel_on_hit and squad and squad.commander_id and squads_t[squad.id] and squads_t[squad.id].fleeing and (not squads_t[squad.id].start_updates_tmr) and squads_t[squad.id].hits then
+		squads_t[squad.id].hits = squads_t[squad.id].hits + 1
+		if squads_t[squad.id].hits >= hits_to_cancel then
+			cancel_flee(squad, true, "got hitted")
+		end
+	end
+
+	if not immortal_npcs then return end
+	if not (s_hit.draftsman and s_hit.draftsman:id() == 0) then
+		flags.ret_value = false
+		return
+	end
+	s_hit.power = 1000
+end
+
+function on_option_change()
+	threshold_mult = npc_fleeing_mcm.get_config("threshold_mult")
+
+--	enemies_pwr_mult = npc_fleeing_mcm.get_config("enemies_pwr_mult")
+--	friends_pwr_mult = npc_fleeing_mcm.get_config("friends_pwr_mult")
+
+	enemies_radius = npc_fleeing_mcm.get_config("enemies_radius")
+	friends_radius = npc_fleeing_mcm.get_config("friends_radius")
+
+	enemies_upd_radius = npc_fleeing_mcm.get_config("enemies_upd_radius")
+	friends_upd_radius = npc_fleeing_mcm.get_config("friends_upd_radius")
+
+	start_flee_time = npc_fleeing_mcm.get_config("start_flee_time")
+	flee_protection_time = npc_fleeing_mcm.get_config("flee_protection_time")
+
+	cancel_on_hit = npc_fleeing_mcm.get_config("cancel_on_hit")
+	hits_to_cancel = npc_fleeing_mcm.get_config("hits_to_cancel")
+
+	flee_smart_min_dist = npc_fleeing_mcm.get_config("flee_smart_min_dist")
+
+	cover_time = npc_fleeing_mcm.get_config("cover_time")
+	smoke_enabled = npc_fleeing_mcm.get_config("smoke_enabled")
+
+	flee_dbg = npc_fleeing_mcm.get_config("flee_dbg")
+end
+
+function on_game_start()
+	RegisterScriptCallback("squad_on_update", squad_on_update)
+	RegisterScriptCallback("actor_on_first_update", actor_on_first_update)
+	RegisterScriptCallback("server_entity_on_unregister", server_entity_on_unregister)
+	RegisterScriptCallback("npc_on_before_hit", npc_on_before_hit)
+	RegisterScriptCallback("monster_on_before_hit", npc_on_before_hit)
+	RegisterScriptCallback("on_option_change", on_option_change)
+end

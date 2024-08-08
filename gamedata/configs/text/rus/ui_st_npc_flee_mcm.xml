@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<!-- 
+	MCM
+-->
+<string_table>
+
+
+	<string id="ui_mcm_npc_flee_title">
+		<text>НПС отступления</text>
+	</string>
+	<string id="ui_mcm_menu_npc_flee">
+		<text>НПС отступления</text>
+	</string>
+
+
+	<!-- Powers -->
+	<string id="ui_mcm_npc_flee_header_power">
+		<text>Сила   (убегать если "сила_врагов > сила_друзей*множитель_порога")</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_threshold_mult">
+		<text>Множитель порога</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_companion_pwr">
+		<text>Множитель силы напарников</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_enemies_pwr_mult">
+		<text>Множитель силы врагов</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_friends_pwr_mult">
+		<text>Множитель силы друзей</text>
+	</string>
+
+
+	<!-- Distance before flee -->
+	<string id="ui_mcm_npc_flee_header_dist_before">
+		<text>Радиус   (до отступления, вычисляет силы врагов/друзей только в этом радиусе)</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_enemies_radius">
+		<text>Радиус врагов</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_friends_radius">
+		<text>Радиус друзей</text>
+	</string>
+
+
+	<!-- Distance after flee -->
+	<string id="ui_mcm_npc_flee_header_dist_after">
+		<text>Радиус 2   (во время отступления, меньший радиус на случай если на пути встретится враг слабее)</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_enemies_upd_radius">
+		<text>Радиус врагов 2</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_friends_upd_radius">
+		<text>Радиус друзей 2</text>
+	</string>
+
+
+	<!-- Others -->
+	<string id="ui_mcm_npc_flee_header_others">
+		<text>Разное</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_start_flee_time">
+		<text>Первые секунды бегства, которые нельзя отменить</text>
+	</string>
+	<string id="ui_mcm_npc_flee_start_flee_time_desc">
+		<text>Первые секунды после начала бегства, которое не может быть отменено слабым противником или попаданиями</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_flee_protection_time">
+		<text>Время защиты от бегства (сек.)</text>
+	</string>
+	<string id="ui_mcm_npc_flee_flee_protection_time_desc">
+		<text>Когда отступление отменяется, НПС не сможет убегать снова в течении этого времени</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_cancel_on_hit">
+		<text>Отмена бегства, если НПС атакован</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_hits_to_cancel">
+		<text>Количество попаданий для отмены</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_flee_smart_min_dist">
+		<text>Минимальное расстояние для отступлений</text>
+	</string>
+	<string id="ui_mcm_npc_flee_flee_smart_min_dist_desc">
+		<text>Выбирается цель для бегства только в том случае, если она находится дальше этого значения</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_cover_time">
+		<text>Время прикрывания (0 = выключить)</text>
+	</string>
+	<string id="ui_mcm_npc_flee_cover_time_desc">
+		<text>Дальний НПС будет прикрывать отход своего отряда.</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_smoke_enabled">
+		<text>Дымовые гранаты</text>
+	</string>
+
+	<string id="ui_mcm_npc_flee_flee_dbg">
+		<text>Дебаг (принты консоли)</text>
+	</string>
+
+
+</string_table>
