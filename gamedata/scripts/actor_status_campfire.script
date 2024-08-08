@@ -1,0 +1,213 @@
+-- ======================================================================
+--[[	Campfire Healing And Designated Savepoint indicator
+-- ====================================================================]]
+script_version 	= 2.1
+release_date 	= 20240630
+--[[=====================================================================
+	Author: Catspaw (CatspawMods @ ModDB)
+	Source: https://www.moddb.com/members/catspawmods/addons
+	https://www.youtube.com/@CatspawAdventures
+
+	Shows a status icon in the HUD when within range of a campfire.
+
+	Whether the actor is "in range" depends on what campfire-related
+	features or addons they are using.
+
+	The vanilla range is very short. The Yet Another Campfire Saving
+	addon is much more forgiving. And in between the two of them is the
+	range of the Cozy Campfires addon, which adds a slow health regen 
+	while near a campfire. The Calming Campfires addon has the same range
+	and does the same thing, but for psy health.
+
+	The adddons in question don't expose these values for customization,
+	so I haven't made an MCM menu for them.
+	
+	To customize the indicator, either DLTX or replace its config file 
+	(configs\plugins\status_indicators\indicator_zone_campfire.ltx),
+	or add one of the following MCM variables to axr_options.ltx:
+-- ====================================================================]]
+feature_enabled 		= true 	-- MCM catsy_misc/campfire_icon_enabled
+enable_heal_icon 		= true	-- MCM catsy_misc/campfire_icon_show_heal
+enable_save_icon 		= true	-- MCM catsy_misc/campfire_icon_show_save
+require_lit_fire 		= true	-- MCM catsy_misc/campfire_requires_lit
+use_default_icon		= (not enable_heal_icon) and (not enable_save_icon)
+vanilla_dist 			= 2.5 	-- sqm
+campheal_dist 			= 10.0 	-- sqm, MCM catsy_misc/campfire_heal_dist
+yacs_dist 				= 18.0 	-- sqm, MCM catsy_misc/campfire_yacs_dist
+long_check_dist 		= 100.0 -- sqm, MCM catsy_misc/campfire_long_dist
+check_int_short 		= 250	-- ms, 	MCM catsy_misc/campfire_interval_short
+check_int_long 			= 5000 	-- ms, 	MCM catsy_misc/campfire_interval_long
+use_alticons 			= (alticons ~= nil)
+alticon_suffix 			= nil
+-- ======================================================================
+if actor_status_from_ltx 	then end
+if actor_status 			then end
+if alticons 				then end
+local yacs 				= (ish_campfire_saving ~= nil)
+local yacs_in_range		= false
+local heal_in_range		= false
+local van_in_range 		= false
+local save_icon_active 	= false
+local heal_icon_active 	= false
+local active_icon 		= nil
+local next_state_check	= 0
+local last_icon_state 	= nil
+local default_icon 		= "ui_indicator_zone_campfire"
+-- To override with MCM: catsy_misc/campfire_custom_icon
+local default_ibg 		= "ui_inGame2_booster_slot"
+local active_ibg 		= default_ibg
+local alt_ibg 			= "ui_button_empty"
+-- To override with MCM: catsy_misc/campfire_custom_ibg
+campfire_icons = {
+	["CampfireBasic"] 		= "ui_indicator_zone_campfire",
+	["CampfireHeal"] 		= "ui_indicator_zone_campfire_heal",
+	["CampfireSave"] 		= "ui_indicator_zone_campfire_save",
+	["CampfireHealSave"] 	= "ui_indicator_zone_campfire_healsave",
+}
+-- The active_icons table gets populated at runtime with adjusted icon 
+-- names based on whether alticons is enabled
+active_icons = {}
+
+-- ======================================================================
+function lit_campfire_check(campfire)
+	if not require_lit_fire then return true end
+	return campfire and campfire:is_on()
+end
+
+function is_in_campfire_zone()
+	-- The functor that returns status. All actual work is done in
+	-- actor_on_update
+	return active_icon and 1 or 0 end
+
+function is_healing_relevant()
+	-- Cozy Campfires and Calming Campfires both have the same range for
+	-- their regens of health and psy, respectively
+	local regen_psy = arszi_psy and arszi_psy.get_nearby_lit_campfire_bonus
+	local regen_health = (cozy_campfire ~= nil)
+	return regen_psy or regen_health and true or false
+end
+
+function update_active_icon_names()
+	-- Adjusts the icon names based on whether Alternative Icons is enabled
+	local ind 		= actor_status.indicators["CampfireIcon"]
+	if ind and (ind.use_alt ~= nil) then
+		local strbool 	= actor_status_from_ltx.strbool
+		use_alticons 	= strbool(ind.use_alt)
+		alticon_suffix	= strbool(ind.use_color) and "color" or "bw"
+	end
+	local suffix 	= use_alticons and ("_alt_" .. (alticon_suffix or "bw")) or ""
+	active_ibg		= use_alticons and alt_ibg or default_ibg
+	for k,v in pairs(campfire_icons) do
+		active_icons[k] = v .. suffix
+	end
+end
+
+-- ======================================================================
+--		MAIN LOOP
+-- ======================================================================
+function actor_on_update()
+	if not feature_enabled then
+		UnregisterScriptCallback("actor_on_update", actor_on_update)
+		return
+	end
+	if next_state_check > time_global() then return end
+	local campfire 				= bind_campfire.get_nearby_campfire(long_check_dist, true)
+	if not campfire then
+		-- No campfires anywhere close, set longer checkback delay to reduce overhead
+		next_state_check 	= time_global() + check_int_long + (math.random() * 50)
+		return
+	end
+	next_state_check 		= time_global() + check_int_short + (math.random() * 5)
+
+	local campfire_ind = actor_status.indicators["CampfireIcon"]
+	if not campfire_ind then return end
+
+	active_icon 			= nil
+	local save_dist 		= yacs and yacs_dist or vanilla_dist
+
+	if enable_save_icon then
+		save_icon_active 	= lit_campfire_check(bind_campfire.get_nearby_campfire(save_dist, true))
+	end
+
+	if enable_heal_icon then
+		heal_icon_active 	= lit_campfire_check(bind_campfire.get_nearby_campfire(campheal_dist, true))
+	end
+
+	if (heal_icon_active and save_icon_active) then
+		active_icon 		= "CampfireHealSave"
+	elseif heal_icon_active and not save_icon_active then
+		active_icon 		= "CampfireHeal"
+	elseif save_icon_active and not heal_icon_active then
+		active_icon 		= "CampfireSave"
+	end
+	if not active_icon then return end
+
+	campfire_ind.icon 		= active_icons[active_icon]
+	campfire_ind.background = active_ibg
+end
+
+function actor_on_first_update()
+	if not feature_enabled then return end
+	actor_status.prepare_indictors_list()
+	if not actor_status_from_ltx.started then
+		actor_status_from_ltx.setup_indicators()
+	end
+	update_active_icon_names()
+end
+-- ======================================================================
+
+function on_option_change()
+	enable_save_icon 	= alife_storage_manager.get_state().enable_campfire_mode
+	enable_heal_icon 	= is_healing_relevant()
+	if ui_mcm then
+		local function get_mcm(path, default)
+			local val 	= ui_mcm.get(path)
+			if val ~= nil then return val end
+			return default
+		end
+
+		if yacs then
+			enable_save_icon 	= get_mcm("yasc/enableCampfireSaving", enable_save_icon)
+		else
+			enable_save_icon 	= get_mcm("catsy_misc/campfire_icon_show_save", enable_save_icon)	
+		end
+
+		printf("~ Checking for campfire icon setting overrides, 'nil value' errors are harmless and should be ignored.")
+		if ui_mcm.get("catsy_misc/campfire_overrides") then
+			feature_enabled		= get_mcm("catsy_misc/campfire_icon_enabled", feature_enabled)
+			if feature_enabled then
+				actor_status.enable_indicator("CampfireIcon")
+				RegisterScriptCallback("actor_on_update", actor_on_update)
+			else
+				actor_status.disable_indicator("CampfireIcon")
+				UnregisterScriptCallback("actor_on_update", actor_on_update)
+				return
+			end
+			local ind 			= actor_status.indicators["CampfireIcon"]
+			ind.icon 			= get_mcm("catsy_misc/campfire_custom_icon", default_icon)
+			ind.background 		= get_mcm("catsy_misc/campfire_custom_ibg", default_ibg)
+			enable_heal_icon 	= get_mcm("catsy_misc/campfire_icon_show_heal", enable_heal_icon)
+			require_lit_fire 	= get_mcm("catsy_misc/campfire_requires_lit", require_lit_fire)
+			campheal_dist 		= get_mcm("catsy_misc/campfire_heal_dist", campheal_dist)
+			yacs_dist			= get_mcm("catsy_misc/campfire_yacs_dist", yacs_dist)
+			long_check_dist		= get_mcm("catsy_misc/campfire_long_dist", long_check_dist)
+			check_int_short		= get_mcm("catsy_misc/campfire_interval_short", check_int_short)
+			check_int_long 		= get_mcm("catsy_misc/campfire_interval_long", check_int_long)
+			local use_alt 		= ui_mcm.get("catsy_misc/campfire_use_alticons")
+			if use_alt ~= nil then
+				use_alticons = use_alt and true or false
+				alticon_suffix 	= use_alticons and get_mcm("catsy_misc/campfire_alticon_type", "bw")
+			end
+		end
+		use_default_icon 		= not (enable_save_icon or enable_heal_icon)
+	end
+	update_active_icon_names()
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_option_change", on_option_change)
+	if feature_enabled then
+		RegisterScriptCallback("actor_on_first_update", actor_on_first_update)
+		RegisterScriptCallback("actor_on_update", actor_on_update)
+	end
+end

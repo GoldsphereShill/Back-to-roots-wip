@@ -1,0 +1,23 @@
+<w>
+	<file name ="ui\ui_icons_hud_zone_campfire">
+		<!-- Default icons -->
+		<texture id = "ui_indicator_zone_campfire" x="0" y="0" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_heal" x="43" y="0" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_save" x="0" y="43" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_healsave" x="43" y="43" width="43" height="43" />
+
+		<!-- Alticons-style, color -->
+		<texture id = "ui_indicator_zone_campfire_alt_color" x="86" y="0" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_heal_alt_color" x="129" y="0" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_save_alt_color" x="86" y="43" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_healsave_alt_color" x="129" y="43" width="43" height="43" />
+		
+		<!-- Alticons-style, black and white -->
+		<texture id = "ui_indicator_zone_campfire_alt_bw" x="0" y="86" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_heal_alt_bw" x="43" y="86" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_save_alt_bw" x="0" y="129" width="43" height="43" />
+		<texture id = "ui_indicator_zone_campfire_healsave_alt_bw" x="43" y="129" width="43" height="43" />
+
+	</file>
+</w>
+

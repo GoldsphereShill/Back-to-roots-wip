@@ -1,0 +1,15 @@
+[ind_zone_campfire]
+name 		= CampfireIcon
+; Used as the key name in the indicators table both here and in actor_status.script
+enable 		= true
+; Add indicator to actor_status on startup
+index 		= 20
+typ 		= state
+script		= actor_status_campfire
+func		= is_in_campfire_zone
+icon 		= ui_indicator_zone_campfire
+; Default, gets changed dynamically by campfire script
+background 	= ui_inGame2_booster_slot
+; Default, get changed dynamically by campfire script
+anim_icon 	= false
+anim_bk 	= false
