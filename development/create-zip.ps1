@@ -52,6 +52,7 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_dialog_fov_mcm.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_item_icon_info.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_st_factionID.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\eng\ui_mcm_haruka_exo_servo_sounds.xml"
 #Text Russsian 
 <#
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\st_dialogs_lostzone_ll.xml"
@@ -69,11 +70,13 @@ Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_dialog_fov_mcm.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_item_icon_info.xml"
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_st_factionID.xml"
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\text\rus\ui_mcm_haruka_exo_servo_sounds.xml"
 #UI
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\ui" -Recurse
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\configs\system.ltx"
 #Sounds
 Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\sounds\weapons" -Recurse
+Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\sounds\exo-servo" -Recurse
 #Textures
 #Remove-Item "builds\Less Items for Anomaly REWORK\Main\gamedata\textures" -Recurse #No need to do this anymore
 
