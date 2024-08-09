@@ -48,7 +48,7 @@ function on_game_start()
 
         config = ini_file_ex([[plugins\lifar_stashes\stashes.ltx]])
 end
-
+--[[
 function aofu()
         if (not DEBUG) then return end
 
@@ -66,7 +66,7 @@ function aofu()
                 end
         end
 end
-
+--]]
 function save_state(m_data)
         m_data[data_key] = spawned_stash_contents
 end
