@@ -3675,3 +3675,18 @@
 		wound_immunity                = 0.033
  
 ;--------------------------------------------------------------------------
+;-------------------------------o_backpacks.ltx----------------------------
+;--------------------------------------------------------------------------
+
+[equ_small_military_pack]:itm_backpack
+$spawn                                   = "equipments\smilpack"
+description                              = st_equ_smilpack_desc
+inv_weight                               = 0.67
+inv_name                                 = st_equ_smilpack_name
+inv_name_short                           = st_equ_smilpack_name
+inv_grid_y                               = 4
+cost                                     = 7500
+additional_inventory_weight				 = 34
+additional_inventory_weight2			 = 34
+power_loss								 = 0.03
+disassemble_parts				 		 = textile_patch_m,textile_patch_m,textile_patch_m
