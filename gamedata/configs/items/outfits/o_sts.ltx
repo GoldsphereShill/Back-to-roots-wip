@@ -178,68 +178,6 @@
 
 ;--------------------------------------------------------------------------
 
-[merc_nighthunter_outfit]:outfit_base
-		$spawn                        =
-		class                         = EQU_STLK
-		ef_equipment_type             = 3
-		visual                        = dynamics\outfit\merc_outfit
-		actor_visual                  = actors\stalker_merc\stalker_merc_sun1_old.ogf
-		npc_visual                    = actors\stalker_merc\stalker_merc_sun1_old.ogf
-		player_hud_section            = actor_hud_merc_suit
-		character_portrait            = ui_inGame2_mercsun_old
-		full_icon_name                = npc_icon_exo_outfit
-        
-		inv_name                      = merc_nighthunter_outfit_name
-		inv_name_short                = merc_nighthunter_outfit_name
-		description                   = merc_nighthunter_outfit_description
-		inv_grid_x                    = 90
-		inv_grid_y                    = 15
-		upgr_icon_x                   = 716
-		upgr_icon_y                   = 824
-		upgr_icon_width               = 198
-		upgr_icon_height              = 129
-		upgrades                	  = up_gr_firstab_sts_3, up_gr_seconab_sts_3, up_gr_thirdab_sts_3
-		installed_upgrades            =
-		upgrade_scheme                = up_scheme_sts_1
-        
-		community                     = killer
-		kind                          = o_heavy
-		cost                          = 57500
-		inv_weight                    = 14
-		additional_inventory_weight   = 13
-		additional_inventory_weight2  = 13
-		artefact_count                = 0
-		immunities_sect               = sect_merc_nighthunter_outfit_immunities
-		repair_type                   = outfit_heavy
-		;repair_part_bonus             = 0.35
-		hit_fraction_actor            = 0.4
-		bones_koeff_protection        = actor_armor_class3
-		control_inertion_factor       = 1.42
-		power_loss                    = 0.05
-        
-		burn_protection               = 0.12
-		shock_protection              = 0.45
-		radiation_protection          = 0.0092
-		chemical_burn_protection      = 0.02
-		telepatic_protection          = 0
-		strike_protection             = 0.34
-		explosion_protection          = 0.36
-		wound_protection              = 0.34
-		fire_wound_protection         = 0.36
-
-[sect_merc_nighthunter_outfit_immunities]
-		burn_immunity                 = 0.1
-		chemical_burn_immunity        = 0.03
-		explosion_immunity            = 0.1
-		fire_wound_immunity           = 0.02
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.02
-		strike_immunity               = 0.015
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.05
- 
-;--------------------------------------------------------------------------
-
 [merc_wolven_outfit]:outfit_base
 		$spawn                        =
 		class                         = EQU_STLK
