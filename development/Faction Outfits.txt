@@ -13,6 +13,7 @@ Scout Outfit (dolg_scout_outfit)
 PS5-M (dolg_outfit)
 Dolg Seva (dolg_scientific_outfit)
 Dolg Exosuit (exo_dolg_outfit)
+Dolg Skat-9 (dolg_heavy_outfit)
 
 
 Free Stalkers:
