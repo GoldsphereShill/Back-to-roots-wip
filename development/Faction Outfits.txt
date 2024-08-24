@@ -14,7 +14,13 @@ PS5-M (dolg_outfit)
 Dolg Seva (dolg_scientific_outfit)
 Dolg Exosuit (exo_dolg_outfit)
 Dolg Skat-9 (dolg_heavy_outfit)
+PS5-M Proto Exo (dolg_proto_exo_outfit)
+Dikg Skat-9 Proto Exo (dolg_heavy_proto_exo_outfit)
+Dolg Exoskeleton (dolg_exo_outfit)
 
+Bandits:
+Bandit jacket (bandit_novice_outfit)
+White overcoat (trenchcoat_outfit)
 
 Free Stalkers:
 novice_outfit
