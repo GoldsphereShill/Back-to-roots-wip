@@ -1,3 +1,21 @@
+Mercenaries:
+LC-F suit (merc_fighter_outfit)
+LC suit (merc_outfit)
+LCz Suit (merc_sunset_outfit)
+STS-N Body Armour (merc_nighthunter_outfit)
+Mercenary Seva(merc_scientific_outfit)
+Exosuit (merc_exolight_outfit)
+Exoskeleton (merc_exo_outfit)
+Twilight Tactical Suit (merc_sun_outfit) THIS ONE IS NOT USED!!!
+
+Dolg:
+Scout Outfit (dolg_scout_outfit)
+PS5-M (dolg_outfit)
+Dolg Seva (dolg_scientific_outfit)
+Dolg Exosuit (exo_dolg_outfit)
+
+
+Free Stalkers:
 novice_outfit
 stalker_outfit
 stalker_mk2_outfit
