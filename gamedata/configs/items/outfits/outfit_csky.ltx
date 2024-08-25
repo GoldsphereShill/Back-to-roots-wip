@@ -438,3 +438,64 @@
 		wound_immunity                = 0.033
  
 ;--------------------------------------------------------------------------
+
+[cs_scientific_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\cs_scientific_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\cs_scientific_outfit
+		actor_visual                  = actors\stalker_nebo\stalker_nebo_seva_3.ogf
+		npc_visual                    = actors\stalker_nebo\stalker_nebo_seva_3.ogf
+		player_hud_section            = actor_hud_loner_seva
+		character_portrait            = ui_inGame2_csky_nauchniy
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = cs_scientific_outfit_name
+		inv_name_short                = cs_scientific_outfit_name
+		description                   = cs_scientific_outfit_description
+		inv_grid_x                    = 108
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 959
+		upgr_icon_y                   = 196
+		upgr_icon_width               = 298
+		upgr_icon_height              = 164
+		upgrades                      = up_gr_firstab_seva_1, up_gr_seconab_seva_1, up_gr_thirdab_seva_1, up_gr_fourtab_seva_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_seva_1
+        
+		community                     = csky
+		kind                          = o_sci
+		cost                          = 71100
+		inv_weight                    = 14.3
+		additional_inventory_weight   = 19
+		additional_inventory_weight2  = 19
+		artefact_count                = 2
+		immunities_sect               = sect_cs_scientific_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.33
+		hit_fraction_actor            = 0.45
+		bones_koeff_protection        = actor_armor_duty_seva
+		control_inertion_factor       = 1.5
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.09
+		shock_protection              = 1.6
+		radiation_protection          = 0.039
+		chemical_burn_protection      = 0.09
+		telepatic_protection          = 0.115
+		strike_protection             = 0.2
+		explosion_protection          = 0.21
+		wound_protection              = 0.21
+		fire_wound_protection         = 0.23
+
+		[sect_cs_scientific_outfit_immunities]
+		burn_immunity                 = 0.03
+		chemical_burn_immunity        = 0.0025
+		explosion_immunity            = 0.15
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.02
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.03
