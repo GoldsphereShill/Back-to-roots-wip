@@ -64,16 +64,17 @@ UNISG Exosuit (isg_exolight_outfit) - Class:
 UNISG Proto Exoskeleton (isg_proto_exo_outfit) - Class:
 
 Free Stalkers:
-Leather Jacket (novice_outfit) - Class: Light
+Leather Jacket (novice_outfit) - Class: Novice
+Camo Jacket (novice_outfit_camo) - Class: Novice
 Sunrise Suit(stalker_outfit) - Class: Medium
 Sunrise mk2 (stalker_mk2_outfit) - Class: Medium
-Sunrise Proto Exoskeleton (stalker_proto_exo_outfit) - Class:
-Stalker Exosuit (exolight_outfit) - Class:
-Stalker Exoskeleton (exo_outfit) - Class:
+Sunrise Proto Exoskeleton (stalker_proto_exo_outfit) - Class: Proto Exo
+Stalker Exosuit (exolight_outfit) - Class: Exosuit
+Stalker Exoskeleton (exo_outfit) - Class: Exoskeleton
 Nomad Outfit (nomad_outfit) - Class: Medium
 Voyager Outfit (travel_outfit) - Class: Medium
 Wastelander Outfit (wastelander_outfit) - Class: Medium
-SEVA Bodysuit (scientific_outfit) - Class:
+SEVA Bodysuit (scientific_outfit) - Class: Scientific
 
 Mercenaries:
 LC-F suit (merc_fighter_outfit) - Class:
