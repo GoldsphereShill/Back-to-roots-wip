@@ -1,22 +1,10 @@
-Mercenaries:
-LC-F suit (merc_fighter_outfit)
-LC suit (merc_outfit)
-LCz Suit (merc_sunset_outfit)
-STS-N Body Armour (merc_nighthunter_outfit)
-Mercenary Seva (merc_scientific_outfit)
-Exosuit (merc_exolight_outfit)
-Exoskeleton (merc_exo_outfit)
-Twilight Tactical Suit (merc_sun_outfit) THIS ONE IS NOT USED!!!
-
-Dolg:
-Scout Outfit (dolg_scout_outfit)
-PS5-M (dolg_outfit)
-Dolg Seva (dolg_scientific_outfit)
-Dolg Exosuit (exo_dolg_outfit)
-Dolg Skat-9 (dolg_heavy_outfit)
-PS5-M Proto Exo (dolg_proto_exo_outfit)
-Dikg Skat-9 Proto Exo (dolg_heavy_proto_exo_outfit)
-Dolg Exoskeleton (dolg_exo_outfit)
+Backpacks:
+Regular Backpack (itm_backpack)
+Camping Backpack (equ_small_pack)
+Combat Backpack (equ_military_pack)
+Tourist Backpack (equ_tourist_pack)
+Hunter's Kit (kit_hunt)
+Quick Release System (itm_actor_backpack)
 
 Bandits:
 Bandit jacket (bandit_novice_outfit)
@@ -37,14 +25,15 @@ CS-2b (cs_stalker_proto_exo_outfit)
 Clear Sky NBC (cs_nbc_outfit)
 Clear Sky SEVA (cs_scientific_outfit)
 
-Svoboda:
-Wind of Freedom (svoboda_light_outfit)
-Guardian of Freedom (svoboda_heavy_outfit)
-Sentiel of Freedom (svoboda_heavy_outfit_2)
-Watchman of Freedom (svoboda_scientific_outfit)
-Warrior of Freedom (svoboda_exolight_outfit)
-Paragon of Freedom (svoboda_exo_outfit)
-Wind of Freedom Proto Exo, actually uses the model of Sentiel of Freedom (svoboda_light_proto_exo_outfit)
+Dolg:
+Scout Outfit (dolg_scout_outfit)
+PS5-M (dolg_outfit)
+Dolg Seva (dolg_scientific_outfit)
+Dolg Exosuit (exo_dolg_outfit)
+Dolg Skat-9 (dolg_heavy_outfit)
+PS5-M Proto Exo (dolg_proto_exo_outfit)
+Dikg Skat-9 Proto Exo (dolg_heavy_proto_exo_outfit)
+Dolg Exoskeleton (dolg_exo_outfit)
 
 Ecologists:
 ISIRIT Guard Jump Suit (ecolog_guard_outfit)
@@ -52,6 +41,49 @@ SSP-99 (ecolog_outfit_orange)
 SSP-99M (ecolog_outfit_green)
 SSP-99M Mk2 (ecolog_outfit_blue)
 Proto Exoskeleton (ecolog_proto_exo_outfit)
+
+Greh:
+Greh Exoskeleton (greh_exo_outfit)
+Irij Flak Armour (greh_armored_outfit)
+Viriy Flak Armour (greh_armored_camo_outfit)
+Greh PS5 Outfit (greh_ps5_outfit)
+Greh Overcoat (greh_trenchcoat_outfit)
+
+Helmets:
+
+Outfit Immunities:
+
+UNISG:
+UNISG Mk1 (isg_outfit)
+UNISG Mk2 (isg_camo_outfit)
+UNISG LC Suit (isg_lcs_outfit)
+UNISG LC-C Suit (isg_lcs_camo_outfit)
+UNISG Seva (isg_scientific_outfit)
+UNISG Exoskeleton (isg_exo_outfit)
+UNISG Exosuit (isg_exolight_outfit)
+UNISG Proto Exoskeleton (isg_proto_exo_outfit)
+
+Free Stalkers:
+Leather Jacket (novice_outfit)
+Sunrise Suit(stalker_outfit)
+Sunrise mk2 (stalker_mk2_outfit)
+Sunrise Proto Exoskeleton (stalker_proto_exo_outfit)
+Stalker Exosuit (exolight_outfit)
+Stalker Exoskeleton (exo_outfit)
+Nomad Outfit (nomad_outfit)
+Voyager Outfit (travel_outfit)
+Wastelander Outfit (wastelander_outfit)
+SEVA Bodysuit (scientific_outfit)
+
+Mercenaries:
+LC-F suit (merc_fighter_outfit)
+LC suit (merc_outfit)
+LCz Suit (merc_sunset_outfit)
+STS-N Body Armour (merc_nighthunter_outfit)
+Mercenary Seva (merc_scientific_outfit)
+Exosuit (merc_exolight_outfit)
+Exoskeleton (merc_exo_outfit)
+Twilight Tactical Suit (merc_sun_outfit) THIS ONE IS NOT USED!!!
 
 Military:
 Military Service Outfit (army_outfit)
@@ -69,31 +101,13 @@ Monolith Exosuit (monolith_exolight_outfit)
 X-18 Exoskeleton (monolith_proto_exo_outfit)
 Monolith Exoskeleton (monolith_exo_outfit)
 
-UNISG:
-UNISG Mk1 (isg_outfit)
-UNISG Mk2 (isg_camo_outfit)
-UNISG LC Suit (isg_lcs_outfit)
-UNISG LC-C Suit (isg_lcs_camo_outfit)
-UNISG Seva (isg_scientific_outfit)
-UNISG Exoskeleton (isg_exo_outfit)
-UNISG Exosuit (isg_exolight_outfit)
-UNISG Proto Exoskeleton (isg_proto_exo_outfit)
+Svoboda:
+Wind of Freedom (svoboda_light_outfit)
+Guardian of Freedom (svoboda_heavy_outfit)
+Sentiel of Freedom (svoboda_heavy_outfit_2)
+Watchman of Freedom (svoboda_scientific_outfit)
+Warrior of Freedom (svoboda_exolight_outfit)
+Paragon of Freedom (svoboda_exo_outfit)
+Wind of Freedom Proto Exo, actually uses the model of Sentiel of Freedom (svoboda_light_proto_exo_outfit)
 
-Greh:
-Greh Exoskeleton (greh_exo_outfit)
-Irij Flak Armour (greh_armored_outfit)
-Viriy Flak Armour (greh_armored_camo_outfit)
-Greh PS5 Outfit (greh_ps5_outfit)
-Greh Overcoat (greh_trenchcoat_outfit)
-
-Free Stalkers:
-Leather Jacket (novice_outfit)
-Sunrise Suit(stalker_outfit)
-Sunrise mk2 (stalker_mk2_outfit)
-Sunrise Proto Exoskeleton (stalker_proto_exo_outfit)
-Stalker Exosuit (exolight_outfit)
-Stalker Exoskeleton (exo_outfit)
-Nomad Outfit (nomad_outfit)
-Voyager Outfit (travel_outfit)
-Wastelander Outfit (wastelander_outfit)
-SEVA Bodysuit (scientific_outfit)
+Upgrades:
