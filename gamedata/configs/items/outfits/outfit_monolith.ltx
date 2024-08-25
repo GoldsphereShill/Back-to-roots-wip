@@ -1,0 +1,355 @@
+[monolith_outfit]:outfit_base; X-18 Suit
+		$spawn                        = "outfit\monolith_stalker_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\monolith_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith_2.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith_2.ogf
+		player_hud_section            = actor_hud_monolith_suit
+		character_portrait            = ui_inGame2_monolit_2
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = monolith_outfit_name
+		inv_name_short                = monolith_outfit_name
+		description                   = monolith_outfit_description
+		inv_grid_x                    = 90
+		inv_grid_y                    = 3
+		upgr_icon_x                   = 3438
+		upgr_icon_y                   = 608
+		upgr_icon_width               = 308
+		upgr_icon_height              = 136
+		upgrades                	  = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_1
+        
+		community                     = monolith
+		kind                          = o_medium
+		cost                          = 45120
+		inv_weight                    = 8.2
+		additional_inventory_weight   = 10
+		additional_inventory_weight2  = 10
+		artefact_count                = 2
+		immunities_sect               = sect_monolith_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 0.17
+		radiation_protection          = 0.011
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.19
+		wound_protection              = 0.19
+		fire_wound_protection         = 0.19
+
+[sect_monolith_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+ 
+;--------------------------------------------------------------------------
+
+[monolith_trenchcoat_outfit]:outfit_base; Monolith Trenchcoat
+		$spawn                        = "outfit\monolith_trenchcoat_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\bandit_commander_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith_preacher.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith_preacher.ogf
+		player_hud_section            = actor_hud_bandit_trench
+		character_portrait            = ui_inGame2_bandit_6d
+		full_icon_name                = npc_icon_dolg_outfit
+		full_scale_icon               = 8, 11
+        
+		inv_name                      = monolith_trenchcoat_outfit_name
+		inv_name_short                = monolith_trenchcoat_outfit_name
+		description                   = trenchcoat_outfit_description
+		inv_grid_x                    = 84
+		inv_grid_y                    = 15
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                	  = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_1
+        
+		community                     = monolith
+		kind                          = o_medium
+		cost                          = 44670
+		inv_weight                    = 6
+		additional_inventory_weight   = 6
+		additional_inventory_weight2  = 6
+		artefact_count                = 2
+		immunities_sect               = sect_monolith_trenchcoat_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.21
+		hit_fraction_actor            = 0.45
+		bones_koeff_protection        = actor_armor_duty_suit
+		control_inertion_factor       = 1.2
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.17
+		shock_protection              = 0.55
+		radiation_protection          = 0.0075
+		chemical_burn_protection      = 0.045
+		telepatic_protection          = 0.041
+		strike_protection             = 0.35
+		explosion_protection          = 0.5
+		wound_protection              = 0.38
+		fire_wound_protection         = 0.3
+
+[sect_monolith_trenchcoat_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.024
+		explosion_immunity            = 0.24
+		fire_wound_immunity           = 0.06
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.024
+		strike_immunity               = 0.0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.15
+ 
+;--------------------------------------------------------------------------
+
+[monolith_scientific_outfit]:outfit_base,outfit_restrictions_1; Monolith Seva
+		$spawn                        = "outfit\monolith_scientific_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\monolith_scientific_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith_1.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith_1.ogf
+		player_hud_section            = actor_hud_monolith_seva
+		character_portrait            = ui_inGame2_monolit_1
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = monolith_scientific_outfit_name
+		inv_name_short                = monolith_scientific_outfit_name
+		description                   = monolith_scientific_outfit_description
+		inv_grid_x                    = 108
+		inv_grid_y                    = 3
+		upgr_icon_x                   = 2511
+		upgr_icon_y                   = 190
+		upgr_icon_width               = 292
+		upgr_icon_height              = 171
+		upgrades                      = up_gr_firstab_seva_1, up_gr_seconab_seva_1, up_gr_thirdab_seva_1, up_gr_fourtab_seva_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_seva_1
+        
+		community                     = monolith
+		kind                          = o_sci
+		cost                          = 73400
+		inv_weight                    = 13.3
+		additional_inventory_weight   = 18
+		additional_inventory_weight2  = 18
+		artefact_count                = 2
+		immunities_sect               = sect_scientific_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.32
+		hit_fraction_actor            = 0.45
+		bones_koeff_protection        = actor_armor_seva
+		control_inertion_factor       = 1.42
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.15
+		shock_protection              = 1.8
+		radiation_protection          = 0.036
+		chemical_burn_protection      = 0.11
+		telepatic_protection          = 0.105
+		strike_protection             = 0.2
+		explosion_protection          = 0.30
+		wound_protection              = 0.36
+		fire_wound_protection         = 0.28
+
+;--------------------------------------------------------------------------
+
+[monolith_exolight_outfit]:outfit_base,outfit_restrictions_1; Monolith Exosuit
+		$spawn                        = "outfit\monolith_exolight_outfit"
+		class                         = E_STLK
+		ef_equipment_type             = 5
+		visual                        = dynamics\outfit\monolith_exolight_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith3a.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith3a.ogf
+		player_hud_section            = actor_hud_monolith_exolight
+		character_portrait            = ui_inGame2_monolit_4
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 2, 11
+        
+		inv_name                      = monolith_exolight_outfit_name
+		inv_name_short                = monolith_exolight_outfit_name
+		description                   = monolith_exolight_outfit_description
+		inv_grid_x                    = 110
+		inv_grid_y                    = 15
+		upgr_icon_x                   = 2508
+		upgr_icon_y                   = 371
+		upgr_icon_width               = 299
+		upgr_icon_height              = 166
+		upgrades                      = up_gr_firstab_exolight_2, up_gr_seconab_exolight_2, up_gr_thirdab_exolight_2, up_gr_fourtab_exolight_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_exolight_1
+        
+		community                     = monolith
+		kind                          = o_heavy
+		cost                          = 92580
+		inv_weight                    = 17
+		additional_inventory_weight   = 17
+		additional_inventory_weight2  = 17
+		artefact_count                = 2
+		immunities_sect               = sect_monolith_exolight_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.38
+		hit_fraction_actor            = 0.25
+		bones_koeff_protection        = actor_armor_radiation
+		control_inertion_factor       = 1.76
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.08
+		shock_protection              = 0.2
+		radiation_protection          = 0.032
+		chemical_burn_protection      = 0.062
+		telepatic_protection          = 0.12
+		strike_protection             = 0.61
+		explosion_protection          = 0.76
+		wound_protection              = 0.65
+		fire_wound_protection         = 0.6
+
+[sect_monolith_exolight_outfit_immunities]
+		burn_immunity                 = 0.05
+		chemical_burn_immunity        = 0.017
+		explosion_immunity            = 0.08
+		fire_wound_immunity           = 0.01
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.015
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.006
+ 
+;--------------------------------------------------------------------------
+
+[monolith_proto_exo_outfit]:outfit_base,outfit_restrictions_4; X-18 Exoskeleton
+		$spawn                        = "outfit\monolith_stalker_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\monolith_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith_4_proto.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith_4_proto.ogf
+		player_hud_section            = actor_hud_monolith_proto
+		character_portrait            = ui_inGame2_monolit_2
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = monolith_proto_exo_outfit_name
+		inv_name_short                = monolith_proto_exo_outfit_name
+		description                   = monolith_proto_exo_outfit_description
+		inv_grid_x                    = 104
+		inv_grid_y                    = 15
+		upgr_icon_x                   = 2823
+		upgr_icon_y                   = 1362
+		upgr_icon_width               = 308
+		upgr_icon_height              = 134
+		upgrades                      = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1, up_gr_fourtab_sts_proto_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_extra_1
+        
+		community                     = monolith
+		kind                          = o_heavy
+		cost                          = 54120
+		inv_weight                    = 25
+		additional_inventory_weight   = 50
+		additional_inventory_weight2  = 50
+		artefact_count                = 3
+		immunities_sect               = sect_monolith_proto_exo_outfit_immunities
+		repair_type                   = outfit_exo
+		;repair_part_bonus             = 0.33
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 0.17
+		radiation_protection          = 0.011
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.19
+		wound_protection              = 0.19
+		fire_wound_protection         = 0.19
+
+[sect_monolith_proto_exo_outfit_immunities]
+		burn_immunity                 = 0.1
+		chemical_burn_immunity        = 0.045
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+
+;--------------------------------------------------------------------------
+
+[monolith_exo_outfit]:outfit_base,outfit_restrictions_3; Monolith Exoskeleton
+		$spawn                        = "outfit\monolith_exo_outfit"
+		class                         = E_STLK
+		ef_equipment_type             = 5
+		visual                        = dynamics\outfit\monolith_exo_outfit
+		actor_visual                  = actors\stalker_monolith\stalker_monolith_4.ogf
+		npc_visual                    = actors\stalker_monolith\stalker_monolith_4.ogf
+		player_hud_section            = actor_hud_monolith_exo
+		character_portrait            = ui_inGame2_monolit_4
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 2, 11
+        
+		inv_name                      = monolith_exo_outfit_name
+		inv_name_short                = monolith_exo_outfit_name
+		description                   = monolith_exo_outfit_description
+		inv_grid_x                    = 112
+		inv_grid_y                    = 12
+		upgr_icon_x                   = 2499
+		upgr_icon_y                   = 0
+		upgr_icon_width               = 309
+		upgr_icon_height              = 165
+		upgrades                      = up_gr_firstab_exolight_2, up_gr_seconab_exolight_2, up_gr_thirdab_exolight_2, up_gr_fourtab_exolight_2, up_gr_fifthab_exo_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_exo_1
+        
+		community                     = monolith
+		kind                          = o_heavy
+		cost                          = 154280
+		inv_weight                    = 35
+		additional_inventory_weight   = 55
+		additional_inventory_weight2  = 55
+		artefact_count                = 2
+		immunities_sect               = sect_exo_outfit_immunities
+		repair_type                   = outfit_exo
+		;repair_part_bonus             = 0.45
+		hit_fraction_actor            = 0.2
+		bones_koeff_protection        = actor_armor_exo
+		control_inertion_factor       = 1.76
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.08
+		shock_protection              = 0.2
+		radiation_protection          = 0.032
+		chemical_burn_protection      = 0.062
+		telepatic_protection          = 0.12
+		strike_protection             = 0.61
+		explosion_protection          = 0.86
+		wound_protection              = 0.65
+		fire_wound_protection         = 0.6
+
+;--------------------------------------------------------------------------
