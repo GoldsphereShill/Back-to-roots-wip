@@ -1,0 +1,152 @@
+[trenchcoat_green_outfit]:outfit_base; Green trenchcoat
+		$spawn                        = "outfit\trenchcoat_green_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\bandit_commander_outfit
+		actor_visual                  = actors\stalker_bandit\stalker_bandit4b.ogf
+		npc_visual                    = actors\stalker_bandit\stalker_bandit4b.ogf
+		player_hud_section            = actor_hud_bandit_trench
+		character_portrait            = ui_inGame2_bandit_6d
+		full_icon_name                = npc_icon_dolg_outfit
+		full_scale_icon               = 8, 11
+        
+		inv_name                      = trenchcoat_green_outfit_name
+		inv_name_short                = trenchcoat_green_outfit_name
+		description                   = trenchcoat_green_outfit_description
+		inv_grid_x                    = 84
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 1262
+		upgr_icon_y                   = 511
+		upgr_icon_width               = 303
+		upgr_icon_height              = 166
+		upgrades                      = up_gr_firstab_ps5_1, up_gr_seconab_ps5_1, up_gr_thirdab_ps5_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_ps5_1
+        
+		kind                          = o_medium
+		cost                          = 45370
+		inv_weight                    = 5
+		additional_inventory_weight   = 6
+		additional_inventory_weight2  = 6
+		artefact_count                = 0
+		immunities_sect               = sect_novice_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.21
+		hit_fraction_actor            = 0.45
+		bones_koeff_protection        = actor_armor_duty_suit
+		control_inertion_factor       = 1.2
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.15
+		shock_protection              = 0.45
+		radiation_protection          = 0.0075
+		chemical_burn_protection      = 0.042
+		telepatic_protection          = 0.034
+		strike_protection             = 0.28
+		explosion_protection          = 0.5
+		wound_protection              = 0.38
+		fire_wound_protection         = 0.3
+
+;--------------------------------------------------------------------------
+
+[nbc_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        = "outfit\nbc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\stalker_outfit
+		actor_visual                  = actors\stalker_neutral\stalker_neutral_2_gp5.ogf
+		player_hud_section            = actor_hud_loner_nbc
+		character_portrait            = ui_inGame2_neutral_2_gp5
+		full_icon_name                = npc_icon_stalker_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = nbc_outfit_name
+		inv_name_short                = nbc_outfit_name
+		description                   = nbc_outfit_description
+		inv_grid_x                    = 100
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 314
+		upgr_icon_y                   = 0
+		upgr_icon_width               = 308
+		upgr_icon_height              = 134
+		upgrades                      = up_gr_firstab_sunrise_3, up_gr_seconab_sunrise_3, up_gr_thirdab_sunrise_3, up_gr_fourtab_sunrise_nbc_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_extra_1
+        
+		community                     =
+		kind                          = o_medium
+		cost                          = 63280
+		inv_weight                    = 15.2
+		additional_inventory_weight   = 32
+		additional_inventory_weight2  = 32
+		artefact_count                = 2
+		immunities_sect               = sect_scientific_outfit_immunities
+		repair_type                   = outfit_light
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_suit
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.14
+		shock_protection              = 1.2
+		radiation_protection          = 0.0285
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.14
+		wound_protection              = 0.21
+		fire_wound_protection         = 0.27
+		
+;--------------------------------------------------------------------------
+
+[ghillie_outfit]:outfit_base
+		$spawn                        = "outfit\ghillie_outfit"
+		class                         = E_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\ghillie_outfit.ogf
+		actor_visual                  = actors\oa_ee\stalker_ghillie.ogf
+		npc_visual                    = actors\oa_ee\stalker_ghillie.ogf
+		player_hud_section            = actor_hud_ghillie
+		full_icon_name                = npc_icon_ghillie_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = ghillie_outfit_name
+		inv_name_short                = ghillie_outfit_name
+		description                   = ghillie_outfit_description
+		inv_grid_x                    = 116
+		inv_grid_y                    = 9
+		upgr_icon_x                   = 3746
+		upgr_icon_y                   = 162
+		upgr_icon_width               = 306
+		upgr_icon_height              = 157
+		upgrades                      = up_gr_firstab_lcs_1, up_gr_seconab_lcs_1, up_gr_thirdab_lcs_1, up_gr_fourtab_lcs_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_lcs_1
+        
+		community                     =
+		kind                          = o_medium
+		cost                          = 128710
+		inv_weight                    = 14.12
+		additional_inventory_weight   = 14
+		additional_inventory_weight2  = 14
+		artefact_count                = 1
+		immunities_sect               = sect_medium_combat_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_armor_ghillie
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+		npc_blindness_koeff           = 20
+        
+		burn_protection               = 0.044
+		shock_protection              = 1.22
+		radiation_protection          = 0.02
+		chemical_burn_protection      = 0.057
+		telepatic_protection          = 0.006
+		strike_protection             = 0.05
+		explosion_protection          = 0.20
+		wound_protection              = 0.45
+		fire_wound_protection         = 0.16
+ 

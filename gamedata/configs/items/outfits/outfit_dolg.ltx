@@ -25,14 +25,14 @@
 		upgrade_scheme                = up_scheme_ps5_1
         
 		community                     = dolg
-		kind                          = o_medium
+		kind                          = o_light
 		cost                          = 42500
 		inv_weight                    = 5.3
 		additional_inventory_weight   = 6
 		additional_inventory_weight2  = 6
 		artefact_count                = 0
-		immunities_sect               = sect_dolg_scout_outfit_immunities
-		repair_type                   = outfit_medium
+		immunities_sect               = sect_novice_outfit_immunities
+		repair_type                   = outfit_light
 		;repair_part_bonus             = 0.18
 		hit_fraction_actor            = 0.55
 		bones_koeff_protection        = actor_armor_suit
@@ -48,17 +48,6 @@
 		explosion_protection          = 0.2
 		wound_protection              = 0.2
 		fire_wound_protection         = 0.2
-		
-[sect_dolg_scout_outfit_immunities]
-		burn_immunity                 = 0.1
-		chemical_burn_immunity        = 0.045
-		explosion_immunity            = 0.15
-		fire_wound_immunity           = 0.033
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.027
-		strike_immunity               = 0
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.033
 
 [dolg_outfit]:outfit_base; PS5-M
 		$spawn                        = "outfit\dolg_outfit"
@@ -92,7 +81,7 @@
 		additional_inventory_weight   = 9
 		additional_inventory_weight2  = 9
 		artefact_count                = 0
-		immunities_sect               = sect_dolg_outfit_immunities
+		immunities_sect               = sect_medium_combat_outfit_immunities
 		repair_type                   = outfit_medium
 		;repair_part_bonus             = 0.18
 		hit_fraction_actor            = 0.45
@@ -109,17 +98,6 @@
 		explosion_protection          = 0.4
 		wound_protection              = 0.33
 		fire_wound_protection         = 0.25
-
-[sect_dolg_outfit_immunities]
-		burn_immunity                 = 0.125
-		chemical_burn_immunity        = 0.045
-		explosion_immunity            = 0.1
-		fire_wound_immunity           = 0.029
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.027
-		strike_immunity               = 0
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.029
  
 ;--------------------------------------------------------------------------
 
@@ -207,7 +185,7 @@
 		additional_inventory_weight   = 16
 		additional_inventory_weight2  = 16
 		artefact_count                = 0
-		immunities_sect               = sect_dolg_heavy_outfit_immunities
+		immunities_sect               = sect_heavy_combat_outfit_immunities
 		repair_type                   = outfit_heavy
 		;repair_part_bonus             = 0.29
 		hit_fraction_actor            = 0.22
@@ -224,17 +202,6 @@
 		explosion_protection          = 0.70
 		wound_protection              = 0.46
 		fire_wound_protection         = 0.44
-
-[sect_dolg_heavy_outfit_immunities]
-		burn_immunity                 = 0.025
-		chemical_burn_immunity        = 0.035
-		explosion_immunity            = 0.08
-		fire_wound_immunity           = 0.017
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.021
-		strike_immunity               = 0
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.015
 
 [exo_dolg_outfit]:outfit_base,outfit_restrictions_1; Dolg Exosuit
 		$spawn                        =
@@ -268,7 +235,7 @@
 		additional_inventory_weight   = 19
 		additional_inventory_weight2  = 19
 		artefact_count                = 1
-		immunities_sect               = sect_exo_dolg_outfit_immunities
+		immunities_sect               = sect_exolight_outfit_immunities
 		repair_type                   = outfit_heavy
 		;repair_part_bonus             = 0.50
 		hit_fraction_actor            = 0.25
@@ -285,17 +252,6 @@
 		explosion_protection          = 0.7
 		wound_protection              = 0.6
 		fire_wound_protection         = 0.58
-
-[sect_exo_dolg_outfit_immunities]
-		burn_immunity                 = 0.05
-		chemical_burn_immunity        = 0.01
-		explosion_immunity            = 0.08
-		fire_wound_immunity           = 0.01
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.01
-		strike_immunity               = 0.003
-		telepatic_immunity            = 0.00
-		wound_immunity                = 0.015
 
 [dolg_proto_exo_outfit]:outfit_base,outfit_restrictions_4; Dolg PS5-M Proto Exo
 		$spawn                        = "outfit\dolg_outfit"
@@ -329,7 +285,7 @@
 		additional_inventory_weight   = 50
 		additional_inventory_weight2  = 50
 		artefact_count                = 2
-		immunities_sect               = sect_dolg_proto_exo_outfit_immunities
+		immunities_sect               = sect_medium_combat_outfit_immunities
 		repair_type                   = outfit_exo
 		;repair_part_bonus             = 0.28
 		hit_fraction_actor            = 0.45
@@ -346,17 +302,6 @@
 		explosion_protection          = 0.4
 		wound_protection              = 0.33
 		fire_wound_protection         = 0.25
-
-[sect_dolg_proto_exo_outfit_immunities]
-		burn_immunity                 = 0.125
-		chemical_burn_immunity        = 0.045
-		explosion_immunity            = 0.1
-		fire_wound_immunity           = 0.029
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.027
-		strike_immunity               = 0
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.029
 
 [dolg_heavy_proto_exo_outfit]:outfit_base,outfit_restrictions_4; Dolg Skat-9 Proto Exo
 		$spawn                        = "outfit\dolg_heavy_outfit"
@@ -390,7 +335,7 @@
 		additional_inventory_weight   = 50
 		additional_inventory_weight2  = 50
 		artefact_count                = 2
-		immunities_sect               = sect_dolg_heavy_proto_exo_outfit_immunities
+		immunities_sect               = sect_heavy_combat_outfit_immunities
 		repair_type                   = outfit_exo
 		;repair_part_bonus             = 0.36
 		hit_fraction_actor            = 0.22
@@ -407,17 +352,6 @@
 		explosion_protection          = 0.70
 		wound_protection              = 0.46
 		fire_wound_protection         = 0.44
-
-[sect_dolg_heavy_proto_exo_outfit_immunities]
-		burn_immunity                 = 0.025
-		chemical_burn_immunity        = 0.035
-		explosion_immunity            = 0.08
-		fire_wound_immunity           = 0.017
-		radiation_immunity            = 0.0
-		shock_immunity                = 0.021
-		strike_immunity               = 0
-		telepatic_immunity            = 0.0
-		wound_immunity                = 0.015
 
 ;--------------------------------------------------------------------------
 
