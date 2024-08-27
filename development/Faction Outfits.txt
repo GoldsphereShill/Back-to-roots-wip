@@ -107,6 +107,9 @@ UNISG Exoskeleton (isg_exo_outfit) - Class: Exoskeleton
 UNISG Exosuit (isg_exolight_outfit) - Class: Exosuit
 UNISG Proto Exoskeleton (isg_proto_exo_outfit) - Class: Medium Combat
 
+Neutral:
+
+
 Helmets:
 
 Upgrades:
