@@ -108,7 +108,10 @@ UNISG Exosuit (isg_exolight_outfit) - Class: Exosuit
 UNISG Proto Exoskeleton (isg_proto_exo_outfit) - Class: Medium Combat
 
 Neutral:
-
+Green Trenchcoat (trenchcoat_green_outfit) - Class: Novice
+NBC Outfit (nbc_outfit) - Class: Scientific
+Ghillie Outfit (ghillie_outfit) - Class: Medium Combat
+Renegademerc outfit (renegademerc_outfit) - Class: Medium Combat
 
 Helmets:
 
@@ -120,3 +123,36 @@ DURABILITY INFO:
 0.01 fire_immunity is:
 3% durability per point blank shot of of MP-153
 Around 4% durability per full magazine of PM
+
+PROTECTION INFO:
+Base Exolight:
+		inv_weight                    = 18
+        cost                          = 85680
+		artefact_count                = 1
+
+		burn_protection               = 0.23
+		shock_protection              = 0.7
+		chemical_burn_protection      = 0.052
+		strike_protection             = 0.55
+		explosion_protection          = 0.63
+		wound_protection              = 0.64
+		fire_wound_protection         = 0.58
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.06
+
+Base Exosuit:
+		cost                          = 129680
+		inv_weight                    = 24
+		additional_inventory_weight   = 65
+		additional_inventory_weight2  = 65
+		artefact_count                = 1
+
+        burn_protection               = 0.23
+		shock_protection              = 0.7
+		chemical_burn_protection      = 0.052
+		strike_protection             = 0.58
+		explosion_protection          = 0.63
+		wound_protection              = 0.64
+		fire_wound_protection         = 0.61
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.06
