@@ -21,21 +21,27 @@
 
 [1]
 title						= st_ui_craft_device
-x_detector_simple		    = 1, recipe_basic_0, broken_detector,1,prt_i_transistors,4
-x_detector_geiger			= 1, recipe_basic_0, broken_detector,1,prt_i_transistors,2
-x_device_torch_dummy		= 1, recipe_basic_0, flashlight_broken,2,prt_i_transistors,4
-x_detector_advanced         = 2, recipe_advanced_0, detector_simple,1,prt_i_transistors,8
-x_device_torch_nv_1			= 2, recipe_advanced_0, device_torch_dummy,1,prt_i_transistors,6
-x_detector_radio			= 2, recipe_advanced_0, walkie,3,prt_i_transistors,6
 x_af_aac                    = 3, recipe_expert_0, af_iam,1,prt_i_transistors,10
-x_device_torch_nv_2			= 2, recipe_advanced_0, device_torch_nv_1,1,prt_i_transistors,12
-x_device_pda_2				= 3, recipe_expert_0, device_pda_1,1,prt_i_transistors,10
 x_af_iam                    = 2, recipe_advanced_0, lead_box,1,prt_i_transistors,12
 x_af_aam                    = 3, recipe_expert_0, af_aac,1,prt_i_transistors,15
-x_detector_elite            = 3, recipe_expert_0, detector_advanced,1,prt_i_transistors,14
-x_device_torch_nv_3			= 3, recipe_expert_0, device_torch_nv_2,1,prt_i_transistors,18
+
+x_detector_simple		    = 1, recipe_basic_0, broken_detector,1,prt_i_transistors,4
+x_detector_advanced         = 2, recipe_advanced_0, detector_simple,1,prt_i_transistors,8
 x_detector_scientific       = 3, recipe_expert_0, detector_elite,1,prt_i_transistors,20
-x_device_pda_3				= 3, recipe_expert_0, device_pda_2,1,prt_i_transistors,20
+x_detector_elite            = 3, recipe_expert_0, detector_advanced,1,prt_i_transistors,14
+x_detector_geiger			= 1, recipe_basic_0, broken_detector,1,prt_i_transistors,2
+x_detector_radio			= 1, recipe_advanced_0, walkie,1,prt_i_transistors,2
+
+x_device_fleshlight         = 1, 
+x_device_torch_dummy		= 1, recipe_basic_0, flashlight_broken,1,prt_i_transistors,4
+x_device_torch_nv_1			= 1, recipe_advanced_0, device_torch_dummy,1,prt_i_transistors,6
+x_device_torch_nv_2			= 2, recipe_advanced_0, device_torch_nv_1,1,prt_i_transistors,12
+x_device_torch_nv_3			= 3, recipe_expert_0, device_torch_nv_2,1,prt_i_transistors,18
+
+x_device_pda_1				= 1, recipe_expert_0, prt_i_fasteners,4,prt_i_transistors,4
+x_device_pda_2				= 2, recipe_expert_0, device_pda_1,1,prt_i_transistors,8
+x_device_pda_3				= 3, recipe_expert_0, device_pda_2,1,prt_i_transistors,12
+
 
 [2]
 title						= st_ui_craft_equipment
@@ -150,6 +156,17 @@ x_mine_new       				= 5, recipe_ammo_0, prt_i_fasteners,4,grenade_f1,1,prt_i_am
 x_ied_rpg_new      			    = 5, recipe_ammo_0, grenade_f1,1,grenade_rgd5,1,prt_i_fasteners,4
 x_ied_new      				    = 5, recipe_ammo_0, ammo_vog-25,2,grenade_f1,1,prt_i_fasteners,2
 
+[7]
+title						= st_ui_craft_outfits
+
+x_stalker_proto_exo_outfit = 3, recipe_expert_0, stalker_outfit,1,prt_o_support_1,1,prt_i_transistors,4
+x_cs_stalker_proto_exo_outfit = 3, recipe_expert_0, cs_stalker_outfit,1,prt_o_support_1,1,prt_i_transistors,4
+x_dolg_proto_exo_outfit = 3, recipe_expert_0, dolg_outfit,1,prt_o_support_1,1,prt_i_transistors,4
+x_ecolog_proto_exo_outfit = 3, recipe_expert_0, ecolog_guard_outfit,1,prt_o_support_1,1,prt_i_transistors,4
+x_monolith_proto_exo_outfit = 3, recipe_expert_0, monolith_outfit,1,prt_o_support_1,1,prt_i_transistors,4
+x_svoboda_light_proto_exo_outfit = 3, recipe_expert_0, svoboda_heavy_outfit_2,1,prt_o_support_1,1,prt_i_transistors,4
+x_isg_proto_exo_outfit = 3, recipe_expert_0, isg_camo_outfit_2,1,prt_o_support_1,1,prt_i_transistors,4
+
 
 ;;--==========================< Item combinations >=============================
 ;[[
@@ -163,4 +180,4 @@ x_ied_new      				    = 5, recipe_ammo_0, ammo_vog-25,2,grenade_f1,1,prt_i_fast
 [item_combination]
 ;vodka:prt_o_fabrics_4 = bandage
 ;stalker_outfit:prt_o_support_1 = stalker_proto_exo_outfit
-prt_o_support_1:stalker_outfit = stalker_proto_exo_outfit
+;prt_o_support_1:stalker_outfit = stalker_proto_exo_outfit
