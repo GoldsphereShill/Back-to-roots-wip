@@ -1,0 +1,377 @@
+[merc_jackal_outfit]:outfit_base
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\merc_outfit
+		actor_visual                  = actors\stalker_merc\stalker_ki_mask.ogf
+		npc_visual                    = actors\stalker_merc\stalker_ki_mask.ogf
+		player_hud_section            = actor_hud_loner_sunrise
+		character_portrait            = ui_inGame2_jackal
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 14, 11
+        
+		inv_name                      = merc_jackal_outfit_name
+		inv_name_short                = merc_jackal_outfit_name
+		description                   = merc_jackal_outfit_description
+		inv_grid_x                    = 92
+		inv_grid_y                    = 6
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_lcs_3, up_gr_seconab_lcs_3, up_gr_thirdab_lcs_3, up_gr_fourtab_lcs_3
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_lcs_1
+        
+		community                     = killer
+		kind                          = o_medium
+		cost                          = 43500
+		inv_weight                    = 7
+		additional_inventory_weight   = 19
+		additional_inventory_weight2  = 19
+		artefact_count                = 2
+		immunities_sect               = sect_merc_jackal_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.32
+		hit_fraction_actor            = 0.5
+		bones_koeff_protection        = actor_armor_class2
+		control_inertion_factor       = 1.18
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.035
+		shock_protection              = 0.64
+		radiation_protection          = 0.0075
+		chemical_burn_protection      = 0.03
+		telepatic_protection          = 0
+		strike_protection             = 0.16
+		explosion_protection          = 0.35
+		wound_protection              = 0.2
+		fire_wound_protection         = 0.4
+
+[sect_merc_jackal_outfit_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.03
+		explosion_immunity            = 0.12
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.02
+		strike_immunity               = 0.015
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.05
+ 
+;--------------------------------------------------------------------------
+
+
+[merc_combat_scientific_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\scientific_outfit
+		actor_visual                  = actors\stalker_merc\stalker_mercenary3.ogf
+		npc_visual                    = actors\stalker_merc\stalker_mercenary3.ogf
+		player_hud_section            = actor_hud_loner_seva
+		character_portrait            = ui_inGame2_mercenary3
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = merc_combat_scientific_outfit_name
+		inv_name_short                = merc_combat_scientific_outfit_name
+		description                   = merc_combat_scientific_outfit_description
+		inv_grid_x                    = 108
+		inv_grid_y                    = 36
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_seva_2, up_gr_seconab_seva_2, up_gr_thirdab_seva_2, up_gr_fourtab_seva_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_seva_1
+        
+		community                     = killer
+		kind                          = o_sci
+		cost                          = 95000
+		inv_weight                    = 11.7
+		additional_inventory_weight   = 20
+		additional_inventory_weight2  = 20
+		artefact_count                = 2
+		immunities_sect               = sect_combat_scientific_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.50
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_class3
+		control_inertion_factor       = 1.42
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.5
+		shock_protection              = 2.2
+		radiation_protection          = 0.035
+		chemical_burn_protection      = 0.135
+		telepatic_protection          = 0.13
+		strike_protection             = 0.26
+		explosion_protection          = 0.38
+		wound_protection              = 0.38
+		fire_wound_protection         = 0.38
+
+[sect_combat_scientific_outfit_immunities]
+		burn_immunity                 = 0.025
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.02
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.03
+		strike_immunity               = 0.003
+		telepatic_immunity            = 0.00
+		wound_immunity                = 0.015
+ 
+;--------------------------------------------------------------------------
+
+[merc_scientific_armored_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\scientific_outfit
+		actor_visual                  = actors\stalker_merc\stalker_mercenary4.ogf
+		npc_visual                    = actors\stalker_merc\stalker_mercenary4.ogf
+		player_hud_section            = actor_hud_loner_seva
+		character_portrait            = ui_inGame2_mercenary3
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = merc_scientific_armored_outfit_name
+		inv_name_short                = merc_scientific_armored_outfit_name
+		description                   = merc_scientific_armored_outfit_description
+		inv_grid_x                    = 108
+		inv_grid_y                    = 39
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_seva_2, up_gr_seconab_seva_2, up_gr_thirdab_seva_2, up_gr_fourtab_seva_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_seva_1
+        
+		community                     = killer
+		kind                          = o_sci
+		cost                          = 89000
+		inv_weight                    = 15
+		additional_inventory_weight   = 22.7
+		additional_inventory_weight2  = 22.7
+		artefact_count                = 2
+		immunities_sect               = sect_merc_scientific_armored_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.45
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_class3
+		control_inertion_factor       = 1.42
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.3
+		shock_protection              = 0.45
+		radiation_protection          = 0.023
+		chemical_burn_protection      = 0.12
+		telepatic_protection          = 0.1
+		strike_protection             = 0.24
+		explosion_protection          = 0.34
+		wound_protection              = 0.34
+		fire_wound_protection         = 0.34
+
+[sect_merc_scientific_armored_outfit_immunities]
+		burn_immunity                 = 0.03
+		chemical_burn_immunity        = 0.0025
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.03
+		strike_immunity               = 0.01
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.05
+ 
+;--------------------------------------------------------------------------
+
+		[merc_scout_outfit]:outfit_base
+		$spawn                        = "outfit\merc_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\merc_outfit
+		actor_visual                  = actors\stalker_merc\stalker_merc2c.ogf
+		npc_visual                    = actors\stalker_merc\stalker_merc2c.ogf
+		player_hud_section            = actor_hud_duty_ps5m
+		character_portrait            = ui_inGame2_merc2
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 10, 11
+        
+		inv_name                      = merc_scout_outfit_name
+		inv_name_short                = merc_scout_outfit_name
+		description                   = merc_scout_outfit_description
+		inv_grid_x                    = 92
+		inv_grid_y                    = 15
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_lcs_2, up_gr_seconab_lcs_2, up_gr_thirdab_lcs_2, up_gr_fourtab_lcs_2
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_lcs_1
+        
+		community                     = killer
+		kind                          = o_light
+		cost                          = 28500
+		inv_weight                    = 4
+		additional_inventory_weight   = 10
+		additional_inventory_weight2  = 10
+		artefact_count                = 0
+		immunities_sect               = sect_merc_scout_outfit_immunities
+		repair_type                   = outfit_light
+		;repair_part_bonus             = 0.18
+		hit_fraction_actor            = 0.55
+		bones_koeff_protection        = actor_armor_freedom_wind
+		control_inertion_factor       = 1.18
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 1.0
+		radiation_protection          = 0.0065
+		chemical_burn_protection      = 0.04
+		telepatic_protection          = 0
+		strike_protection             = 0.1
+		explosion_protection          = 0.15
+		wound_protection              = 0.15
+		fire_wound_protection         = 0.15
+
+[sect_merc_scout_outfit_immunities]
+		burn_immunity                 = 0.125
+		chemical_burn_immunity        = 0.03
+		explosion_immunity            = 0.12
+		fire_wound_immunity           = 0.03
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.027
+		strike_immunity               = 0
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.033
+ 
+;--------------------------------------------------------------------------
+
+[merc_ace_outfit]:outfit_base,outfit_restrictions_1
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 2
+		visual                        = dynamics\outfit\scientific_outfit
+		actor_visual                  = actors\stalker_merc\stalker_mercenary3.ogf
+		npc_visual                    = actors\stalker_merc\stalker_mercenary3.ogf
+		player_hud_section            = actor_hud_loner_seva
+		character_portrait            = ui_inGame2_ace
+		full_icon_name                = npc_icon_scientific_outfit
+		full_scale_icon               = 12, 11
+        
+		inv_name                      = ace_outfit_name
+		inv_name_short                = ace_outfit_name
+		description                   = ace_outfit_description
+		inv_grid_x                    = 108
+		inv_grid_y                    = 36
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                      = up_gr_firstab_seva_1, up_gr_seconab_seva_1, up_gr_thirdab_seva_1, up_gr_fourtab_seva_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_seva_1
+        
+		community                     = killer
+		kind                          = o_sci
+		cost                          = 135000
+		inv_weight                    = 9.9
+		additional_inventory_weight   = 22.7
+		additional_inventory_weight2  = 22.7
+		artefact_count                = 3
+		immunities_sect               = sect_ace_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.50
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_class3
+		control_inertion_factor       = 1.33
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.66
+		shock_protection              = 2.6
+		radiation_protection          = 0.033
+		chemical_burn_protection      = 0.187
+		telepatic_protection          = 0.145
+		strike_protection             = 0.32
+		explosion_protection          = 0.38
+		wound_protection              = 0.38
+		fire_wound_protection         = 0.38
+
+[sect_ace_outfit_immunities]
+		burn_immunity                 = 0.025
+		chemical_burn_immunity        = 0.005
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.02
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.03
+		strike_immunity               = 0.003
+		telepatic_immunity            = 0.00
+		wound_immunity                = 0.015
+ 
+;--------------------------------------------------------------------------
+
+[merc_wolven_outfit]:outfit_base
+		$spawn                        =
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\merc_outfit
+		actor_visual                  = actors\stalker_merc\stalker_merc_sun1_merc.ogf
+		npc_visual                    = actors\stalker_merc\stalker_merc_sun1_merc.ogf
+		player_hud_section            = actor_hud_loner_sunrise
+		character_portrait            = ui_inGame2_merc_sun1_merc
+		full_icon_name                = npc_icon_exo_outfit
+        
+		inv_name                      = merc_wolven_outfit_name
+		inv_name_short                = merc_wolven_outfit_name
+		description                   = merc_wolven_outfit_description
+		inv_grid_x                    = 90
+		inv_grid_y                    = 12
+		upgr_icon_x                   = 716
+		upgr_icon_y                   = 824
+		upgr_icon_width               = 198
+		upgr_icon_height              = 129
+		upgrades                	  = up_gr_firstab_sts_1, up_gr_seconab_sts_1, up_gr_thirdab_sts_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sts_1
+        
+		community                     = killer
+		kind                          = o_medium
+		cost                          = 52700
+		inv_weight                    = 6.3
+		additional_inventory_weight   = 10
+		additional_inventory_weight2  = 10
+		artefact_count                = 2
+		immunities_sect               = sect_merc_wolven_outfit_immunities
+		repair_type                   = outfit_light
+		;repair_part_bonus             = 0.35
+		hit_fraction_actor            = 0.5
+		bones_koeff_protection        = actor_armor_class2
+		control_inertion_factor       = 1.23
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.36
+		shock_protection              = 0.6
+		radiation_protection          = 0.015
+		chemical_burn_protection      = 0.08
+		telepatic_protection          = 0
+		strike_protection             = 0.16
+		explosion_protection          = 0.26
+		wound_protection              = 0.24
+		fire_wound_protection         = 0.26
+
+[sect_merc_wolven_outfit_immunities]
+		burn_immunity                 = 0.075
+		chemical_burn_immunity        = 0.03
+		explosion_immunity            = 0.1
+		fire_wound_immunity           = 0.02
+		radiation_immunity            = 0.0
+		shock_immunity                = 0.02
+		strike_immunity               = 0.015
+		telepatic_immunity            = 0.0
+		wound_immunity                = 0.05
+ 
+;--------------------------------------------------------------------------

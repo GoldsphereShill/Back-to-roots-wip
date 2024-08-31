@@ -1,0 +1,308 @@
+[army_outfit]:outfit_base; Military Service Outfit
+		$spawn                        = "outfit\army_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\army_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier1e
+		npc_visual                    = actors\stalker_soldier\stalker_soldier1e
+		player_hud_section            = actor_hud_military_novice
+		character_portrait            = ui_inGame2_soldier_1_camo_paint
+		full_icon_name                = npc_icon_svoboda_light_outfit
+		full_scale_icon               = 10, 11
+        
+		inv_name                      = army_outfit_name
+		inv_name_short                = army_outfit_name
+		description                   = army_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 0
+		inv_grid_height    			  = 2
+		upgr_icon_x                   = 3440
+		upgr_icon_y                   = 896
+		upgr_icon_width               = 309
+		upgr_icon_height              = 135
+		upgrades                      = up_gr_firstab_novice_1, up_gr_seconab_novice_1, up_gr_thirdab_novice_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_novice_1
+        
+		community                     = army
+		kind                          = o_light
+		cost                          = 20530
+		inv_weight                    = 8
+		additional_inventory_weight   = 11
+		additional_inventory_weight2  = 11
+		artefact_count                = 1
+		immunities_sect               = sect_novice_outfit_immunities
+		repair_type                   = outfit_novice
+		;repair_part_bonus             = 0.17
+		hit_fraction_actor            = 0.75
+		bones_koeff_protection        = actor_armor_cs1
+		control_inertion_factor       = 1.2
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.04
+		shock_protection              = 0.25
+		radiation_protection          = 0
+		chemical_burn_protection      = 0.02
+		telepatic_protection          = 0
+		strike_protection             = 0.006
+		explosion_protection          = 0.25
+		wound_protection              = 0.35
+		fire_wound_protection         = 0.25
+ 
+;--------------------------------------------------------------------------
+
+[specops_outfit]:outfit_base; Berill-5M
+		$spawn                        = "outfit\specops_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 3
+		visual                        = dynamics\outfit\specops_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier_3.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_soldier_3.ogf
+		player_hud_section            = actor_hud_military_berill
+		character_portrait            = ui_inGame2_Soldier_2
+		full_icon_name                = npc_icon_specops_outfit
+		full_scale_icon               = 4, 6
+        
+		inv_name                      = specops_outfit_name
+		inv_name_short                = specops_outfit_name
+		description                   = specops_outfit_description
+		inv_grid_x                    = 96
+		inv_grid_y                    = 2
+		upgr_icon_x                   = 309
+		upgr_icon_y                   = 158
+		upgr_icon_width               = 317
+		upgr_icon_height              = 137
+		upgrades                      = up_gr_firstab_berill_1, up_gr_seconab_berill_1, up_gr_thirdab_berill_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_berill_1
+        
+		community                     = army
+		kind                          = o_medium
+		cost                          = 44600
+		inv_weight                    = 12
+		additional_inventory_weight   = 16
+		additional_inventory_weight2  = 16
+		artefact_count                = 1
+		immunities_sect               = sect_medium_combat_outfit_immunities
+		repair_type                   = outfit_medium
+		;repair_part_bonus             = 0.24
+		hit_fraction_actor            = 0.4
+		bones_koeff_protection        = actor_armor_berill
+		control_inertion_factor       = 1.48
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.07
+		shock_protection              = 0.34
+		radiation_protection          = 0.0055
+		chemical_burn_protection      = 0.02
+		telepatic_protection          = 0
+		strike_protection             = 0.2
+		explosion_protection          = 0.5
+		wound_protection              = 0.75
+		fire_wound_protection         = 0.31
+ 
+;--------------------------------------------------------------------------
+
+[military_outfit]:outfit_base; Skat-9 armoured suit
+		$spawn                        = "outfit\military_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 4
+		visual                        = dynamics\outfit\military_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier_4.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_soldier_4.ogf
+		player_hud_section            = actor_hud_military_skat9
+		character_portrait            = ui_inGame2_Soldier_4
+		full_icon_name                = npc_icon_military_outfit
+		full_scale_icon               = 10, 6
+        
+		inv_name                      = military_outfit_name
+		inv_name_short                = military_outfit_name
+		description                   = military_outfit_description
+		inv_grid_x                    = 102
+		inv_grid_y                    = 0
+		upgr_icon_x                   = 643
+		upgr_icon_y                   = 348
+		upgr_icon_width               = 288
+		upgr_icon_height              = 155
+		upgrades                      = up_gr_firstab_skat_1, up_gr_seconab_skat_1, up_gr_thirdab_skat_1, up_gr_fourtab_skat_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_skat_1
+        
+		community                     = army
+		kind                          = o_heavy
+		cost                          = 70700
+		inv_weight                    = 18
+		additional_inventory_weight   = 15
+		additional_inventory_weight2  = 15
+		artefact_count                = 0
+		immunities_sect               = sect_heavy_combat_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.27
+		hit_fraction_actor            = 0.25
+		bones_koeff_protection        = actor_armor_skat
+		control_inertion_factor       = 1.54
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.4
+		shock_protection              = 1.5
+		radiation_protection          = 0.006
+		chemical_burn_protection      = 0.07
+		telepatic_protection          = 0
+		strike_protection             = 0.55
+		explosion_protection          = 0.70
+		wound_protection              = 0.43
+		fire_wound_protection         = 0.38
+ 
+;--------------------------------------------------------------------------
+ 
+[military_proto_exo_outfit]:outfit_base,outfit_restrictions_4; Skat-9 Proto Exo
+		$spawn                        = "outfit\military_outfit"
+		class                         = EQU_STLK
+		ef_equipment_type             = 4
+		visual                        = dynamics\outfit\military_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_soldier_9_proto.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_soldier_9_proto.ogf
+		player_hud_section            = actor_hud_military_proto
+		character_portrait            = ui_inGame2_Soldier_4
+		full_icon_name                = npc_icon_military_outfit
+		full_scale_icon               = 10, 6
+        
+		inv_name                      = military_proto_exo_outfit_name
+		inv_name_short                = military_proto_exo_outfit_name
+		description                   = military_proto_exo_outfit_description
+		inv_grid_x                    = 104
+		inv_grid_y                    = 9
+		upgr_icon_x                   = 2823
+		upgr_icon_y                   = 1528
+		upgr_icon_width               = 305
+		upgr_icon_height              = 154
+		upgrades                      = up_gr_firstab_sunrise_3, up_gr_seconab_sunrise_3, up_gr_thirdab_sunrise_3, up_gr_fourtab_sunrise_proto_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_sunrise_extra_1
+        
+		community                     = army
+		kind                          = o_heavy
+		cost                          = 74700
+		inv_weight                    = 31
+		additional_inventory_weight   = 50
+		additional_inventory_weight2  = 50
+		artefact_count                = 1
+		immunities_sect               = sect_heavy_combat_outfit_immunities
+		repair_type                   = outfit_exo
+		;repair_part_bonus             = 0.33
+		hit_fraction_actor            = 0.25
+		bones_koeff_protection        = actor_armor_skat
+		control_inertion_factor       = 1.54
+		power_loss                    = 0.05
+        
+		burn_protection               = 0.4
+		shock_protection              = 1.5
+		radiation_protection          = 0.006
+		chemical_burn_protection      = 0.07
+		telepatic_protection          = 0
+		strike_protection             = 0.55
+		explosion_protection          = 0.70
+		wound_protection              = 0.43
+		fire_wound_protection         = 0.38
+
+;--------------------------------------------------------------------------
+
+[military_exolight_outfit]:outfit_base,outfit_restrictions_1; Military Exosuit
+		$spawn                        = "outfit\military_exolight_outfit"
+		class                         = E_STLK
+		ef_equipment_type             = 5
+		visual                        = dynamics\outfit\military_exolight_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_neutral_reinforced.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_neutral_reinforced.ogf
+		player_hud_section            = actor_hud_military_exolight
+		character_portrait            = ui_inGame2_monolit_4
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 2, 11
+        
+		inv_name                      = military_exolight_outfit_name
+		inv_name_short                = military_exolight_outfit_name
+		description                   = military_exolight_outfit_description
+		inv_grid_x                    = 110
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 2820
+		upgr_icon_y                   = 193
+		upgr_icon_width               = 300
+		upgr_icon_height              = 162
+		upgrades                      = up_gr_firstab_exolight_1, up_gr_seconab_exolight_1, up_gr_thirdab_exolight_1, up_gr_fourtab_exolight_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_exolight_1
+        
+		community                     = army
+		kind                          = o_heavy
+		cost                          = 83480
+		inv_weight                    = 20
+		immunities_sect               = sect_exolight_outfit_immunities
+		repair_type                   = outfit_heavy
+		;repair_part_bonus             = 0.38
+		hit_fraction_actor            = 0.25
+		bones_koeff_protection        = actor_armor_radiation
+		control_inertion_factor       = 1.76
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.21
+		shock_protection              = 0.56
+		chemical_burn_protection      = 0.051
+		strike_protection             = 0.53
+		explosion_protection          = 0.67
+		wound_protection              = 0.63
+		fire_wound_protection         = 0.67
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.02
+ 
+;--------------------------------------------------------------------------
+
+[military_exo_outfit]:outfit_base,outfit_restrictions_3; Military Exoskeleton
+		$spawn                        = "outfit\military_exo_outfit"
+		class                         = E_STLK
+		ef_equipment_type             = 5
+		visual                        = dynamics\outfit\military_exo_outfit
+		actor_visual                  = actors\stalker_soldier\stalker_military_exo.ogf
+		npc_visual                    = actors\stalker_soldier\stalker_military_exo.ogf
+		player_hud_section            = actor_hud_military_exo
+		character_portrait            = ui_inGame2_monolit_4
+		full_icon_name                = npc_icon_exo_outfit
+		full_scale_icon               = 2, 11
+        
+		inv_name                      = military_exo_outfit_name
+		inv_name_short                = military_exo_outfit_name
+		description                   = military_exo_outfit_description
+		inv_grid_x                    = 112
+		inv_grid_y                    = 18
+		upgr_icon_x                   = 2810
+		upgr_icon_y                   = 0
+		upgr_icon_width               = 307
+		upgr_icon_height              = 162
+		upgrades                      = up_gr_firstab_exolight_1, up_gr_seconab_exolight_1, up_gr_thirdab_exolight_1, up_gr_fourtab_exolight_1, up_gr_fifthab_exo_1
+		installed_upgrades            =
+		upgrade_scheme                = up_scheme_exo_1
+        
+		community                     = army
+		kind                          = o_heavy
+		cost                          = 139510
+		inv_weight                    = 26
+		additional_inventory_weight   = 65
+		additional_inventory_weight2  = 65
+		immunities_sect               = sect_exo_outfit_immunities
+		repair_type                   = outfit_exo
+		;repair_part_bonus             = 0.45
+		hit_fraction_actor            = 0.18
+		bones_koeff_protection        = actor_armor_military_exo
+		control_inertion_factor       = 1.76
+		power_loss                    = 0.1
+        
+		burn_protection               = 0.21
+		shock_protection              = 0.56
+		chemical_burn_protection      = 0.051
+		strike_protection             = 0.53
+		explosion_protection          = 0.68
+		wound_protection              = 0.65
+		fire_wound_protection         = 0.69
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.02
+
+;--------------------------------------------------------------------------

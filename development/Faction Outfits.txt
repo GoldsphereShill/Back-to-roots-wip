@@ -1,4 +1,158 @@
-novice_outfit
-stalker_outfit
-stalker_mk2_outfit
-stalker_proto_exo_outfit
+Backpacks:
+Regular Backpack (itm_backpack)
+Camping Backpack (equ_small_pack)
+Combat Backpack (equ_military_pack)
+Tourist Backpack (equ_tourist_pack)
+Hunter's Kit (kit_hunt)
+Quick Release System (itm_actor_backpack)
+
+Free Stalkers:
+Leather Jacket (novice_outfit) - Class: Novice
+Camo Jacket (novice_outfit_camo) - Class: Novice
+Sunrise Suit(stalker_outfit) - Class: Stalker
+Sunrise mk2 (stalker_mk2_outfit) - Class: Stalker
+Sunrise Proto Exoskeleton (stalker_proto_exo_outfit) - Class: Stalker
+Stalker Exosuit (exolight_outfit) - Class: Exosuit
+Stalker Exoskeleton (exo_outfit) - Class: Exoskeleton
+Nomad Outfit (nomad_outfit) - Class: Stalker
+Voyager Outfit (travel_outfit) - Class: Stalker
+Wastelander Outfit (wastelander_outfit) - Class: Stalker
+SEVA Bodysuit (scientific_outfit) - Class: Scientific
+
+Bandits:
+Bandit jacket (bandit_novice_outfit) - Class: Novice
+White overcoat (trenchcoat_outfit) - Class: Novice
+Brown trenchcoat (trenchcoat_brown_outfit) - Class: Novice
+Green trenchcoat (trenchcoat_green_outfit) - Class: Novice
+Banditmerc outfit (banditmerc_outfit) - Class: Medium Combat
+Sunset Outfit (bandit_sun_outfit) - Class: Medium Combat
+Bandit PS5-M (bandit_ps5_outfit) - Class: Medium Combat
+
+Dolg:
+Scout Outfit (dolg_scout_outfit) - Class: Novice
+PS5-M (dolg_outfit) - Class: Medium Combat
+Dolg Seva (dolg_scientific_outfit) - Class: Scientific
+Dolg Exosuit (exo_dolg_outfit) - Class: Exosuit
+Dolg Skat-9 (dolg_heavy_outfit) - Class: Heavy Combat
+PS5-M Proto Exo (dolg_proto_exo_outfit) - Class: Medium Combat
+Dolg Skat-9 Proto Exo (dolg_heavy_proto_exo_outfit) - Class: Heavy Combat
+Dolg Exoskeleton (dolg_exo_outfit) - Class: Exoskeleton
+
+Svoboda:
+Wind of Freedom (svoboda_light_outfit) - Class: Novice
+Guardian of Freedom (svoboda_heavy_outfit) - Class: Medium Combat
+Sentiel of Freedom (svoboda_heavy_outfit_2) - Class: Medium Combat
+Watchman of Freedom (svoboda_scientific_outfit) - Class: Scientific
+Warrior of Freedom (svoboda_exolight_outfit) - Class: Exosuit
+Paragon of Freedom (svoboda_exo_outfit) - Class: Exoskeleton
+Wind of Freedom Proto Exo, actually uses the model of Sentiel of Freedom (svoboda_light_proto_exo_outfit) - Class: Medium Combat
+
+Mercenaries:
+LC-F suit (merc_fighter_outfit) - Class: Medium Combat
+LC suit (merc_outfit) - Class: Medium Combat
+LCz Suit (merc_sunset_outfit) - Class: Medium Combat
+STS-N Body Armour (merc_nighthunter_outfit) - Class: Medium Combat
+Mercenary Seva (merc_scientific_outfit) - Class: Scientific
+Exosuit (merc_exolight_outfit) - Class: Exosuit
+Exoskeleton (merc_exo_outfit) - Class: Exoskeleton
+Twilight Tactical Suit (merc_sun_outfit) - Class: Medium Monolith
+
+Clear Sky:
+CS-1 (cs_light_novice_outfit) - Class: Novice
+CS-2 (cs_light_outfit) - Class: Novice
+CS-2b (cs_stalker_outfit) - Class: Stalker
+CS-3a (cs_medium_outfit) - Class: Stalker
+CS-3b (cs_heavy_outfit) - Class: Medium Combat
+CS-2b (cs_stalker_proto_exo_outfit) - Class: Stalker
+Clear Sky NBC (cs_nbc_outfit) - Class: Scientific
+Clear Sky SEVA (cs_scientific_outfit) - Class: Scientific
+
+Ecologists:
+ISIRIT Guard Jump Suit (ecolog_guard_outfit) - Class: Stalker
+SSP-99 (ecolog_outfit_orange) - Class: Medium Combat
+SSP-99M (ecolog_outfit_green) - Class: Medium Combat
+SSP-99M Mk2 (ecolog_outfit_blue) - Class: Medium Combat
+Proto Exoskeleton (ecolog_proto_exo_outfit) - Class: Stalker
+
+Military:
+Military Service Outfit (army_outfit) - Class: Novice
+Berill-5M Armoured Suit(specops_outfit) - Class: Medium Combat
+Skat-9 Armoured Suit (military_outfit) - Class: Heavy Combat
+Skat-9 Proto Exo (military_proto_exo_outfit) - Class: Heavy Combat
+Military Exosuit (military_exolight_outfit) - Class: Exosuit
+Military Exoskeleton (military_exo_outfit) - Class: Exoskeleton
+
+Monolith:
+X-18 Suit (monolith_outfit) - Class:
+Monolith Trenchcoat (monolith_trenchcoat_outfit) - Class:
+Monolith Seva (monolith_scientific_outfit) - Class:
+Monolith Exosuit (monolith_exolight_outfit) - Class:
+X-18 Exoskeleton (monolith_proto_exo_outfit) - Class:
+Monolith Exoskeleton (monolith_exo_outfit) - Class:
+
+Greh:
+Greh Exoskeleton (greh_exo_outfit) - Class: Exoskeleton
+Irij Flak Armour (greh_armored_outfit) - Class: Medium Combat
+Viriy Flak Armour (greh_armored_camo_outfit) - Class: Medium Combat
+Greh PS5 Outfit (greh_ps5_outfit) - Class: Medium Combat
+Greh Overcoat (greh_trenchcoat_outfit) - Class: Novice
+
+UNISG:
+UNISG Mk1 (isg_outfit) - Class: Medium Combat
+UNISG Mk2 (isg_camo_outfit) - Class: Medium Combat
+UNISG LC Suit (isg_lcs_outfit) - Class: Medium Combat
+UNISG LC-C Suit (isg_lcs_camo_outfit) - Class: Medium Combat
+UNISG Seva (isg_scientific_outfit) - Class: Scientific
+UNISG Exoskeleton (isg_exo_outfit) - Class: Exoskeleton
+UNISG Exosuit (isg_exolight_outfit) - Class: Exosuit
+UNISG Proto Exoskeleton (isg_proto_exo_outfit) - Class: Medium Combat
+
+Neutral:
+Green Trenchcoat (trenchcoat_green_outfit) - Class: Novice
+NBC Outfit (nbc_outfit) - Class: Scientific
+Ghillie Outfit (ghillie_outfit) - Class: Medium Combat
+Renegademerc outfit (renegademerc_outfit) - Class: Medium Combat
+
+Helmets:
+
+Upgrades:
+
+Outfit Immunities:
+
+DURABILITY INFO: 
+0.01 fire_immunity is:
+3% durability per point blank shot of of MP-153
+Around 4% durability per full magazine of PM
+
+PROTECTION INFO:
+Base Exolight:
+		inv_weight                    = 18
+        cost                          = 85680
+		artefact_count                = 1
+
+		burn_protection               = 0.23
+		shock_protection              = 0.7
+		chemical_burn_protection      = 0.052
+		strike_protection             = 0.55
+		explosion_protection          = 0.63
+		wound_protection              = 0.64
+		fire_wound_protection         = 0.58
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.06
+
+Base Exosuit:
+		cost                          = 129680
+		inv_weight                    = 24
+		additional_inventory_weight   = 65
+		additional_inventory_weight2  = 65
+		artefact_count                = 1
+
+        burn_protection               = 0.23
+		shock_protection              = 0.7
+		chemical_burn_protection      = 0.052
+		strike_protection             = 0.58
+		explosion_protection          = 0.63
+		wound_protection              = 0.64
+		fire_wound_protection         = 0.61
+		radiation_protection          = 0.024
+		telepatic_protection          = 0.06
