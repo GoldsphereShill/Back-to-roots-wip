@@ -36,10 +36,10 @@ Xenotech Behavior: https://www.moddb.com/mods/stalker-anomaly/addons/xenotech-be
 Less screen shake on damage: https://www.moddb.com/mods/stalker-anomaly/addons/no-camera-animations-when-injured
 Undercover Communications: https://www.moddb.com/mods/stalker-anomaly/addons/151-banjajis-undercover-communications
 NPC Fleeing: https://www.moddb.com/mods/stalker-anomaly/addons/npc-fleeing-01
+NPC Pushing: https://www.moddb.com/mods/stalker-anomaly/addons/get-out-of-my-way-you-stupid-npc
 
 -Essential:
 iTheon tasks: https://github.com/lTheon/iTheon-New-Tasks-Addon
-NPC Pushing: https://www.moddb.com/mods/stalker-anomaly/addons/get-out-of-my-way-you-stupid-npc
 
 -Hideout Furniture:
 Hideout Furniture: https://www.moddb.com/mods/stalker-anomaly/addons/hideout-furniture-hf
@@ -76,14 +76,14 @@ Exoseva suit: https://www.moddb.com/mods/stalker-anomaly/addons/exoseva-cbse-out
 Extended Unused Guitar Music: https://www.moddb.com/mods/stalker-anomaly/addons/extended-unused-guitar-music
 
 -New Ass Mods suggested by andermann:
-https://www.moddb.com/mods/stalker-anomaly/addons/modular-miscellaneous-tweaks
-https://www.moddb.com/mods/stalker-anomaly/addons/nomorecompanionfriendlyfire
-https://www.moddb.com/mods/stalker-anomaly/addons/minimalist-companion-ui
-https://www.moddb.com/mods/stalker-anomaly/addons/dialogue-expanded-v4
-https://www.moddb.com/mods/stalker-anomaly/addons/increased-companion-distance
-https://www.moddb.com/mods/stalker-anomaly/addons/152-hg-companion
-https://www.moddb.com/mods/stalker-anomaly/addons/he-is-with-me
-https://www.moddb.com/mods/stalker-anomaly/addons/dltx-an-94-fire-rate-fix-and-more
-https://www.moddb.com/mods/stalker-anomaly/addons/beefs-npcs-die-in-anomalies-v10
-https://www.moddb.com/mods/stalker-anomaly/addons/fight-my-foes
-https://www.moddb.com/mods/stalker-anomaly/addons/ompanions-obey-all-commands-fix-patrol-mode
+Modular Miscellaneous Tweaks: https://www.moddb.com/mods/stalker-anomaly/addons/modular-miscellaneous-tweaks
+No mor companion friendly fire: https://www.moddb.com/mods/stalker-anomaly/addons/nomorecompanionfriendlyfire
+Minimalist companion ui: https://www.moddb.com/mods/stalker-anomaly/addons/minimalist-companion-ui
+Dialogue Expanded v4: https://www.moddb.com/mods/stalker-anomaly/addons/dialogue-expanded-v4
+Increased companion distance: https://www.moddb.com/mods/stalker-anomaly/addons/increased-companion-distance
+152-hg companion: https://www.moddb.com/mods/stalker-anomaly/addons/152-hg-companion
+he is with me: https://www.moddb.com/mods/stalker-anomaly/addons/he-is-with-me
+an-94-fire-rate-fix-and-more: https://www.moddb.com/mods/stalker-anomaly/addons/dltx-an-94-fire-rate-fix-and-more
+npcs die in anomalies v10: https://www.moddb.com/mods/stalker-anomaly/addons/beefs-npcs-die-in-anomalies-v10
+Fight my foes: https://www.moddb.com/mods/stalker-anomaly/addons/fight-my-foes
+NPCs obey all commands, fix patrol mode: https://www.moddb.com/mods/stalker-anomaly/addons/ompanions-obey-all-commands-fix-patrol-mode
