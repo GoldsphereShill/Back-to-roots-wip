@@ -1,0 +1,183 @@
+--[[
+        Original Author(s)
+          Singustromo <singustromo at disroot.org>
+
+        Credits
+
+        Edited by
+
+        License
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+          (https://creativecommons.org/licenses/by-nc-sa/4.0)
+
+        Synopsis
+          Plays a sound on player jump
+
+======>>>>>>
+        MercHater: With the current values, you would have to place your
+                   sounds into gamedata\sounds\YOUR_DIRECTORY\YOUR_TYPE\
+                   Adapt them accordingly
+
+                   I retained the type functionality so you can introduce conditionals
+                   for different sound types, whatever you're planning.
+======>>>>>>
+--]]
+
+local CONST_BASE_SOUND_DIRECTORY = "extras" -- in gamedata\sounds\
+local CONST_VOLUME = 1.0
+local CONST_SOUND_DELAY = 100 -- in ms
+
+---------------------
+--   Callbacks
+---------------------
+
+function on_game_start()
+        RegisterScriptCallback("actor_on_jump", actor_on_jump)
+end
+
+function actor_on_jump()
+        printf("Jumped..")
+        play_sound("jump", 100) -- number is chance
+end
+
+---------------------
+--   Main functions
+---------------------
+
+-- typ defines the subdirectory; Here it is referred to jump or land
+-- Returns true on sound playback
+function play_sound(typ, chance)
+        if (math.random(100) > chance) then return end
+
+        printf("1")
+        local sound_directory = string.format("%s\\%s\\",
+                CONST_BASE_SOUND_DIRECTORY, typ)
+
+        if not (CONST_SOUND_DELAY and CONST_SOUND_DELAY > 0) then
+                printf("2")
+                return play_random_sound(sound_directory)
+        end
+
+        timed_call(CONST_SOUND_DELAY, function()
+                printf("3")
+                play_random_sound(sound_directory)
+                return true
+        end)
+
+        return true
+end
+
+local tm, r_sound_cache = 0, {}
+function play_random_sound(directory)
+        if (not directory) then return end
+        printf("4 Dir: %s", directory)
+
+        -- Only allow sounds in x milliseconds intervals
+        local ct = time_global()
+        if (tm and ct <= tm) then return end
+        printf("5")
+
+        local player, file, list_size = db.actor
+
+        -- No need to play any sound, if player is dead ..
+        if not (player and player:alive()) then return end
+        printf("6")
+
+        -- We want to execute list_files() only one time per game load
+        -- No need for on_game_load callback here
+        if is_table_empty(r_sound_cache) then
+                r_sound_cache = list_files("$game_sounds$", directory)
+        end
+
+        file = string.format("%s%s", directory,
+                r_sound_cache[math.random(size_table(r_sound_cache))])
+        printf("7 file: %s", tostring(file))
+
+        local sound = xr_sound.get_safe_sound_object(file)
+        if not (sound and sound.play) then return end
+        printf("8")
+
+        sound:play(player, 0, sound_object.s2d)
+        sound.volume = CONST_VOLUME
+
+        tm = ct + 300
+        return true
+end
+
+---------------------
+--    Wrapper
+---------------------
+
+-- output of next() is nil when table is empty
+function is_table_empty(tbl)
+        return not (tbl and next(tbl))
+end
+
+-- Taken from Western Goods (slightly modified)
+-- Function used to list all the files in a given folder (excluding the sub-folders).
+-- @basedir     string
+-- @path        string (relative to basedir)
+-- @return      table - containing file names
+function list_files(basedir, path)
+        local file_list, file_list_fs = {}
+
+        file_list_fs = getFS():file_list_open(basedir,
+                path, bit_or(FS.FS_ListFiles, FS.FS_RootOnly))
+
+        local count = file_list_fs and file_list_fs:Size() or 0
+        if (count < 1) then return file_list end
+
+        for i = 1, count do
+                local file_name = file_list_fs:GetAt(i - 1) -- with file extension
+
+                if file_name then
+                        file_list[#file_list + 1] = file_name:gsub('%..*', '') -- remove extension
+                end
+        end
+
+        return file_list
+end
+
+-- Repeatedly calls functor
+-- Delay should be declared in milliseconds
+function timed_call(delay, functor, ...)
+        if (not functor) then return end
+        local args = {...}
+
+        -- We also delay first execution
+        local throttled_func = throttle(delay, true, functor, unpack(args))
+        if not throttled_func then return end
+
+        -- Calls functor every game tick (approx. 16-17 ms)
+        AddUniqueCall(throttled_func)
+end
+
+-- Wrapper to delay function execution
+-- Modified derivative from modded exes
+-- @delay               number (milliseconds)
+-- @delay_first_call    boolean
+-- @func                functor
+-- @vararg              functor-parameters
+-- @returns             functor
+function throttle(delay, delay_first_call, functor, ...)
+        if not functor then return end
+        local args = {...}
+
+        if not (delay and delay > (GAMETICK_DURATION or 16)) then
+                return function()
+                        return functor(unpack(args))
+                end
+        end
+
+        local TimeGlobal = time_global
+        local tg_threshold = (delay_first_call)
+                and TimeGlobal() + delay or 0
+
+        return function()
+                local tg = TimeGlobal()
+                if (tg_threshold +1) > tg then return end
+                tg_threshold = tg + delay
+
+                return functor(unpack(args))
+        end
+end
