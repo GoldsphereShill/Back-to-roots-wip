@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="ui_mcm_menu_banjajis_field_workshop">
+		<text>Taller de Banjaji</text>
+	</string>
+	<string id="banjajis_field_workshop_title">
+		<text>Taller de campo de Banjaji</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_workshop_menu_key">
+		<text>Keybind para abrir el taller</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_weapon_without_part_unusable">
+		<text>El arma es inutilizable cuando falta una pieza</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_part_condition_variability">
+		<text>Por debajo de este %, la parte de condicion se considera faltante (tecnica).</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Title_Dusty">
+		<text>Dusty9261's Sin necesidad de kit de herramientas para los vicios</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_disassembly_tools_required">
+		<text>Se necesita una herramienta de desmontaje para desmontar el equipo</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_tool_degradation_multiplier">
+		<text>Multiplicador por degradacion de herramientas de desmontaje</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics">
+		<text>Sistema de reparacion de armadura de vainilla</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics_desc">
+		<text>Si esto esta marcado, entonces no puedes quitar partes de la armadura como lo harias con las armas. Solo puede reemplazar partes y no recuperara la otra parte.</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_repairs_dont_require_repair_kits">
+		<text>La reparacion de armaduras no requiere kits de reparacion</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_tool_kits">
+		<text>La actualizacion no requiere juegos de herramientas</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_repair_kits">
+		<text>La actualizacion no requiere kits de reparacion</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_upgrade_kits">
+		<text>La actualizacion no requiere kits de actualizacion</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Full_Upgrades_patch">
+		<text>Parche para las actualizaciones completas de Swergdach</text>
+	</string>
+	
+	
+</string_table>

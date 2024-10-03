@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="ui_mcm_menu_banjajis_field_workshop">
+		<text>Мастерская Баняйи</text>
+	</string>
+	<string id="banjajis_field_workshop_title">
+		<text>Полевая мастерская Баняйи</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_workshop_menu_key">
+		<text>Клавиша для открытия мастерской</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_weapon_without_part_unusable">
+		<text>Оружие невозможно использовать при отсутствии части</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_part_condition_variability">
+		<text>Деталь состояния ниже этого % считается отсутствующей (технической).</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Title_Dusty">
+		<text>Дусти9261 не требует набора инструментов для пороков</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_disassembly_tools_required">
+		<text>Инструмент для разборки необходим для разборки оборудования</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_tool_degradation_multiplier">
+		<text>Множитель за износ инструмента для разборки</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics">
+		<text>Ванильная система ремонта брони</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics_desc">
+		<text>Если этот флажок установлен, вы не сможете снимать детали с брони, как с оружия. Вы можете только заменить части, и вы не получите другую часть обратно.</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_repairs_dont_require_repair_kits">
+		<text>Ремонт доспехов не требует ремонтных комплектов</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_tool_kits">
+		<text>Обновление не требует наборов инструментов</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_repair_kits">
+		<text>Обновление не требует ремонтных комплектов</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_upgrade_kits">
+		<text>Обновление не требует комплектов обновления</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Full_Upgrades_patch">
+		<text>Патч для полных обновлений Swergdach</text>
+	</string>
+	
+	
+</string_table>

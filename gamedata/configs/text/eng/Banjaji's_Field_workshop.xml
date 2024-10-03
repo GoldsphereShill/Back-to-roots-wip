@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+	<string id="ui_mcm_menu_banjajis_field_workshop">
+		<text>Banjaji's Workshop</text>
+	</string>
+	<string id="banjajis_field_workshop_title">
+		<text>Banjaji's Field workshop</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_workshop_menu_key">
+		<text>Keybind for opening the workshop</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_weapon_without_part_unusable">
+		<text>Weapon is unusable when missing a part</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_part_condition_variability">
+		<text>Below this % condition part is considered as missing (technical).</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Title_Dusty">
+		<text>Dusty9261's No Toolkit Requirement for Vices</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_disassembly_tools_required">
+		<text>Disassembly tool is needed for taking apart equipment</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_tool_degradation_multiplier">
+		<text>Multiplier for disassembly tool degradation</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics">
+		<text>Vanilla armor repair system</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_vanilla_mechanics_desc">
+		<text>If this is checked then you can't strip parts from armor like you would from weapons. You can only replace parts and you won't get the other part back.</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_armor_repairs_dont_require_repair_kits">
+		<text>Repairing armors doesn't require repair kits</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_tool_kits">
+		<text>Upgrading doesn't require tool kits</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_repair_kits">
+		<text>Upgrading doesn't require repair kits</text>
+	</string>
+	<string id="ui_mcm_banjajis_field_workshop_upgrades_dont_require_upgrade_kits">
+		<text>Upgrading doesn't require upgrade kits</text>
+	</string>
+	
+	<string id="ui_mcm_banjajis_field_workshop_Full_Upgrades_patch">
+		<text>Patch for Swergdach's Full upgrades</text>
+	</string>
+	
+</string_table>

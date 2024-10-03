@@ -1,0 +1,1074 @@
+--[[
+	Modifies ui_workshop.script with function injections
+	
+	-- In the vanilla code terms were used interchangeably. In repair the only kit is repair kit. In upgrades mainly repair kits and upgrade kits are considered (only a few lines consider actual tool kit). In crafting actual tool kits are considered.
+
+	Dusty9261's "No Toolkit Requirement for Vices"  included
+	
+	2022.04.09
+	Banjaji's Field workshop
+	* You can open the workshop by default with the "J" key (at least according to DIK). The keybind is configurable in MCM. This way you could have a mobile crafting station.
+	* Repairing weapons doesn't require repair kits. This is a modified version of Dusty9261's No Toolkit Requirement for Vices.
+	* You can strip weapon parts with your bare hands without even requiring a spare part. Only a weapon shell is left behind after you have taken all its mechanisms. This way you can repair the part and put it back in.
+	* You can also install weapon spare parts with your bare hands.
+	* Weapons are unusable if at least one part is missing (0 condition). You can't run around and shooting your AK which has 80% condition but is missing the barrel. This can be turned off in MCM.
+	* It's best to play with full percentage parts but isn't strictly necessary.
+	* Armors still require repair kits to do stuff by default. This can be turned off in MCM. Installing parts uses the repair kit. However, by default if you have the repair kit you can remove parts for free.
+	* Merged also Dusty9261's No Toolkit Requirement for Vices - upgrades part which is toggleable in MCM.  
+	* Added an option that upgrades don't require tool kits. Toggleable in MCM.
+	* Added an option that upgrades don't require upgrade kits. Toggleable in MCM.
+	* Window is kept open on repair and on upgrade. Similar functionality to TheMrDemonized's Keep Crafting Windows Opened (update 12) but different (better?) implementation.
+--]]
+
+-----------------------------------------------------------------------------------------------------------------------
+-- Banjaji's Field workshop
+-----------------------------------------------------------------------------------------------------------------------
+local workshop_key = DIK_keys.DIK_J -- Open the workshop window with this key
+local weapon_without_part_unusable = true -- Are weapons unusable if some parts are missing?
+--local part_condition_variability = 6 -- how much can a 0 condition part be evaluated as. If a part has condition below this % it's read as missing.
+
+local disassembly_tools_required = false -- whether disassembly tools are depleted on taking apart equipment
+local tool_degradation_multiplier = 1 -- multiplier for how much condition is depleted from the disassembly tool
+
+local armor_vanilla_mechanics = false -- whether armor repair works according to vanilla mechanics
+local armor_repairs_dont_require_repair_kits = false -- Are armors treated the same way as weapons that you can change parts with your hands?
+
+local upgrades_dont_require_tool_kits = false -- Does upgrading stuff require tool kits?
+local upgrades_dont_require_repair_kits = false -- Does upgrading stuff consume repair kits?
+local upgrades_dont_require_upgrade_kits = false -- Does upgrading stuff require upgrade kits?
+local Full_Upgrades_patch = false -- Can you upgrade stuff that already has an alternate upgrade installed?
+
+local missing_value = -1 -- this condition means that part is missing, with 0 you'd lose broken helmets completely on repair.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+-- Function injections (monkeypatch) for ui_workshop.script
+-----------------------------------------------------------------------------------------------------------------------
+
+local clr_list = { -- from ui_workshop.script
+	["g"]    = utils_xml.get_color("d_green"),
+	["y"]    = utils_xml.get_color("yellow"),
+	["o"]    = utils_xml.get_color("d_orange"),
+	["r"]    = utils_xml.get_color("d_red"),
+	["b"]    = utils_xml.get_color("d_cyan"),
+	["b1"]   = utils_xml.get_color("pda_blue"),
+	["b2"]   = utils_xml.get_color("d_blue"),
+	["p"]    = utils_xml.get_color("d_purple"),
+	["dark"] = utils_xml.get_color("ui_gray_2"),
+}
+
+--######################################################################################################################
+--#															2. REPAIR													#
+--######################################################################################################################
+-- Force full percentage parts
+GetEcoFactor = game_difficulties.get_eco_factor -- original function
+function game_difficulties.get_eco_factor(str)
+    if (str == "percentage_parts") then return true
+    else return GetEcoFactor(str) end
+end
+
+-- Lists/draws the equipment parts around the weapon. Initializes equipment parts.
+ui_workshop.UIWorkshopRepair.original_ListPartScheme = ui_workshop.UIWorkshopRepair.ListPartScheme
+ui_workshop.UIWorkshopRepair.ListPartScheme = function(self)
+	local obj = self.CC["inventory"]:GetCell_Selected(true)
+	if (not obj) then
+		return
+	end
+	
+	if armor_vanilla_mechanics and (IsOutfit(obj) or IsHeadgear(obj)) then -- do stuff the vanilla way (don't allow taking parts)
+		self:original_ListPartScheme()
+		return
+	end
+	
+	-- Reset
+	self.CC["parts"]:Reset()
+	empty_table(self.new_con)
+	empty_table(self.parts)
+	self.selected_btn = nil
+	self.highlight_btn = nil
+	local ps_cnt = 0
+	
+	--self.dot:Show(true)
+	--self.line_r:Show(true)
+	self.itm_b_r:Show(true)
+	
+	itms_manager.play_item_sound(obj)
+	
+	local sec = obj:section()
+	sec = ini_sys:r_string_ex(sec,"parent_section") or sec -- for weapons with scopes
+	local con = math.ceil(100*(obj:condition()))
+	utils_xml.set_upgr_icon(obj, sec, self.itm_ico_r, self.itm_ico_temp_r)
+	self.itm_con_r:SetText(con .. "%")
+	
+	
+	-- Weapons don't use repair kits
+	local toolkits_num = 0
+	if (IsWeapon(obj) or armor_repairs_dont_require_repair_kits) then -- hide repair kit
+		self.itm_ico_rq:Show(false) -- hide icon
+		self.itm_num_rq:SetText("") -- hide text
+	else -- prepare repair kit
+		toolkits_num = self:UpdateToolkits(0)
+	end
+	
+	-- Prepare parts
+	local parts = itms_manager.ini_parts:r_string_ex("con_parts_list",sec)
+	parts = parts and str_explode(parts,",") or {}
+	
+	local parts_con = se_load_var(obj:id(), nil, "parts") -- load parts for the object
+	if not parts_con then -- parts haven't been initialized yet
+		parts_con = item_parts.get_parts_con(obj, nil, true) -- initialize parts
+	end
+	
+	for i=1,#parts do
+		-- item_parts.get_parts_con(obj, nil, true) returns parts that have small variability in part conditions.
+		-- This check makes sure that very low condition weapon (0 condition weapon) stays as 0 condition.
+		--if parts_con[parts[i]] <= part_condition_variability then 
+		--	parts_con[parts[i]] = 0
+		--end
+		
+		self.parts[i] = {}
+		self.parts[i].sec = parts[i]
+		self.parts[i].con = parts_con[parts[i]]
+	end
+	
+	for i=1,6 do
+		if self.parts[i] and self.parts[i].sec and (self.parts[i].sec ~= "na") and self.parts[i].con then
+			local part_name = ui_item.get_sec_name(self.parts[i].sec) or ""
+			local con = utils_item.get_cond_static(self.parts[i].con)
+			local clr = utils_xml.get_color_con(con)
+			local obj_part = db.actor:object(self.parts[i].sec) -- if player has this spare part then returns the object
+			--self.itm_line[i]:Show(true)
+			self.itm_b[i]:Show(true)
+			self.itm_selected[i]:InitTexture("ui_button_inv_d")
+			self.itm_selected[i]:Show(true)
+			
+			-- Weapons don't use repair kits
+			if (IsWeapon(obj) or armor_repairs_dont_require_repair_kits) then
+				self.itm_btn[i]:Show(true) -- all parts are clickable
+			else
+				self.itm_btn[i]:Show((toolkits_num > 0) and true or false) -- player has the repair kit
+			end
+			
+			self.itm_name[i]:SetText(part_name)
+			if con <= missing_value then -- for display
+				self.itm_con[i]:SetText(clr .. "missing")
+			else
+				self.itm_con[i]:SetText(clr .. con .. "%")
+			end
+			
+			utils_xml.set_icon(self.parts[i].sec, obj_part == nil, self.itm_ico_temp[i], self.itm_ico[i])
+			ps_cnt = ps_cnt + (obj_part and 1 or 0)
+		else
+			self.itm_line[i]:Show(false)
+			self.itm_b[i]:Show(false)
+			self.itm_selected[i]:Show(false)
+			self.itm_btn[i]:Show(false)
+			self.itm_name[i]:SetText("")
+			self.itm_con[i]:SetText("")
+			self.itm_ico[i]:InitTexture("ui_button_inv_d")
+		end
+	end
+	
+	-- Weapons don't use repair kits
+	if not (IsWeapon(obj) or armor_repairs_dont_require_repair_kits) then
+		if (toolkits_num > 0) then
+			ui_workshop.SetTip("repair_tip_1", "repair_warning_1", "repair_solution_1", self.toolkit, (ps_cnt == #self.parts), self.info_text)
+		else
+			ui_workshop.SetTip("repair_tip_1", "repair_warning_2", "repair_solution_2", self.toolkit, false, self.info_text)
+		end
+	end
+end
+
+-- Checks if the weapon has a part missing and writes the weapon condition as 0 if so. Otherwise calculates the total condition of the equipment piece.
+ui_workshop.UIWorkshopRepair.calculate_equipment_condition = function(self, obj, check_new_parts)
+	local return_table = {}
+	return_table.con = 0
+	return_table.count = 0
+	
+	-- Iterate over parts and calculate total condition of the equipment
+	for i=1,6 do
+		if check_new_parts and self.new_con[i] and self.new_con[i].con then -- take into account new parts
+			if IsWeapon(obj) and weapon_without_part_unusable and (self.new_con[i].con <= missing_value) then -- weapon is unusable because part is missing
+				return_table.con = missing_value
+				return_table.count = 1
+				return return_table
+			end
+			
+			local addition = 0
+			if (self.new_con[i].con > missing_value) then -- part is not missing
+				addition = self.new_con[i].con
+			end
+			
+			return_table.con = return_table.con + addition
+			return_table.count = return_table.count + 1
+			
+		elseif self.parts[i] and self.parts[i].sec and (self.parts[i].sec ~= "na") then -- old parts
+			if IsWeapon(obj) and weapon_without_part_unusable and (self.parts[i].con <= missing_value) then -- weapon is unusable because part is missing
+				return_table.con = missing_value
+				return_table.count = 1
+				return return_table
+			end
+			
+			local addition = 0
+			if (self.parts[i].con > missing_value) then -- part is not missing
+				addition = self.parts[i].con
+			end
+			
+			return_table.con = return_table.con + addition
+			return_table.count = return_table.count + 1
+		end
+	end
+
+	return return_table
+end
+
+function ui_workshop.UIWorkshopRepair.save_parts(obj) -- mostly from item_parts.evaluate_parts()
+	local data = {}
+	data[sec] = math_ceil(obj:condition() * 100) -- default condition of the item
+	local data = self.parts
+	
+	
+	se_save_var( id, obj:name(), "parts", data )
+end
+
+-- Gives part to actor and changes equipment condition if it's clicked on the equipent. Shows available spare parts in actor's inventory.
+ui_workshop.UIWorkshopRepair.original_ListSpareParts = ui_workshop.UIWorkshopRepair.ListSpareParts
+ui_workshop.UIWorkshopRepair.ListSpareParts = function(self)
+	if (not self.highlight_btn) then
+		return
+	end
+	local obj = self.CC["inventory"]:GetCell_Selected(true)
+	
+	if armor_vanilla_mechanics and (IsOutfit(obj) or IsHeadgear(obj)) then -- do stuff the vanilla way (don't allow taking parts)
+		self:original_ListSpareParts()
+		return
+	end
+	
+	self.selected_btn = self.highlight_btn
+	local sec_part = self.parts[self.selected_btn].sec
+	local con_part = self.parts[self.selected_btn].con
+	
+	-- Reset selected spare part in case of a second click on the weapon part
+	self.new_con[self.selected_btn] = nil
+	if is_empty(self.new_con) then
+		self.btn_repair:Enable(false) -- reset repair button if player clicked all parts again
+	end
+	
+	-- If player wants a tool to be discharged on taking apart equipment and the part isn't missing
+	if disassembly_tools_required and (self.parts[self.selected_btn].con > missing_value) then
+		local dtool_obj = item_parts.get_suitable_dtool(obj)
+		if dtool_obj then -- suitable tool exists, therefore degrade/delete disassembly tool
+			local itms_disassemble = GetItemList("disassemble")
+			local degr_val = itms_disassemble[dtool_obj:section()]
+			utils_item.degrade(dtool_obj, degr_val * tool_degradation_multiplier)
+		else -- no suitable tool
+			-- Warning message on missing suitable disassembly tool
+			if IsWeapon(obj) then
+				actor_menu.set_item_news('fail', 'weapon', "st_dis_text_3", " ")
+			else
+				news_manager.send_tip(db.actor, game.translate_string("st_news_dis_items"), nil, "swiss_knife", 6000)
+			end
+			return -- stop the function
+		end
+	end
+	
+	-- Prepare variables for equipment and part condition decrease, essentially copy-paste from UIWorkshopRepair:Repair()
+	self.parts[self.selected_btn].con = missing_value -- Old part is removed. Therefore, condition gets written as missing_value
+	
+	-- Check if it's a weapon and it has a part missing. Calculate total condition.
+	local return_table = self:calculate_equipment_condition(obj, false)
+	local tot_con = return_table.con
+	local cnt = return_table.count
+	local final_con = (cnt > 0) and (clamp(math.ceil(tot_con/cnt),1,100)/100)
+	
+	-- New equipment condition
+	local id = obj:id()
+	local sec = obj:section()
+	sec = ini_sys:r_string_ex(sec,"parent_section") or sec -- for weapons with scopes
+	
+	
+	-- Set equipment condition
+	local weapon = level.object_by_id(id)
+	if weapon and final_con and (final_con >= 0) and (final_con <= 1) then
+		weapon:set_condition(final_con)
+	else
+		printe("! UIWorkshopRepair:Repair() | object with id (%s) is either not found. Or didn't register new condition (%s)!", id, final_con)
+	end
+	
+	-- Change part condition to missing_value in the equipment
+	local result_part_tbl = {}
+	result_part_tbl[sec] = clamp(math.ceil(tot_con/cnt),1,100) -- equipment condition
+	for i=1,#self.parts do
+		result_part_tbl[self.parts[i].sec] = self.parts[i].con -- part condition
+	end
+	item_parts.set_parts_con(id, result_part_tbl)
+	
+	
+	-- spawn same condition part into inventory and set weapon part condition to missing_value
+	if con_part > missing_value then -- don't let player take "non-existent" part
+		-- Spawn the part in inventory
+		local t = {}
+		t.cond = con_part / 100
+		local se_item = alife_create_item(sec_part, db.actor, t) -- this requires time to be executed. That's why I have TimeEvents.
+		local part_id = se_item.id
+		
+		-- Set spawned part condition as the removed part condition
+		local function after_pause_for_part_creation(id,cond)
+			local item = level.object_by_id(id)
+			item:set_condition(cond)
+			
+			if IsHeadgear(item) then
+				item_parts.get_parts_con(item, nil, true) -- reinitialize parts so that they wouldn't be 100%
+			end
+			
+			-- Redraw the part brightness in the icon since now there's a new part in your inventory
+			local obj_part = db.actor:object(self.parts[self.selected_btn].sec)
+			utils_xml.set_icon(self.parts[self.selected_btn].sec, obj_part == nil, self.itm_ico_temp[self.selected_btn], self.itm_ico[self.selected_btn])
+			
+			return true -- stop TimeEvent
+		end
+		
+		-- Pause before continuing with the code. Otherwise new part (eg headgear) isn't spawned before its condition is modified
+		CreateTimeEvent("pause_ID","Pause_for_item_creation1",0.01,after_pause_for_part_creation,se_item.id,t.cond)
+	end
+	
+	-- Calculate equipment condition again but considering the new parts
+	local return_table = self:calculate_equipment_condition(obj, true)
+	local tot_con = return_table.con
+	local cnt = return_table.count
+	local final_con = (cnt > 0) and (clamp(math.ceil(tot_con/cnt),1,100)/100)
+	
+	-- Redraw part condition after clicking
+	local part_name = ui_item.get_sec_name(self.parts[self.selected_btn].sec) or ""
+	local con = utils_item.get_cond_static(self.parts[self.selected_btn].con)
+	local clr = utils_xml.get_color_con(con)
+	if con <= missing_value then -- part has new condition
+		self.itm_con[self.selected_btn]:SetText(clr .. "missing")
+	else
+		self.itm_con[self.selected_btn]:SetText(clr .. con .. "%")
+	end
+	self.itm_con_r:SetText(tostring(final_con * 100) .. "%") -- equipment has new condition
+
+	
+	-- This is separate function so that the weapon part gets spawned in the inventory before the script continues
+	local function after_pause_for_item_creation2()
+		local cc = self.CC["parts"]
+		local inv, inf, size_t = {},{}, 0
+		db.actor:iterate_inventory(function(owner,obj)
+			local sec = obj:section()
+			if (sec == sec_part) then
+				size_t = size_t + 1
+				inv[size_t] = obj
+				inf[size_t] = math.ceil(obj:condition() * 100)
+			end
+		end)
+
+		cc:Reinit(inv, inf)
+		
+		local fnt = GetFontSmall()
+		for idx,ci in pairs(self.CC["parts"].cell) do
+			if ci:IsShown() then
+				local con100 = ci.flags.info
+				local con = ci.flags.info / 100
+				local g = clamp(512 * con, 0, 255)
+				local r = clamp(512 * (1- con), 0, 255)
+				ci:Add_CustomText(con100.."%", nil, nil, GetARGB(255,r,g,50), fnt)
+			end
+		end
+		
+		-- Hide unusable parts
+		for idx,ci in pairs(cc.cell) do
+			local obj = ci:IsShown() and cc:GetObj(idx)
+			if obj then
+				-- parts are always usable
+				ci.flags.usable = true
+				ci:Colorize("def")
+				--[[
+				if (obj:condition() <= (con_part / 100)) then
+					ci.flags.usable = false	
+					ci:Colorize("hide")
+				else
+					ci.flags.usable = true
+					ci:Colorize("def")
+				end
+				--]]
+			end
+		end
+		
+		-- ui_workshop.SetTip("repair_tip_3", "repair_warning_3", "repair_solution_3", sec_part, pst, self.info_text) -- pst seems to be nil at all times
+		-- ui_workshop.SetTip("repair_tip_3", "repair_warning_3", "repair_solution_3", sec_part, true, self.info_text) -- you can replace any part you want
+		
+		return true -- stop TimeEvent2
+	end
+	
+	-- Pause before continuing with the code. Otherwise new part isn't spawned before it is checked
+	CreateTimeEvent("pause_ID","Pause_for_item_creation2",0.01,after_pause_for_item_creation2)
+end
+
+-- Runs when player has clicked on a spare part. It shows the new outcome if repair would be pressed and registers new conditions.
+ui_workshop.UIWorkshopRepair.ReplacePart = function(self)
+	local obj_part = self.CC["parts"]:GetCell_Selected(true)
+	if not (obj_part and self.selected_btn) then
+		return
+	end
+	
+	self.itm_selected[self.selected_btn]:InitTexture("ui_button_inv_t")
+		
+	ui_workshop.print_ws("- UIWorkshopRepair:ReplacePart() | picked replacement part (%s) [%s] - condition: %s", obj_part:id(), obj_part:section(), obj_part:condition())
+	
+	-- Save the condition of selected part
+	local new_part_con = math.ceil(obj_part:condition() * 100)
+	
+	self.new_con[self.selected_btn] = {}
+	self.new_con[self.selected_btn].id = obj_part:id()
+	self.new_con[self.selected_btn].con = new_part_con
+	
+	-- Calculate individual condition and update text
+	self.btn_repair:Enable(true)
+	
+	-- Check if it's a weapon and it has a part missing. Calculate total condition.
+	local equipment = self.CC["inventory"]:GetCell_Selected(true) -- selected item to repair
+	local return_table = self:calculate_equipment_condition(equipment, true)
+	local tot_con = return_table.con
+	local cnt = return_table.count
+	local active = 0
+	local t
+	local clr
+	for i=1,6 do
+		if self.new_con[i] and self.new_con[i].con then -- take into account new parts
+			t = self.new_con[i].con
+			clr = utils_xml.get_color_con(t)
+			self.itm_con[i]:SetText(clr .. t .. "%")
+			active = active + 1 -- increment required repair kits
+		elseif self.parts[i] and self.parts[i].sec and (self.parts[i].sec ~= "na") then -- old part
+			t = self.parts[i].con
+			clr = utils_xml.get_color_con(t)
+			if t <= missing_value then -- distinguishes missing parts
+				self.itm_con[i]:SetText(clr .. "missing")
+			else
+				self.itm_con[i]:SetText(clr .. t .. "%")
+			end
+		end
+	end
+	
+	
+	-- Calculate total condition and update text
+	tot_con = clamp(math.ceil(tot_con/cnt),1,100)
+	self.itm_con_r:SetText(tot_con .. "%")
+	
+	-- Weapons don't use repair kits
+	if not (IsWeapon(equipment) or armor_repairs_dont_require_repair_kits) then
+		-- Update remaining repair kit count
+		self:UpdateToolkits(active)
+	end
+	
+	-- Hide part inventory
+	self.CC["parts"]:Reset()
+	
+	utils_obj.play_sound("interface\\items\\inv_items_cloth_" .. tostring(math.random(2,3)))
+	
+	ui_workshop.SetTip("repair_tip_4", nil, nil, nil, true, self.info_text)
+	
+	-- Reset
+	self.selected_btn = nil
+	self.highlight_btn = nil
+end
+
+-- Draws new repair kit amount when a spare part has been clicked
+ui_workshop.UIWorkshopRepair.UpdateToolkits = function(self, num)
+	local obj = self.CC["inventory"]:GetCell_Selected(true)
+	if (not obj) then
+		return
+	end
+	
+	empty_table(self.toolkit_inv)
+	empty_table(self.toolkit_pick)
+	
+	
+	local toolkits_num = 0
+	-- Weapons don't use repair kits
+	if IsWeapon(obj) or armor_repairs_dont_require_repair_kits then
+		toolkits_num = 5
+	end
+	
+	self.toolkit = "na"
+	local main_sec = obj:section()
+	local repair_type = ini_sys:r_string_ex(main_sec,"repair_type") or main_sec
+	for k,v in pairs(GetItemList("workshop")) do
+		if v[repair_type] then
+			self.toolkit = k
+			ui_workshop.print_ws("- UIWorkshopRepair:UpdateToolkits(%s) | picked proper tookit [%s] to use for [%s]", num, k, main_sec)
+			break
+		end
+	end
+	if self.toolkit then
+		self.toolkit_inv = utils_item.collect_amount(db.actor, self.toolkit)
+		for _,uses in pairs(self.toolkit_inv) do
+			toolkits_num = toolkits_num + uses
+		end
+		
+		if (num > 0) then
+			for i=1,num do
+				local id = random_key_table(self.toolkit_inv)
+				local uses = self.toolkit_inv[id]
+				if uses and uses > 0 then
+					uses = uses - 1
+					self.toolkit_pick[#self.toolkit_pick + 1] = id
+					if uses == 0 then
+						self.toolkit_inv[id] = nil
+					else
+						self.toolkit_inv[id] = uses
+					end
+				end
+			end
+		end
+		
+		local toolkits_remain = toolkits_num - #self.toolkit_pick
+		for i=1,6 do
+			if self.parts[i] and self.parts[i].sec and (not self.new_con[i]) then
+				if (toolkits_remain < 1) then
+					self.itm_btn[i]:Enable(false)
+				else
+					self.itm_btn[i]:Enable(true)
+				end
+			end
+		end
+		
+		utils_xml.set_icon(self.toolkit, toolkits_remain < 1, self.itm_ico_temp_rq, self.itm_ico_rq)
+		self.itm_num_rq:SetText((toolkits_remain > 0 and clr_list["g"] or clr_list["r"]) .. tostring(toolkits_remain))
+		
+		return toolkits_remain
+	else
+		printe("! UIWorkshopRepair:UpdateToolkits(%s) | no proper repair toolkit is found for item [%s], make sure it is supported by repair tools sections", num, main_sec)
+	end
+	return 0
+end
+
+-- Finalizes the changes on pressing "repair". Changes part conditions, changes equipment condition and decreases repair kit uses.
+ui_workshop.UIWorkshopRepair.Repair = function(self)
+	local obj = self.CC["inventory"]:GetCell_Selected(true)
+	if (not obj) then
+		return
+	end
+	
+	local sim = alife()
+	local tot_con = 0
+	local cnt = 0
+	if is_not_empty(self.new_con) then
+		for i=1,6 do
+			if self.parts[i] and self.parts[i].sec and (self.parts[i].sec ~= "na") then
+				if self.new_con[i] and self.new_con[i].id then
+					self.parts[i].con = self.new_con[i].con
+					ui_workshop.print_ws("- UIWorkshopRepair:Repair() | replaced part spotted | part: %s - condition: %s - order: %s - id: %s", self.parts[i].sec, self.new_con[i].con, i, self.new_con[i].id)
+					
+					-- Release replacement parts
+					alife_release_id(self.new_con[i].id)
+				end
+				
+				tot_con = tot_con + self.parts[i].con --ui_workshop.AdjustCon(self.parts[i].sec, self.parts[i].con, #self.parts, IsOutfit(self.object))
+				cnt = cnt + 1
+				ui_workshop.print_ws("/ UIWorkshopRepair:Repair() | total condition calculation | part: %s - condition: %s - order: %s - total sum: %s", self.parts[i].sec, self.parts[i].con, i, tot_con)
+			end
+		end
+	else
+		ui_workshop.print_ws("! UIWorkshopRepair:Repair() | no new parts have been replaced")
+		return
+	end
+	
+	-- Weapons don't use repair kits
+	if not (IsWeapon(equipment) or armor_repairs_dont_require_repair_kits) then
+		-- Discharge tools
+		for i=1,#self.toolkit_pick do
+			local obj_tool = level.object_by_id(self.toolkit_pick[i])
+			if obj_tool then
+				utils_item.discharge(obj_tool)
+				ui_workshop.print_ws("/ UIWorkshopRepair:Repair() | discharged toolkit (%s)", self.toolkit_pick[i])
+			else
+				printe("!ERROR UIWorkshopRepair:Repair() | can't discharge toolkit with id (%s). Object not found!", self.toolkit_pick[i])
+			end
+		end
+	end
+
+	
+	
+	-- Apply condition changes
+	local id = obj:id()
+	local sec = obj:section()
+	sec = ini_sys:r_string_ex(sec,"parent_section") or sec -- for weapons with scopes
+	local weapon = level.object_by_id(id)
+	
+	-- Check if it's a weapon and it has a part missing
+	local return_table = self:calculate_equipment_condition(weapon, true)
+	local tot_con = return_table.con
+	local cnt = return_table.count
+	
+	local final_con = (cnt > 0) and (clamp(math.ceil(tot_con/cnt),1,100)/100)
+	if weapon and final_con and (final_con >= 0) and (final_con <= 1) then
+		weapon:set_condition(final_con)
+		ui_workshop.print_ws("- UIWorkshopRepair:Repair() | object with id (%s) is set to a new condition: %s", id, final_con)
+	else
+		printe("! UIWorkshopRepair:Repair() | object with id (%s) is either not found. Or didn't register new condition (%s)!", id, final_con)
+	end
+	
+	local result_part_tbl = {}
+	result_part_tbl[sec] = clamp(math.ceil(tot_con/cnt),1,100)
+	for i=1,#self.parts do
+		result_part_tbl[self.parts[i].sec] = self.parts[i].con
+	end
+	item_parts.set_parts_con(id, result_part_tbl)
+	
+	for k,v in pairs(result_part_tbl) do
+		ui_workshop.print_ws("~ UIWorkshopRepair:Repair() | item's new part table [%s] = %s",k,v)
+	end
+	
+	-- Effect
+	actor_effects.play_item_fx("craft_dummy")
+	
+	--self:Close()
+	
+	-- Keep the equipment window open
+	local function after_pause_for_item_creation3()
+		self.btn_repair:Enable(false) -- reset repair button
+		-- Redraw the brightness of the icons
+		for i=1,6 do
+			if self.parts[i] and self.parts[i].sec and (self.parts[i].sec ~= "na") and self.parts[i].con then
+				local obj_part = db.actor:object(self.parts[i].sec)
+				utils_xml.set_icon(self.parts[i].sec, obj_part == nil, self.itm_ico_temp[i], self.itm_ico[i])
+			end
+		end
+		
+		self:ListPartScheme() -- go back to the stage where the equipment is selected
+		return true -- stop TimeEvent
+	end
+	
+	-- Continue with the code after a pause so that old part gets released
+	CreateTimeEvent("pause_ID","Pause_for_item_creation3",0.01,after_pause_for_item_creation3) 
+end
+
+--######################################################################################################################
+--#															3. UPGRADE													#
+--######################################################################################################################
+-- Initializes the upgrade subclass
+local original_InitControls = ui_workshop.UIWorkshopUpgrade.InitControls
+ui_workshop.UIWorkshopUpgrade.InitControls = function(self, x, y)
+	original_InitControls(self, x, y)
+	
+	if upgrades_dont_require_repair_kits then
+		self.upgr_toolkit = 5	-- Dusty9261's change, I'm too lazy to check if it's needed anymore
+	end
+end
+
+
+-- Draws text when you hover the cursor over items
+ui_workshop.UIWorkshopUpgrade.Update = function(self)
+	CUIScriptWnd.Update(self)
+	
+	local info_box = self.owner.item_info
+	local upgr_box = self.owner.upgr_info
+	
+	-- Item upgrade repair kit
+	if not upgrades_dont_require_repair_kits then
+		if self.itm_ico_rq:IsCursorOverWindow() and self.upgr_toolkit then
+			self.update_cache["type"] = 1 -- reset cache
+			upgr_box:Update()
+			info_box:Update(nil,self.upgr_toolkit)
+			return
+		end
+	end
+	
+	-- Item cell containers
+	local found_cell = self.CC:Update(info_box)
+	if (found_cell) then
+		self.update_cache["type"] = 1 -- reset cache
+		upgr_box:Update()
+		return
+	end
+	
+	-- Upgrade tree
+	for k1,v1 in pairs(self.upgr_xml) do  
+		for k2,v2 in pairs(v1) do
+			if v2.pic:IsCursorOverWindow() and self.upgr[k1][k2] then
+				-- Cache
+				if (self.update_cache["type"] == 2) and (self.update_cache["k1"] == k1) and (self.update_cache["k2"] == k2) then
+					upgr_box:Update(self.update_cache["section"], self.update_cache["prereq"], self.update_cache["installed"])
+					return
+				end
+
+				local section = self.upgr[k1][k2].section
+				local installed = self.inst_upgr[section]
+				local prereq = ""
+				local t = self.upgr_flags[k1][k2]
+				local has_prereq = false
+				for i=1,#t do
+					if (not t[i]) then
+						local str = game.translate_string("st_ui_workshop_no_upgr_" .. tostring(i))
+						if (i == 1) then
+							local main_tool = self.upgr_toolkit or ""
+							str = strformat(str, ui_item.get_sec_name(main_tool))
+						elseif (i == 2) then
+							local tool = self.upgr[k1][k2].tool or ""
+							str = strformat(str, ui_item.get_sec_name(tool))
+						end
+						prereq = prereq .. "\\n - " .. str
+						has_prereq = true
+					end
+				end
+				if has_prereq then
+					prereq = game.translate_string("st_upgr_disable") .. prereq
+				elseif installed then
+					prereq = game.translate_string("st_upgr_installed")
+				end
+
+				-- Cache
+				self.update_cache["type"] = 2
+				self.update_cache["k1"] = k1
+				self.update_cache["k2"] = k2
+				self.update_cache["section"] = section
+				self.update_cache["installed"] = installed
+				self.update_cache["prereq"] = prereq
+				
+				upgr_box:Update(section, prereq, installed)
+				info_box:Update()
+				return
+				
+			-- Upgrade kit
+			elseif v2.itm:IsCursorOverWindow() and self.upgr[k1][k2] then
+			
+				self.update_cache["type"] = 1 -- reset cache
+				local tool = self.upgr[k1][k2].tool
+				if tool then
+					upgr_box:Update()
+					info_box:Update(nil,tool)
+					return
+				end
+			end
+		end
+	end
+	
+	upgr_box:Update()
+	info_box:Update()
+end
+
+-- Draws the possible upgrades and required upgrade kits
+ui_workshop.UIWorkshopUpgrade.ListUpgradeTree = function(self)
+	local obj = self.CC:GetCell_Selected(true)
+	if (not obj) then
+		return
+	end
+	
+	local xml = self.xml
+	local sec = obj:section()
+	
+	-- Setup item icon
+	utils_xml.set_upgr_icon(obj, sec, self.itm_ico_r, self.itm_ico_temp_r)
+	
+	-- Repair kit number
+	if not upgrades_dont_require_repair_kits then
+		self:SetkitInfo(self.upgr_toolkit, self.itm_num_rq, self.itm_ico_rq, self.itm_ico_temp_rq)
+	end
+	
+	-- Get upgrade tree
+	self.scroll_upgr:Clear()
+	self.upgr = utils_item.get_upgrades_tree(sec)
+	if not (self.upgr and is_not_empty(self.upgr)) then
+		return
+	end
+	
+	-- List upgrade tree
+	empty_table(self.upgr_xml)
+	local _st
+	for k1,v1 in pairs(self.upgr) do
+		_st = xml:InitStatic("workshop:upgrade:pic_upgr_form", nil)
+		self.upgr_idx[k1] = xml:InitTextWnd("workshop:upgrade:text_upgr_idx", _st)
+		self.upgr_idx[k1]:SetText(tostring(k1))
+		self.upgr_xml[k1] = {}
+		self.inst_upgr_xml[k1] = {}
+		for k2,v2 in pairs(v1) do
+			local t = {}
+			t.base = xml:InitStatic("workshop:upgrade:upgr_" .. tostring(k2),_st)
+			t.b = xml:InitStatic("workshop:upgrade:upgr:back",_st)
+			t.itm = xml:InitStatic("workshop:upgrade:upgr:ico",_st)
+			t.itm_temp = xml:InitStatic("workshop:upgrade:upgr:ico",_st)
+			t.txt = xml:InitTextWnd("workshop:upgrade:upgr:txt",_st)
+			t.pic = xml:InitStatic("workshop:upgrade:upgr:pic",_st)
+			--t.msk = xml:InitStatic("workshop:upgrade:upgr:mask",_st)
+			t.btn = xml:InitCheck("workshop:upgrade:upgr:btn",_st) --Init3tButton
+			
+			local offset_y = 0
+			if ((k2 == 1) and (not self.upgr[k1][2])) or ((k2 == 3) and (not self.upgr[k1][4])) or ((k2 == 5) and (not self.upgr[k1][6])) then
+				offset_y = 25
+			end
+			
+			
+			utils_xml.adjust_pos_to_element(t.base, 0, offset_y, t.b, t.itm, t.itm_temp, t.txt, t.pic, t.btn)
+			
+			-- Upgrade icon
+			t.pic:InitTexture(v2.icon)
+			t.pic:SetStretchTexture(true)
+			
+			-- Upgrade kit info
+			if v2.tool and ini_sys:section_exist(v2.tool) and (not upgrades_dont_require_upgrade_kits) then
+				self:SetkitInfo(v2.tool, t.txt, t.itm, t.itm_temp)
+			end
+			
+			self:Register(t.btn,"check_upgrade")
+			
+			self.inst_upgr_xml[k1][k2] = false
+			self.upgr_xml[k1][k2] = t
+		end
+		
+		self.scroll_upgr:AddWindow(_st, true)
+	end
+end
+
+-- Draws some stuff. Otherwise not sure about the function
+ui_workshop.UIWorkshopUpgrade.EvaluateUpgrades = function(self)
+	-- First we process the newely installed upgrade
+	for row,w in pairs(self.upgr) do
+		for col,v in pairs(w) do
+			if self.upgr_xml[row][col].btn:GetCheck()
+			and (not self.inst_upgr[v.section])
+			then
+				if not upgrades_dont_require_repair_kits then
+					self:DischargeKit(self.upgr_toolkit)
+				end
+				
+				if not upgrades_dont_require_upgrade_kits then
+					self:DischargeKit(v.tool)
+				end
+				self.inst_upgr[v.section] = true
+				
+				utils_obj.play_sound("interface\\inv_slot")
+			
+				ui_workshop.SetTip("upgrade_tip_3", nil, nil, nil, true, self.info_text)
+				
+				self.btn_upgrade:Enable(true)
+			end
+		end
+	end
+	
+	-- Lock/Unlock upgrades according to requirements
+	for row,w in pairs(self.upgr) do
+		for col,v in pairs(w) do
+			self:EvaluateUpgrade(row, col, v)
+		end
+	end
+	
+	-- Repair kit number after upgrading
+	if not upgrades_dont_require_repair_kits then
+		self:SetkitInfo(self.upgr_toolkit, self.itm_num_rq, self.itm_ico_rq, self.itm_ico_temp_rq)
+	end
+	
+	local main_tool = self.upgr_toolkit
+	if (main_tool and self.upgr_tools[main_tool] and is_not_empty(self.upgr_tools[main_tool])) or upgrades_dont_require_repair_kits then
+		ui_workshop.SetTip("upgrade_tip_1", "upgrade_warning_2", "upgrade_solution_2", nil, false, self.info_text)
+	else
+		ui_workshop.SetTip("upgrade_tip_1", "upgrade_warning_1", "upgrade_solution_1", self.upgr_toolkit, false, self.info_text)
+	end
+end
+
+-- Lock/Unlock upgrades according to requirements
+ui_workshop.UIWorkshopUpgrade.EvaluateUpgrade = function(self, row, col, info)
+	local flags = {}
+	local section = info.section
+	local st = self.upgr_xml[row][col]
+	
+	-- Don't process installed upgrades
+	if self.inst_upgr[section] then
+		st.btn:SetCheck(true)
+		
+	-- Process the rest
+	else
+		-- Flag 1: is workshop repair kit available
+		local main_tool = self.upgr_toolkit
+		if upgrades_dont_require_repair_kits then
+			flags[1] = true
+		else
+			flags[1] = main_tool and self.upgr_tools[main_tool] and is_not_empty(self.upgr_tools[main_tool]) and true or false
+		end
+		
+		-- Flag 2: is upgrade kit available
+		local tool = info.tool
+		if upgrades_dont_require_upgrade_kits then
+			flags[2] = true
+		else
+			flags[2] = tool and self.upgr_tools[tool] and is_not_empty(self.upgr_tools[tool]) and true or false
+		end
+		-- Flag 3: is main tool kit available
+		if upgrades_dont_require_tool_kits then
+			flags[3] = true
+		else
+			flags[3] = self.toolkits_state[ math.ceil(col/2) ] and true or false
+		end
+		
+		-- Flag 4: check if another upgrade in the same group is not installed
+		if (not info.solo) and (not Full_Upgrades_patch) then
+			local col_g = odd(col) and col+1 or col-1
+			local section_g = self.upgr[row][col_g].section
+			flags[4] = (not (section_g and self.inst_upgr[section_g])) and true or false
+		else
+			flags[4] = true 
+		end
+		
+		-- Flag 5: check if previous group has installed upgrade
+		local prev_installed = col <= 2 and true or false
+		if (not prev_installed) then
+			flags[5] = false
+			for c,v in pairs(self.upgr[row]) do
+				if v.effect and v.effect[section] and self.inst_upgr[v.section] then
+					flags[5] = true 
+					break
+				end
+			end
+		else
+			flags[5] = true 
+		end
+	end
+	
+	-- Result
+	local pass = true
+	for i,res in pairs(flags) do
+		pass = pass and res
+		--printf("flags [%s] %s: %s", section, i, res)
+	end
+	
+	-- Cache and Set
+	if (not pass) then
+		st.btn:SetCheck(false)
+	end
+	
+	st.btn:Enable(pass)
+	
+	if (not self.upgr_flags[row]) then
+		self.upgr_flags[row] = {}
+	end
+	self.upgr_flags[row][col] = flags
+	
+	-- Upgrade kit number after use
+	if not upgrades_dont_require_upgrade_kits then
+		self:SetkitInfo(info.tool, st.txt, st.itm, st.itm_temp)
+	end
+end
+
+-- Finalize the upgrade by adding upgrade to the equipment and discharging the kits after "upgrade" has been pressed
+ui_workshop.UIWorkshopUpgrade.Upgrade = function(self)
+	local obj = self.CC:GetCell_Selected(true)
+	if (not obj) then
+		return
+	end
+	
+	-- For weapons, unload mag and clear ammo cache in case of ammo type upgrades
+	if IsWeapon(obj) and (not IsItem("fake_ammo_wpn",obj:section())) then
+		obj:force_unload_magazine(true)
+		item_weapon.clear_cache(obj)
+	end
+	
+	-- Sort upgrades
+	k2t_table(self.inst_upgr)
+	local sort_tbl = {}
+	for i=1,#self.upgr_order do
+		for ii=1,#self.inst_upgr do
+			if string.find(self.inst_upgr[ii],self.upgr_order[i]) then
+				sort_tbl[#sort_tbl+1] = self.inst_upgr[ii]
+				break
+			end
+		end
+	end
+	
+	-- Install upgrades
+	inventory_upgrades.force_upgrade = true
+	for i=1,#sort_tbl do
+		--printf("installing: %s - for [%s]", sort_tbl[i], obj:name())
+		obj:install_upgrade(sort_tbl[i])
+	end
+	inventory_upgrades.force_upgrade = false
+
+	-- Discharge repair kits and/or upgrade kits
+	for i=1,#self.upgr_tools_pick do
+		local t_obj = level.object_by_id(self.upgr_tools_pick[i])
+		if t_obj then
+			utils_item.discharge(t_obj)
+		end
+	end
+	
+	-- Effect
+	if self.owner.dbg then
+	
+	else
+		actor_effects.play_item_fx("craft_dummy")
+	end
+
+	-- self:Close()
+	
+	local function reset_after_delay()
+		self:On_CC_Mouse1(nil, nil) -- resets to the stage you clicked on the equipment
+		return true -- stop the TimeEvent
+	end
+	-- Continue with the code after a pause so that items get discharged before updating the GUI
+	CreateTimeEvent("pause_ID","Pause_for_upgrade",0.01,reset_after_delay)
+end
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+-- Ordinary functions
+-----------------------------------------------------------------------------------------------------------------------
+-- If key is pressed and then released then open workshop window
+function on_key_release(key)
+	if (key == workshop_key) then
+		start_workshop()
+	end
+end
+
+-- Opens the workshop window
+local workshop_ui_ref
+function start_workshop() -- From Grok's Craft and Repair Overhaul - toolkits as workbench
+	local hud = get_hud()
+	if hud then
+		hud:HideActorMenu()
+	end
+	
+	workshop_ui_ref = ui_workshop.get_workshop_ui(_ui1, nil, nil, false) 
+	if (workshop_ui_ref) then
+		workshop_ui_ref:ShowDialog(true)
+	end	
+end
+
+-- Registers callbacks
+function on_game_start()
+	RegisterScriptCallback("on_key_release", on_key_release)
+	RegisterScriptCallback("on_option_change",on_option_change) -- MCM support
+	RegisterScriptCallback("actor_on_first_update", on_option_change) -- Load MCM settings at the start of session
+end
+
+-------------------------------------------------------------------
+-- MCM support
+-------------------------------------------------------------------
+-- Changes variables according to MCM settings
+function on_option_change()
+	if (ui_mcm) then -- Checks if MCM is installed
+		workshop_key = ui_mcm.get("banjajis_field_workshop/workshop_menu_key")
+		weapon_without_part_unusable = ui_mcm.get("banjajis_field_workshop/weapon_without_part_unusable")
+		--part_condition_variability = ui_mcm.get("banjajis_field_workshop/part_condition_variability")
+		
+		disassembly_tools_required = ui_mcm.get("banjajis_field_workshop/disassembly_tools_required")
+		tool_degradation_multiplier = ui_mcm.get("banjajis_field_workshop/tool_degradation_multiplier")
+		
+		armor_vanilla_mechanics = ui_mcm.get("banjajis_field_workshop/armor_vanilla_mechanics")
+		armor_repairs_dont_require_repair_kits = ui_mcm.get("banjajis_field_workshop/armor_repairs_dont_require_repair_kits")
+		
+		
+		upgrades_dont_require_tool_kits = ui_mcm.get("banjajis_field_workshop/upgrades_dont_require_tool_kits")
+		upgrades_dont_require_repair_kits = ui_mcm.get("banjajis_field_workshop/upgrades_dont_require_repair_kits")
+		upgrades_dont_require_upgrade_kits = ui_mcm.get("banjajis_field_workshop/upgrades_dont_require_upgrade_kits")
+		Full_Upgrades_patch = ui_mcm.get("banjajis_field_workshop/Full_Upgrades_patch")
+		
+		-- Completely reinits the workshop GUI. This is necessary because some MCM options change UI logic in the subclasses and this causes a crash
+		-- in case the old variables are used. This reinit is easier than understanding each and every line of code in this script.
+		ui_workshop.GUI = ui_workshop.UIWorkshop() 
+	end
+end

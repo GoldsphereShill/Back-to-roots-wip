@@ -1,0 +1,29 @@
+-- Constructs options for MCM.
+
+options = 
+{	
+	id = "banjajis_field_workshop", sh = true, gr = 
+	{
+		{id = "Title", type = "slide", text = "banjajis_field_workshop_title", link = "Banjaji_textures\\Banjaji_workshop.dds", size = {76, 50}, spacing = 20, stretch = false},
+		{id = "workshop_menu_key", type = "key_bind", val = 2, def = DIK_keys.DIK_J},
+		{id = "weapon_without_part_unusable", type = "check", val = 1, def = true},
+		--{id = "part_condition_variability", type = "track", val = 2, min = 0, max = 20, step = 1, def = 10},
+		
+		{id = "disassembly_tools_required", type = "check", val = 1, def = false},
+		{id = "tool_degradation_multiplier", type = "track", val = 2, min = 0, max = 10, step = 0.05, def = 0.5},
+		
+		{id = "armor_vanilla_mechanics", type = "check", val = 1, def = false},
+		{id = "armor_repairs_dont_require_repair_kits", type = "check", val = 1, def = false},
+		
+		{id = "upgrades_dont_require_tool_kits", type = "check", val = 1, def = false},
+		{id = "upgrades_dont_require_repair_kits", type = "check", val = 1, def = false},
+		{id = "upgrades_dont_require_upgrade_kits", type = "check", val = 1, def = false},
+		
+		{id = "Full_Upgrades_patch", type = "check", val = 1, def = false}
+    }
+}
+
+
+function on_mcm_load()
+    return options
+end
