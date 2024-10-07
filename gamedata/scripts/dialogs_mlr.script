@@ -1478,7 +1478,7 @@ function give_task_fanat_training_2()
 			break
 		end
 	end
-	local se_arty = box_id and alife_create("af_ball", VEC_ZERO, 0, 0, box_id, false)
+	local se_arty = box_id and alife_create("af_electra_sparkler", VEC_ZERO, 0, 0, box_id, false)
 	if (se_arty) then
 		alife():register(se_arty)
 	end
