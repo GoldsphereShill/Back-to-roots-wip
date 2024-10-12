@@ -1,6 +1,6 @@
 1) Maybe some suit balancing
 2) Exoseva
-3) Finishing integration of many mods
+3) Finishing integration of many mods (DONE!)
 4) Anomalite build script (yes we need this)
 5) Integrating minimod repository (this will take a while)
 6) Better upgrades 😭😭😢
@@ -14,7 +14,7 @@
 10) Completing the funny sound mod
 - Possibly add it the sounds to some mutants
 
-11)Toolkit revamp (it repairs parts now)
+11)Toolkit revamp (it repairs parts now) (DONE!!!)
 
 bolt_carrier, bolt, gas_tube, barrel
 barrel, gas_tube
