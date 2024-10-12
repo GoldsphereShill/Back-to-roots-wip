@@ -8,8 +8,16 @@
 - Detectors too
 7) Crafting revamp 😭😭😢
 - Outfit crafting
-8) Completing junk artifact removal
+8) Completing junk artifact removal (DONE!!!)
 9) Weapons balancing 😭😭😢
 - God have mercy on my soul
 10) Completing the funny sound mod
 - Possibly add it the sounds to some mutants
+
+11)Toolkit revamp (it repairs parts now)
+
+bolt_carrier, bolt, gas_tube, barrel
+barrel, gas_tube
+trigger_components, spring
+
+12)Disasemble for gun parts

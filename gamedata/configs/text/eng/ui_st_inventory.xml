@@ -1026,6 +1026,9 @@
 	<string id="st_ui_craft_outfits">
 		<text>Outfits</text>
 	</string>
+	<string id="st_ui_furniture">
+		<text>Furniture</text>
+	</string>
 	
 	<string id="st_ui_workshop_info_state_intro">
 		<text>The workshop allows you to repair, upgrade and craft items by yourself with the help of proper toolkits.
