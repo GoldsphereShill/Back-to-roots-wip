@@ -1,0 +1,232 @@
+class "UIToPray" (CUIScriptWnd)
+
+local dte = demonized_time_events
+
+local praying = false
+local praying_time = 0
+local near_loc = false
+
+local time_g = 0
+local timer_regen = time_global()
+local timer_sound = time_global()
+local heal_interval = 1750	--  update every 2000ms/2sec
+local sound_interval = 11*1000
+local start_tracking = false
+local start_tracking_sound = false
+local health_regen = 0.1
+local first = false
+
+local allowed_factions = { ["monolith"] = true, ["greh"] = true, ["isg"]=true, ["renegade"] = false}
+local HUD = nil
+local current_level = nil
+
+local sound_base = "characters_voice\\scenario\\sarcofag\\monolith_call_"
+
+local pray_loc = {
+	{pos = {-2.3736,3.6047,201.9532}, level = "l11_pripyat", range = 5},
+	{pos = {-174.7694,0.56518,-346.1294}, level = "pripyat", range = 3.5},
+	{pos = {-104.5522,4.5176,-104.9914}, level = "pripyat", range = 3.5},
+}
+
+function SaveNewLimbHealth()
+	utils_obj.save_var(db.actor,"health.head",zzz_player_injuries.health.head)
+	utils_obj.save_var(db.actor,"health.torso",zzz_player_injuries.health.torso)
+	utils_obj.save_var(db.actor,"health.rightarm",zzz_player_injuries.health.rightarm)
+	utils_obj.save_var(db.actor,"health.leftarm",zzz_player_injuries.health.leftarm)
+	utils_obj.save_var(db.actor,"health.rightleg",zzz_player_injuries.health.rightleg)
+	utils_obj.save_var(db.actor,"health.leftleg",zzz_player_injuries.health.leftleg)
+end
+
+local xml
+function UIToPray:__init() super()
+	self.ratio  = utils_xml.screen_ratio()
+	
+	xml  = CScriptXmlInit()
+	xml:ParseFile("pray_ui.xml")
+	self.key = xml:InitStatic("key", self)
+	self.key:TextControl():SetText("Hold (F) to Pray for the Monolith!")
+end
+
+function UIToPray:__finalize()
+end
+
+function activate_hud()
+	if not HUD then
+		HUD = UIToPray()
+	end
+	get_hud():AddDialogToRender(HUD)
+end
+function deactivate_hud()
+	if HUD then
+		get_hud():RemoveDialogToRender(HUD)
+		HUD = nil
+	end
+end
+
+function on_key_press(key)
+	if key == 33 and not praying and allowed_factions[get_actor_true_community()] then
+		first = true
+		praying = true
+		deactivate_hud()
+		db.actor:activate_slot(0)
+		RegisterScriptCallback("actor_on_update",praying_on_update)
+	end
+	if key == 36 then --- Test
+		zzz_player_injuries.health.torso = 1
+	end
+end
+
+function on_key_release(key)
+	if key == 33 and praying then
+		game.only_allow_movekeys(false)
+		activate_hud()
+		praying = false
+		UnregisterScriptCallback("actor_on_update",praying_on_update)
+	end
+end
+
+function playAmin()
+	if IsMoveState("mcClimb") then
+		return
+	end
+	--level.disable_input()
+	game.only_allow_movekeys(true)
+end
+
+function hide_detector()
+	det_active = db.actor:active_detector() or nil
+	if det_active then det_active:switch_state(2) end
+end
+
+function praying_on_update()
+	time_g = time_global()
+	playAmin()
+	if not start_tracking then
+		timer_regen = time_global()
+		start_tracking = true
+	elseif ((time_g - timer_regen) > heal_interval) then
+		db.actor:change_health(health_regen)
+		if zzz_player_injuries then
+			if zzz_player_injuries.health.head ~= zzz_player_injuries.maxhp.head then
+				zzz_player_injuries.health.head = zzz_player_injuries.health.head + 1
+			end
+			if zzz_player_injuries.health.torso ~= zzz_player_injuries.maxhp.torso then
+				zzz_player_injuries.health.torso = zzz_player_injuries.health.torso + 1
+			end
+			if zzz_player_injuries.health.rightarm ~= zzz_player_injuries.maxhp.rightarm then
+				zzz_player_injuries.health.rightarm = zzz_player_injuries.health.rightarm + 1
+			end
+			if zzz_player_injuries.health.leftarm ~= zzz_player_injuries.maxhp.leftarm then
+				zzz_player_injuries.health.leftarm = zzz_player_injuries.health.leftarm + 1
+			end
+			if zzz_player_injuries.health.rightleg ~= zzz_player_injuries.maxhp.rightleg then
+				zzz_player_injuries.health.rightleg = zzz_player_injuries.health.rightleg + 1
+			end
+			if zzz_player_injuries.health.leftleg ~= zzz_player_injuries.maxhp.leftleg then
+				zzz_player_injuries.health.leftleg = zzz_player_injuries.health.leftleg + 1
+			end
+			SaveNewLimbHealth()
+			timer_regen = time_global()
+			start_tracking = false
+		end
+	end
+	if not start_tracking_sound then
+		timer_sound = time_global()
+		start_tracking_sound = true
+	elseif ((time_g - timer_sound) > sound_interval) then
+		local sound_index = math.random(1, 14)
+		sound_ref = sound_object(sound_base.. sound_index)
+		sound_ref:play(db.actor, 0, sound_object.s2d)
+		sound_ref.volume = 1.4
+		sound_ref.frequency = 1
+		timer_sound = time_global()
+		start_tracking_sound = false
+	elseif first then
+		first = false
+		local sound_index = math.random(1, 14)
+		sound_ref = sound_object(sound_base.. sound_index)
+		sound_ref:play(db.actor, 0, sound_object.s2d)
+		sound_ref.volume = 1.4
+		sound_ref.frequency = 1
+	end
+end
+
+function actor_on_update()
+	--printf("level"..tostring(current_level))
+	local old_near_loc = near_loc
+	near_loc = false
+	for i,place in pairs(pray_loc) do
+		if current_level and current_level==place.level and db.actor:position():distance_to(vector():set(place.pos[1],place.pos[2],place.pos[3]))<place.range then
+			near_loc = true
+		end
+	end
+	if near_loc~=old_near_loc then
+		if near_loc then
+			activate_hud()
+			RegisterScriptCallback("on_key_press",on_key_press)
+			RegisterScriptCallback("on_key_release",on_key_release)
+		else
+			deactivate_hud()
+			UnregisterScriptCallback("actor_on_update",praying_on_update)
+			UnregisterScriptCallback("on_key_press",on_key_press)
+			UnregisterScriptCallback("on_key_release",on_key_release)
+			if praying then
+				game.only_allow_movekeys(false)
+				praying = false
+			end
+
+		end
+	end
+end
+
+function LevelCheck()
+	for i,place in pairs(pray_loc) do
+		if level.name()==place.level then
+			return true
+		end
+	end
+	return false
+end
+
+function on_level_changing()
+	if LevelCheck() then
+		RegisterScriptCallback("actor_on_update",actor_on_update)
+		current_level = level.name()
+	elseif current_level then
+		near_loc = false
+		deactivate_hud()
+		UnregisterScriptCallback("actor_on_update",praying_on_update)
+		UnregisterScriptCallback("on_key_press",on_key_press)
+		UnregisterScriptCallback("on_key_release",on_key_release)
+		UnregisterScriptCallback("actor_on_update",actor_on_update)
+		if praying then
+			praying = false
+			game.only_allow_movekeys(false)
+		end
+		current_level = nil
+	end
+end
+
+function actor_on_first_update()
+	if LevelCheck() then
+		RegisterScriptCallback("actor_on_update",actor_on_update)
+		current_level = level.name()
+	elseif current_level then
+		near_loc = false
+		deactivate_hud()
+		UnregisterScriptCallback("actor_on_update",praying_on_update)
+		UnregisterScriptCallback("on_key_press",on_key_press)
+		UnregisterScriptCallback("on_key_release",on_key_release)
+		UnregisterScriptCallback("actor_on_update",actor_on_update)
+		if praying then
+			praying = false
+			game.only_allow_movekeys(false)
+		end
+		current_level = nil
+	end
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_level_changing",on_level_changing)
+	RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+end
