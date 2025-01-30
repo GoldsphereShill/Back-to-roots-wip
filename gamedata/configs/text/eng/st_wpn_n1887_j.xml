@@ -1,0 +1,10 @@
+<string_table>
+			<string id="st_wpn_n1895_j">
+		<text>1887 Nagant</text>
+	</string>
+	<string id="st_wpn_n1895_j_descr">
+		<text>The Nagant M1887 revolver, an innovative design by Belgian brothers Émile and Léon Nagant, is a distinctive and powerful weapon with a unique gas-seal system. This seven-shot, double-action revolver is renowned for its ability to maintain a gas-tight seal between the cylinder and the barrel, enhancing muzzle velocity and accuracy. Adopted by the Russian Empire, this revolver features a solid frame, a distinctive reloading gate on the right side, and a folding loading rod. Its robust construction and reliable performance make it a favored sidearm for military and law enforcement, prized for its accuracy and durability. \n \n
+		%c[ui_gray_2]ATTACHMENTS: \n
+		%c[d_purple] - %c[ui_gray_2] Suppressor: 9mm Suppressor. \n </text>
+	</string>
+</string_table>
