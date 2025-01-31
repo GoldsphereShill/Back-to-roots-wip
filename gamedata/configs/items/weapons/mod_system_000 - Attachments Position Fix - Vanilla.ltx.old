@@ -1,0 +1,561 @@
+;-------------------------------------;
+;-- Weapon Attachments Position Fix --;
+;-- Vanilla weapons & icons version --;
+;-------------------------------------;
+
+;-------------- Pistols --------------;
+
+
+![wpn_aps]
+silencer_x = 86
+silencer_y = -16
+
+
+![wpn_beretta]
+silencer_x = 86
+silencer_y = -17
+
+
+![wpn_colt1911]
+silencer_x = 88
+silencer_y = -16
+
+![wpn_colt1911_alt]
+silencer_x = 88
+silencer_y = -16
+
+![wpn_colt1911_camo]
+silencer_x = 92
+silencer_y = -16
+
+![wpn_colt1911_custom]
+silencer_x = 89
+silencer_y = -16
+
+![wpn_colt1911_duty]
+silencer_x = 90
+silencer_y = -16
+
+![wpn_colt1911_merc]
+silencer_x = 92
+silencer_y = -16
+
+![wpn_colt1911_modern]
+silencer_x = 89
+silencer_y = -16
+
+![wpn_colt1911_new]
+silencer_x = 87
+silencer_y = -16
+
+
+![wpn_cz75]
+silencer_x = 69
+silencer_y = -15
+
+
+![wpn_fn57]
+silencer_x = 86
+silencer_y = -16
+
+
+![wpn_fnp45]
+silencer_x = 77
+silencer_y = -15
+
+
+![wpn_fort]
+silencer_x = 78
+silencer_y = -18
+
+
+![wpn_glock]
+silencer_x = 80
+silencer_y = -16
+
+
+![wpn_hpsa]
+silencer_x = 86
+silencer_y = -17
+
+
+![wpn_oc33]
+silencer_x = 75
+silencer_y = -18
+
+
+![wpn_sig220]
+silencer_x = 84
+silencer_y = -14
+
+![wpn_sig220_custom]
+silencer_x = 85
+silencer_y = -14
+
+![wpn_sig220_nimble]
+silencer_x = 85
+silencer_y = -14
+
+
+![wpn_usp]
+silencer_x = 84
+silencer_y = -15
+
+![wpn_usp_match]
+silencer_x = 87
+silencer_y = -13
+
+![wpn_usp_nimble]
+silencer_x = 80
+silencer_y = -13
+
+
+![wpn_walther]
+silencer_x = 73
+silencer_y = -15
+
+![wpn_walther_custom]
+silencer_x = 75
+silencer_y = -15
+
+
+;-------------- Shotguns -------------;
+
+
+![wpn_saiga12s]
+silencer_x = 224
+silencer_y = 12
+
+![wpn_vepr]
+silencer_x = 226
+silencer_y = 14
+
+
+;---------------- SMG ----------------;
+
+
+![wpn_bizon]
+silencer_x = 188
+silencer_y = 22
+
+
+![wpn_mp5]
+silencer_x = 188
+silencer_y = 14
+
+![wpn_mp5_custom]
+silencer_x = 190
+silencer_y = 14
+
+;-- has wrong silencer world model (9mm instead of gemtech)
+![wpn_mp5_nimble]
+silencer_x = 189
+silencer_y = 15
+
+
+![wpn_p90]
+silencer_x = 170
+silencer_y = 26
+
+
+![wpn_ump45]
+silencer_x = 171
+silencer_y = 13
+
+
+![wpn_vityaz]
+silencer_x = 182
+silencer_y = 14
+
+
+![wpn_kiparis]
+silencer_x = 140
+silencer_y = 13
+
+
+![wpn_pp2000]
+silencer_x = 136
+silencer_y = 13
+
+;-- has shitty silencer world model
+![wpn_mp7]
+silencer_x = 86
+silencer_y = 12
+
+
+![wpn_vz61]
+silencer_x = 91
+silencer_y = -13
+
+
+;-------------- Rifles ---------------;
+
+
+![wpn_mk14_ac10632]
+1icon_layer_x = 87
+1icon_layer_y = -1
+
+![wpn_mk14_acog]
+1icon_layer_x = 73
+1icon_layer_y = 1
+
+![wpn_mk14_c-more]
+1icon_layer_x = 86
+1icon_layer_y = 2
+
+![wpn_mk14_eot]
+1icon_layer_x = 85
+1icon_layer_y = 2
+
+
+![wpn_abakan]
+grenade_launcher_x = 118
+grenade_launcher_y = 23
+
+![wpn_abakan_kobra]
+1icon_layer_x = 68
+1icon_layer_y = 3
+
+![wpn_abakan_ps01]
+1icon_layer_x = 34
+1icon_layer_y = 3
+
+![wpn_abakan_camo_kobra]
+1icon_layer_x = 68
+1icon_layer_y = 3
+
+![wpn_abakan_camo_ps01]
+1icon_layer_x = 34
+1icon_layer_y = 3
+
+
+![wpn_aek]
+silencer_x = 222
+silencer_y = 10
+grenade_launcher_x = 120
+grenade_launcher_y = 19
+
+![wpn_aek_duty]
+silencer_x = 222
+silencer_y = 9
+grenade_launcher_x = 120
+grenade_launcher_y = 18
+
+
+![wpn_ak]
+silencer_x = 244
+silencer_y = 13
+grenade_launcher_x = 131
+grenade_launcher_y = 22
+
+
+![wpn_ak101]
+silencer_x = 225
+silencer_y = 15
+grenade_launcher_x = 118
+grenade_launcher_y = 21
+
+
+![wpn_ak102]
+silencer_x = 225
+silencer_y = 11
+
+;-- grenade launcher model disappears when silencer is attached
+![wpn_ak103]
+silencer_x = 222
+silencer_y = 14
+grenade_launcher_x = 117
+grenade_launcher_y = 21
+
+![wpn_ak103_camo]
+silencer_x = 224
+silencer_y = 15
+grenade_launcher_x = 119
+grenade_launcher_y = 21
+
+
+![wpn_ak104]
+silencer_x = 225
+silencer_y = 14
+
+;-- has ATG silencer model instead of TGP-A
+![wpn_ak12]
+silencer_x = 216
+silencer_y = 16
+grenade_launcher_x = 108
+grenade_launcher_y = 25
+
+
+![wpn_ak74]
+silencer_x = 224
+silencer_y = 12
+grenade_launcher_x = 116
+grenade_launcher_y = 21
+
+![wpn_ak74_alt]
+silencer_x = 226
+silencer_y = 11
+grenade_launcher_x = 118
+grenade_launcher_y = 19
+
+![wpn_ak74_custom]
+silencer_x = 226
+silencer_y = 12
+grenade_launcher_x = 118
+grenade_launcher_y = 21
+
+![wpn_ak74_modern]
+silencer_x = 226
+silencer_y = 12
+grenade_launcher_x = 118
+grenade_launcher_y = 21
+
+![wpn_ak74_old]
+silencer_x = 225
+silencer_y = 11
+grenade_launcher_x = 118
+grenade_launcher_y = 19
+
+![wpn_ak74_rpk]
+silencer_x = 224
+silencer_y = 9
+grenade_launcher_x = 118
+grenade_launcher_y = 18
+
+;-- skipping w_ak74m.ltx for now, there is almost no imperfections (~1px)
+
+![wpn_akm]
+silencer_x = 240
+silencer_y = 12
+grenade_launcher_x = 129
+grenade_launcher_y = 19
+
+![wpn_akms]
+silencer_x = 238
+silencer_y = 15
+grenade_launcher_x = 129
+grenade_launcher_y = 22
+
+![wpn_akms_alt]
+grenade_launcher_x = 127
+grenade_launcher_y = 23
+
+
+![wpn_aks]!!!
+silencer_x = 244
+silencer_y = 15
+grenade_launcher_x = 131
+grenade_launcher_y = 23
+
+
+![wpn_aks74]
+grenade_launcher_x = 117
+grenade_launcher_y = 21
+
+![wpn_aks74_new]
+grenade_launcher_x = 117
+grenade_launcher_y = 20
+
+
+![wpn_aug]
+silencer_x = 223
+silencer_y = 14
+
+
+![wpn_fal]
+silencer_x = 224
+silencer_y = 24
+
+;-- wrong weapon scale compare to attachments
+![wpn_g36]
+silencer_x = 224
+silencer_y = 17
+grenade_launcher_x = 134
+grenade_launcher_y = 32
+
+;-- wpn_g36k icon has mismatch with model, so, i don't touch silencer, it looks ok
+
+![wpn_g3]
+silencer_x = 216
+silencer_y = 20
+
+
+![scope_galil]
+scope_x = 54
+scope_y = -1
+
+;-- custom silencer?
+![wpn_hk416]
+silencer_x = 220 ;227
+silencer_y = 15
+grenade_launcher_x = 154
+grenade_launcher_y = 30
+
+
+![wpn_l85]
+silencer_x = 209
+silencer_y = 16
+
+;-- wrong weapon scale compare to attachments
+![wpn_lr300]
+silencer_x = 230
+silencer_y = 13
+grenade_launcher_x = 142
+grenade_launcher_y = 30
+
+
+![wpn_m4]
+silencer_x = 218
+silencer_y = 15
+grenade_launcher_x = 144
+grenade_launcher_y = 29
+
+
+![wpn_m4a1]
+silencer_x = 220
+silencer_y = 19
+grenade_launcher_x = 132
+grenade_launcher_y = 34
+
+
+![wpn_rpk74]
+silencer_x = 240
+silencer_y = 11
+
+;-- wpn_scar is almost fine
+
+![wpn_sig550]
+silencer_x = 215
+silencer_y = 20
+grenade_launcher_x = 143
+grenade_launcher_y = 34
+
+![wpn_sig550_luckygun]
+grenade_launcher_x = 133
+grenade_launcher_y = 33
+
+;-- icon has mismatch with model
+![wpn_xm8]
+silencer_x = 234
+silencer_y = 16
+
+
+![scope_type63]
+scope_x = 68
+scope_y = -28
+
+
+![wpn_ace21]!!!!
+silencer_x = 175
+silencer_y = 14
+
+
+![wpn_9a91]
+silencer_x = 180
+silencer_y = 16
+
+
+![wpn_ak74u]!!!
+silencer_x = 176
+silencer_y = 12
+
+![wpn_ak74u_old]!!!
+silencer_x = 177
+silencer_y = 11
+
+;-- icon has mismatch with model
+![wpn_famas3]
+silencer_x = 172
+silencer_y = 14
+
+;-- icon has mismatch with model
+![wpn_fn2000]
+silencer_x = 182
+silencer_y = 15
+
+![wpn_fn2000_nimble]
+silencer_x = 180
+silencer_y = 13
+
+;-- scope icon has been mirrored, so, don't care
+![scope_groza_po4x34]
+scope_x = 58
+scope_y = -15
+
+
+![wpn_sig552]
+silencer_x = 170
+silencer_y = 22
+
+
+![wpn_vihr]
+silencer_x = 186
+silencer_y = 9
+
+
+;-------------- Sniper ---------------;
+
+
+![wpn_sr25]
+silencer_x = 202
+silencer_y = 20
+grenade_launcher_x = 122
+grenade_launcher_y = 31
+
+
+![wpn_remington700]
+silencer_x = 283
+silencer_y = 16
+
+;-- silencer (sr-25) has no visible model and coordinates at all
+![wpn_m98b]
+silencer_x = 220
+silencer_y = 20
+
+
+![wpn_sig550_sniper]
+silencer_x = 256
+silencer_y = 18
+
+
+![wpn_svd]
+silencer_x = 270
+silencer_y = 18
+
+![wpn_svd_nimble]
+silencer_x = 270
+silencer_y = 18
+
+
+![scope_mosin]
+scope_x = 84
+scope_y = -24
+
+
+![scope_sks]
+scope_x = 58
+scope_y = -24
+
+;-- its not same PU scope
+![scope_svt40]
+scope_x = 55
+scope_y = -21
+
+
+![wpn_k98]
+silencer_x = 274
+silencer_y = -16
+
+![scope_k98]
+scope_x = 91
+scope_y = -27
+
+;-- silencer KZRZP has no visible model
+![wpn_wa2000]
+silencer_x = 271
+silencer_y = 25
+
+
+
+
+

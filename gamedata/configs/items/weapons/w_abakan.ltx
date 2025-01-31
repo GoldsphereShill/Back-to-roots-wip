@@ -21,8 +21,9 @@
         
         inv_grid_height             = 2
         inv_grid_width              = 5
-        inv_grid_x                  = 25
+        inv_grid_x                  = 25;0
         inv_grid_y                  = 0
+	;icons_texture				= wpn\wpn_abakan_icon
         inv_name                    = st_wpn_abakan
         inv_name_short              = st_wpn_abakan
         description                 = st_wpn_abakan_descr
@@ -79,6 +80,8 @@
         scope_zoom_factor           = 0
         
         silencer_status             = 0
+	;silencer_x                  = 227
+	;silencer_y                  = 4
         silencer_light_color        = 0.6, 0.5, 0.3
         silencer_light_range        = 0.01
         silencer_light_time         = 0.2
@@ -101,6 +104,7 @@
         rpm                         = 600
         rpm_mode_2                  = 1800
         rpm_empty_click             = 200
+	cycle_down                  = true
         base_dispersioned_bullets_count = 2
         base_dispersioned_bullets_speed = 900
         
@@ -164,7 +168,7 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_hud]:hud_base
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_hud.ogf; As it should be (changed from: anomaly_weapons\wpn_abakan\wpn_abakan_hud.ogf)
         attach_place_idx            = 0
         zoom_hide_crosshair         = true
         
@@ -176,13 +180,13 @@ control_inertion_factor = 1.0f
         hands_orientation           = 2, 2, 0
         hands_orientation_16x9      = 2, 2, 0
         
-        aim_hud_offset_pos          = -0.0932, 0.0786, -0.25
-        aim_hud_offset_pos_16x9     = -0.0932, 0.0786, -0.25
-        aim_hud_offset_rot          = 0.0375, 0.03455, 0
-        aim_hud_offset_rot_16x9     = 0.0375, 0.03455, 0
+        aim_hud_offset_pos          = -0.09195, 0.07, -0.2
+        aim_hud_offset_pos_16x9     = -0.09195, 0.07, -0.2
+        aim_hud_offset_rot          = 0.025, 0.035, 0
+        aim_hud_offset_rot_16x9     = 0.025, 0.035, 0
         
-        gl_hud_offset_pos           = -0.054, 0.025, -0.25
-        gl_hud_offset_pos_16x9      = -0.054, 0.025, -0.25
+        gl_hud_offset_pos           = -0.054, 0.025, -0.2
+        gl_hud_offset_pos_16x9      = -0.054, 0.025, -0.2
         gl_hud_offset_rot           = -0.076, 0.03275, 0
         gl_hud_offset_rot_16x9      = -0.076, 0.03275, 0
         
@@ -238,7 +242,7 @@ control_inertion_factor = 1.0f
 [wpn_abakan_1p29]:wpn_abakan
         1icon_layer                 = 1p29
         1icon_layer_x               = 57
-        1icon_layer_y               = 0
+        1icon_layer_y               = 0;-4
         
         inv_weight                  = 4.65
         
@@ -255,22 +259,19 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_1p29_hud]:wpn_abakan_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_1p29_hud.ogf
-        
-        aim_hud_offset_pos          = -0.08535, 0.0342, -0.3
-        aim_hud_offset_pos_16x9     = -0.08535, 0.0342, -0.3
-        aim_hud_offset_rot          = 0.019, 0.0342, 0.005
-        aim_hud_offset_rot_16x9     = 0.019, 0.0342, 0.005
-		aim_hud_offset_alt_pos		= -0.09295, 0.074, -0.250
-		aim_hud_offset_alt_pos_16x9 = -0.09295, 0.074, -0.250
-		aim_hud_offset_alt_rot		= 0.03255, 0.03455, 0
-		aim_hud_offset_alt_rot_16x9 = 0.03255, 0.03455, 0
+
+		item_visual                	= dynamics\weapons\wpn_abakan\wpn_abakan_1p29_hud.ogf
+
+		aim_hud_offset_pos			= -0.09835, 0.0442, -0.15
+		aim_hud_offset_rot			= 0.019, 0.0342, 0.005
+		aim_hud_offset_pos_16x9 	= -0.09835, 0.0442, -0.15
+		aim_hud_offset_rot_16x9 	= 0.019, 0.0342, 0.005
  
 ;------------------------------------------------------------------------------------------------
 [wpn_abakan_kobra]:wpn_abakan
         1icon_layer                 = kobra
         1icon_layer_x               = 68
-        1icon_layer_y               = 3;4
+        1icon_layer_y               = 3;-3
         
         inv_weight                  = 4.25
         
@@ -279,18 +280,18 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_kobra_hud]:wpn_abakan_1p29_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_kobra_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_kobra_hud.ogf
         
-        aim_hud_offset_pos          = -0.085300, 0.034310, -0.3
-        aim_hud_offset_pos_16x9     = -0.085300, 0.034310, -0.3
-        aim_hud_offset_rot          = 0.019000, 0.034200, 0.005000
-        aim_hud_offset_rot_16x9     = 0.019000, 0.034200, 0.005000
+		aim_hud_offset_pos			= -0.0918, 0.0373, -0.295
+		aim_hud_offset_rot			= 0.019, 0.0342, 0.005
+		aim_hud_offset_pos_16x9		= -0.0918, 0.0373, -0.295
+		aim_hud_offset_rot_16x9 	= 0.019, 0.0342, 0.005
  
 ;------------------------------------------------------------------------------------------------
 [wpn_abakan_ps01]:wpn_abakan
         1icon_layer                 = ps01
         1icon_layer_x               = 34;40
-        1icon_layer_y               = 3
+        1icon_layer_y               = 3;-6
         
         inv_weight                  = 4.43
         
@@ -305,8 +306,8 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_pso1_hud]:wpn_abakan_hud
-        aim_hud_offset_pos          = -0.0795, 0.057, -0.25
-        aim_hud_offset_pos_16x9     = -0.0795, 0.057, -0.25
+		aim_hud_offset_pos			= -0.0795, 0.057, -0.1
+		aim_hud_offset_pos_16x9 	= -0.0795, 0.057, -0.1
 
 
 ;------------------------------------------------------------------------------------------------
@@ -317,21 +318,18 @@ control_inertion_factor = 1.0f
         
         inv_grid_height             = 2
         inv_grid_width              = 5
-        inv_grid_x                  = 25
+        inv_grid_x                  = 25;0
         inv_grid_y                  = 2
+	;icons_texture				= wpn\wpn_abakan_icon
         inv_name                    = st_wpn_abakan_camo
         inv_name_short              = st_wpn_abakan_camo
-        
+		
         cost                        = 40860
         
         hud                         = wpn_abakan_sk1_hud
         visual                      = dynamics\weapons\wpn_abakan\wpn_abakan_sk1.ogf
         
         installed_upgrades          = up_firsta_abakan, up_fiftha_abakan
-        
-        bullet_speed                = 908
-        rpm                         = 620
-        rpm_mode_2                  = 1240
         
         fire_dispersion_base        = 0.24
         
@@ -340,13 +338,13 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_sk1_hud]:wpn_abakan_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_sk1_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_sk1_hud.ogf
 
 ;------------------------------------------------------------------------------------------------
 [wpn_abakan_camo_1p29]:wpn_abakan_camo
         1icon_layer                 = 1p29
         1icon_layer_x               = 57
-        1icon_layer_y               = 0
+        1icon_layer_y               = 0;-4
         
         inv_weight                  = 4.65
         
@@ -362,13 +360,13 @@ control_inertion_factor = 1.0f
 		use_alt_aim_hud				= true
  
 [wpn_abakan_1p29_sk1_hud]:wpn_abakan_1p29_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_1p29_sk1_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_1p29_sk1_hud.ogf
  
 ;------------------------------------------------------------------------------------------------
 [wpn_abakan_camo_kobra]:wpn_abakan_camo
         1icon_layer                 = kobra
         1icon_layer_x               = 68
-        1icon_layer_y               = 3;4
+        1icon_layer_y               = 3;-3
         
         inv_weight                  = 4.25
         
@@ -377,18 +375,18 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_kobra_sk1_hud]:wpn_abakan_1p29_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_kobra_sk1_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_kobra_sk1_hud.ogf
         
-        aim_hud_offset_pos          = -0.085300, 0.034310, -0.3
-        aim_hud_offset_pos_16x9     = -0.085300, 0.034310, -0.3
-        aim_hud_offset_rot          = 0.019000, 0.034200, 0.005000
-        aim_hud_offset_rot_16x9     = 0.019000, 0.034200, 0.005000
+		aim_hud_offset_pos			= -0.0918, 0.0373, -0.295
+		aim_hud_offset_rot			= 0.019, 0.0342, 0.005
+		aim_hud_offset_pos_16x9		= -0.0918, 0.0373, -0.295
+		aim_hud_offset_rot_16x9 	= 0.019, 0.0342, 0.005
  
 ;------------------------------------------------------------------------------------------------
 [wpn_abakan_camo_ps01]:wpn_abakan_camo
         1icon_layer                 = ps01
         1icon_layer_x               = 34;40
-        1icon_layer_y               = 3
+        1icon_layer_y               = 3;-6
         
         inv_weight                  = 4.43
         
@@ -403,5 +401,5 @@ control_inertion_factor = 1.0f
  
 
 [wpn_abakan_pso1_sk1_hud]:wpn_abakan_pso1_hud
-        item_visual                 = anomaly_weapons\wpn_abakan\wpn_abakan_sk1_hud.ogf
+        item_visual                 = dynamics\weapons\wpn_abakan\wpn_abakan_sk1_hud.ogf
  
