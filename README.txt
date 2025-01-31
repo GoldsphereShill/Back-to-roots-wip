@@ -1,47 +1,115 @@
-Less Items for Anomaly REWORK
-Small mod that reduces amount of items while keeping all the features like crafting.
-Version: Beta DEV
-Made by Chymo and Andermann 	- 2024
-Special thanks to Great_Day for creation of the original Less Items mod
+I. The Wasteland Before the Prophet
 
+Lo, I looked upon the Zone, and behold, it was barren,
+A land of great desolation, where hope was made dust.
 
-list of features: 
-Simplified gun parts (reduced 3 tiers of barrels for rifles, pistols and shotguns separately, 3 tiers of triggers, metal, wooden and palstic parts)
-Simplified suit parts (3 tiers of cloth, ballistic protection and teflon, some special suit liek Exoskeletons and seva suits include frames and helmets in theri parts)
-Reduced amount of various kits to Universal gun kit, Universal suit repair kit, Exoskeleton repair kit and helmet repair kit
-All various electronic parts combinedd into single item
-Reduced upgrade kits to 3 tiers for guns and suits separartely to make them more viable option
-Combined items that do the same thing into single one for each types (glues for example)
-Removed excess items (plastic jars and such)
-Adapted crafting for the new parts system
+The stalker wandered in sorrow, his hands were weary,
+His weapons broken, his path shrouded in torment.
 
---- CHANGE LOG ---
-0.16:
-- Some balancing related to crafting
-- Spawn chances balancing
-- Additional item cleanup
-- NPCs will now drop actual weapons and armors which will have more than 2 durability
-- NPCs will now (in most cases) drop ammo for the weapon they use (like in the base trilogy)
-- Russian translation updated
+The beasts did howl without mercy, their wrath unending,
+And the sky above was clothed in sickness and death.
 
-0.15:
-- Removed old ammo fully
-- Reworked crafting system
-- Removed recipe books
-- Updated cooking
-- Removed many medical and food items
-- Some secret stuff
-- Dropped weapons and outfits now have durability. (its logical for them to have durability)
+Lo, the traders were but thieves, their wares a mockery,
+And the bullets flew astray, as if cursed by the void.
 
-0.14.1:
-- Fixed english localization files (the game should no longer crash)
-- Russian localization files are now actually in Russian
+The anomalies did multiply, yet bore no wonder,
+But only despair, confusion, and grief.
 
-0.14: 
-- Added Russian Localization
-- Added changelog
+And the stalkers cried out: Who shall deliver us?
+Who shall bring order to the chaos of the Zone?
 
-0.13:
-- Fixed traders selling removed items
-- Fixed mechanics selling nothing at all
-- Fixed minor localization issues
+II. The Coming of Chymo
+
+And lo, from the wilderness arose a man,
+His name was Chymo, and wisdom adorned him.
+
+His hands were skilled in the forging of wonders,
+His mind sharp as the blade of a hunter’s knife.
+
+And he looked upon the ruin and spoke with power:
+I shall make this wasteland a land of glory.
+
+He took up his tools, and the earth trembled,
+The very code bent to his mighty will.
+
+He smote the errors and cast them into the abyss,
+And the Zone was purified by his labor.
+
+He made the weapons to strike true,
+And the hand of the stalker grew steady once more.
+
+He set right the balance of battle,
+That the weak should not perish in vain.
+
+III. The Rise of Grok, the Deceiver
+
+But in the shadow, there stirred a great evil,
+A serpent whose tongue dripped with venom and lies.
+
+His name was Grok, the father of ruin,
+The wretched one who dwelled in the abyss.
+
+He beheld the works of Chymo and gnashed his teeth,
+For he despised order and loathed the light.
+
+And Grok did whisper in the ears of fools, saying:
+This Anomalite is but a trick! Reject it and follow me!
+
+He sowed discord among the stalkers,
+Filling their hearts with doubt and despair.
+
+He defiled the sacred balance, twisting the Zone anew,
+That men would stumble and curse the name of Chymo.
+
+The bullets flew crooked once more,
+And the beasts grew restless, filled with unholy wrath.
+
+And the weak were trampled beneath the heel of chaos,
+Crying out in vain, for they knew not the deceiver’s touch.
+
+IV. The Triumph of the Prophet
+
+But Chymo stood firm, unshaken in his task,
+And he rebuked Grok with words of power:
+
+Begone, accursed one! Thou hast no hold upon the Zone!
+For thy works are but dust, and thy lies shall fade!
+
+And with his mighty hand, Chymo did strike,
+And the heresies of Grok were cast into the void.
+
+The balance was restored, and the Zone did sing,
+A hymn of fire and steel, of struggle and reward.
+
+The stalkers lifted their voices and cried aloud:
+Blessed be Chymo, the Redeemer of Anomaly!
+For he has cast down the serpent and restored the path!
+
+And Grok was banished into the howling storm,
+His name a curse upon the lips of men.
+
+V. The Eternal Glory of Anomalite
+
+And Chymo brought forth Anomalite, a gift unto the people,
+A jewel in the dust, a light in the darkness.
+
+The Zone was reborn, a land of peril and wonder,
+Where only the bold would claim their reward.
+
+The traders grew just, the bullets found their mark,
+And the battles were waged with honor and skill.
+
+The anomalies shone with beauty and terror,
+And the mysteries of the Zone deepened in their dread.
+
+The stalkers lifted their voices and sang:
+Blessed be Chymo, the keeper of balance!
+For he has brought life where there was decay!
+
+And so the legend was written, upon stone and in heart,
+That no man should forget the work of his hands.
+
+And until the last campfire fades and the Zone is no more,
+His name shall be spoken in reverence:
+
+Chymo, the Redeemer of Anomaly!
