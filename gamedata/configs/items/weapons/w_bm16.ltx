@@ -200,32 +200,7 @@ control_inertion_factor = 1.0f
 		freelook_z_offset_mul		= 0.8
  
 ;------------------------------------------------------------------------------------------------
-[wpn_bm16_alt]:wpn_bm16
-        inv_grid_y                  = 56
-        inv_name                    = st_wpn_bm16_alt
-        inv_name_short              = st_wpn_bm16_alt
-        
-        cost                        = 12850
-        
-        hud                         = wpn_bm16_sk1_hud
-        visual                      = dynamics\weapons\wpn_bm16\wpn_bm16_sk1.ogf
-        
-        installed_upgrades          = up_secona_bm16
-        
-        fire_dispersion_base        = 0.8
-        
-        misfire_start_condition     = 0.7 ;  0.83
-        misfire_start_prob          = 0.007
-        misfire_end_condition       = 0.09
-        misfire_end_prob            = 0.11
-        
-        condition_queue_shot_dec    = 0.0017
-        condition_shot_dec          = 0.0024
- 
 
-[wpn_bm16_sk1_hud]:wpn_bm16_hud
-        item_visual                 = anomaly_weapons\wpn_bm16\wpn_bm16_sk1_hud.ogf
- 
 ;------------------------------------------------------------------------------------------------
 [wpn_bm16_full]:wpn_bm16,wpn_bm16full_sounds
         hand_dependence             = 1
@@ -300,29 +275,3 @@ control_inertion_factor = 1.0f
         zoom_hide_crosshair         = true
  
 ;------------------------------------------------------------------------------------------------
-[wpn_bm16_full_alt]:wpn_bm16_full
-        inv_grid_y                  = 31
-        inv_name                    = st_wpn_bm16_full_alt
-        inv_name_short              = st_wpn_bm16_full_alt
-        
-        cost                        = 18250
-        
-        hud                         = wpn_bm16_full_sk1_hud
-        visual                      = dynamics\weapons\wpn_bm16\wpn_bm16_full_sk1.ogf
-        
-        installed_upgrades          = up_firsta_bm16_full
-        
-        fire_dispersion_base        = 0.4
-        
-        misfire_start_condition     = 0.7 ;  0.79
-        misfire_start_prob          = 0.003
-        misfire_end_condition       = 0.08
-        misfire_end_prob            = 0.02
-        
-        condition_queue_shot_dec    = 0.0016
-        condition_shot_dec          = 0.0023
- 
-
-[wpn_bm16_full_sk1_hud]:wpn_bm16_full_hud
-        item_visual                 = anomaly_weapons\wpn_bm16\wpn_bm16_full_sk1_hud.ogf
- 
