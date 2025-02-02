@@ -162,3 +162,1566 @@
         item_visual                 = dynamics\weapons\wpn_knife\wpn_knife_nr40_hud.ogf
  
 ;------------------------------------------------------------------------------------------------
+;;;;------------------w_mp5.ltx--------------------
+;------------------------------------------------------------------------------------------------
+;-- MP5 (Alt)
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_alt]:wpn_mp5
+parent_section                           = wpn_mp5_alt
+
+inv_grid_y                               = 14
+inv_name                                 = st_wpn_mp5_alt
+inv_name_short                           = st_wpn_mp5_alt
+
+cost                                     = 22350
+
+hud                                      = wpn_mp5_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_sk2.ogf
+
+installed_upgrades                       =
+
+rpm                                      = 813
+
+fire_dispersion_base                     = 0.45
+
+misfire_start_condition                  = 0.7 ;  0.83
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.11
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+
+[wpn_mp5_sk2_hud]:wpn_mp5_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_alt_ac10632]:wpn_mp5_alt
+1icon_layer                              = ac10632
+1icon_layer_x                            = 88
+1icon_layer_y                            = -10
+
+inv_weight                               = 3.215
+
+hud                                      = wpn_mp5_ac10632_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_ac10632_sk2.ogf
+
+
+[wpn_mp5_ac10632_sk2_hud]:wpn_mp5_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_ac10632_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_alt_acog]:wpn_mp5_alt
+1icon_layer                              = acog
+1icon_layer_x                            = 87
+1icon_layer_y                            = -8
+
+inv_weight                               = 3.5
+
+hud                                      = wpn_mp5_acog_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_acog_sk2.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_mp5_acog_sk2_hud]:wpn_mp5_acog_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_acog_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_alt_eot]:wpn_mp5_alt
+1icon_layer                              = eot
+1icon_layer_x                            = 88
+1icon_layer_y                            = -4
+
+inv_weight                               = 3.41
+
+hud                                      = wpn_mp5_eot_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_eot_sk2.ogf
+
+
+[wpn_mp5_eot_sk2_hud]:wpn_mp5_eot_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_eot_sk2_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+;-- MP5 (Custom)
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_custom]:wpn_mp5
+parent_section                           = wpn_mp5_custom
+
+inv_grid_y                               = 12
+inv_name                                 = st_wpn_mp5_custom
+inv_name_short                           = st_wpn_mp5_custom
+
+cost                                     = 23680
+
+hud                                      = wpn_mp5_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_sk1.ogf
+
+installed_upgrades                       = up_thirda_mp5, up_fiftha_mp5
+
+rpm                                      = 830
+
+fire_dispersion_base                     = 0.43
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.00073
+condition_shot_dec                       = 0.00073
+
+silencer_x                               = 190;185
+silencer_y                               = 14;13
+
+[wpn_mp5_sk1_hud]:wpn_mp5_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_custom_ac10632]:wpn_mp5_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 88
+1icon_layer_y                            = -10
+
+inv_weight                               = 3.215
+
+hud                                      = wpn_mp5_ac10632_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_ac10632_sk1.ogf
+
+[wpn_mp5_ac10632_sk1_hud]:wpn_mp5_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_ac10632_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_custom_acog]:wpn_mp5_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 87
+1icon_layer_y                            = -8
+
+inv_weight                               = 3.5
+
+hud                                      = wpn_mp5_acog_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_acog_sk1.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_mp5_acog_sk1_hud]:wpn_mp5_acog_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_acog_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5_custom_eot]:wpn_mp5_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 88
+1icon_layer_y                            = -4
+
+inv_weight                               = 3.41
+
+hud                                      = wpn_mp5_eot_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5\wpn_mp5_eot_sk1.ogf
+
+
+[wpn_mp5_eot_sk1_hud]:wpn_mp5_eot_hud
+item_visual                              = anomaly_weapons\wpn_mp5\wpn_mp5_eot_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+;-- MP5SD (Custom)
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_custom]:wpn_mp5sd
+parent_section                           = wpn_mp5sd_custom
+
+inv_grid_y                               = 22
+inv_name                                 = st_wpn_mp5sd_custom
+inv_name_short                           = st_wpn_mp5sd_custom
+
+cost                                     = 24560
+
+hud                                      = wpn_mp5sd_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_sk1.ogf
+
+installed_upgrades                       = up_fourta_mp5sd
+
+rpm                                      = 835
+
+fire_dispersion_base                     = 0.46
+
+misfire_start_condition                  = 0.77
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.00074
+condition_shot_dec                       = 0.00074
+
+
+[wpn_mp5sd_sk1_hud]:wpn_mp5sd_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_custom_ac10632]:wpn_mp5sd_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 74
+1icon_layer_y                            = -5
+
+inv_weight                               = 3.085
+
+hud                                      = wpn_mp5sd_ac10632_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_ac10632_sk1.ogf
+
+
+[wpn_mp5sd_ac10632_sk1_hud]:wpn_mp5sd_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_ac10632_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_custom_acog]:wpn_mp5sd_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 74
+1icon_layer_y                            = -2
+
+inv_weight                               = 3.37
+
+hud                                      = wpn_mp5sd_acog_sk1_hud
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_mp5sd_acog_sk1_hud]:wpn_mp5sd_acog_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_acog_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_custom_eot]:wpn_mp5sd_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 81
+1icon_layer_y                            = 1
+
+inv_weight                               = 3.28
+
+hud                                      = wpn_mp5sd_eot_sk1_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_eot_sk1.ogf
+
+
+[wpn_mp5sd_eot_sk1_hud]:wpn_mp5sd_eot_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_eot_sk1_hud.ogf
+
+
+;------------------------------------------------------------------------------------------------
+;-- MP5SD (New)
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_new]:wpn_mp5sd
+parent_section                           = wpn_mp5sd_new
+
+inv_grid_y                               = 24
+inv_name                                 = st_wpn_mp5sd_new
+inv_name_short                           = st_wpn_mp5sd_new
+
+cost                                     = 22650
+
+hud                                      = wpn_mp5sd_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_sk2.ogf
+
+rpm                                      = 820
+
+fire_dispersion_base                     = 0.49
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.0008
+condition_shot_dec                       = 0.0008
+
+
+[wpn_mp5sd_sk2_hud]:wpn_mp5sd_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_new_ac10632]:wpn_mp5sd_new
+1icon_layer                              = ac10632
+1icon_layer_x                            = 74
+1icon_layer_y                            = -5
+
+inv_weight                               = 3.085
+
+hud                                      = wpn_mp5sd_ac10632_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_ac10632_sk2.ogf
+
+
+[wpn_mp5sd_ac10632_sk2_hud]:wpn_mp5sd_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_ac10632_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_new_acog]:wpn_mp5sd_new
+1icon_layer                              = acog
+1icon_layer_x                            = 74
+1icon_layer_y                            = -2
+
+inv_weight                               = 3.37
+
+hud                                      = wpn_mp5sd_acog_sk2_hud
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_mp5sd_acog_sk2_hud]:wpn_mp5sd_acog_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_acog_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_mp5sd_new_eot]:wpn_mp5sd_new
+1icon_layer                              = eot
+1icon_layer_x                            = 81
+1icon_layer_y                            = 1
+
+inv_weight                               = 3.28
+
+hud                                      = wpn_mp5sd_eot_sk2_hud
+visual                                   = dynamics\weapons\wpn_mp5sd\wpn_mp5sd_eot_sk2.ogf
+
+
+[wpn_mp5sd_eot_sk2_hud]:wpn_mp5sd_eot_hud
+item_visual                              = anomaly_weapons\wpn_mp5sd\wpn_mp5sd_eot_sk2_hud.ogf
+
+;;;;_________________w_ump45.ltx____________________
+
+[wpn_ump45_custom]:wpn_ump45
+parent_section                           = wpn_ump45_custom
+
+inv_grid_y                               = 32
+inv_name                                 = st_wpn_ump45_custom
+inv_name_short                           = st_wpn_ump45_custom
+
+cost                                     = 33880
+
+hud                                      = wpn_ump45_sk1_hud
+visual                                   = dynamics\weapons\wpn_ump45\wpn_ump45_sk1.ogf
+
+installed_upgrades                       = up_fourta_ump45
+
+rpm                                      = 640
+
+fire_dispersion_base                     = 0.48
+
+misfire_start_condition                  = 0.7 ;  0.82
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.11
+misfire_end_prob                         = 0.08
+
+condition_queue_shot_dec                 = 0.00082
+condition_shot_dec                       = 0.00082
+
+
+[wpn_ump45_sk1_hud]:wpn_ump45_hud
+item_visual                              = anomaly_weapons\wpn_ump45\wpn_ump45_sk1_hud.ogf
+
+
+[wpn_ump45_ac10632_sk1_hud]:wpn_ump45_hud
+item_visual                              = anomaly_weapons\wpn_ump45\wpn_ump45_ac10632_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.08236, 0.0592, -0.25
+aim_hud_offset_pos_16x9                  = -0.08236, 0.0592, -0.25
+aim_hud_offset_rot                       = 0.0228, 0.0346, 0
+aim_hud_offset_rot_16x9                  = 0.0228, 0.0346, 0
+
+;------------------------------------------------------------------------------------------------
+[wpn_ump45_custom_ac10632]:wpn_ump45_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 83
+1icon_layer_y                            = -13
+
+inv_weight                               = 2.60
+
+hud                                      = wpn_ump45_ac10632_sk1_hud
+visual                                   = dynamics\weapons\wpn_ump45\wpn_ump45_ac10632_sk1.ogf
+
+
+[wpn_ump45_acog_sk1_hud]:wpn_ump45_acog_hud
+item_visual                              = anomaly_weapons\wpn_ump45\wpn_ump45_acog_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.08233, 0.0399, -0.25
+aim_hud_offset_pos_16x9                  = -0.08233, 0.0399, -0.25
+aim_hud_offset_rot                       = 0.0228, 0.0346, 0.0005
+aim_hud_offset_rot_16x9                  = 0.0228, 0.0346, 0.0005
+
+;------------------------------------------------------------------------------------------------
+[wpn_ump45_custom_acog]:wpn_ump45_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 80
+1icon_layer_y                            = -10
+
+inv_weight                               = 2.80
+
+hud                                      = wpn_ump45_acog_sk1_hud
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+;------------------------------------------------------------------------------------------------
+[wpn_ump45_custom_eot]:wpn_ump45_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 83
+1icon_layer_y                            = -8
+
+inv_weight                               = 2.85
+
+hud                                      = wpn_ump45_eot_sk1_hud
+visual                                   = dynamics\weapons\wpn_ump45\wpn_ump45_eot_sk1.ogf
+
+
+[wpn_ump45_eot_sk1_hud]:wpn_ump45_hud
+item_visual                              = anomaly_weapons\wpn_ump45\wpn_ump45_eot_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.0824,0.0324,-0.25
+aim_hud_offset_pos_16x9                  = -0.0824,0.0324,-0.25
+aim_hud_offset_rot                       = 0.0228, 0.0346, 0.0005
+aim_hud_offset_rot_16x9                  = 0.0228, 0.0346, 0.0005
+
+;;;;_________________w_vz61.ltx____________________
+
+[wpn_vz61_alt]:wpn_vz61
+inv_grid_y                               = 80
+inv_name                                 = st_wpn_vz61_alt
+inv_name_short                           = st_wpn_vz61_alt
+
+cost                                     = 13960
+
+hud                                      = wpn_vz61_sk3_hud
+visual                                   = dynamics\weapons\wpn_vz61\wpn_vz61_sk3.ogf
+
+ammo_class                               = ammo_9x18_fmj, ammo_9x18_fmj_bad, ammo_9x18_fmj_verybad, ammo_9x18_pmm, ammo_9x18_pmm_bad, ammo_9x18_pmm_verybad, ammo_9x18_ap, ammo_9x18_ap_bad, ammo_9x18_ap_verybad
+
+hit_power                                = 0.46, 0.46, 0.46, 0.46
+bullet_speed                             = 320
+rpm                                      = 865
+ap_modifier                              = 1.1
+
+fire_dispersion_base                     = 0.65
+
+misfire_start_condition                  = 0.7 ;  0.85
+misfire_end_condition                    = 0.16
+
+condition_queue_shot_dec                 = 0.00122
+condition_shot_dec                       = 0.00122
+
+cam_return                               = 0
+cam_relax_speed                          = 10
+cam_dispersion                           = 0.38
+cam_dispersion_frac                      = 0.9
+cam_dispersion_inc                       = 0.13
+cam_max_angle                            = 28.0
+cam_max_angle_horz                       = 28.0
+cam_step_angle_horz                      = 1.31
+zoom_cam_relax_speed                     = 10
+zoom_cam_dispersion                      = 0.23
+zoom_cam_dispersion_frac                 = 0.9
+zoom_cam_dispersion_inc                  = 0.09
+zoom_cam_max_angle                       = 28.0
+zoom_cam_max_angle_horz                  = 28.0
+zoom_cam_step_angle_horz                 = 1.3
+
+cam_relax_speed_ai                       = 120.75
+zoom_cam_relax_speed_ai                  = 120.75
+
+
+[wpn_vz61_sk3_hud]:wpn_vz61_hud
+item_visual                              = anomaly_weapons\wpn_vz61\wpn_vz61_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vz61_camo]:wpn_vz61
+inv_grid_y                               = 79
+inv_name                                 = st_wpn_vz61_camo
+inv_name_short                           = st_wpn_vz61_camo
+
+cost                                     = 18960
+
+hud                                      = wpn_vz61_sk2_hud
+visual                                   = dynamics\weapons\wpn_vz61\wpn_vz61_sk2.ogf
+
+installed_upgrades                       = up_secona_vz61, up_fiftha_vz61
+
+rpm                                      = 880
+
+fire_dispersion_base                     = 0.56
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.09
+
+condition_queue_shot_dec                 = 0.0011
+condition_shot_dec                       = 0.0011
+
+
+[wpn_vz61_sk2_hud]:wpn_vz61_hud
+item_visual                              = anomaly_weapons\wpn_vz61\wpn_vz61_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vz61_freedom]:wpn_vz61
+inv_grid_y                               = 78
+inv_name                                 = st_wpn_vz61_freedom
+inv_name_short                           = st_wpn_vz61_freedom
+
+cost                                     = 17980
+
+hud                                      = wpn_vz61_sk1_hud
+visual                                   = dynamics\weapons\wpn_vz61\wpn_vz61_sk1.ogf
+
+installed_upgrades                       = up_fourta_vz61
+
+rpm                                      = 913
+
+fire_dispersion_base                     = 0.61
+
+misfire_start_condition                  = 0.7 ;  0.81
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.13
+misfire_end_prob                         = 0.09
+
+condition_queue_shot_dec                 = 0.00102
+condition_shot_dec                       = 0.00102
+
+
+[wpn_vz61_sk1_hud]:wpn_vz61_hud
+item_visual                              = anomaly_weapons\wpn_vz61\wpn_vz61_sk1_hud.ogf
+
+;;;;_________________w_beretta.ltx____________________
+
+[wpn_beretta_camo]:wpn_beretta
+inv_grid_x                               = 39
+inv_name                                 = st_wpn_beretta_camo
+inv_name_short                           = st_wpn_beretta_camo
+
+cost                                     = 11650
+
+hud                                      = wpn_beretta_sk1_hud
+visual                                   = dynamics\weapons\wpn_beretta92fs\wpn_beretta92fs_sk1.ogf
+
+installed_upgrades                       = up_fiftha_beretta, up_thirda_beretta, up_thirdd_beretta
+
+fire_dispersion_base                     = 0.4
+
+misfire_start_condition                  = 0.7 ;  0.77
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.0017
+condition_shot_dec                       = 0.0017
+
+
+[wpn_beretta_sk1_hud]:wpn_beretta_hud
+item_visual                              = anomaly_weapons\wpn_beretta92fs\wpn_beretta92fs_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_beretta_modern]:wpn_beretta
+inv_grid_x                               = 41
+inv_name                                 = st_wpn_beretta_modern
+inv_name_short                           = st_wpn_beretta_modern
+
+cost                                     = 9390
+
+hud                                      = wpn_beretta_sk2_hud
+visual                                   = dynamics\weapons\wpn_beretta92fs\wpn_beretta92fs_sk2.ogf
+
+installed_upgrades                       = up_fiftha_beretta, up_firsta_beretta
+
+rpm                                      = 343
+
+fire_dispersion_base                     = 0.44
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.1
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.0014
+condition_shot_dec                       = 0.0014
+
+
+[wpn_beretta_sk2_hud]:wpn_beretta_hud
+item_visual                              = anomaly_weapons\wpn_beretta92fs\wpn_beretta92fs_sk2_hud.ogf
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;_________________________________w_colt1911.ltx_______________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_colt1911_alt]:wpn_colt1911
+        inv_grid_x                  = 49
+        inv_name                    = st_wpn_colt1911_alt
+        inv_name_short              = st_wpn_colt1911_alt
+        
+        cost                        = 11280
+        
+        hud                         = wpn_colt1911_sk6_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk6.ogf
+        
+        rpm                         = 235
+        
+        fire_dispersion_base        = 0.58
+        
+        misfire_start_condition     = 0.7 ;  0.82
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.11
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0016
+        condition_shot_dec          = 0.0016
+ 
+
+[wpn_colt1911_sk6_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk6_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_colt1911_camo]:wpn_colt1911
+        inv_grid_x                  = 43
+        inv_name                    = st_wpn_colt1911_camo
+        inv_name_short              = st_wpn_colt1911_camo
+        description                 = st_wpn_colt1911_camo_descr
+        
+        cost                        = 13880
+        
+        hud                         = wpn_colt1911_sk3_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk3.ogf
+        
+        installed_upgrades          = up_firsta_colt1911, up_fiftha_colt1911
+        
+        rpm                         = 245
+        
+        fire_dispersion_base        = 0.52
+        
+        misfire_start_condition     = 0.7 ;  0.84
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0014
+        condition_shot_dec          = 0.0014
+ 
+
+[wpn_colt1911_sk3_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk3_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_colt1911_custom]:wpn_colt1911
+        inv_grid_x                  = 45
+        inv_name                    = st_wpn_colt1911_custom
+        inv_name_short              = st_wpn_colt1911_custom
+        
+        cost                        = 12550
+        
+        hud                         = wpn_colt1911_sk4_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk4.ogf
+        
+        installed_upgrades          = up_fiftha_colt1911
+        
+        rpm                         = 246
+        
+        fire_dispersion_base        = 0.56
+        
+        misfire_start_condition     = 0.7 ;  0.84
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.12
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_colt1911_sk4_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk4_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_colt1911_duty]:wpn_colt1911
+        inv_grid_x                  = 39
+        inv_name                    = st_wpn_colt1911_duty
+        inv_name_short              = st_wpn_colt1911_duty
+        description                 = st_wpn_colt1911_duty_descr
+        
+        cost                        = 14580
+        
+        hud                         = wpn_colt1911_sk1_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk1.ogf
+        
+        installed_upgrades          = up_thirda_colt1911, up_firsta_colt1911
+        
+        rpm                         = 235
+        
+        fire_dispersion_base        = 0.54
+        
+        misfire_start_condition     = 0.7 ;  0.83
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.11
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_colt1911_sk1_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_colt1911_merc]:wpn_colt1911
+        inv_grid_x                  = 41
+        inv_name                    = st_wpn_colt1911_merc
+        inv_name_short              = st_wpn_colt1911_merc
+        description                 = st_wpn_colt1911_merc_descr
+        
+        cost                        = 14860
+        
+        hud                         = wpn_colt1911_sk2_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk2.ogf
+        
+        installed_upgrades          = up_fourta_colt1911, up_fiftha_colt1911
+        
+        rpm                         = 240
+        
+        fire_dispersion_base        = 0.5
+        
+        misfire_start_condition     = 0.7 ;  0.79
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0013
+        condition_shot_dec          = 0.0013
+ 
+
+[wpn_colt1911_sk2_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk2_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_colt1911_modern]:wpn_colt1911
+        inv_grid_x                  = 47
+        inv_name                    = st_wpn_colt1911_modern
+        inv_name_short              = st_wpn_colt1911_modern
+        
+        cost                        = 12380
+        
+        hud                         = wpn_colt1911_sk5_hud
+        visual                      = dynamics\weapons\wpn_colt1911\wpn_colt1911_sk5.ogf
+        
+        installed_upgrades          = up_fiftha_colt1911
+        
+        rpm                         = 250
+        
+        fire_dispersion_base        = 0.55
+        
+        misfire_start_condition     = 0.7 ;  0.81
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0016
+        condition_shot_dec          = 0.0016
+ 
+
+[wpn_colt1911_sk5_hud]:wpn_colt1911_hud
+        item_visual                 = anomaly_weapons\wpn_colt1911\wpn_colt1911_sk5_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;______________________________w_desert_eagle.ltx______________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_desert_eagle_custom]:wpn_desert_eagle
+        inv_grid_x                  = 49
+        inv_name                    = st_wpn_desert_eagle_custom
+        inv_name_short              = st_wpn_desert_eagle_custom
+        
+        cost                        = 23580
+        
+        hud                         = wpn_desert_eagle_sk1_hud
+        visual                      = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_sk1.ogf
+        
+        installed_upgrades          = up_thirda_desert_eagle, up_fourta_desert_eagle
+        
+        rpm                         = 238
+        
+        fire_dispersion_base        = 0.5
+        
+        misfire_start_condition     = 0.7 ;  0.77
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.083
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.0024
+        condition_shot_dec          = 0.0024
+ 
+
+[wpn_desert_eagle_sk1_hud]:wpn_desert_eagle_hud
+        item_visual                 = anomaly_weapons\wpn_desert_eagle\wpn_desert_eagle_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_desert_eagle_modern]:wpn_desert_eagle
+        inv_grid_x                  = 51
+        inv_name                    = st_wpn_desert_eagle_modern
+        inv_name_short              = st_wpn_desert_eagle_modern
+        
+        cost                        = 22250
+        
+        hud                         = wpn_desert_eagle_sk2_hud
+        visual                      = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_sk2.ogf
+        
+        installed_upgrades          = up_secona_desert_eagle
+        
+        rpm                         = 252
+        
+        fire_dispersion_base        = 0.53
+        
+        misfire_start_condition     = 0.7 ;  0.8
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.088
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.0023
+        condition_shot_dec          = 0.0023
+ 
+
+[wpn_desert_eagle_sk2_hud]:wpn_desert_eagle_hud
+        item_visual                 = anomaly_weapons\wpn_desert_eagle\wpn_desert_eagle_sk2_hud.ogf
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_fnp45.ltx_________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_fnp45_custom]:wpn_fnp45
+        inv_grid_x                  = 49
+        inv_name                    = st_wpn_fnp45_custom
+        inv_name_short              = st_wpn_fnp45_custom
+        
+        cost                        = 17550
+        
+        hud                         = wpn_fnp45_sk1_hud
+        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnp45_sk1.ogf
+        
+        installed_upgrades          = up_secona_fnp45
+        
+        rpm                         = 268
+        
+        fire_dispersion_base        = 0.38
+        
+        misfire_start_condition     = 0.7 ;  0.8
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.07
+        misfire_end_prob            = 0.08
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_fnp45_sk1_hud]:wpn_fnp45_hud
+        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnp45_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+
+[wpn_fnx45_alt]:wpn_fnx45
+        inv_grid_x                  = 59
+        inv_grid_y                  = 79
+        inv_name                    = st_wpn_fnx45_alt
+        inv_name_short              = st_wpn_fnx45_alt
+        
+        cost                        = 12850
+        
+        hud                         = wpn_fnx45_sk2_hud
+        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnx45_sk2.ogf
+        
+        rpm                         = 250
+        
+        fire_dispersion_base        = 0.46
+        
+        misfire_start_condition     = 0.7 ;  0.83
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.08
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0016
+        condition_shot_dec          = 0.0016
+ 
+
+[wpn_fnx45_sk2_hud]:wpn_fnx45_hud
+        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnx45_sk2_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_fnx45_custom]:wpn_fnx45
+        inv_grid_y                  = 79
+        inv_name                    = st_wpn_fnx45_custom
+        inv_name_short              = st_wpn_fnx45_custom
+        
+        cost                        = 18650
+        
+        hud                         = wpn_fnx45_sk1_hud
+        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnx45_sk1.ogf
+        
+        installed_upgrades          = up_firsta_fnx45
+        
+        rpm                         = 270
+        
+        fire_dispersion_base        = 0.4
+        
+        misfire_start_condition     = 0.7 ;  0.79
+        misfire_end_condition       = 0.07
+ 
+
+[wpn_fnx45_sk1_hud]:wpn_fnx45_hud
+        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnx45_sk1_hud.ogf
+ 
+
+[wpn_fnp45_sk2_hud]:wpn_fnp45_hud
+        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnp45_sk2_hud.ogf
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_glock.ltx_________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_glock_custom]:wpn_glock
+        inv_grid_x                  = 55
+        inv_name                    = st_wpn_glock_custom
+        inv_name_short              = st_wpn_glock_custom
+        
+        cost                        = 13580
+        
+        hud                         = wpn_glock_sk1_hud
+        visual                      = dynamics\weapons\wpn_glock\wpn_glock_sk1.ogf
+        
+        installed_upgrades          = up_fiftha_glock, up_thirda_glock
+        
+        rpm                         = 280
+        
+        fire_dispersion_base        = 0.3
+        
+        misfire_start_condition     = 0.7 ;  0.75
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.08
+        misfire_end_prob            = 0.08
+        
+        condition_queue_shot_dec    = 0.00165
+        condition_shot_dec          = 0.00165
+ 
+
+[wpn_glock_sk1_hud]:wpn_glock_hud
+        item_visual                 = anomaly_weapons\wpn_glock\wpn_glock_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_glock_modern]:wpn_glock
+        inv_grid_x                  = 57
+        inv_name                    = st_wpn_glock_modern
+        inv_name_short              = st_wpn_glock_modern
+        description                 = st_wpn_glock_modern_descr
+        
+        cost                        = 15680
+        
+        hud                         = wpn_glock_sk2_hud
+        visual                      = dynamics\weapons\wpn_glock\wpn_glock_sk2.ogf
+        
+        upgrades                    = up_gr_firstab_glock_auto, up_gr_seconab_glock_auto, up_gr_thirdab_glock_auto, up_gr_fourtab_glock_auto, up_gr_fifthab_glock_auto, up_gr_fifthcd_glock_auto
+        installed_upgrades          = up_fiftha_glock_auto
+        
+        fire_modes                  = 1, -1
+        
+        grenade_class               = ammo_vog-25
+        
+        rpm                         = 525
+        
+        fire_dispersion_base        = 0.35
+        
+        misfire_start_condition     = 0.7 ;  0.7
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.07
+        misfire_end_prob            = 0.08
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_glock_sk2_hud]:wpn_glock_hud
+        item_visual                 = anomaly_weapons\wpn_glock\wpn_glock_sk2_hud.ogf
+ 
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_gsh18.ltx_________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_gsh18_custom]:wpn_gsh18
+        inv_grid_x                  = 63
+        inv_name                    = st_wpn_gsh18_custom
+        inv_name_short              = st_wpn_gsh18_custom
+        
+        cost                        = 11580
+        
+        hud                         = wpn_gsh18_sk1_hud
+        visual                      = dynamics\weapons\wpn_gsh18\wpn_gsh18_sk1.ogf
+        
+        installed_upgrades          = up_firsta_gsh18
+        
+        rpm                         = 305
+        
+        fire_dispersion_base        = 0.38
+        
+        misfire_start_condition     = 0.7 ;  0.83
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.00182
+        condition_shot_dec          = 0.00182
+ 
+
+[wpn_gsh18_sk1_hud]:wpn_gsh18_hud
+        item_visual                 = anomaly_weapons\wpn_gsh18\wpn_gsh18_sk1_hud.ogf
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_hpsa.ltx__________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_hpsa_alt]:wpn_hpsa
+        inv_grid_x                  = 51
+        inv_name                    = st_wpn_hpsa_alt
+        inv_name_short              = st_wpn_hpsa_alt
+        
+        cost                        = 9960
+        
+        hud                         = wpn_hpsa_sk1_hud
+        visual                      = dynamics\weapons\wpn_hpsa\wpn_hpsa_sk1.ogf
+        
+        installed_upgrades          = up_fiftha_hpsa
+        
+        rpm                         = 290
+        
+        fire_dispersion_base        = 0.5
+        
+        misfire_start_condition     = 0.7 ;  0.83
+        misfire_start_prob          = 0.005
+        misfire_end_condition       = 0.082
+        misfire_end_prob            = 0.04
+        
+        condition_queue_shot_dec    = 0.0021
+        condition_shot_dec          = 0.0021
+ 
+
+[wpn_hpsa_sk1_hud]:wpn_hpsa_hud
+        item_visual                 = anomaly_weapons\wpn_hpsa\wpn_hpsa_sk1_hud
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_pm.ltx____________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_pm_custom]:wpn_pm
+        inv_grid_x                  = 63
+        inv_name                    = st_wpn_pm_custom
+        inv_name_short              = st_wpn_pm_custom
+        
+        cost                        = 6890
+        
+        hud                         = wpn_pm_sk1_hud
+        visual                      = dynamics\weapons\wpn_pm\wpn_pm_sk1.ogf
+        
+        rpm                         = 340
+        
+        fire_dispersion_base        = 0.59
+        
+        misfire_start_condition     = 0.7 ;  0.79
+        misfire_start_prob          = 0.004
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.03
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_pm_sk1_hud]:wpn_pm_hud
+        item_visual                 = anomaly_weapons\wpn_pm\wpn_pm_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_pmm]:wpn_pm
+        inv_grid_x                  = 69
+        inv_name                    = st_wpn_pmm
+        inv_name_short              = st_wpn_pmm
+        description                 = st_wpn_pmm_descr
+        
+        inv_weight                  = 0.76
+        cost                        = 7580
+        
+        hud                         = wpn_pmm_hud
+        visual                      = dynamics\weapons\wpn_pm\wpn_pmm.ogf
+        
+        ammo_elapsed                = 12
+        ammo_mag_size               = 12
+        
+        rpm                         = 245
+        
+control_inertion_factor = 1.0f
+        fire_dispersion_base        = 0.56
+        
+        misfire_start_condition     = 0.7 ;  0.8
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.11
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_pmm_hud]:wpn_pm_hud
+        item_visual                 = anomaly_weapons\wpn_pm\wpn_pmm_hud.ogf
+        
+        hands_position              = -0.031, -0.17, 0
+        hands_position_16x9         = -0.031, -0.17, 0
+        hands_orientation           = -0.5, 1., 1.15
+        hands_orientation_16x9      = -0.5, 1., 1.15
+        
+        aim_hud_offset_pos          = -0.10105, 0.0556, -0.17
+        aim_hud_offset_pos_16x9     = -0.10105, 0.0556, -0.17
+        aim_hud_offset_rot          = 0.0087, 0.0125, -0.01575
+        aim_hud_offset_rot_16x9     = 0.0087, 0.0125, -0.01575
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;__________________________________w_pb.ltx____________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_pb_custom]:wpn_pb
+inv_grid_x                               = 73
+inv_name                                 = st_wpn_pb_custom
+inv_name_short                           = st_wpn_pb_custom
+
+cost                                     = 8190
+
+hud                                      = wpn_pb_sk1_hud
+visual                                   = dynamics\weapons\wpn_pb\wpn_pb_sk1.ogf
+
+installed_upgrades                       = up_fiftha_pb
+
+rpm                                      = 325
+
+fire_dispersion_base                     = 0.56
+
+misfire_start_condition                  = 0.7 ;  0.85
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.12
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.0016
+condition_shot_dec                       = 0.0016
+
+
+[wpn_pb_sk1_hud]:wpn_pb_hud
+item_visual                              = anomaly_weapons\wpn_pb\wpn_pb_sk1_hud.ogf
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;_______________________________w_sig220.ltx___________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_sig220_custom]:wpn_sig220
+        inv_grid_x                  = 39
+        inv_name                    = st_wpn_sig220_custom
+        inv_name_short              = st_wpn_sig220_custom
+        
+        cost                        = 15880
+        
+        hud                         = wpn_sig220_sk1_hud
+        visual                      = dynamics\weapons\wpn_sig220\wpn_sig220_sk1.ogf
+        
+        installed_upgrades          = up_firsta_sig220
+        
+        rpm                         = 260
+        
+        fire_dispersion_base        = 0.5
+        
+        misfire_start_condition     = 0.7 ;  0.7
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+ 
+
+[wpn_sig220_sk1_hud]:wpn_sig220_hud
+        item_visual                 = anomaly_weapons\wpn_sig220\wpn_sig220_sk1_hud.ogf
+
+[wpn_sig220_nimble]:wpn_sig220
+        $spawn                      = "weapons\wpn_sig220_nimble"
+        
+        inv_grid_x                  = 45
+        inv_name                    = st_wpn_sig220_nimble
+        inv_name_short              = st_wpn_sig220_nimble
+        description                 = st_wpn_sig220_nimble_descr
+        
+        cost                        = 18560
+        
+        hud                         = wpn_sig220_nimble_hud
+        visual                      = dynamics\weapons\wpn_sig220\wpn_sig220_nimble.ogf
+        
+        rpm                         = 244
+        
+        fire_dispersion_base        = 0.48
+        
+        misfire_start_condition     = 0.7 ;  0.7
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.08
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.00143
+        condition_shot_dec          = 0.00143
+ 
+
+[wpn_sig220_nimble_hud]:wpn_sig220_hud
+        item_visual                 = anomaly_weapons\wpn_sig220\wpn_sig220_nimble_hud.ogf
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;________________________________w_tt33.ltx____________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_tt33_modern]:wpn_tt33
+        inv_grid_x                  = 61
+        inv_name                    = st_wpn_tt33_modern
+        inv_name_short              = st_wpn_tt33_modern
+        
+        cost                        = 12350
+        
+        hud                         = wpn_tt33_sk1_hud
+        visual                      = dynamics\weapons\wpn_tt33\wpn_tt33_sk1.ogf
+        
+        rpm                         = 240
+        
+        fire_dispersion_base        = 0.53
+        
+        misfire_start_condition     = 0.7 ;  0.68
+        misfire_start_prob          = 0.006
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.0016
+        condition_shot_dec          = 0.0016
+ 
+
+[wpn_tt33_sk1_hud]:wpn_tt33_hud
+        item_visual                 = anomaly_weapons\wpn_tt33\wpn_tt33_sk1_hud.ogf
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;_________________________________w_usp.ltx____________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+;------------------------------------------------------------------------------------------------
+[wpn_usp_custom]:wpn_usp
+        inv_grid_x                  = 39
+        inv_name                    = st_wpn_usp_custom
+        inv_name_short              = st_wpn_usp_custom
+        
+        cost                        = 13580
+        
+        hud                         = wpn_usp45_sk1_hud
+        visual                      = dynamics\weapons\wpn_usp45\wpn_usp45_sk1.ogf
+        
+        installed_upgrades          = up_fiftha_usp
+        
+        rpm                         = 273
+        
+        fire_dispersion_base        = 0.38
+        
+        misfire_start_condition     = 0.7 ;  0.82
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.1
+        misfire_end_prob            = 0.09
+        
+        condition_queue_shot_dec    = 0.00148
+        condition_shot_dec          = 0.00148
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_usp_match]:wpn_usp
+        inv_grid_x                  = 43
+        inv_name                    = st_wpn_usp_match
+        inv_name_short              = st_wpn_usp_match
+        description                 = st_wpn_usp_match_descr
+        
+        inv_weight                  = 1.18
+        cost                        = 15360
+        
+        hud                         = wpn_usp_match_hud
+        visual                      = dynamics\weapons\wpn_usp45\wpn_usp_match.ogf
+        
+        upgrades                    = up_gr_firstab_usp_match, up_gr_seconab_usp_match, up_gr_thirdab_usp_match, up_gr_fourtab_usp_match, up_gr_fifthab_usp_match
+        
+        ammo_class                  = ammo_9x19_fmj, ammo_9x19_fmj_bad, ammo_9x19_fmj_verybad, ammo_9x19_pbp, ammo_9x19_pbp_bad, ammo_9x19_pbp_verybad, ammo_9x19_ap, ammo_9x19_ap_bad, ammo_9x19_ap_verybad
+        ammo_elapsed                = 15
+        ammo_mag_size               = 15
+        
+        silencer_name               = wpn_sil_gemtech
+        silencer_x                  = 87;95
+        silencer_y                  = -13;-14
+        
+        rpm                         = 260
+        
+        fire_dispersion_base        = 0.4
+        
+        misfire_start_condition     = 0.7 ;  0.8
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.1
+        misfire_end_prob            = 0.08
+        
+        condition_queue_shot_dec    = 0.0015
+        condition_shot_dec          = 0.0015
+        
+        cam_return                  = 0
+        cam_relax_speed             = 8
+        cam_dispersion              = 0.82
+        cam_dispersion_frac         = 1.1
+        cam_dispersion_inc          = 0.88
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 0.42
+        
+        PDM_disp_accel_factor       = 1.055
+        PDM_disp_base               = 0.65
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.05
+        
+        cam_relax_speed_ai          = 360
+ 
+
+[wpn_usp_match_hud]:wpn_usp45_hud
+        item_visual                 = anomaly_weapons\wpn_usp45\wpn_usp_match_hud.ogf
+        
+        aim_hud_offset_pos          = -0.09869, 0.0645, -0.17
+        aim_hud_offset_pos_16x9     = -0.09869, 0.0645, -0.17
+        aim_hud_offset_rot          = 0.019, 0.0129, -0.0151
+        aim_hud_offset_rot_16x9     = 0.019, 0.0129, -0.0151
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;______________________________w_walther.ltx___________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_walther_custom]:wpn_walther
+        inv_grid_x                  = 69
+        inv_name                    = st_wpn_walther_custom
+        inv_name_short              = st_wpn_walther_custom
+        
+        cost                        = 5680
+        
+        hud                         = wpn_walther_sk1_hud
+        visual                      = dynamics\weapons\wpn_walter99\wpn_walter99_sk1.ogf
+        
+        rpm                         = 285
+        
+        fire_dispersion_base        = 0.65
+ 
+
+[wpn_walther_sk1_hud]:wpn_walther_hud
+        item_visual                 = anomaly_weapons\wpn_walter99\wpn_walter99_sk1_hud
+        
+        item_position               = 0.000746, -0.000421, -0.003479
+        item_orientation            = 0.239378, 0.634046, -0.052052
+        
+        aim_hud_offset_pos          = -0.09195, 0.0567, -0.15
+        aim_hud_offset_pos_16x9     = -0.09195, 0.0567, -0.15
+        aim_hud_offset_rot          = 0.0187, -0.0048, 0.0191
+        aim_hud_offset_rot_16x9     = 0.0187, -0.0048, 0.0191
+ 
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;_____________________________w_protecta.ltx___________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_aim]:wpn_protecta
+inv_grid_x                               = 35
+inv_grid_y                               = 52
+inv_name                                 = st_wpn_protecta_aim
+inv_name_short                           = st_wpn_protecta_aim
+description                              = st_wpn_protecta_aim_descr
+
+cost                                     = 33780
+
+hud                                      = wpn_protecta_aim_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_aim.ogf
+
+rpm                                      = 150
+
+fire_dispersion_base                     = 0.53
+
+misfire_start_condition                  = 0.7 ;  0.78
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.093
+misfire_end_prob                         = 0.05
+
+condition_queue_shot_dec                 = 0.0022
+condition_shot_dec                       = 0.0022
+
+
+[wpn_protecta_aim_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_aim_hud.ogf
+
+aim_hud_offset_pos                       = -0.1001,0.0206,-0.3
+aim_hud_offset_pos_16x9                  = -0.1001,0.0206,-0.3
+aim_hud_offset_rot                       = 0,0.0003,0
+aim_hud_offset_rot_16x9                  = 0,0.0003,0
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_camo]:wpn_protecta
+inv_grid_x                               = 35
+inv_grid_y                               = 44
+inv_name                                 = st_wpn_protecta_camo
+inv_name_short                           = st_wpn_protecta_camo
+
+cost                                     = 33850
+
+hud                                      = wpn_protecta_sk1_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_sk1.ogf
+
+installed_upgrades                       = up_firsta_protecta, up_secona_protecta
+
+fire_dispersion_base                     = 0.6
+
+misfire_start_condition                  = 0.7 ;  0.7
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.00223
+condition_shot_dec                       = 0.00223
+
+
+[wpn_protecta_sk1_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_custom]:wpn_protecta
+inv_grid_y                               = 46
+inv_name                                 = st_wpn_protecta_custom
+inv_name_short                           = st_wpn_protecta_custom
+
+cost                                     = 30650
+
+hud                                      = wpn_protecta_sk2_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_sk2.ogf
+
+installed_upgrades                       = up_fourta_protecta
+
+rpm                                      = 168
+
+fire_dispersion_base                     = 0.62
+
+misfire_start_condition                  = 0.7 ;  0.76
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.04
+
+condition_queue_shot_dec                 = 0.00211
+condition_shot_dec                       = 0.00211
+
+
+[wpn_protecta_sk2_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_protecta_nimble]:wpn_protecta
+$spawn                                   = "weapons\wpn_protecta_nimble"
+
+inv_grid_x                               = 35
+inv_grid_y                               = 54
+inv_name                                 = st_wpn_protecta_nimble
+inv_name_short                           = st_wpn_protecta_nimble
+description                              = st_wpn_protecta_nimble_descr
+
+cost                                     = 32680
+
+hud                                      = wpn_protecta_nimble_hud
+visual                                   = dynamics\weapons\wpn_protecta\wpn_protecta_nimble
+
+rpm                                      = 191
+
+fire_dispersion_base                     = 0.63
+
+misfire_start_condition                  = 0.7 ;  0.76
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.02
+
+condition_queue_shot_dec                 = 0.0022
+condition_shot_dec                       = 0.0022
+
+
+[wpn_protecta_nimble_hud]:wpn_protecta_hud
+item_visual                              = anomaly_weapons\wpn_protecta\wpn_protecta_nimble_hud
+
+
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+;;;;;______________________________w_spas12.ltx____________________________;;;;;;;;;;;;
+;;;;;______________________________________________________________________;;;;;;;;;;;;
+
+[wpn_spas12_custom]:wpn_spas12
+        inv_grid_x                  = 40
+        inv_grid_y                  = 2
+        inv_name                    = st_wpn_spas12_custom
+        inv_name_short              = st_wpn_spas12_custom
+        
+        cost                        = 32580
+        
+        hud                         = wpn_spas12_sk1_hud
+        visual                      = dynamics\weapons\wpn_spas12\wpn_spas12_sk1.ogf
+        
+        installed_upgrades          = up_secona_spas12
+        
+        rpm                         = 130
+        
+        fire_dispersion_base        = 0.45
+        
+        misfire_start_condition     = 0.7 ;  0.76
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.09
+        misfire_end_prob            = 0.02
+        
+        condition_queue_shot_dec    = 0.00225
+        condition_shot_dec          = 0.00225
+ 
+
+[wpn_spas12_sk1_hud]:wpn_spas12_hud
+        item_visual                 = anomaly_weapons\wpn_spas12\wpn_spas12_sk1_hud.ogf
+ 
+;------------------------------------------------------------------------------------------------
+[wpn_spas12_nimble]:wpn_spas12
+        $spawn                      = "weapons\wpn_spas12_nimble"
+        
+        inv_grid_x                  = 40
+        inv_grid_y                  = 8
+        inv_name                    = st_wpn_spas12_nimble
+        inv_name_short              = st_wpn_spas12_nimble
+        description                 = st_wpn_spas12_nimble_descr
+        
+        cost                        = 34860
+        
+        hud                         = wpn_spas12_nimble_hud
+        visual                      = dynamics\weapons\wpn_spas12\wpn_spas12_nimble.ogf
+        
+        hit_power                   = 0.83, 0.83, 0.83, 0.83
+        bullet_speed                = 350
+        
+        fire_dispersion_base        = 0.43
+        
+        misfire_start_condition     = 0.7 ;  0.73
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.08
+        misfire_end_prob            = 0.02
+        
+        condition_queue_shot_dec    = 0.0024
+        condition_shot_dec          = 0.0024
+ 
+
+[wpn_spas12_nimble_hud]:wpn_spas12_hud
+        item_visual                 = anomaly_weapons\wpn_spas12\wpn_spas12_nimble_hud.ogf
+ 

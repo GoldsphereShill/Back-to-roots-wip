@@ -201,63 +201,7 @@ control_inertion_factor = 1.0f
         fire_point                  = 0, 0, 0
  
 ;------------------------------------------------------------------------------------------------
-[wpn_desert_eagle_custom]:wpn_desert_eagle
-        inv_grid_x                  = 49
-        inv_name                    = st_wpn_desert_eagle_custom
-        inv_name_short              = st_wpn_desert_eagle_custom
-        
-        cost                        = 23580
-        
-        hud                         = wpn_desert_eagle_sk1_hud
-        visual                      = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_sk1.ogf
-        
-        installed_upgrades          = up_thirda_desert_eagle, up_fourta_desert_eagle
-        
-        rpm                         = 238
-        
-        fire_dispersion_base        = 0.5
-        
-        misfire_start_condition     = 0.7 ;  0.77
-        misfire_start_prob          = 0.006
-        misfire_end_condition       = 0.083
-        misfire_end_prob            = 0.09
-        
-        condition_queue_shot_dec    = 0.0024
-        condition_shot_dec          = 0.0024
- 
 
-[wpn_desert_eagle_sk1_hud]:wpn_desert_eagle_hud
-        item_visual                 = anomaly_weapons\wpn_desert_eagle\wpn_desert_eagle_sk1_hud.ogf
- 
-;------------------------------------------------------------------------------------------------
-[wpn_desert_eagle_modern]:wpn_desert_eagle
-        inv_grid_x                  = 51
-        inv_name                    = st_wpn_desert_eagle_modern
-        inv_name_short              = st_wpn_desert_eagle_modern
-        
-        cost                        = 22250
-        
-        hud                         = wpn_desert_eagle_sk2_hud
-        visual                      = dynamics\weapons\wpn_desert_eagle\wpn_desert_eagle_sk2.ogf
-        
-        installed_upgrades          = up_secona_desert_eagle
-        
-        rpm                         = 252
-        
-        fire_dispersion_base        = 0.53
-        
-        misfire_start_condition     = 0.7 ;  0.8
-        misfire_start_prob          = 0.006
-        misfire_end_condition       = 0.088
-        misfire_end_prob            = 0.09
-        
-        condition_queue_shot_dec    = 0.0023
-        condition_shot_dec          = 0.0023
- 
-
-[wpn_desert_eagle_sk2_hud]:wpn_desert_eagle_hud
-        item_visual                 = anomaly_weapons\wpn_desert_eagle\wpn_desert_eagle_sk2_hud.ogf
- 
 ;------------------------------------------------------------------------------------------------
 [wpn_desert_eagle_nimble]:wpn_desert_eagle
         $spawn                      = "weapons\wpn_desert_eagle_nimble"

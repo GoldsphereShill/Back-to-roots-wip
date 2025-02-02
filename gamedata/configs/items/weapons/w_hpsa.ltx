@@ -203,31 +203,3 @@ control_inertion_factor = 1.0f
         fire_point                  = 0, 0, 0
  
 ;------------------------------------------------------------------------------------------------
-[wpn_hpsa_alt]:wpn_hpsa
-        inv_grid_x                  = 51
-        inv_name                    = st_wpn_hpsa_alt
-        inv_name_short              = st_wpn_hpsa_alt
-        
-        cost                        = 9960
-        
-        hud                         = wpn_hpsa_sk1_hud
-        visual                      = dynamics\weapons\wpn_hpsa\wpn_hpsa_sk1.ogf
-        
-        installed_upgrades          = up_fiftha_hpsa
-        
-        rpm                         = 290
-        
-        fire_dispersion_base        = 0.5
-        
-        misfire_start_condition     = 0.7 ;  0.83
-        misfire_start_prob          = 0.005
-        misfire_end_condition       = 0.082
-        misfire_end_prob            = 0.04
-        
-        condition_queue_shot_dec    = 0.0021
-        condition_shot_dec          = 0.0021
- 
-
-[wpn_hpsa_sk1_hud]:wpn_hpsa_hud
-        item_visual                 = anomaly_weapons\wpn_hpsa\wpn_hpsa_sk1_hud
- 

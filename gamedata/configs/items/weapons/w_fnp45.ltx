@@ -211,35 +211,7 @@ control_inertion_factor = 1.0f
         fire_point                  = 0, 0, 0
  
 ;------------------------------------------------------------------------------------------------
-[wpn_fnp45_custom]:wpn_fnp45
-        inv_grid_x                  = 49
-        inv_name                    = st_wpn_fnp45_custom
-        inv_name_short              = st_wpn_fnp45_custom
-        
-        cost                        = 17550
-        
-        hud                         = wpn_fnp45_sk1_hud
-        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnp45_sk1.ogf
-        
-        installed_upgrades          = up_secona_fnp45
-        
-        rpm                         = 268
-        
-        fire_dispersion_base        = 0.38
-        
-        misfire_start_condition     = 0.7 ;  0.8
-        misfire_start_prob          = 0.006
-        misfire_end_condition       = 0.07
-        misfire_end_prob            = 0.08
-        
-        condition_queue_shot_dec    = 0.0015
-        condition_shot_dec          = 0.0015
- 
 
-[wpn_fnp45_sk1_hud]:wpn_fnp45_hud
-        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnp45_sk1_hud.ogf
- 
-;------------------------------------------------------------------------------------------------
 [wpn_fnx45]:wpn_fnp45
         inv_grid_x                  = 57
         inv_grid_y                  = 78
@@ -290,58 +262,3 @@ control_inertion_factor = 1.0f
         aim_hud_offset_rot_16x9     = 0.016, 0.013, -0.0151
  
 ;------------------------------------------------------------------------------------------------
-[wpn_fnx45_alt]:wpn_fnx45
-        inv_grid_x                  = 59
-        inv_grid_y                  = 79
-        inv_name                    = st_wpn_fnx45_alt
-        inv_name_short              = st_wpn_fnx45_alt
-        
-        cost                        = 12850
-        
-        hud                         = wpn_fnx45_sk2_hud
-        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnx45_sk2.ogf
-        
-        rpm                         = 250
-        
-        fire_dispersion_base        = 0.46
-        
-        misfire_start_condition     = 0.7 ;  0.83
-        misfire_start_prob          = 0.007
-        misfire_end_condition       = 0.08
-        misfire_end_prob            = 0.11
-        
-        condition_queue_shot_dec    = 0.0016
-        condition_shot_dec          = 0.0016
- 
-
-[wpn_fnx45_sk2_hud]:wpn_fnx45_hud
-        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnx45_sk2_hud.ogf
- 
-;------------------------------------------------------------------------------------------------
-[wpn_fnx45_custom]:wpn_fnx45
-        inv_grid_y                  = 79
-        inv_name                    = st_wpn_fnx45_custom
-        inv_name_short              = st_wpn_fnx45_custom
-        
-        cost                        = 18650
-        
-        hud                         = wpn_fnx45_sk1_hud
-        visual                      = dynamics\weapons\wpn_fnp45\wpn_fnx45_sk1.ogf
-        
-        installed_upgrades          = up_firsta_fnx45
-        
-        rpm                         = 270
-        
-        fire_dispersion_base        = 0.4
-        
-        misfire_start_condition     = 0.7 ;  0.79
-        misfire_end_condition       = 0.07
- 
-
-[wpn_fnx45_sk1_hud]:wpn_fnx45_hud
-        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnx45_sk1_hud.ogf
- 
-
-[wpn_fnp45_sk2_hud]:wpn_fnp45_hud
-        item_visual                 = anomaly_weapons\wpn_fnp45\wpn_fnp45_sk2_hud.ogf
- 

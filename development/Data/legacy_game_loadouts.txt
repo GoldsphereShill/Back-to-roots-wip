@@ -183,7 +183,7 @@ wpn_bizon			            = true,1,550,1
 [isg_loadout]:shared
 helm_cloth_mask	                = false,1,0
 isg_outfit	                    = false,1,0
-wpn_beretta_camo		        = false,1,0
+wpn_beretta_alt 		        = false,1,0
 wpn_knife 				        = false,1,0
 isg_patch			            = false,1,0
 bolt_bullet 			        = false,1,0
