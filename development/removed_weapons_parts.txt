@@ -51,3 +51,7 @@ wpn_l85_modern					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_
 wpn_l85a2_alt					=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
 wpn_l85a2_custom				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
 wpn_l85a2_modern				=	 prt_w_barrel_12,	prt_i_ceramic,					prt_i_scrap,				prt_w_p_trigger_2,	prt_i_scrap
+wpn_ak74_alt					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_custom					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_modern					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
+wpn_ak74_old					=	 prt_w_p_trigger_2,	prt_w_barrel_7,				prt_i_scrap,				prt_i_scrap,		prt_i_wood
