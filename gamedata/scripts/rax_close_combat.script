@@ -1,0 +1,123 @@
+--Close Combat Weapon selection
+--RavenAscendant
+--Feb 11 2023
+--based on:
+
+--Example of correct use of npc_on_choose_weapon callback.
+--Author RavenAscendant
+--Credit madgamer98
+--24Jan2023
+
+-- npc_on_choose_weapon callback if incorrectly used will break NPCs
+-- this example has the following features:
+------ It works
+------ It it immediately returns with not effects if NPC is not a target of this script (performance optimization)
+------ It only scans NPC inventories at a set interval not every frame (performance optimization)
+------ It schedules the inventory scans of each NPC in a manner that greatly reduces the likelihood of multiple scans happening in the same frame
+------ Cache's the chosen weapon to maintain the npc using the selected weapon between update cycles.
+------ Changes flags.gun_id only when this script has something to change it to.
+------ Can be easily edited to any purpose by editing the first two functions
+
+ 
+
+local update_freq = 5000 -- how frequently to rescan inventories
+local close_combat_range = 5 --in meters i think
+local melee_range = 1
+
+
+local update_time = {} -- per npc time in ms that if time_global is higher that we rescan this NPC inventory 
+local update_delta = {} -- list of offsets in MS for each NPC to prevent scheduling multiple NPCs to be updated at the same time.
+local npc_count = 0 -- counter to calculate offset
+
+local set_wpn = {} --this callback breaks the npc if flags.gun_id changes too frequently. to prevent having to iterate the inventory to find our weapon every time this is called we store the result of find_weapon for each npc to set the flag to between refreshes of our logic. Callback has checks for the item existing in the npc's inventory so we don't need to worry about that.
+
+local ccr2 = close_combat_range * close_combat_range -- used for distance_to_sqr 
+local mr2 = melee_range * melee_range
+
+local range --not a table because it will be updated every time.
+
+local function npc_to_overide(npc)
+	--some logic to decide if this npc should have weapon overridden, reading from a list of ids or sections, checking range to enemy
+	local be = npc:best_enemy()
+	range = be and be:position():distance_to_sqr(npc:position())
+	return range and range < ccr2
+end
+
+
+
+
+local function find_weapon(npc) --function we use to find the weapon we want the npc to use.
+	local best_cond = 0
+	local wpn_id = nil
+
+	local function find_shotgun(obj) --simple inventory iterator to find a shotty
+		local value_cond = (obj:condition() * (ini_sys:r_float_ex(obj:section(), "cost") or 1)) --condition and value are good enough proxies for weapon effectiveness, this could be changed to also take into acount ammo type or rate of fire.
+	  	if IsShotgun(obj) and value_cond > best_cond then --if the item is a shotty and a better value than what we have found update:
+		   best_cond = value_cond
+		   wpn_id = obj:id() 
+		end
+	  	return false -- this iterator returning true stops the iterator, we want to look at everything
+	end
+	
+	local function find_melee(obj) --simple inventory iterator to find a melee
+		local value_cond = (obj:condition() * (ini_sys:r_float_ex(obj:section(), "cost") or 1)) --condition and value are good enough proxies for weapon effectiveness, this could be changed to also take into acount ammo type or rate of fire.
+	  	if IsMelee(obj) and value_cond > best_cond then --if the item is a melee and a better value than what we have found update:
+		   best_cond = value_cond
+		   wpn_id = obj:id() 
+		end
+	  	return false -- this iterator returning true stops the iterator, we want to look at everything
+	end
+
+	local function find_not_long_range(obj) --simple inventory iterator to find something that isn't long range
+		local value_cond = (obj:condition() * (ini_sys:r_float_ex(obj:section(), "cost") or 1)) --condition and value are good enough proxies for weapon effectiveness, this could be changed to also take into acount ammo type or rate of fire.
+	  	if (not(IsSniper(obj) or IsLauncher(obj))) and value_cond > best_cond then --if the item isn't long range and a better value than what we have found update:
+		   best_cond = value_cond
+		   wpn_id = obj:id() 
+		end
+	  	return false -- this iterator returning true stops the iterator, we want to look at everything
+	end
+	
+	npc:inventory_for_each(find_shotgun) --shot gun first
+	if not wpn_id and range <= mr2 then --need to be extra close for melee
+		npc:inventory_for_each(find_melee) -- then melee
+	end
+	if not wpn_id then
+		npc:inventory_for_each(find_not_long_range)
+	end
+	
+	--printf("find weapon: %s", wpn_id)
+	return wpn_id -- will be the best weapon we found or nil if we found nothing.
+end
+
+
+function npc_on_choose_weapon(npc, cur_gun, flags)
+	if not npc_to_overide(npc) then return end -- if not an NPC we want to override change nothing and return let the engine or other npc_on_choose_weapon callbacks decide
+	local id = npc:id()	
+
+	if not update_time[id] then --if we don't have an update_time this is a new npc
+		npc_count = npc_count + 1
+		update_delta[id] = npc_count * 10 -- put each NPC on a staggered timer so we don't iterate multiple inventories the same frame
+		update_time[id] = math.floor(time_global()/1000)*1000 + update_delta[id]
+	end
+	
+	
+	
+	if update_time[id] < time_global() then -- only scan the npc's inventory if past the scheduled update time
+		if (time_global() - update_time[id]) > (update_freq + 1000) then -- if way past the update time reschedule in the future by the npc's update_delta, this prevents scanning an entier squad all at once when it re-enters combat
+			update_time[id] = time_global() + update_delta[id]
+			--printf("past time")
+		else
+			update_time[id] = math.floor(time_global()/1000)*1000 + update_delta[id] + update_freq --round down to nearest second, schedule update for 5 seconds + npc's unique delta to ensure only one npc inventory gets parsed any one frame
+			set_wpn[id] = find_weapon(npc) -- if we have a weapon that meets our criteria record it, if not it will be set to nil
+		end
+	end
+	
+	flags.gun_id = set_wpn[id] or flags.gun_id --if we have a recorded wpn for this npc use it, if not leave the flag as it was to respect other callbacks that may have been called before this one, or leave it nil to let engine decide. 
+end
+
+
+
+function on_game_start()
+	RegisterScriptCallback("npc_on_choose_weapon", npc_on_choose_weapon)
+end
+
