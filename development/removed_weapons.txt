@@ -3301,3 +3301,1027 @@ visual                                   = dynamics\weapons\wpn_lr300\wpn_lr300_
 
 [wpn_lr300_eot_sk2_hud]:wpn_lr300_eot_hud
 item_visual                              = anomaly_weapons\wpn_lr300\wpn_lr300_eot_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+;-- Old
+;------------------------------------------------------------------------------------------------
+[wpn_ak74u_old]:wpn_ak74u
+parent_section                           = wpn_ak74u_old
+
+inv_grid_x                               = 40
+inv_grid_y                               = 64
+inv_name                                 = st_wpn_ak74u_old
+inv_name_short                           = st_wpn_ak74u_old
+description                              = st_wpn_ak74u_old_descr
+
+cost                                     = 17860
+
+hud                                      = wpn_ak74u_sk6_hud
+visual                                   = dynamics\weapons\wpn_ak74u\wpn_ak74u_sk6.ogf
+
+scopes                                   = none
+
+hit_power                                = 0.39, 0.39, 0.39, 0.39
+bullet_speed                             = 725
+rpm                                      = 690
+
+fire_dispersion_base                     = 0.58
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_end_condition                    = 0.11
+
+condition_queue_shot_dec                 = 0.00093
+condition_shot_dec                       = 0.00093
+
+
+[wpn_ak74u_sk6_hud]:wpn_ak74u_hud
+item_visual                              = anomaly_weapons\wpn_ak74u\wpn_ak74u_sk6_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+;-- Custom
+;------------------------------------------------------------------------------------------------
+[wpn_ak74u_custom]:wpn_ak74u
+parent_section                           = wpn_ak74u_custom
+
+inv_grid_x                               = 40
+inv_grid_y                               = 58
+inv_name                                 = st_wpn_ak74u_custom
+inv_name_short                           = st_wpn_ak74u_custom
+
+cost                                     = 23880
+
+hud                                      = wpn_ak74u_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74u\wpn_ak74u_sk2.ogf
+
+installed_upgrades                       = up_fourta_ak74u
+
+bullet_speed                             = 752
+rpm                                      = 715
+
+fire_dispersion_base                     = 0.5
+
+misfire_start_condition                  = 0.7 ;  0.69
+misfire_start_prob                       = 0.005
+misfire_end_condition                    = 0.085
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.001
+condition_shot_dec                       = 0.001
+
+
+[wpn_ak74u_sk2_hud]:wpn_ak74u_hud
+item_visual                              = anomaly_weapons\wpn_ak74u\wpn_ak74u_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74u_custom_1p29]:wpn_ak74u_custom
+1icon_layer                              = 1p29
+1icon_layer_x                            = 56
+1icon_layer_y                            = 2
+
+inv_weight                               = 3.28
+
+hud                                      = wpn_ak74u_1p29_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74u\wpn_ak74u_1p29_sk2.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74u_1p29_sk2_hud]:wpn_ak74u_1p29_hud
+item_visual                              = anomaly_weapons\wpn_ak74u\wpn_ak74u_1p29_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74u_custom_kobra]:wpn_ak74u_custom
+1icon_layer                              = kobra
+1icon_layer_x                            = 67
+1icon_layer_y                            = 4
+
+inv_weight                               = 2.88
+
+hud                                      = wpn_ak74u_kobra_sk2_hud
+visual                                   = dynamics\weapons\wpn_ak74u\wpn_ak74u_kobra_sk2.ogf
+
+
+[wpn_ak74u_kobra_sk2_hud]:wpn_ak74u_kobra_hud
+item_visual                              = anomaly_weapons\wpn_ak74u\wpn_ak74u_kobra_sk2_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_ak74u_custom_ps01]:wpn_ak74u_custom
+1icon_layer                              = ps01
+1icon_layer_x                            = 30
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.08
+
+hud                                      = wpn_ak74u_pso1_sk2_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_ak74u_pso1_sk2_hud]:wpn_ak74u_pso1_hud
+item_visual                              = anomaly_weapons\wpn_ak74u\wpn_ak74u_sk2_hud.ogf
+
+[wpn_g36_nimble]:wpn_g36
+$spawn                                   = "weapons\wpn_g36_nimble"
+
+
+[wpn_g36_sk2_hud]:wpn_g36_hud
+item_visual                              = anomaly_weapons\wpn_g36\wpn_g36_sk2_hud.ogf
+
+
+[wpn_g36k_sk1_hud]:wpn_g36_hud
+item_visual                              = anomaly_weapons\wpn_g36\wpn_g36k_sk1_hud.ogf
+
+aim_hud_offset_pos                  	 = -0.121920, 0.057350, -0.35
+aim_hud_offset_rot                  	 = 0.041500, 0.033500, 0
+aim_hud_offset_pos_16x9                  = -0.121920, 0.057350, -0.35
+aim_hud_offset_rot_16x9                  = 0.041500, 0.033500, 0
+
+;------------------------------------------------------------------------------------------------
+;-- Custom
+;------------------------------------------------------------------------------------------------
+[wpn_m4a1_custom]:wpn_m4a1
+parent_section                           = wpn_m4a1_custom
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 25
+inv_grid_y                               = 48
+inv_name                                 = st_wpn_m4a1_custom
+inv_name_short                           = st_wpn_m4a1_custom
+
+inv_weight                               = 3.1
+cost                                     = 35980
+
+hud                                      = wpn_m4a1_sk3_hud
+visual                                   = dynamics\weapons\wpn_m4a1\wpn_m4a1_sk3.ogf
+
+installed_upgrades                       = up_fiftha_m4a1, up_secona_m4a1
+
+rpm                                      = 820
+
+fire_dispersion_base                     = 0.28
+
+misfire_start_condition                  = 0.7 ;  0.84
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.0007
+condition_shot_dec                       = 0.0007
+
+
+[wpn_m4a1_sk3_hud]:wpn_m4a1_hud
+item_visual                              = anomaly_weapons\wpn_m4a1\wpn_m4a1_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_m4a1_custom_ac10632]:wpn_m4a1_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 85
+1icon_layer_y                            = -3
+
+inv_weight                               = 3.215
+
+hud                                      = wpn_m4a1_ac10632_sk3_hud
+visual                                   = dynamics\weapons\wpn_m4a1\wpn_m4a1_ac10632_sk3.ogf
+
+
+[wpn_m4a1_ac10632_sk3_hud]:wpn_m4a1_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_m4a1\wpn_m4a1_ac10632_sk3_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_m4a1_custom_acog]:wpn_m4a1_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 82
+1icon_layer_y                            = -1
+
+inv_weight                               = 3.450
+
+hud                                      = wpn_m4a1_acog_sk3_hud
+visual                                   = dynamics\weapons\wpn_m4a1\wpn_m4a1_acog_sk3.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_m4a1_acog_sk3_hud]:wpn_m4a1_acog_hud
+item_visual                              = anomaly_weapons\wpn_m4a1\wpn_m4a1_acog_sk3_hud.ogf
+
+aim_hud_offset_pos                       = -0.11944,0.0349,-0.275
+aim_hud_offset_pos_16x9                  = -0.11944,0.0349,-0.275
+aim_hud_offset_rot                       = 0.042,0.0085,0
+aim_hud_offset_rot_16x9                  = 0.042,0.0085,0
+
+;------------------------------------------------------------------------------------------------
+[wpn_m4a1_custom_eot]:wpn_m4a1_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 82
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.4
+
+hud                                      = wpn_m4a1_eot_sk3_hud
+visual                                   = dynamics\weapons\wpn_m4a1\wpn_m4a1_eot_sk3.ogf
+
+
+[wpn_m4a1_eot_sk3_hud]:wpn_m4a1_eot_hud
+item_visual                              = anomaly_weapons\wpn_m4a1\wpn_m4a1_eot_sk3_hud.ogf
+
+aim_hud_offset_pos                       = -0.11911,0.05034,-0.2
+aim_hud_offset_pos_16x9                  = -0.11911,0.05034,-0.2
+aim_hud_offset_rot                       = 0.042, 0.0085, 0
+aim_hud_offset_rot_16x9                  = 0.042, 0.0085, 0
+
+[wpn_ppsh41_woodnew]:wpn_ppsh41
+        inv_grid_x                  = 55
+        inv_name                    = st_wpn_ppsh41_new
+        inv_name_short              = st_wpn_ppsh41_new
+        
+        inv_weight                  = 3.65
+        cost                        = 18180
+        
+        hud                         = wpn_ppsh41_woodnew_hud
+        visual                      = dynamics\weapons\wpn_ppsh41\wpn_ppsh41_sk1.ogf
+        
+        rpm                         = 900
+        
+        fire_dispersion_base        = 0.58
+        
+        misfire_start_condition     = 0.7 ;  0.74
+        misfire_start_prob          = 0.003
+        misfire_end_condition       = 0.05
+        misfire_end_prob            = 0.02
+        
+        condition_queue_shot_dec    = 0.00065
+        condition_shot_dec          = 0.00065
+ 
+
+[wpn_ppsh41_woodnew_hud]:wpn_ppsh41_hud
+        item_visual                 = anomaly_weapons\wpn_ppsh41\wpn_ppsh41_sk1_hud.ogf
+ 
+
+;------------------------------------------------------------------------------------------------
+;-- Custom
+;------------------------------------------------------------------------------------------------
+[wpn_scar_custom]:wpn_scar
+parent_section                           = wpn_scar_custom
+
+inv_grid_height                          = 2
+inv_grid_width                           = 5
+inv_grid_x                               = 20
+inv_grid_y                               = 44
+inv_name                                 = st_wpn_scar_custom
+inv_name_short                           = st_wpn_scar_custom
+
+inv_weight                               = 3.6
+cost                                     = 63580
+
+hud                                      = wpn_scar_sk1_hud
+visual                                   = dynamics\weapons\wpn_scar\wpn_scar_sk1.ogf
+
+installed_upgrades                       = up_firsta_scar
+
+rpm                                      = 640
+
+control_inertion_factor = 1.0f
+crosshair_inertion                       = 5.7
+fire_dispersion_base                     = 0.13
+
+misfire_start_condition                  = 0.7 ;  0.63
+misfire_end_condition                    = 0.044
+
+condition_queue_shot_dec                 = 0.00105
+condition_shot_dec                       = 0.00105
+
+
+[wpn_scar_sk1_hud]:wpn_scar_hud
+item_visual                              = anomaly_weapons\wpn_scar\wpn_scar_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_scar_custom_ac10632]:wpn_scar_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 104
+1icon_layer_y                            = -9
+
+inv_weight                               = 3.736
+
+hud                                      = wpn_scar_ac10632_sk1_hud
+visual                                   = dynamics\weapons\wpn_scar\wpn_scar_ac10632_sk1.ogf
+
+
+[wpn_scar_ac10632_sk1_hud]:wpn_scar_hud
+item_visual                              = anomaly_weapons\wpn_scar\wpn_scar_ac10632_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.0797, 0.0333, -0.25
+aim_hud_offset_pos_16x9                  = -0.0797, 0.0333, -0.25
+
+anm_idle_aim                             = lancew_scar_idle_aim, idle_aim
+anm_idle_w_gl_aim                        = lancew_scar_idle_aim_w_gl, idle_aim
+anm_shots                                = lancew_scar_shoot_scope, shoot
+anm_shots_w_gl                           = lancew_scar_shoot_scope_w_gl, shoot
+
+;------------------------------------------------------------------------------------------------
+[wpn_scar_custom_acog]:wpn_scar_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 99
+1icon_layer_y                            = -7
+
+inv_weight                               = 3.971
+
+hud                                      = wpn_scar_acog_sk1_hud
+visual                                   = dynamics\weapons\wpn_scar\wpn_scar_acog_sk1.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+
+[wpn_scar_acog_sk1_hud]:wpn_scar_acog_hud
+item_visual                              = anomaly_weapons\wpn_scar\wpn_scar_acog_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_scar_custom_eot]:wpn_scar_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 107
+1icon_layer_y                            = -4
+
+inv_weight                               = 3.921
+
+hud                                      = wpn_scar_eot_sk1_hud
+visual                                   = dynamics\weapons\wpn_scar\wpn_scar_eot_sk1.ogf
+
+
+[wpn_scar_eot_sk1_hud]:wpn_scar_hud
+item_visual                              = anomaly_weapons\wpn_scar\wpn_scar_eot_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.07975,0.03335,-0.25
+aim_hud_offset_pos_16x9                  = -0.07975,0.03335,-0.25
+aim_hud_offset_rot                       = 0.03645, 0.008, -0.0102
+aim_hud_offset_rot_16x9                  = 0.03645, 0.008, -0.0102
+
+anm_idle_aim                             = lancew_scar_idle_aim, idle_aim
+anm_idle_w_gl_aim                        = lancew_scar_idle_aim_w_gl, idle_aim
+anm_shots                                = lancew_scar_shoot_scope, shoot
+anm_shots_w_gl                           = lancew_scar_shoot_scope_w_gl, shoot
+
+
+;------------------------------------------------------------------------------------------------
+;-- Camo
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_camo]:wpn_sig550
+parent_section                           = wpn_sig550_camo
+
+inv_grid_x                               = 20
+inv_grid_y                               = 52
+inv_name                                 = st_wpn_sig550_camo
+inv_name_short                           = st_wpn_sig550_camo
+
+cost                                     = 50860
+
+hud                                      = wpn_sig550_sk4_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_sk4.ogf
+
+installed_upgrades                       = up_firsta_sig550, up_fiftha_sig550
+
+rpm                                      = 720
+
+fire_dispersion_base                     = 0.205
+
+misfire_start_condition                  = 0.7 ;  0.65
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.08
+misfire_end_prob                         = 0.04
+
+condition_queue_shot_dec                 = 0.001
+condition_shot_dec                       = 0.001
+
+
+[wpn_sig550_sk4_hud]:wpn_sig550_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_sk4_hud.ogf
+
+
+[wpn_sig550_ac10632_sk4_hud]:wpn_sig550_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_ac10632_sk4_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_camo_ac10632]:wpn_sig550_camo
+1icon_layer                              = ac10632
+1icon_layer_x                            = 82
+1icon_layer_y                            = -3
+
+inv_weight                               = 4.215
+
+hud                                      = wpn_sig550_ac10632_sk4_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_ac10632_sk4.ogf
+
+
+[wpn_sig550_acog1_hud]:wpn_sig550_acog_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_acog_sk4_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_camo_acog]:wpn_sig550_camo
+1icon_layer                              = acog
+1icon_layer_x                            = 78
+1icon_layer_y                            = -2
+
+inv_weight                               = 4.450
+
+hud                                      = wpn_sig550_acog1_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_acog_sk4.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.3
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_camo_eot]:wpn_sig550_camo
+1icon_layer                              = eot
+1icon_layer_x                            = 78
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.4
+
+hud                                      = wpn_sig550_eot_sk4_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_eot_sk4.ogf
+
+
+[wpn_sig550_eot_sk4_hud]:wpn_sig550_eot_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_eot_sk4_hud.ogf
+
+aim_hud_offset_pos                       = -0.0886, 0.0545, -0.27
+aim_hud_offset_pos_16x9                  = -0.0886, 0.0545, -0.27
+aim_hud_offset_rot                       = 0.043, 0.0095, -0.01
+aim_hud_offset_rot_16x9                  = 0.043, 0.0095, -0.01
+
+;------------------------------------------------------------------------------------------------
+;-- Custom
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_custom]:wpn_sig550
+parent_section                           = wpn_sig550_custom
+
+inv_grid_x                               = 20
+inv_grid_y                               = 54
+inv_name                                 = st_wpn_sig550_custom
+inv_name_short                           = st_wpn_sig550_custom
+
+cost                                     = 45860
+
+hud                                      = wpn_sig550_sk1_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_sk1.ogf
+
+installed_upgrades                       = up_secona_sig550
+
+rpm                                      = 750
+
+fire_dispersion_base                     = 0.223
+
+misfire_start_condition                  = 0.7 ;  0.75
+misfire_start_prob                       = 0.003
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.04
+
+condition_queue_shot_dec                 = 0.0009
+condition_shot_dec                       = 0.0009
+
+
+[wpn_sig550_sk1_hud]:wpn_sig550_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_custom_ac10632]:wpn_sig550_custom
+1icon_layer                              = ac10632
+1icon_layer_x                            = 82
+1icon_layer_y                            = -3
+
+inv_weight                               = 4.215
+
+hud                                      = wpn_sig550_ac10632_sk1_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_ac10632_sk1.ogf
+
+
+[wpn_sig550_ac10632_sk1_hud]:wpn_sig550_ac10632_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_ac10632_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_custom_acog]:wpn_sig550_custom
+1icon_layer                              = acog
+1icon_layer_x                            = 78
+1icon_layer_y                            = -2
+
+inv_weight                               = 4.450
+
+hud                                      = wpn_sig550_acog2_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_acog_sk1.ogf
+
+scope_status                             = 0
+scope_zoom_factor                        = 20
+
+zoom_rotate_time                         = 0.3
+
+
+[wpn_sig550_acog2_hud]:wpn_sig550_acog_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_acog_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_sig550_custom_eot]:wpn_sig550_custom
+1icon_layer                              = eot
+1icon_layer_x                            = 78
+1icon_layer_y                            = 1
+
+inv_weight                               = 4.4
+
+hud                                      = wpn_sig550_eot_sk1_hud
+visual                                   = dynamics\weapons\wpn_sig550\wpn_sig550_eot_sk1.ogf
+
+
+[wpn_sig550_eot_sk1_hud]:wpn_sig550_eot_hud
+item_visual                              = anomaly_weapons\wpn_sig550\wpn_sig550_eot_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_val_modern]:wpn_val
+parent_section                           = wpn_val_modern
+
+inv_grid_x                               = 30
+inv_grid_y                               = 20
+inv_name                                 = st_wpn_val_modern
+inv_name_short                           = st_wpn_val_modern
+description                              = st_wpn_val_modern_descr
+
+cost                                     = 41580
+
+hud                                      = wpn_val_sk1_hud
+visual                                   = dynamics\weapons\wpn_val\wpn_val_sk1.ogf
+
+scopes                                   = 1p29, kobra, ps01
+
+rpm                                      = 840
+
+fire_dispersion_base                     = 0.3
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_end_condition                    = 0.09
+
+condition_queue_shot_dec                 = 0.00105
+condition_shot_dec                       = 0.00105
+
+snd_reload                               = weapons\val\val_sk1_reload
+snd_reload_empty                         = weapons\val\val_sk1_reload
+
+
+[wpn_val_sk1_hud]:wpn_val_hud
+item_visual                              = anomaly_weapons\wpn_val\wpn_val_sk1_hud.ogf
+
+hands_position                           = -0.042, -0.132, 0.1955
+hands_position_16x9                      = -0.042, -0.132, 0.1955
+hands_orientation                        = 0.55, 2.39, 0.1499993
+hands_orientation_16x9                   = 0.55, 2.39, 0.1499993
+
+aim_hud_offset_pos                       = -0.1086,0.0604,-0.3
+aim_hud_offset_pos_16x9                  = -0.1086,0.0604,-0.3
+aim_hud_offset_rot                       = 0.037, 0.009, -0.01
+aim_hud_offset_rot_16x9                  = 0.037, 0.009, -0.01
+
+anm_hide                                 = lancew_val_holster
+anm_idle                                 = lancew_val_idle
+anm_idle_aim                             = lancew_val_idle_aim, idle_aim
+anm_idle_moving                          = lancew_val_moving
+anm_idle_sprint                          = lancew_sr3m_sprint
+anm_reload                               = lancew_val_reload, reload
+anm_reload_empty                         = lancew_val_reload, reload
+anm_shots                                = lancew_val_shoot, shoot
+anm_show                                 = lancew_val_draw
+
+shell_bone                               = wpn_body
+shell_dir                                = 0.0, 1.0, 0.0
+shell_point                              = 0.02, 0.04, 0.131
+
+fire_bone                                = wpn_body
+fire_bone2                               = wpn_body
+fire_point                               = 0, 0.037, 0.626
+fire_point2                              = -0.014, 0.01, -0.037
+
+[wpn_val_1p29_sk1_hud]:wpn_val_sk1_hud
+item_visual                              = anomaly_weapons\wpn_val\wpn_val_1p29_sk1_hud.ogf
+
+aim_hud_offset_pos                       = -0.085, 0.0329, -0.33
+aim_hud_offset_pos_16x9                  = -0.085, 0.0329, -0.33
+aim_hud_offset_rot                       = -0.001, 0.0055, -0.01
+aim_hud_offset_rot_16x9                  = -0.001, 0.0055, -0.01
+
+;------------------------------------------------------------------------------------------------
+[wpn_val_modern_1p29]:wpn_val_modern
+1icon_layer                              = 1p29
+1icon_layer_x                            = 65
+1icon_layer_y                            = 1
+
+inv_weight                               = 3.3
+
+hud                                      = wpn_val_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_val\wpn_val_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_val_kobra_sk1_hud]:wpn_val_sk1_hud
+item_visual                              = anomaly_weapons\wpn_val\wpn_val_kobra_sk1_hud.ogf
+
+hands_position                           = -0.062, -0.162, 0.1955
+hands_position_16x9                      = -0.062, -0.162, 0.1955
+hands_orientation                        = 0.55, 2.39, 0.1499993
+hands_orientation_16x9                   = 0.55, 2.39, 0.1499993
+
+aim_hud_offset_pos                       = -0.0847,0.0325,-0.33
+aim_hud_offset_pos_16x9                  = -0.0847,0.0325,-0.33
+aim_hud_offset_rot                       = -0.001, 0.0055, -0.01
+aim_hud_offset_rot_16x9                  = -0.001, 0.0055, -0.01
+
+;------------------------------------------------------------------------------------------------
+[wpn_val_modern_kobra]:wpn_val_modern
+1icon_layer                              = kobra
+1icon_layer_x                            = 73
+1icon_layer_y                            = 5
+
+inv_weight                               = 2.9
+
+hud                                      = wpn_val_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_val\wpn_val_kobra_sk1.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_val_modern_ps01]:wpn_val_modern
+1icon_layer                              = ps01
+1icon_layer_x                            = 43
+1icon_layer_y                            = 3
+
+inv_weight                               = 3.1
+
+hud                                      = wpn_val_pso1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_val_pso1_hud]:wpn_val_sk1_hud
+item_visual                              = anomaly_weapons\wpn_val\wpn_val_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------------------------
+;-- Alt
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt]:wpn_vintorez
+parent_section                           = wpn_vintorez_alt
+
+inv_grid_y                               = 24
+inv_name                                 = st_wpn_vintorez_alt
+inv_name_short                           = st_wpn_vintorez_alt
+
+cost                                     = 41860
+
+hud                                      = wpn_vintorez_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_sk1.ogf
+
+rpm                                      = 750
+
+fire_dispersion_base                     = 0.184
+
+misfire_start_condition                  = 0.7 ;  0.8
+misfire_start_prob                       = 0.006
+misfire_end_condition                    = 0.11
+misfire_end_prob                         = 0.1
+
+condition_queue_shot_dec                 = 0.0021
+condition_shot_dec                       = 0.0016
+
+
+[wpn_vintorez_sk1_hud]:wpn_vintorez_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_1p29]:wpn_vintorez_alt
+1icon_layer                              = 1p29
+1icon_layer_x                            = 68
+1icon_layer_y                            = 5
+
+inv_weight                               = 3.41
+
+hud                                      = wpn_vintorez_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.25
+
+
+[wpn_vintorez_1p29_sk1_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_1p29_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_kobra]:wpn_vintorez_alt
+1icon_layer                              = kobra
+1icon_layer_x                            = 79
+1icon_layer_y                            = 8
+
+inv_weight                               = 2.98
+
+hud                                      = wpn_vintorez_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_vintorez\wpn_vintorez_kobra_sk1.ogf
+
+scope_status                             = 0
+scope_dynamic_zoom                       = off
+
+
+[wpn_vintorez_kobra_sk1_hud]:wpn_vintorez_kobra_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_kobra_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_vintorez_alt_pso1m21]:wpn_vintorez_alt
+1icon_layer                              = pso1m21
+1icon_layer_x                            = 56
+1icon_layer_y                            = 7
+
+inv_weight                               = 3.22
+
+hud                                      = wpn_vintorez_pso1m21_sk1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = on
+scope_texture                            = wpn_crosshair_pso1_ksvk
+scope_zoom_factor                        = 15
+
+
+[wpn_vintorez_pso1m21_sk1_hud]:wpn_vintorez_1p29_hud
+item_visual                              = anomaly_weapons\wpn_vintorez\wpn_vintorez_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+;-- Custom
+;------------------------------------------------------------------------------------------------
+[wpn_svd_custom]:wpn_svd
+parent_section                           = wpn_svd_custom
+
+inv_grid_height                          = 2
+inv_grid_width                           = 6
+inv_grid_x                               = 44
+inv_grid_y                               = 12
+inv_name                                 = st_wpn_svd_custom
+inv_name_short                           = st_wpn_svd_custom
+
+cost                                     = 45360
+
+hud                                      = wpn_svd_sk1_hud
+visual                                   = dynamics\weapons\wpn_svd\wpn_svd_sk1.ogf
+
+installed_upgrades                       = up_fourta_svd
+
+rpm                                      = 65
+
+fire_dispersion_base                     = 0.08
+
+misfire_start_condition                  = 0.7 ;  0.88
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.09
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.0038
+condition_shot_dec                       = 0.0038
+
+
+[wpn_svd_sk1_hud]:wpn_svd_hud
+item_visual                              = anomaly_weapons\wpn_svd\wpn_svd_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svd_custom_1p29]:wpn_svd_custom
+1icon_layer                              = 1p29
+1icon_layer_x                            = 58
+1icon_layer_y                            = 8
+
+inv_weight                               = 4.71
+
+hud                                      = wpn_svd_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_svd\wpn_svd_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.3
+
+
+[wpn_svd_1p29_sk1_hud]:wpn_svd_1p29_hud
+item_visual                              = anomaly_weapons\wpn_svd\wpn_svd_1p29_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svd_custom_kobra]:wpn_svd_custom
+1icon_layer                              = kobra
+1icon_layer_x                            = 64
+1icon_layer_y                            = 10
+
+inv_weight                               = 4.32
+
+hud                                      = wpn_svd_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_svd\wpn_svd_kobra_sk1.ogf
+
+scope_status                             = 0
+scope_dynamic_zoom                       = off
+
+[wpn_svd_kobra_sk1_hud]:wpn_svd_kobra_hud
+item_visual                              = anomaly_weapons\wpn_svd\wpn_svd_kobra_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svd_custom_ps01]:wpn_svd_custom
+1icon_layer                              = ps01
+1icon_layer_x                            = 33
+1icon_layer_y                            = 9
+
+inv_weight                               = 4.51
+
+hud                                      = wpn_svd_pso1_sk1_hud
+
+scope_status                             = 1
+scope_dynamic_zoom                       = on
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+
+[wpn_svd_pso1_sk1_hud]:wpn_svd_hud
+item_visual                              = anomaly_weapons\wpn_svd\wpn_svd_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+;-- Alt
+;------------------------------------------------------------------------------------------------
+[wpn_svu_alt]:wpn_svu
+parent_section                           = wpn_svu_alt
+
+inv_grid_x                               = 45
+inv_grid_y                               = 4
+inv_name                                 = st_wpn_svu_alt
+inv_name_short                           = st_wpn_svu_alt
+
+cost                                     = 48850
+
+hud                                      = wpn_svu_sk1_hud
+visual                                   = dynamics\weapons\wpn_svu\wpn_svu_sk1.ogf
+
+installed_upgrades                       = up_secona_svu
+
+rpm                                      = 78
+
+fire_dispersion_base                     = 0.073
+
+misfire_start_condition                  = 0.7 ;  0.75
+misfire_start_prob                       = 0.004
+misfire_end_condition                    = 0.08
+misfire_end_prob                         = 0.03
+
+condition_queue_shot_dec                 = 0.0045
+condition_shot_dec                       = 0.0045
+
+
+[wpn_svu_sk1_hud]:wpn_svu_hud
+item_visual                              = anomaly_weapons\wpn_svu\wpn_svu_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svu_alt_1p29]:wpn_svu_alt
+1icon_layer                              = 1p29
+1icon_layer_x                            = 72
+1icon_layer_y                            = 6
+
+inv_weight                               = 4.61
+
+hud                                      = wpn_svu_1p29_sk1_hud
+visual                                   = dynamics\weapons\wpn_svu\wpn_svu_1p29_sk1.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = off
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 15
+
+zoom_rotate_time                         = 0.3
+
+
+[wpn_svu_1p29_sk1_hud]:wpn_svu_1p29_hud
+item_visual                              = anomaly_weapons\wpn_svu\wpn_svu_1p29_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svu_alt_kobra]:wpn_svu_alt
+1icon_layer                              = kobra
+1icon_layer_x                            = 75
+1icon_layer_y                            = 9
+
+inv_weight                               = 4.22
+
+hud                                      = wpn_svu_kobra_sk1_hud
+visual                                   = dynamics\weapons\wpn_svu\wpn_svu_kobra_sk1.ogf
+
+scope_status                             = 0
+scope_dynamic_zoom                       = off
+
+
+[wpn_svu_kobra_sk1_hud]:wpn_svu_kobra_hud
+item_visual                              = anomaly_weapons\wpn_svu\wpn_svu_kobra_sk1_hud.ogf
+
+;------------------------------------------------------------------------------------------------
+[wpn_svu_alt_ps01]:wpn_svu_alt
+1icon_layer                              = ps01
+1icon_layer_x                            = 47
+1icon_layer_y                            = 8
+
+inv_weight                               = 4.41
+
+hud                                      = wpn_svu_pso1_sk1_hud
+item_visual                              = anomaly_weapons\wpn_svu\wpn_svu_pso1_sk1.ogf
+
+scope_status                             = 1
+scope_dynamic_zoom                       = on
+scope_texture                            = wpn_crosshair_pso1
+scope_zoom_factor                        = 15
+
+
+[wpn_svu_pso1_sk1_hud]:wpn_svu_pso1_hud
+item_visual                              = anomaly_weapons\wpn_svu\wpn_svu_pso1_sk1_hud.ogf
+
+[wpn_sks_modern]:wpn_sks
+inv_grid_height                          = 1
+inv_grid_width                           = 5
+inv_grid_x                               = 50
+inv_grid_y                               = 76
+inv_name                                 = st_wpn_sks_modern
+inv_name_short                           = st_wpn_sks_modern
+
+cost                                     = 22960
+
+hud                                      = wpn_sks_sk1_hud
+visual                                   = dynamics\weapons\wpn_sks\wpn_sks_sk1
+
+installed_upgrades                       = up_firsta_sks
+
+rpm                                      = 245
+
+fire_dispersion_base                     = 0.176
+
+misfire_start_condition                  = 0.7 ;  0.6
+misfire_start_prob                       = 0.007
+misfire_end_condition                    = 0.15
+misfire_end_prob                         = 0.035
+
+condition_queue_shot_dec                 = 0.0014
+condition_shot_dec                       = 0.0014
+
+cam_dispersion                           = 1.56
+cam_dispersion_inc                       = 1.36
+cam_step_angle_horz                      = 1.05
+zoom_cam_dispersion                      = 1.26
+zoom_cam_dispersion_inc                  = 1.06
+zoom_cam_step_angle_horz                 = 0.95
+
+
+[wpn_sks_sk1_hud]:wpn_sks_hud
+item_visual                              = anomaly_weapons\wpn_sks\wpn_sks_sk1_hud.ogf
+
+[wpn_svt40_modern]:wpn_svt40
+        inv_grid_y                  = 41
+        inv_name                    = st_wpn_svt40_modern
+        inv_name_short              = st_wpn_svt40_modern
+        
+        cost                        = 26350
+        
+        hud                         = wpn_svt40_sk1_hud
+        visual                      = dynamics\weapons\wpn_svt40\wpn_svt40_sk1.ogf
+        
+        rpm                         = 135
+        
+        fire_dispersion_base        = 0.096
+        
+        misfire_start_condition     = 0.7 ;  0.81
+        misfire_start_prob          = 0.005
+        misfire_end_condition       = 0.08
+        misfire_end_prob            = 0.05
+        
+        condition_queue_shot_dec    = 0.0048
+        condition_shot_dec          = 0.0048
+ 
+
+[wpn_svt40_sk1_hud]:wpn_svt40_hud
+        item_visual                 = anomaly_weapons\wpn_svt40\wpn_svt40_sk1_hud.ogf
+ 

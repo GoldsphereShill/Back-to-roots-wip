@@ -26,7 +26,7 @@
         inv_name_short              = st_wpn_ppsh41
         description                 = st_wpn_ppsh41_descr
         
-        kind                        = w_rifle
+        kind                        = w_smg ;w_rifle
         inv_weight                  = 3.64
         cost                        = 15840
         repair_type                 = pistol
@@ -229,30 +229,3 @@ control_inertion_factor = 1.0f
         item_visual                 = anomaly_weapons\wpn_ppsh41\wpn_ppsh41_sk3_hud.ogf
  
 ;------------------------------------------------------------------------------------------------
-[wpn_ppsh41_woodnew]:wpn_ppsh41
-        inv_grid_x                  = 55
-        inv_name                    = st_wpn_ppsh41_new
-        inv_name_short              = st_wpn_ppsh41_new
-        
-        inv_weight                  = 3.65
-        cost                        = 18180
-        
-        hud                         = wpn_ppsh41_woodnew_hud
-        visual                      = dynamics\weapons\wpn_ppsh41\wpn_ppsh41_sk1.ogf
-        
-        rpm                         = 900
-        
-        fire_dispersion_base        = 0.58
-        
-        misfire_start_condition     = 0.7 ;  0.74
-        misfire_start_prob          = 0.003
-        misfire_end_condition       = 0.05
-        misfire_end_prob            = 0.02
-        
-        condition_queue_shot_dec    = 0.00065
-        condition_shot_dec          = 0.00065
- 
-
-[wpn_ppsh41_woodnew_hud]:wpn_ppsh41_hud
-        item_visual                 = anomaly_weapons\wpn_ppsh41\wpn_ppsh41_sk1_hud.ogf
- 
